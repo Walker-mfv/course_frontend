@@ -1,0 +1,12 @@
+{
+    "folders": [
+        {
+            "name": "OnlineCourse-nextjs",
+            "path": "."
+        },
+        {
+            "name": "OnlineCourse-nest",
+            "path": "../OnlineCourse-nest"
+        }
+    ]
+}
