@@ -7,14 +7,10 @@ import { fetchLearnUnit } from '../../../../app/apis/user/user-learning.api'
 export const RQK_LEARN_UNIT = 'learn-unit'
 
 export const useLearnUnit = (unitId?: string, options?: UseQueryOptions<ILearnUnit>) => {
-    const learnId = useSelector(selectLearnId)
-    return useQuery<ILearnUnit>(
-        [RQK_LEARN_UNIT, learnId, unitId],
-        () => fetchLearnUnit(learnId!, unitId!),
-        {
-            notifyOnChangeProps: 'tracked',
-            enabled: !!learnId && !!unitId,
-            ...options,
-        }
-    )
+  const learnId = useSelector(selectLearnId)
+  return useQuery<ILearnUnit>([RQK_LEARN_UNIT, learnId, unitId], () => fetchLearnUnit(learnId!, unitId!), {
+    notifyOnChangeProps: 'tracked',
+    enabled: !!learnId && !!unitId,
+    ...options,
+  })
 }

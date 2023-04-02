@@ -1,3 +1,3 @@
 export type TDragItem = {
-    id: string
+  id: string
 }

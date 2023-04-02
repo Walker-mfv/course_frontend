@@ -3,5 +3,5 @@ import { NextFetchEvent, NextResponse } from 'next/server'
 import { accessSetting } from './../../../app/middlewares/role.middleware'
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-    return accessSetting(req, NextResponse)
+  return accessSetting(req, NextResponse)
 }

@@ -5,13 +5,13 @@ import RequirementForm from '../parts/RequirementForm'
 import SuitableLearnerForm from '../parts/SuitableLearnerForm'
 
 function IntendedLearners() {
-    return (
-        <CoursePageSection title={'Intended learners'} >
-            <ObjectiveForm />
-            <RequirementForm />
-            <SuitableLearnerForm />
-        </CoursePageSection>
-    )
+  return (
+    <CoursePageSection title={'Intended learners'}>
+      <ObjectiveForm />
+      <RequirementForm />
+      <SuitableLearnerForm />
+    </CoursePageSection>
+  )
 }
 
-export default  React.memo(IntendedLearners);
+export default React.memo(IntendedLearners)

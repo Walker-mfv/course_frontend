@@ -4,14 +4,14 @@ import IModel from './model.interface'
 import { IHistory } from './shared.interface'
 
 export interface ICourseInOrder {
-    course: ICourse
-    salePrice: number
-    price: number
+  course: ICourse
+  salePrice: number
+  price: number
 }
 
 export default interface IOrder extends IModel {
-    totalPrice: number
-    coursesInOrder: ICourseInOrder[]
-    moneyConfiguration: IMoneyConfiguration
-    history: IHistory
+  totalPrice: number
+  coursesInOrder: ICourseInOrder[]
+  moneyConfiguration: IMoneyConfiguration
+  history: IHistory
 }

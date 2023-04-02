@@ -6,11 +6,10 @@ import { useAdminOverviewTotalQuery } from '../../../queries/admin-overview-tota
 
 export interface AdminCourseRatingChartProps {}
 export function AdminCourseRatingChart(props: AdminCourseRatingChartProps) {
-    const {
-        state: { courseId },
-    } = useCourseChartParams()
-    const { data: total } = useAdminOverviewTotalQuery('rating', 'all', courseId)
-    const { isLoading: isStatsLoading, data: ratingStats } =
-        useAdminCourseRatingStatsQuery(courseId)
-    return <CourseRatingChart isLoading={isStatsLoading} data={ratingStats} total={total} />
+  const {
+    state: { courseId },
+  } = useCourseChartParams()
+  const { data: total } = useAdminOverviewTotalQuery('rating', 'all', courseId)
+  const { isLoading: isStatsLoading, data: ratingStats } = useAdminCourseRatingStatsQuery(courseId)
+  return <CourseRatingChart isLoading={isStatsLoading} data={ratingStats} total={total} />
 }

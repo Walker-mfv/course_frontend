@@ -9,22 +9,22 @@ import QuizContent from './QuizContent/QuizContent'
 import ShowSidebarButton from './ShowSidebarButton'
 
 export default function ContentBox() {
-    const { isOpen } = useSidebar()
-    const unit = useSelector(selectActiveUnit)
-    const renderContent = useMemo(() => {
-        switch (unit?.type) {
-            case 'lecture':
-                return <LectureContent />
-            case 'quiz':
-                return <QuizContent />
-            default:
-                return <ContentSkeleton />
-        }
-    }, [unit?.type])
-    return (
-        <Box overflowX={'hidden'}>
-            <Box>{renderContent}</Box>
-            {!isOpen && <ShowSidebarButton />}
-        </Box>
-    )
+  const { isOpen } = useSidebar()
+  const unit = useSelector(selectActiveUnit)
+  const renderContent = useMemo(() => {
+    switch (unit?.type) {
+      case 'lecture':
+        return <LectureContent />
+      case 'quiz':
+        return <QuizContent />
+      default:
+        return <ContentSkeleton />
+    }
+  }, [unit?.type])
+  return (
+    <Box overflowX={'hidden'}>
+      <Box>{renderContent}</Box>
+      {!isOpen && <ShowSidebarButton />}
+    </Box>
+  )
 }

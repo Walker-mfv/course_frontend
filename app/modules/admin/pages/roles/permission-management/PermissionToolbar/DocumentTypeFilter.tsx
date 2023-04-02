@@ -9,41 +9,36 @@ import { useDocumentPermissionSelectDataQuery } from '../../../../queries/docume
 
 export const DOCUMENT_TYPE_FILTER_KEY = 'documentType._id_filter'
 export default function DocumentTypeFilter() {
-    const { getUrlWithQueryParams } = useUrlHelper()
-    const { data } = useDocumentPermissionSelectDataQuery()
-    const router = useRouter()
-    const {
-        methods: { setDocumentPermissionId },
-    } = usePermissionManagement()
-    //
-    const { [DOCUMENT_TYPE_FILTER_KEY]: value = '' } = usePermissionManagementParams()
-    useEffect(() => {
-        setDocumentPermissionId(value + '' || undefined)
-    }, [setDocumentPermissionId, value])
-    const renderOption = useCallback((item: ISelectItem<string>, i: number) => {
-        return (
-            <option key={i} value={item.value}>
-                {item.label}
-            </option>
-        )
-    }, [])
-
-    const onChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
-        const value = e.target.value
-        //
-        const url = getUrlWithQueryParams({
-            [DOCUMENT_TYPE_FILTER_KEY]: value,
-        })
-        router.replace(url)
-    }
+  const { getUrlWithQueryParams } = useUrlHelper()
+  const { data } = useDocumentPermissionSelectDataQuery()
+  const router = useRouter()
+  const {
+    methods: { setDocumentPermissionId },
+  } = usePermissionManagement()
+  //
+  const { [DOCUMENT_TYPE_FILTER_KEY]: value = '' } = usePermissionManagementParams()
+  useEffect(() => {
+    setDocumentPermissionId(value + '' || undefined)
+  }, [setDocumentPermissionId, value])
+  const renderOption = useCallback((item: ISelectItem<string>, i: number) => {
     return (
-        <Select
-            placeholder="Select document type"
-            w="fit-content"
-            onChange={onChange}
-            value={value}
-        >
-            {data?.map(renderOption)}
-        </Select>
+      <option key={i} value={item.value}>
+        {item.label}
+      </option>
     )
+  }, [])
+
+  const onChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
+    const value = e.target.value
+    //
+    const url = getUrlWithQueryParams({
+      [DOCUMENT_TYPE_FILTER_KEY]: value,
+    })
+    router.replace(url)
+  }
+  return (
+    <Select placeholder="Select document type" w="fit-content" onChange={onChange} value={value}>
+      {data?.map(renderOption)}
+    </Select>
+  )
 }

@@ -7,25 +7,25 @@ import { axiosApiInstance } from './../utils/axios-utils'
 const prefix = `${API_DOMAIN}/${CONTROLLER.file}`
 
 export function apiCreateFile(data: Partial<IFile>): Promise<IFile> {
-    return axiosApiInstance.post(`${prefix}`, data).then((res) => res.data)
+  return axiosApiInstance.post(`${prefix}`, data).then((res) => res.data)
 }
 
 export interface IFileQuery {
-    search: string
-    fileType: TFileType
+  search: string
+  fileType: TFileType
 }
 export function fetchMyFiles({ queryKey }: any): Promise<IFile[]> {
-    const [_key, fileQuery, _page, _limit]: [string, IFileQuery, number, number] = queryKey
-    const queryString = UrlHelper.cvtObjToQueryString({
-        ...fileQuery,
-        _page,
-        _limit,
-    })
-    return axiosApiInstance.get(`${prefix}/my-files?${queryString}`).then((res) => res.data)
+  const [_key, fileQuery, _page, _limit]: [string, IFileQuery, number, number] = queryKey
+  const queryString = UrlHelper.cvtObjToQueryString({
+    ...fileQuery,
+    _page,
+    _limit,
+  })
+  return axiosApiInstance.get(`${prefix}/my-files?${queryString}`).then((res) => res.data)
 }
 
 export function countMyFiles({ queryKey }: any): Promise<number> {
-    const [_key, fileQuery]: [string, IFileQuery] = queryKey
-    const queryString = UrlHelper.cvtObjToQueryString(fileQuery)
-    return axiosApiInstance.get(`${prefix}/count-my-files?${queryString}`).then((res) => res.data)
+  const [_key, fileQuery]: [string, IFileQuery] = queryKey
+  const queryString = UrlHelper.cvtObjToQueryString(fileQuery)
+  return axiosApiInstance.get(`${prefix}/count-my-files?${queryString}`).then((res) => res.data)
 }

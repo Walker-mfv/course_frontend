@@ -3,5 +3,5 @@ import { NextFetchEvent, NextResponse } from 'next/server'
 import { accessCourseManagement } from './../../../app/middlewares/role.middleware'
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-    return accessCourseManagement(req, NextResponse)
+  return accessCourseManagement(req, NextResponse)
 }

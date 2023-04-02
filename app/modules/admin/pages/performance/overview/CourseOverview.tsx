@@ -6,57 +6,53 @@ import { CourseChartParamsProvider } from '../../../../stats-shared/providers/co
 import AdminCourseEnrollmentsChart from './AdminCourseEnrollmentsChart'
 import { AdminCourseRatingChart } from './AdminCourseRatingChart'
 import AdminRevenueChart from './AdminRevenueChart'
-import {
-    AdminCourseEnrollmentTabContent,
-    AdminCourseRatingTabContent,
-    AdminRevenueTabContent,
-} from './OverviewTabList'
+import { AdminCourseEnrollmentTabContent, AdminCourseRatingTabContent, AdminRevenueTabContent } from './OverviewTabList'
 
 const Main = () => {
-    const [index, setIndex] = useState<number>(0)
-    return (
-        <Stack>
-            <HStack>
-                <Box>{index != 2 && <DateRangeFilter />}</Box>
-            </HStack>
-            <Tabs isLazy variant="line" onChange={setIndex} index={index}>
-                <TabList overflowX={'auto'} p={1} borderBottom={'none'}>
-                    <Tab px={6}>
-                        <AdminRevenueTabContent />
-                    </Tab>
-                    <Tab px={6}>
-                        <AdminCourseEnrollmentTabContent />
-                    </Tab>
-                    <Tab px={6}>
-                        <AdminCourseRatingTabContent />
-                    </Tab>
-                </TabList>
+  const [index, setIndex] = useState<number>(0)
+  return (
+    <Stack>
+      <HStack>
+        <Box>{index != 2 && <DateRangeFilter />}</Box>
+      </HStack>
+      <Tabs isLazy variant="line" onChange={setIndex} index={index}>
+        <TabList overflowX={'auto'} p={1} borderBottom={'none'}>
+          <Tab px={6}>
+            <AdminRevenueTabContent />
+          </Tab>
+          <Tab px={6}>
+            <AdminCourseEnrollmentTabContent />
+          </Tab>
+          <Tab px={6}>
+            <AdminCourseRatingTabContent />
+          </Tab>
+        </TabList>
 
-                <TabPanels>
-                    <TabPanel px={0}>
-                        <AdminRevenueChart />
-                    </TabPanel>
-                    <TabPanel px={0}>
-                        <AdminCourseEnrollmentsChart />
-                    </TabPanel>
-                    <TabPanel px={0}>
-                        <AdminCourseRatingChart />
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
-        </Stack>
-    )
+        <TabPanels>
+          <TabPanel px={0}>
+            <AdminRevenueChart />
+          </TabPanel>
+          <TabPanel px={0}>
+            <AdminCourseEnrollmentsChart />
+          </TabPanel>
+          <TabPanel px={0}>
+            <AdminCourseRatingChart />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Stack>
+  )
 }
 
 export interface OverviewProps {
-    courseId?: string
+  courseId?: string
 }
 export default function CourseOverview(props: OverviewProps) {
-    return (
-        <CourseChartParamsProvider courseId={props.courseId}>
-            <MyChartProvider>
-                <Main />
-            </MyChartProvider>
-        </CourseChartParamsProvider>
-    )
+  return (
+    <CourseChartParamsProvider courseId={props.courseId}>
+      <MyChartProvider>
+        <Main />
+      </MyChartProvider>
+    </CourseChartParamsProvider>
+  )
 }

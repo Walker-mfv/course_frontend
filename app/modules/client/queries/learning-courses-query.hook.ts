@@ -7,33 +7,33 @@ import { IUserCourse } from './../../shared/interfaces/models/user_course.interf
 export const RQK_LEARNING_COURSES = 'learning-courses'
 
 export const useLearningCourses = (options?: UseQueryOptions<IUserCourse[]>) => {
-    const {
-        state: { enableAuthFetch },
-    } = useAuth()
-    return useQuery<IUserCourse[]>(RQK_LEARNING_COURSES, fetchLearningCourses, {
-        notifyOnChangeProps: 'tracked',
-        enabled: enableAuthFetch,
-        ...options,
-    })
+  const {
+    state: { enableAuthFetch },
+  } = useAuth()
+  return useQuery<IUserCourse[]>(RQK_LEARNING_COURSES, fetchLearningCourses, {
+    notifyOnChangeProps: 'tracked',
+    enabled: enableAuthFetch,
+    ...options,
+  })
 }
 
 export const RQK_LEARNING_COURSE_IDS = 'learning-course-ids'
 export const useLearningCourseIdsQuery = (options?: UseQueryOptions<string[]>) => {
-    const {
-        state: { enableAuthFetch },
-    } = useAuth()
-    return useQuery<string[]>(RQK_LEARNING_COURSE_IDS, fetchLearningCourseIds, {
-        notifyOnChangeProps: 'tracked',
-        enabled: enableAuthFetch,
-        ...options,
-    })
+  const {
+    state: { enableAuthFetch },
+  } = useAuth()
+  return useQuery<string[]>(RQK_LEARNING_COURSE_IDS, fetchLearningCourseIds, {
+    notifyOnChangeProps: 'tracked',
+    enabled: enableAuthFetch,
+    ...options,
+  })
 }
 //
 export const useArchiveCourses = () => {
-    const queryClient = useQueryClient()
-    return useMutation(apiArchiveCourses, {
-        onSuccess: (_) => {
-            queryClient.invalidateQueries(RQK_LEARNING_COURSES)
-        },
-    })
+  const queryClient = useQueryClient()
+  return useMutation(apiArchiveCourses, {
+    onSuccess: (_) => {
+      queryClient.invalidateQueries(RQK_LEARNING_COURSES)
+    },
+  })
 }

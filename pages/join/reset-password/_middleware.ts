@@ -4,12 +4,12 @@ import { FRONTEND_DOMAIN } from '../../../app/utils/constants/app.constant'
 import { apiIsValidPermissionCode } from './../../../app/apis/auth.api'
 
 export async function middleware(req: NextRequest, ev: NextFetchEvent) {
-    const token = req.nextUrl.searchParams.get('token')
-    if (!!token) {
-        const isValid = await apiIsValidPermissionCode(token)
-        if (isValid) {
-            return NextResponse.next()
-        }
+  const token = req.nextUrl.searchParams.get('token')
+  if (!!token) {
+    const isValid = await apiIsValidPermissionCode(token)
+    if (isValid) {
+      return NextResponse.next()
     }
-    return NextResponse.redirect(FRONTEND_DOMAIN + '')
+  }
+  return NextResponse.redirect(FRONTEND_DOMAIN + '')
 }

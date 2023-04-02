@@ -6,21 +6,21 @@ import { apiUpdateCart } from './../../../apis/user/user.api'
 
 export const RQK_CART = 'cart'
 export const useCartQuery = (options?: UseQueryOptions<ICart>) => {
-    const {
-        state: { enableAuthFetch },
-    } = useAuth()
-    return useQuery<ICart>(RQK_CART, fetchCart, {
-        notifyOnChangeProps: ['data'],
-        enabled: enableAuthFetch,
-        ...options,
-    })
+  const {
+    state: { enableAuthFetch },
+  } = useAuth()
+  return useQuery<ICart>(RQK_CART, fetchCart, {
+    notifyOnChangeProps: ['data'],
+    enabled: enableAuthFetch,
+    ...options,
+  })
 }
 
 export const useUpdateCart = () => {
-    const queryClient = useQueryClient()
-    return useMutation((data: ICart) => apiUpdateCart(data), {
-        onSuccess: (_) => {
-            queryClient.invalidateQueries(RQK_CART)
-        },
-    })
+  const queryClient = useQueryClient()
+  return useMutation((data: ICart) => apiUpdateCart(data), {
+    onSuccess: (_) => {
+      queryClient.invalidateQueries(RQK_CART)
+    },
+  })
 }

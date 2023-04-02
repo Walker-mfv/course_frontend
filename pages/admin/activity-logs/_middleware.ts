@@ -3,5 +3,5 @@ import { NextFetchEvent, NextResponse } from 'next/server'
 import { accessActivityLogs } from './../../../app/middlewares/role.middleware'
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-    return accessActivityLogs(req, NextResponse)
+  return accessActivityLogs(req, NextResponse)
 }

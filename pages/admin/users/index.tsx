@@ -16,12 +16,8 @@ import MainCreateButton from '../../../app/modules/admin/pages/shared/MainCreate
 import UserDetailForm from '../../../app/modules/admin/pages/users/forms/UserDetailForm'
 import { AdminPaginationProvider } from '../../../app/modules/admin/providers/admin-pagination-provider'
 import { AdminUrlParamsProvider } from '../../../app/modules/admin/providers/admin-query.provider'
-import AppDialogProvider, {
-    useAppDialog,
-} from '../../../app/modules/admin/providers/app-dialog.provider'
-import PageParamsProvider, {
-    usePageParams,
-} from '../../../app/modules/admin/providers/page-params.provider'
+import AppDialogProvider, { useAppDialog } from '../../../app/modules/admin/providers/app-dialog.provider'
+import PageParamsProvider, { usePageParams } from '../../../app/modules/admin/providers/page-params.provider'
 import SearchProvider from '../../../app/modules/admin/providers/search.provider'
 import { useRoleSelectDataQuery } from '../../../app/modules/admin/queries/role-select-data-query.hook'
 import AppDialog from '../../../app/modules/shared/components/AppDialog'
@@ -45,198 +41,191 @@ import Helper from '../../../app/utils/helpers/helper.helper'
 
 // DATA
 export const columns: ITableColumn[] = [
-    {
-        header: FieldLabel['user.name'],
-        accessor: 'profile.fullName',
-        sortable: true,
-    },
-    {
-        header: FieldLabel['user.email'],
-        accessor: 'email',
-        sortable: true,
-        searchable: true,
-    },
-    {
-        header: FieldLabel['user.status'],
-        accessor: 'status',
-        sortable: true,
-    },
-    {
-        header: FieldLabel['user.role'],
-        accessor: 'role.name',
-        sortable: true,
-    },
-    {
-        header: FieldLabel['user.createdAt'],
-        accessor: 'createdAt',
-        sortable: true,
-    },
-    {
-        header: 'Last loggon',
-        accessor: 'lastLoggon',
-        sortable: true,
-    },
-    {
-        header: FieldLabel.actions,
-        accessor: 'actions',
-    },
+  {
+    header: FieldLabel['user.name'],
+    accessor: 'profile.fullName',
+    sortable: true,
+  },
+  {
+    header: FieldLabel['user.email'],
+    accessor: 'email',
+    sortable: true,
+    searchable: true,
+  },
+  {
+    header: FieldLabel['user.status'],
+    accessor: 'status',
+    sortable: true,
+  },
+  {
+    header: FieldLabel['user.role'],
+    accessor: 'role.name',
+    sortable: true,
+  },
+  {
+    header: FieldLabel['user.createdAt'],
+    accessor: 'createdAt',
+    sortable: true,
+  },
+  {
+    header: 'Last loggon',
+    accessor: 'lastLoggon',
+    sortable: true,
+  },
+  {
+    header: FieldLabel.actions,
+    accessor: 'actions',
+  },
 ]
 
 // PAGE CONTENT
 const PageContent = () => {
-    const { modelName } = usePageParams()
+  const { modelName } = usePageParams()
 
-    return (
-        <Card>
-            <Stack spacing={2} flexDir="column" alignItems={'stretch'}>
-                <PageTitle
-                    title={Helper.lodash.capitalize(Helper.pluralize.plural(modelName))}
-                    mb={{ lg: 4 }}
-                />
-                <PageTableToolbar />
-                <PageTable />
-            </Stack>
-        </Card>
-    )
+  return (
+    <Card>
+      <Stack spacing={2} flexDir="column" alignItems={'stretch'}>
+        <PageTitle title={Helper.lodash.capitalize(Helper.pluralize.plural(modelName))} mb={{ lg: 4 }} />
+        <PageTableToolbar />
+        <PageTable />
+      </Stack>
+    </Card>
+  )
 }
 
 const PageTableToolbar = () => {
-    const rolesSDQ = useRoleSelectDataQuery()
-    //
-    const filters: FilterItemProps[] = useMemo(() => {
-        return [
-            {
-                field: 'status',
-                label: FieldLabel['user.status'],
-                options: USER_STATUS_SELECT_DATA,
-            },
-            {
-                field: 'role._id',
-                label: FieldLabel['user.role'],
-                options: rolesSDQ.data,
-            },
-        ]
-    }, [rolesSDQ.data])
+  const rolesSDQ = useRoleSelectDataQuery()
+  //
+  const filters: FilterItemProps[] = useMemo(() => {
+    return [
+      {
+        field: 'status',
+        label: FieldLabel['user.status'],
+        options: USER_STATUS_SELECT_DATA,
+      },
+      {
+        field: 'role._id',
+        label: FieldLabel['user.role'],
+        options: rolesSDQ.data,
+      },
+    ]
+  }, [rolesSDQ.data])
 
-    // GEN ROWS DATA
-    const form = useMemo(() => {
-        return <UserDetailForm />
-    }, [])
+  // GEN ROWS DATA
+  const form = useMemo(() => {
+    return <UserDetailForm />
+  }, [])
 
-    const actions = useMemo(() => {
-        return [
-            <Filter key={1} data={filters} />,
-            // <ExportButton key={2} />,
-            <MainCreateButton key={3} formComponent={form} />,
-        ]
-    }, [filters, form])
-    return <AdminTableToolbar searchMenu={USER_SEARCH_MENU} actions={actions} />
+  const actions = useMemo(() => {
+    return [
+      <Filter key={1} data={filters} />,
+      // <ExportButton key={2} />,
+      <MainCreateButton key={3} formComponent={form} />,
+    ]
+  }, [filters, form])
+  return <AdminTableToolbar searchMenu={USER_SEARCH_MENU} actions={actions} />
 }
 
 const PageTable = () => {
-    const { onShow } = useAppDialog()
-    const { onDeactivate, onReactivate } = useCrudActions()
-    const { ctrlName, modelName } = usePageParams()
-    const rowsQ = useAdminTableRows<IUser>(ctrlName, { select: transformUsers })
-    const rows: ITableRow[] | undefined = useMemo(() => {
-        return rowsQ.data?.map((item) => {
-            const rowActions: IActionItem[] = [
-                {
-                    name: Helper.lodash.capitalize(lan.EDIT),
-                    icon: FiEdit2,
-                    onClick: () => {
-                        onShow({
-                            title: `${Helper.lodash.upperFirst(
-                                lan.EDIT
-                            )} ${Helper.lodash.upperFirst(modelName)} Detail`,
-                            body: <UserDetailForm userId={item._id} />,
-                            size: '2xl',
-                        })
-                    },
-                },
-            ]
-            if (['active', 'inactive'].includes(item.status)) {
-                rowActions.push({
-                    name: Helper.lodash.capitalize(
-                        item.status == 'active' ? lan.DEACTIVATE : lan.REACTIVATE
-                    ),
-                    onClick: async () => {
-                        if (item.status == 'active') onDeactivate(item._id, item.profile.fullName)
-                        else onReactivate(item._id, item.profile.fullName)
-                    },
-                })
-            }
-
-            return {
-                _id: item._id,
-                'profile.fullName': (
-                    <TdAvatar
-                        alt={item.profile.fullName || ''}
-                        title={item.profile.fullName || ''}
-                        thumbSize="md"
-                        thumb={item.profile.avatar || ''}
-                        field={'profile.fullName'}
-                        searchFields={['profile.fullName']}
-                    />
-                ),
-                email: item.email,
-                status: <StatusBadge status={item.status as TStatus} />,
-                'role.name': <RoleBadge role={(item.role as IRole).name as TRoleName} />,
-                createdAt: <Time timestamp={item.createdAt} />,
-                lastLoggon: <Time timestamp={item.lastLoggon} />,
-                actions: <RowActions actions={rowActions} />,
-            }
+  const { onShow } = useAppDialog()
+  const { onDeactivate, onReactivate } = useCrudActions()
+  const { ctrlName, modelName } = usePageParams()
+  const rowsQ = useAdminTableRows<IUser>(ctrlName, { select: transformUsers })
+  const rows: ITableRow[] | undefined = useMemo(() => {
+    return rowsQ.data?.map((item) => {
+      const rowActions: IActionItem[] = [
+        {
+          name: Helper.lodash.capitalize(lan.EDIT),
+          icon: FiEdit2,
+          onClick: () => {
+            onShow({
+              title: `${Helper.lodash.upperFirst(lan.EDIT)} ${Helper.lodash.upperFirst(modelName)} Detail`,
+              body: <UserDetailForm userId={item._id} />,
+              size: '2xl',
+            })
+          },
+        },
+      ]
+      if (['active', 'inactive'].includes(item.status)) {
+        rowActions.push({
+          name: Helper.lodash.capitalize(item.status == 'active' ? lan.DEACTIVATE : lan.REACTIVATE),
+          onClick: async () => {
+            if (item.status == 'active') onDeactivate(item._id, item.profile.fullName)
+            else onReactivate(item._id, item.profile.fullName)
+          },
         })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [rowsQ.data])
-    return (
-        <AdminTable
-            hasMultiChange={false}
-            isLoading={rowsQ.isLoading}
-            isError={rowsQ.isError}
-            columns={columns}
-            rows={rows}
-        />
-    )
+      }
+
+      return {
+        _id: item._id,
+        'profile.fullName': (
+          <TdAvatar
+            alt={item.profile.fullName || ''}
+            title={item.profile.fullName || ''}
+            thumbSize="md"
+            thumb={item.profile.avatar || ''}
+            field={'profile.fullName'}
+            searchFields={['profile.fullName']}
+          />
+        ),
+        email: item.email,
+        status: <StatusBadge status={item.status as TStatus} />,
+        'role.name': <RoleBadge role={(item.role as IRole).name as TRoleName} />,
+        createdAt: <Time timestamp={item.createdAt} />,
+        lastLoggon: <Time timestamp={item.lastLoggon} />,
+        actions: <RowActions actions={rowActions} />,
+      }
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rowsQ.data])
+  return (
+    <AdminTable
+      hasMultiChange={false}
+      isLoading={rowsQ.isLoading}
+      isError={rowsQ.isError}
+      columns={columns}
+      rows={rows}
+    />
+  )
 }
 
 // PROVIDERS AND DEFAULT VALUES
 const Index: NextPageWithLayout = (query: any) => {
-    return (
-        <>
-            <MyHead title={AppTitle.ADMIN_USERS} />
-            <PageParamsProvider
-                defaultValue={{
-                    ctrlName: CONTROLLER.user,
-                    modelName: MODEL.user,
-                }}
-            >
-                <AdminUrlParamsProvider
-                    defaultValue={{
-                        _sortBy: 'createdAt',
-                        _order: 'desc',
-                        _limit: 5,
-                        ...query,
-                    }}
-                >
-                    <AdminPaginationProvider
-                        params={{
-                            itemsPerPage: 5,
-                            pageRange: 3,
-                            totalItems: 0,
-                        }}
-                    >
-                        <AppDialogProvider>
-                            <SearchProvider defaultField={'all'}>
-                                <PageContent />
-                                <AppDialog />
-                            </SearchProvider>
-                        </AppDialogProvider>
-                    </AdminPaginationProvider>
-                </AdminUrlParamsProvider>
-            </PageParamsProvider>
-        </>
-    )
+  return (
+    <>
+      <MyHead title={AppTitle.ADMIN_USERS} />
+      <PageParamsProvider
+        defaultValue={{
+          ctrlName: CONTROLLER.user,
+          modelName: MODEL.user,
+        }}
+      >
+        <AdminUrlParamsProvider
+          defaultValue={{
+            _sortBy: 'createdAt',
+            _order: 'desc',
+            _limit: 5,
+            ...query,
+          }}
+        >
+          <AdminPaginationProvider
+            params={{
+              itemsPerPage: 5,
+              pageRange: 3,
+              totalItems: 0,
+            }}
+          >
+            <AppDialogProvider>
+              <SearchProvider defaultField={'all'}>
+                <PageContent />
+                <AppDialog />
+              </SearchProvider>
+            </AppDialogProvider>
+          </AdminPaginationProvider>
+        </AdminUrlParamsProvider>
+      </PageParamsProvider>
+    </>
+  )
 }
 
 Index.getLayout = AdminLayout

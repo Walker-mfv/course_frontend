@@ -1,5 +1,5 @@
 export interface IMyDropDownItem {
-    label: string
-    path?: string
-    onClick?: () => void
+  label: string
+  path?: string
+  onClick?: () => void
 }

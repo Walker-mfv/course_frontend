@@ -3,7 +3,7 @@ import CourseFormLayout from '../../../app/modules/course-form/CourseFormLayout'
 import { NextPageWithLayout } from '../../../app/types/next'
 
 const Form: NextPageWithLayout = () => {
-    return <CourseForm />
+  return <CourseForm />
 }
 
 Form.getLayout = CourseFormLayout

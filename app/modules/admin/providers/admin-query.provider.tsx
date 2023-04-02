@@ -7,18 +7,18 @@ import { standardizeClientQuery } from '../../shared/hooks/url-helper.hook'
 const AdminUrlParamsContext = createContext<IClientUrlParams>({} as IClientUrlParams)
 
 export const useAdminUrlParams = () => {
-    return useContext(AdminUrlParamsContext)
+  return useContext(AdminUrlParamsContext)
 }
 
 export function AdminUrlParamsProvider({
-    defaultValue: defaultVal,
-    children,
+  defaultValue: defaultVal,
+  children,
 }: {
-    defaultValue?: IClientUrlParams
-    children: ReactNode
+  defaultValue?: IClientUrlParams
+  children: ReactNode
 }) {
-    const router = useRouter()
-    const clientQuery = standardizeClientQuery(router.query as IClientUrlParams, defaultVal)
-    const state = useMemo(() => clientQuery, [clientQuery])
-    return <AdminUrlParamsContext.Provider value={state}>{children}</AdminUrlParamsContext.Provider>
+  const router = useRouter()
+  const clientQuery = standardizeClientQuery(router.query as IClientUrlParams, defaultVal)
+  const state = useMemo(() => clientQuery, [clientQuery])
+  return <AdminUrlParamsContext.Provider value={state}>{children}</AdminUrlParamsContext.Provider>
 }

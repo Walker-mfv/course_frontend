@@ -1,4 +1,4 @@
 export interface INavItem {
-    title: string
-    active?: boolean
+  title: string
+  active?: boolean
 }

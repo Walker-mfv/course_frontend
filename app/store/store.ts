@@ -6,12 +6,12 @@ import learnCourseReducer from './course/learn-course.slice'
 // ...
 
 export const store = configureStore({
-    reducer: {
-        multiChange: multiChangeReducer,
-        formCourse: formCourseReducer,
-        learnCourse: learnCourseReducer,
-        cart: cartReducer,
-    },
+  reducer: {
+    multiChange: multiChangeReducer,
+    formCourse: formCourseReducer,
+    learnCourse: learnCourseReducer,
+    cart: cartReducer,
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

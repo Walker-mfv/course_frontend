@@ -5,13 +5,13 @@ import { useInstructorId } from './instructor-payments-query.hook'
 
 export const RQK_ADMIN_INSTRUCTOR_WITH_PAYMENT = 'admin-instructor-with-payment'
 export const useAdminInstructorWithPayment = () => {
-    const instructorId = useInstructorId()
-    return useQuery<IInstructorWithPayment>(
-        [RQK_ADMIN_INSTRUCTOR_WITH_PAYMENT, instructorId],
-        () => fetchInstructorWithPayment(instructorId),
-        {
-            notifyOnChangeProps: 'tracked',
-            enabled: !!instructorId,
-        }
-    )
+  const instructorId = useInstructorId()
+  return useQuery<IInstructorWithPayment>(
+    [RQK_ADMIN_INSTRUCTOR_WITH_PAYMENT, instructorId],
+    () => fetchInstructorWithPayment(instructorId),
+    {
+      notifyOnChangeProps: 'tracked',
+      enabled: !!instructorId,
+    }
+  )
 }

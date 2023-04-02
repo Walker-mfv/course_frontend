@@ -11,17 +11,17 @@ import AppTitle from '../../../app/utils/constants/app-title.constant'
 type Props = {}
 
 const EditProfilePage: NextPageWithLayout = (props: Props) => {
-    return (
-        <>
-            <MyHead title={AppTitle.EDIT_PROFILE} />
-            <ClientPageContainer maxW={'container.sm'}>
-                <Stack spacing={5} pb={10}>
-                    <ClientPageHeading>Your Profile</ClientPageHeading>
-                    <ProfileForm />
-                </Stack>
-            </ClientPageContainer>
-        </>
-    )
+  return (
+    <>
+      <MyHead title={AppTitle.EDIT_PROFILE} />
+      <ClientPageContainer maxW={'container.sm'}>
+        <Stack spacing={5} pb={10}>
+          <ClientPageHeading>Your Profile</ClientPageHeading>
+          <ProfileForm />
+        </Stack>
+      </ClientPageContainer>
+    </>
+  )
 }
 
 EditProfilePage.getLayout = ClientLayout

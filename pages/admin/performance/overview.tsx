@@ -8,17 +8,17 @@ import { NextPageWithLayout } from '../../../app/types/next'
 import AppTitle from '../../../app/utils/constants/app-title.constant'
 
 const OverviewPage: NextPageWithLayout = () => {
-    return (
-        <>
-            <MyHead title={AppTitle.ADMIN_OVERVIEW} />
-            <Card>
-                <Stack>
-                    <PageTitle title="Overview" />
-                    <CourseOverview />
-                </Stack>
-            </Card>
-        </>
-    )
+  return (
+    <>
+      <MyHead title={AppTitle.ADMIN_OVERVIEW} />
+      <Card>
+        <Stack>
+          <PageTitle title="Overview" />
+          <CourseOverview />
+        </Stack>
+      </Card>
+    </>
+  )
 }
 
 OverviewPage.getLayout = AdminLayout

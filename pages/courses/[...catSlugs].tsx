@@ -8,21 +8,21 @@ import { NextPageWithLayout } from '../../app/types/next'
 import Helper from '../../app/utils/helpers/helper.helper'
 
 const CategoryPage: NextPageWithLayout = () => {
-    const { data, isLoading } = useCatDetailQuery()
-    return (
-        <>
-            <MyHead title={data?.name} />
-            <ClientPageContainer>
-                <Stack spacing={10}>
-                    {/* HEADING */}
-                    <Skeleton isLoaded={!isLoading} w="fit-content">
-                        <Heading>{Helper.lodash.startCase(data?.name)} Courses</Heading>
-                    </Skeleton>
-                    <FilterCourses />
-                </Stack>
-            </ClientPageContainer>
-        </>
-    )
+  const { data, isLoading } = useCatDetailQuery()
+  return (
+    <>
+      <MyHead title={data?.name} />
+      <ClientPageContainer>
+        <Stack spacing={10}>
+          {/* HEADING */}
+          <Skeleton isLoaded={!isLoading} w="fit-content">
+            <Heading>{Helper.lodash.startCase(data?.name)} Courses</Heading>
+          </Skeleton>
+          <FilterCourses />
+        </Stack>
+      </ClientPageContainer>
+    </>
+  )
 }
 
 CategoryPage.getLayout = ClientLayout

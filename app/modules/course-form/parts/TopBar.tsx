@@ -14,58 +14,51 @@ import { TModule } from '../../shared/types/module.type'
 import { useIsCourseFormMobile } from '../hooks/is-course-form-mobile.hook'
 
 const SettingButton = () => {
-    const id = useSelector(selectFormCourseId)
-    const router = useRouter()
-    return (
-        <NextLink href={PathHelper.getCourseFormPath(id!, 'settings', router.pathname)}>
-            <IconButton aria-label="" icon={<Icon as={AppIcon.settings} />} size="sm" />
-        </NextLink>
-    )
+  const id = useSelector(selectFormCourseId)
+  const router = useRouter()
+  return (
+    <NextLink href={PathHelper.getCourseFormPath(id!, 'settings', router.pathname)}>
+      <IconButton aria-label="" icon={<Icon as={AppIcon.settings} />} size="sm" />
+    </NextLink>
+  )
 }
 
 export const COURSE_FORM_TOP_BAR_HEIGHT = 56
 function TopBar() {
-    const {
-        state: { user },
-    } = useAuth()
-    const isMobile = useIsCourseFormMobile()
-    const bg = useColorModeValue('black', 'gray.800')
-    const backUrl = !!user ? PathHelper.getCourseFormBackPath(user.role.name) : '#'
-    const profileContext = user?.role.name.toLowerCase()
-    return (
-        <HStack
-            zIndex={'sticky'}
-            position={'fixed'}
-            w="100vw"
-            h={COURSE_FORM_TOP_BAR_HEIGHT + 'px'}
-            p={4}
-            top={0}
-            px={8}
-            bgColor={bg}
-            justify={'space-between'}
-            shadow="lg"
-            transitionProperty={'background-color'}
-            transitionDuration="normal"
-        >
-            <NextLink href={backUrl}>
-                <Button
-                    colorScheme={'whiteSmoke'}
-                    variant="link"
-                    leftIcon={<Icon as={FiArrowLeft} />}
-                >
-                    Back to courses
-                </Button>
-            </NextLink>
-            <HStack>
-                <ThemeButton size="sm" />
-                <SettingButton />
-                <ProfilePopover
-                    size={isMobile ? 'sm' : 'md'}
-                    context={(profileContext as TModule) || 'admin'}
-                />
-            </HStack>
-        </HStack>
-    )
+  const {
+    state: { user },
+  } = useAuth()
+  const isMobile = useIsCourseFormMobile()
+  const bg = useColorModeValue('black', 'gray.800')
+  const backUrl = !!user ? PathHelper.getCourseFormBackPath(user.role.name) : '#'
+  const profileContext = user?.role.name.toLowerCase()
+  return (
+    <HStack
+      zIndex={'sticky'}
+      position={'fixed'}
+      w="100vw"
+      h={COURSE_FORM_TOP_BAR_HEIGHT + 'px'}
+      p={4}
+      top={0}
+      px={8}
+      bgColor={bg}
+      justify={'space-between'}
+      shadow="lg"
+      transitionProperty={'background-color'}
+      transitionDuration="normal"
+    >
+      <NextLink href={backUrl}>
+        <Button colorScheme={'whiteSmoke'} variant="link" leftIcon={<Icon as={FiArrowLeft} />}>
+          Back to courses
+        </Button>
+      </NextLink>
+      <HStack>
+        <ThemeButton size="sm" />
+        <SettingButton />
+        <ProfilePopover size={isMobile ? 'sm' : 'md'} context={(profileContext as TModule) || 'admin'} />
+      </HStack>
+    </HStack>
+  )
 }
 
 export default React.memo(TopBar)

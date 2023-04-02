@@ -14,31 +14,31 @@ import AppTitle from '../../app/utils/constants/app-title.constant'
 import { APP_NAME } from '../../app/utils/constants/app.constant'
 
 const LoginPage: NextPageWithLayout = () => {
-    const router = useRouter()
-    const {
-        methods: { setWaitingRedirectPath },
-    } = useAuthParams()
-    const {
-        state: { user },
-    } = useAuth()
+  const router = useRouter()
+  const {
+    methods: { setWaitingRedirectPath },
+  } = useAuthParams()
+  const {
+    state: { user },
+  } = useAuth()
 
-    useEffect(() => {
-        return () => {
-            setWaitingRedirectPath()
-        }
-    }, [router, setWaitingRedirectPath, user])
-    return (
-        <>
-            <MyHead title={AppTitle.LOGIN} />
-            <AuthBox title={`Login to ${APP_NAME} account!`}>
-                <GoogleLoginButton />
-                <Stack>
-                    <LoginForm />
-                    <LoginSupport />
-                </Stack>
-            </AuthBox>
-        </>
-    )
+  useEffect(() => {
+    return () => {
+      setWaitingRedirectPath()
+    }
+  }, [router, setWaitingRedirectPath, user])
+  return (
+    <>
+      <MyHead title={AppTitle.LOGIN} />
+      <AuthBox title={`Login to ${APP_NAME} account!`}>
+        <GoogleLoginButton />
+        <Stack>
+          <LoginForm />
+          <LoginSupport />
+        </Stack>
+      </AuthBox>
+    </>
+  )
 }
 LoginPage.getLayout = ClientLayout
 

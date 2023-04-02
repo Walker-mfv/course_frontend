@@ -9,10 +9,10 @@ import IconButtonWithNumber from './IconButtonWithNumber'
 
 export interface CartButtonProps extends ButtonProps {}
 export default function CartButton(props: CartButtonProps) {
-    const totalCourse = useSelector(selectTotalCourse)
-    return (
-        <NextLink href={PathHelper.getCartPath()}>
-            <IconButtonWithNumber icon={AppIcon.cart} number={totalCourse} {...props} />
-        </NextLink>
-    )
+  const totalCourse = useSelector(selectTotalCourse)
+  return (
+    <NextLink href={PathHelper.getCartPath()}>
+      <IconButtonWithNumber icon={AppIcon.cart} number={totalCourse} {...props} />
+    </NextLink>
+  )
 }

@@ -1,3 +1,3 @@
-import { ThemeTypings } from "@chakra-ui/react";
+import { ThemeTypings } from '@chakra-ui/react'
 
-export type TColorScheme = ThemeTypings["colorSchemes"];
+export type TColorScheme = ThemeTypings['colorSchemes']

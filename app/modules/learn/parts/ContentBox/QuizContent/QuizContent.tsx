@@ -11,64 +11,64 @@ import QuizWelcome from './QuizWelcome'
 
 export interface QuizContentContainerProps extends StackProps {}
 export const QuizContentContainer = ({ children, ...props }: QuizContentContainerProps) => {
-    return (
-        <Stack px={[2, 4, 28]} flex={1} overflow="auto" {...props}>
-            {children}
-        </Stack>
-    )
+  return (
+    <Stack px={[2, 4, 28]} flex={1} overflow="auto" {...props}>
+      {children}
+    </Stack>
+  )
 }
 
 const Main = () => {
-    const {
-        state: {
-            learnQuiz: { status },
-            isLoading,
-            welcomeScreen,
-        },
-    } = useLearnQuiz()
-    const { isOpen } = useSidebar()
+  const {
+    state: {
+      learnQuiz: { status },
+      isLoading,
+      welcomeScreen,
+    },
+  } = useLearnQuiz()
+  const { isOpen } = useSidebar()
 
-    const height = useBreakpointValue({
-        base: 'fit-content',
-        xl: isOpen ? '400px' : `calc(100vh - ${LEARN_TOP_BAR_HEIGHT}px)`,
-    })
+  const height = useBreakpointValue({
+    base: 'fit-content',
+    xl: isOpen ? '400px' : `calc(100vh - ${LEARN_TOP_BAR_HEIGHT}px)`,
+  })
 
-    const renderContent = useMemo(() => {
-        switch (status) {
-            case 'doing':
-                if (welcomeScreen) return <QuizWelcome type="resume" />
-                return <DoingQuiz />
-            default:
-                return <QuizWelcome type="start" />
-        }
-    }, [status, welcomeScreen])
+  const renderContent = useMemo(() => {
+    switch (status) {
+      case 'doing':
+        if (welcomeScreen) return <QuizWelcome type="resume" />
+        return <DoingQuiz />
+      default:
+        return <QuizWelcome type="start" />
+    }
+  }, [status, welcomeScreen])
 
-    return (
-        <Stack height={height} spacing={0}>
-            {status == 'done' ? (
-                <Stack flex={1} overflow="auto">
-                    <QuizDone />
-                </Stack>
-            ) : (
-                <>
-                    {!isLoading ? (
-                        <QuizContentContainer>
-                            <Stack pt={[2, 4, 10]}>{renderContent}</Stack>
-                        </QuizContentContainer>
-                    ) : (
-                        <ContentSkeleton />
-                    )}
-                </>
-            )}
-            {status != 'idle' && <QuizBottomBar />}
+  return (
+    <Stack height={height} spacing={0}>
+      {status == 'done' ? (
+        <Stack flex={1} overflow="auto">
+          <QuizDone />
         </Stack>
-    )
+      ) : (
+        <>
+          {!isLoading ? (
+            <QuizContentContainer>
+              <Stack pt={[2, 4, 10]}>{renderContent}</Stack>
+            </QuizContentContainer>
+          ) : (
+            <ContentSkeleton />
+          )}
+        </>
+      )}
+      {status != 'idle' && <QuizBottomBar />}
+    </Stack>
+  )
 }
 
 export default function QuizContent() {
-    return (
-        <LearnQuizProvider>
-            <Main />
-        </LearnQuizProvider>
-    )
+  return (
+    <LearnQuizProvider>
+      <Main />
+    </LearnQuizProvider>
+  )
 }

@@ -8,69 +8,69 @@ import MyFormLabel from '../../components/MyFormLabel'
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
 export interface EditorProps extends ReactQuillProps {
-    field: string
-    label?: string
-    required?: boolean
-    watch?: UseFormWatch<any>
-    setValue?: UseFormSetValue<any>
+  field: string
+  label?: string
+  required?: boolean
+  watch?: UseFormWatch<any>
+  setValue?: UseFormSetValue<any>
 }
 
 export default function Editor({
-    field,
-    label,
-    required,
-    setValue,
-    watch,
-    // ref: _,
-    ...props
+  field,
+  label,
+  required,
+  setValue,
+  watch,
+  // ref: _,
+  ...props
 }: EditorProps) {
-    const quillRef = useRef(null)
+  const quillRef = useRef(null)
 
-    const setEditorVal = useCallback(
-        (val: string) => {
-            setValue && setValue(field, val, { shouldDirty: true, shouldValidate: true })
-        },
-        [field, setValue]
-    )
+  const setEditorVal = useCallback(
+    (val: string) => {
+      setValue && setValue(field, val, { shouldDirty: true, shouldValidate: true })
+    },
+    [field, setValue]
+  )
 
-    // const handleRef = useCallback((ref) => {
-    //     const quill = ref?.getEditor && ref.getEditor()
+  // const handleRef = useCallback((ref) => {
+  //     const quill = ref?.getEditor && ref.getEditor()
 
-    //     // disable spellcheck
-    //     quill?.root?.setAttribute('spellcheck', false)
+  //     // disable spellcheck
+  //     quill?.root?.setAttribute('spellcheck', false)
 
-    //     quillRef.current = ref
-    // }, [])
+  //     quillRef.current = ref
+  // }, [])
 
-    //
+  //
 
-    const value = watch ? watch(field) : undefined
-    const modules = {
-        toolbar: [
-            [{ header: [1, 2, false] }],
-            ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'code-block'],
-            [{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
-            [{ color: [] }, { background: [] }],
+  const value = watch ? watch(field) : undefined
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'code-block'],
+      [{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
+      [{ color: [] }, { background: [] }],
 
-            ['clean'],
-        ],
-    }
+      ['clean'],
+    ],
+  }
 
-    return (
-        <Stack spacing={1}>
-            {label && (
-                <MyFormLabel field={field} required={required}>
-                    {label}
-                </MyFormLabel>
-            )}
-            <ReactQuill
-                // ref={handleRef}
-                theme="snow"
-                value={value}
-                onChange={setEditorVal}
-                {...props}
-                modules={modules}
-            />
-        </Stack>
-    )
+  return (
+    <Stack spacing={1}>
+      {label && (
+        <MyFormLabel field={field} required={required}>
+          {label}
+        </MyFormLabel>
+      )}
+      <ReactQuill
+        // ref={handleRef}
+        theme="snow"
+        value={value}
+        onChange={setEditorVal}
+        {...props}
+        modules={modules}
+      />
+    </Stack>
+  )
 }

@@ -1,5 +1,5 @@
-import IAnswer from "./answer.interface";
+import IAnswer from './answer.interface'
 
-export default interface IAnswerFormData{
-    answers: IAnswer[]
+export default interface IAnswerFormData {
+  answers: IAnswer[]
 }

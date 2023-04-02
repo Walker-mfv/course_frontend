@@ -44,12 +44,7 @@ const Narbar = () => {
       <HStack spacing={6} display={['none', 'none', 'flex', 'flex']}>
         <Flex>
           <Link href="/">
-            <Image
-              src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
-              alt="llogo"
-              w="91"
-              h="34"
-            />
+            <Image src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="llogo" w="91" h="34" />
           </Link>
         </Flex>
         <Box>
@@ -97,12 +92,7 @@ const Narbar = () => {
       <Flex display={['flex', 'flex', 'flex', 'none']}>
         <HStack w="full" spacing={10}>
           <Box>
-            <IconButton
-              aria-label="Open Menu"
-              size="lg"
-              icon={<HamburgerIcon />}
-              onClick={onOpen}
-            />
+            <IconButton aria-label="Open Menu" size="lg" icon={<HamburgerIcon />} onClick={onOpen} />
           </Box>
 
           <HStack>

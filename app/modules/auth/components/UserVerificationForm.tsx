@@ -12,48 +12,48 @@ import SubmitButton from '../../shared/components/SubmitButton'
 import { useAppToast } from '../../shared/hooks/app-toast.hook'
 
 interface FormData {
-    permissionCode: string
+  permissionCode: string
 }
 
 const vldSchema = yup.object({
-    permissionCode: yup.string().required(),
+  permissionCode: yup.string().required(),
 })
 export default function UserVerificationForm() {
-    const toast = useAppToast()
-    const router = useRouter()
-    const {
-        register,
-        handleSubmit,
-        formState: { errors, isDirty, isSubmitting, isSubmitted },
-        reset,
-        watch,
-        setError,
-    } = useForm<FormData>({
-        resolver: yupResolver(vldSchema),
-    })
-    const onSubmit = handleSubmit(async (values) => {
-        try {
-            await apiVerifyEmail(values.permissionCode)
-            router.push(PathHelper.getLoginPath())
-            toast(NotifyHelper.success('Sign Up success!'))
-        } catch (e) {
-            setError('permissionCode', { message: 'is incorrect!' })
-        }
-    })
-    return (
-        <form onSubmit={onSubmit}>
-            <Stack spacing={4}>
-                <MyInput
-                    autoFocus
-                    label="Verification Code"
-                    placeholder="eg. 1234"
-                    field="permissionCode"
-                    register={register}
-                    error={errors.permissionCode}
-                    helperText="We have sent verification code to your email."
-                />
-                <SubmitButton isDisabled={!isDirty || isSubmitting} />
-            </Stack>
-        </form>
-    )
+  const toast = useAppToast()
+  const router = useRouter()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty, isSubmitting, isSubmitted },
+    reset,
+    watch,
+    setError,
+  } = useForm<FormData>({
+    resolver: yupResolver(vldSchema),
+  })
+  const onSubmit = handleSubmit(async (values) => {
+    try {
+      await apiVerifyEmail(values.permissionCode)
+      router.push(PathHelper.getLoginPath())
+      toast(NotifyHelper.success('Sign Up success!'))
+    } catch (e) {
+      setError('permissionCode', { message: 'is incorrect!' })
+    }
+  })
+  return (
+    <form onSubmit={onSubmit}>
+      <Stack spacing={4}>
+        <MyInput
+          autoFocus
+          label="Verification Code"
+          placeholder="eg. 1234"
+          field="permissionCode"
+          register={register}
+          error={errors.permissionCode}
+          helperText="We have sent verification code to your email."
+        />
+        <SubmitButton isDisabled={!isDirty || isSubmitting} />
+      </Stack>
+    </form>
+  )
 }

@@ -11,23 +11,23 @@ import { NextPageWithLayout } from '../../../app/types/next'
 import AppTitle from '../../../app/utils/constants/app-title.constant'
 
 const SearchHead = () => {
-    const { _searchValue } = useClientUrlParams()
-    return <MyHead title={`${AppTitle.SEARCH} ${_searchValue}`} />
+  const { _searchValue } = useClientUrlParams()
+  return <MyHead title={`${AppTitle.SEARCH} ${_searchValue}`} />
 }
 
 const SearchCoursesPage: NextPageWithLayout = () => {
-    useHideHCatBar()
-    return (
-        <>
-            <SearchHead />
-            <ClientPageContainer>
-                <Stack spacing={5}>
-                    <SearchHeading />
-                    <FilterCourses />
-                </Stack>
-            </ClientPageContainer>
-        </>
-    )
+  useHideHCatBar()
+  return (
+    <>
+      <SearchHead />
+      <ClientPageContainer>
+        <Stack spacing={5}>
+          <SearchHeading />
+          <FilterCourses />
+        </Stack>
+      </ClientPageContainer>
+    </>
+  )
 }
 
 SearchCoursesPage.getLayout = ClientLayout

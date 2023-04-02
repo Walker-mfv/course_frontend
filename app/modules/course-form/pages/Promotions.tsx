@@ -5,11 +5,11 @@ import MessageForm from '../parts/MessageForm'
 import PromotionForm from '../parts/PromotionForm'
 
 function Promotions() {
-    return (
-        <CoursePageSection title={'Promotions'} >
-            <PromotionForm />
-        </CoursePageSection>
-    )
+  return (
+    <CoursePageSection title={'Promotions'}>
+      <PromotionForm />
+    </CoursePageSection>
+  )
 }
 
-export default React.memo(Promotions);
+export default React.memo(Promotions)

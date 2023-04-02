@@ -1,3 +1,4 @@
 export interface IUnitAddress {
-     sectionId: string, unitId: string
+  sectionId: string
+  unitId: string
 }

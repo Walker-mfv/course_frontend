@@ -6,33 +6,33 @@ import { useCourseDetailObjectives } from '../../../queries/course-detail-query.
 
 export interface ObjectiveProps extends StackProps {}
 export const Objective = ({ children, ...props }: ObjectiveProps) => {
-    return (
-        <HStack align="start" spacing={6} {...props}>
-            <Box>
-                <Icon as={AppIcon.check} />
-            </Box>
-            <Text flex={1}>{children}</Text>
-        </HStack>
-    )
+  return (
+    <HStack align="start" spacing={6} {...props}>
+      <Box>
+        <Icon as={AppIcon.check} />
+      </Box>
+      <Text flex={1}>{children}</Text>
+    </HStack>
+  )
 }
 
 function CourseObjective() {
-    const objectives = useCourseDetailObjectives()
-    if (objectives?.length == 0) return <></>
-    const objectivesHtml = objectives?.map((content, i) => {
-        return (
-            <GridItem key={i} colSpan={1}>
-                <Objective>{content}</Objective>
-            </GridItem>
-        )
-    })
+  const objectives = useCourseDetailObjectives()
+  if (objectives?.length == 0) return <></>
+  const objectivesHtml = objectives?.map((content, i) => {
     return (
-        <ContentCard title="What you'll learn" shadow="md">
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
-                {objectivesHtml}
-            </SimpleGrid>
-        </ContentCard>
+      <GridItem key={i} colSpan={1}>
+        <Objective>{content}</Objective>
+      </GridItem>
     )
+  })
+  return (
+    <ContentCard title="What you'll learn" shadow="md">
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+        {objectivesHtml}
+      </SimpleGrid>
+    </ContentCard>
+  )
 }
 
 export default React.memo(CourseObjective)

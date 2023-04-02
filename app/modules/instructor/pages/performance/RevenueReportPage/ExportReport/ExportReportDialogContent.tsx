@@ -4,10 +4,10 @@ import { ExportExcelRevenueReport } from './ExportExcelRevenueReport'
 import { ExportPdfRevenueReport } from './ExportPdfRevenueReport'
 
 export default function ExportReportDialogContent() {
-    return (
-        <ButtonGroup justifyContent={'center'}>
-            <ExportExcelRevenueReport />
-            <ExportPdfRevenueReport />
-        </ButtonGroup>
-    )
+  return (
+    <ButtonGroup justifyContent={'center'}>
+      <ExportExcelRevenueReport />
+      <ExportPdfRevenueReport />
+    </ButtonGroup>
+  )
 }

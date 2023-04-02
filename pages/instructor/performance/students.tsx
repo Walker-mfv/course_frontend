@@ -11,30 +11,30 @@ import { NextPageWithLayout } from '../../../app/types/next'
 import AppTitle from '../../../app/utils/constants/app-title.constant'
 
 const Pagination = () => {
-    const { data } = useCountStudentsQuery()
-    return <InstructorPagination totalItems={data} />
+  const { data } = useCountStudentsQuery()
+  return <InstructorPagination totalItems={data} />
 }
 
 const Page: NextPageWithLayout = () => {
-    return (
-        <>
-            <MyHead title={AppTitle.INSTRUCTOR_STUDENTS} />
-            <InstructorPage title="Students">
-                <Stack spacing={10}>
-                    <Flex
-                        justify={{ md: 'space-between' }}
-                        flexDir={{ base: 'column', md: 'row' }}
-                        alignItems={{ base: 'stretch', md: 'end' }}
-                    >
-                        <StudentCount />
-                        <InstructorCourseFilter />
-                    </Flex>
-                    <StudentTable />
-                    <Pagination />
-                </Stack>
-            </InstructorPage>
-        </>
-    )
+  return (
+    <>
+      <MyHead title={AppTitle.INSTRUCTOR_STUDENTS} />
+      <InstructorPage title="Students">
+        <Stack spacing={10}>
+          <Flex
+            justify={{ md: 'space-between' }}
+            flexDir={{ base: 'column', md: 'row' }}
+            alignItems={{ base: 'stretch', md: 'end' }}
+          >
+            <StudentCount />
+            <InstructorCourseFilter />
+          </Flex>
+          <StudentTable />
+          <Pagination />
+        </Stack>
+      </InstructorPage>
+    </>
+  )
 }
 
 Page.getLayout = InstructorLayout

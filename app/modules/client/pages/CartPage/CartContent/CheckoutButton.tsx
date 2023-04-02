@@ -10,43 +10,43 @@ import { useAppToast } from '../../../../shared/hooks/app-toast.hook'
 import { useCart } from '../../../providers/cart.provider'
 
 export const CheckoutButton = () => {
-    const router = useRouter()
-    const toast = useAppToast()
-    const {
-        methods: { setWaitingRedirectPath },
-    } = useAuthParams()
-    const { paying, onCheckout } = useCart()
-    const {
-        state: { user },
-    } = useAuth()
+  const router = useRouter()
+  const toast = useAppToast()
+  const {
+    methods: { setWaitingRedirectPath },
+  } = useAuthParams()
+  const { paying, onCheckout } = useCart()
+  const {
+    state: { user },
+  } = useAuth()
 
-    if (typeof user == 'undefined') return <></>
-    //
-    const onCheckoutClick = async () => {
-        if (!!user) {
-            try {
-                await onCheckout()
-            } catch (e) {
-                toast(NotifyHelper.somethingWentWrong)
-            }
+  if (typeof user == 'undefined') return <></>
+  //
+  const onCheckoutClick = async () => {
+    if (!!user) {
+      try {
+        await onCheckout()
+      } catch (e) {
+        toast(NotifyHelper.somethingWentWrong)
+      }
 
-            return
-        }
-        toast(NotifyHelper.info('You need to login for checkout'))
-        setWaitingRedirectPath(router.asPath)
-        router.push(PathHelper.getLoginPath())
+      return
     }
-    return (
-        <Button
-            isDisabled={paying}
-            w="full"
-            size={'lg'}
-            onClick={onCheckoutClick}
-            colorScheme={'pink'}
-            leftIcon={<Icon as={AppIcon.bank} />}
-            iconSpacing={2}
-        >
-            Checkout with MoMo
-        </Button>
-    )
+    toast(NotifyHelper.info('You need to login for checkout'))
+    setWaitingRedirectPath(router.asPath)
+    router.push(PathHelper.getLoginPath())
+  }
+  return (
+    <Button
+      isDisabled={paying}
+      w="full"
+      size={'lg'}
+      onClick={onCheckoutClick}
+      colorScheme={'pink'}
+      leftIcon={<Icon as={AppIcon.bank} />}
+      iconSpacing={2}
+    >
+      Checkout with MoMo
+    </Button>
+  )
 }

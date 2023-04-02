@@ -7,10 +7,10 @@ import { useCountWishlist } from '../queries/wishlist-query.hook'
 import IconButtonWithNumber from './IconButtonWithNumber'
 
 export default function WishlistButton() {
-    const { data: countWishlist } = useCountWishlist()
-    return (
-        <NextLink href={PathHelper.getMyCoursesPath('wishlist')}>
-            <IconButtonWithNumber icon={AppIcon.favoriteOutline} number={countWishlist} />
-        </NextLink>
-    )
+  const { data: countWishlist } = useCountWishlist()
+  return (
+    <NextLink href={PathHelper.getMyCoursesPath('wishlist')}>
+      <IconButtonWithNumber icon={AppIcon.favoriteOutline} number={countWishlist} />
+    </NextLink>
+  )
 }

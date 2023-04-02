@@ -11,106 +11,105 @@ import { useAppToast } from '../../shared/hooks/app-toast.hook'
 import { useApproveCourse, useSubmitForReview } from '../hooks/course-query.hook'
 
 const SubmitForReviewButton = (props: CourseActionsProps) => {
-    const {
-        state: { user },
-    } = useAuth()
-    const { onShow } = useSimpleDialog()
-    const toast = useAppToast()
-    const router = useRouter()
-    const courseId = useSelector(selectFormCourseId)
-    const { mutate: submitForReview } = useSubmitForReview()
-    const onSubmitForReview = () => {
-        onShow({
-            title: 'Submit Course for Review',
-            content: 'Do you want to submit this course for review?',
-            colorScheme: 'purple',
-            onPositive: () => {
-                submitForReview(courseId!, {
-                    onSuccess: (_) => {
-                        router.push(PathHelper.getCourseFormBackPath(user!.role.name)).then((_) => {
-                            toast(NotifyHelper.success('Course Submitted for Review'))
-                        })
-                    },
-                })
-            },
+  const {
+    state: { user },
+  } = useAuth()
+  const { onShow } = useSimpleDialog()
+  const toast = useAppToast()
+  const router = useRouter()
+  const courseId = useSelector(selectFormCourseId)
+  const { mutate: submitForReview } = useSubmitForReview()
+  const onSubmitForReview = () => {
+    onShow({
+      title: 'Submit Course for Review',
+      content: 'Do you want to submit this course for review?',
+      colorScheme: 'purple',
+      onPositive: () => {
+        submitForReview(courseId!, {
+          onSuccess: (_) => {
+            router.push(PathHelper.getCourseFormBackPath(user!.role.name)).then((_) => {
+              toast(NotifyHelper.success('Course Submitted for Review'))
+            })
+          },
         })
-    }
-    return (
-        <Button onClick={onSubmitForReview} colorScheme={'purple'} {...props}>
-            Submit for Review
-        </Button>
-    )
+      },
+    })
+  }
+  return (
+    <Button onClick={onSubmitForReview} colorScheme={'purple'} {...props}>
+      Submit for Review
+    </Button>
+  )
 }
 
 const ApproveActions = (props: CourseActionsProps) => {
-    const { onShow } = useSimpleDialog()
-    const {
-        state: { user },
-    } = useAuth()
-    const id = useSelector(selectFormCourseId)
-    const { mutate: approveCourse } = useApproveCourse()
-    const router = useRouter()
-    const toast = useAppToast()
-    const onApprove = () => {
-        onShow({
-            title: 'Approve Course',
-            content:
-                'Once the course is approved, it will be live on the website. Do you want to approve this course?',
-            colorScheme: 'blue',
-            onPositive: () => {
-                approveCourse(
-                    { id: id!, status: 'active' },
-                    {
-                        onSuccess: (_) => {
-                            router.push(PathHelper.getCourseFormBackPath(user!.role.name))
-                            toast(NotifyHelper.success('Course approved'))
-                        },
-                        onError: (_) => {
-                            toast(NotifyHelper.somethingWentWrong)
-                        },
-                    }
-                )
+  const { onShow } = useSimpleDialog()
+  const {
+    state: { user },
+  } = useAuth()
+  const id = useSelector(selectFormCourseId)
+  const { mutate: approveCourse } = useApproveCourse()
+  const router = useRouter()
+  const toast = useAppToast()
+  const onApprove = () => {
+    onShow({
+      title: 'Approve Course',
+      content: 'Once the course is approved, it will be live on the website. Do you want to approve this course?',
+      colorScheme: 'blue',
+      onPositive: () => {
+        approveCourse(
+          { id: id!, status: 'active' },
+          {
+            onSuccess: (_) => {
+              router.push(PathHelper.getCourseFormBackPath(user!.role.name))
+              toast(NotifyHelper.success('Course approved'))
             },
-        })
-    }
-    const onReject = () => {
-        onShow({
-            title: 'Reject Course',
-            content: 'Do you want to reject this course?',
-            colorScheme: 'yellow',
-            onPositive: () => {
-                approveCourse(
-                    { id: id!, status: 'rejected' },
-                    {
-                        onSuccess: (_) => {
-                            router.push(PathHelper.getCourseFormBackPath(user!.role.name))
-                            toast(NotifyHelper.success('Course rejected'))
-                        },
-                        onError: (_) => {
-                            toast(NotifyHelper.somethingWentWrong)
-                        },
-                    }
-                )
+            onError: (_) => {
+              toast(NotifyHelper.somethingWentWrong)
             },
-        })
-    }
-    return (
-        <ButtonGroup>
-            <Button onClick={onApprove} colorScheme={'blue'} {...props}>
-                Approve
-            </Button>
-            <Button onClick={onReject} colorScheme={'yellow'} {...props}>
-                Reject
-            </Button>
-        </ButtonGroup>
-    )
+          }
+        )
+      },
+    })
+  }
+  const onReject = () => {
+    onShow({
+      title: 'Reject Course',
+      content: 'Do you want to reject this course?',
+      colorScheme: 'yellow',
+      onPositive: () => {
+        approveCourse(
+          { id: id!, status: 'rejected' },
+          {
+            onSuccess: (_) => {
+              router.push(PathHelper.getCourseFormBackPath(user!.role.name))
+              toast(NotifyHelper.success('Course rejected'))
+            },
+            onError: (_) => {
+              toast(NotifyHelper.somethingWentWrong)
+            },
+          }
+        )
+      },
+    })
+  }
+  return (
+    <ButtonGroup>
+      <Button onClick={onApprove} colorScheme={'blue'} {...props}>
+        Approve
+      </Button>
+      <Button onClick={onReject} colorScheme={'yellow'} {...props}>
+        Reject
+      </Button>
+    </ButtonGroup>
+  )
 }
 
 export interface CourseActionsProps extends ButtonProps {}
 export default function CourseActions(props: CourseActionsProps) {
-    const course = useSelector(selectFormCourse)
-    if (!course) return <></>
-    if (course.status == 'draft') return <SubmitForReviewButton {...props} />
-    if (course.status == 'pending') return <ApproveActions {...props} />
-    return <></>
+  const course = useSelector(selectFormCourse)
+  if (!course) return <></>
+  if (course.status == 'draft') return <SubmitForReviewButton {...props} />
+  if (course.status == 'pending') return <ApproveActions {...props} />
+  return <></>
 }

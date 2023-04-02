@@ -7,18 +7,14 @@ import { getCourseDetailSlug } from './../../client/queries/course-detail-query.
 
 export const RQK_LEARN_COURSE = 'learn-course'
 export const useLearnCourseQuery = () => {
-    const {
-        state: { user },
-    } = useAuth()
-    const router = useRouter()
-    const courseSlug = getCourseDetailSlug(router.query)
-    return useQuery<IUserCourse>(
-        [RQK_LEARN_COURSE, user?._id, courseSlug],
-        () => fetchUserCourseBySlug(courseSlug),
-        {
-            notifyOnChangeProps: ['data'],
-            enabled: !!user?._id,
-            // staleTime: Infinity,
-        }
-    )
+  const {
+    state: { user },
+  } = useAuth()
+  const router = useRouter()
+  const courseSlug = getCourseDetailSlug(router.query)
+  return useQuery<IUserCourse>([RQK_LEARN_COURSE, user?._id, courseSlug], () => fetchUserCourseBySlug(courseSlug), {
+    notifyOnChangeProps: ['data'],
+    enabled: !!user?._id,
+    // staleTime: Infinity,
+  })
 }

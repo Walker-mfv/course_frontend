@@ -6,21 +6,21 @@ import { useCourseChartParams } from '../../../../stats-shared/providers/course-
 import { useAdminCourseEnrollmentStatsQuery } from '../../../queries/admin-course-enrollments-stats-query'
 
 const Main = (props: AdminCourseEnrollmentChartProps) => {
-    const {
-        state: { courseId },
-    } = useCourseChartParams()
-    const {
-        state: { labels, dateRange },
-        methods: { standardizedDatasetData },
-    } = useMyChart()
-    const { isLoading, data: stats } = useAdminCourseEnrollmentStatsQuery(dateRange, courseId)
-    if (isLoading) return <Skeleton height={'350px'} />
-    if (!stats) return <></>
-    const data = standardizedDatasetData(stats)
-    return <CourseEnrollmentsChart labels={labels} data={data} />
+  const {
+    state: { courseId },
+  } = useCourseChartParams()
+  const {
+    state: { labels, dateRange },
+    methods: { standardizedDatasetData },
+  } = useMyChart()
+  const { isLoading, data: stats } = useAdminCourseEnrollmentStatsQuery(dateRange, courseId)
+  if (isLoading) return <Skeleton height={'350px'} />
+  if (!stats) return <></>
+  const data = standardizedDatasetData(stats)
+  return <CourseEnrollmentsChart labels={labels} data={data} />
 }
 
 export interface AdminCourseEnrollmentChartProps {}
 export default function AdminCourseEnrollmentsChart(props: AdminCourseEnrollmentChartProps) {
-    return <Main {...props} />
+  return <Main {...props} />
 }

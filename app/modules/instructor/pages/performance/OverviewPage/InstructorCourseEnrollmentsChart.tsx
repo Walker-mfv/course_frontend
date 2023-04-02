@@ -6,23 +6,21 @@ import { useInstructorEnrollmentsStatsQuery } from '../../../queries/instructor-
 import CourseEnrollmentsChart from '../../../../stats-shared/components/Charts/CourseEnrollmentsChart'
 
 const Main = (props: InstructorCourseEnrollmentChartProps) => {
-    const {
-        state: { courseId },
-    } = useCourseChartParams()
-    const {
-        state: { labels, dateRange },
-        methods: { standardizedDatasetData },
-    } = useMyChart()
-    const { isLoading, data: stats } = useInstructorEnrollmentsStatsQuery(dateRange, courseId)
-    if (isLoading) return <Skeleton height={'350px'} />
-    if (!stats) return <></>
-    const data = standardizedDatasetData(stats)
-    return <CourseEnrollmentsChart labels={labels} data={data} />
+  const {
+    state: { courseId },
+  } = useCourseChartParams()
+  const {
+    state: { labels, dateRange },
+    methods: { standardizedDatasetData },
+  } = useMyChart()
+  const { isLoading, data: stats } = useInstructorEnrollmentsStatsQuery(dateRange, courseId)
+  if (isLoading) return <Skeleton height={'350px'} />
+  if (!stats) return <></>
+  const data = standardizedDatasetData(stats)
+  return <CourseEnrollmentsChart labels={labels} data={data} />
 }
 
 export interface InstructorCourseEnrollmentChartProps {}
-export default function InstructorCourseEnrollmentsChart(
-    props: InstructorCourseEnrollmentChartProps
-) {
-    return <Main {...props} />
+export default function InstructorCourseEnrollmentsChart(props: InstructorCourseEnrollmentChartProps) {
+  return <Main {...props} />
 }

@@ -1,4 +1,4 @@
 export default interface IKvp {
-    key: string
-    value: string
+  key: string
+  value: string
 }

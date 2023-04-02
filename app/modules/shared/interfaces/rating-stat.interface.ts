@@ -1,4 +1,4 @@
 export interface IRatingStat {
-    rating: number
-    count: number
+  rating: number
+  count: number
 }

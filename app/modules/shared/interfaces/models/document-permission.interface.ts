@@ -2,7 +2,7 @@ import { TDocumentType, TPermission } from '../../../../utils/constants/role.con
 import IModel from './model.interface'
 
 export default interface IDocumentPermission extends IModel {
-    type: TDocumentType
-    name: string
-    permissions: TPermission[]
+  type: TDocumentType
+  name: string
+  permissions: TPermission[]
 }

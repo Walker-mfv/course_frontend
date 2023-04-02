@@ -8,26 +8,26 @@ import FilteredCourseSeketon from './FilteredCourseSeketon'
 import SearchPagination from './SearchPagination'
 
 const EmptyMessage = () => {
-    return <Alert status="info">No course found. Please try another key words!</Alert>
+  return <Alert status="info">No course found. Please try another key words!</Alert>
 }
 
 const FilteredCourseList = () => {
-    const { isLoading, isError, data } = useFilterCoursesQuery()
-    const coursesHtml = data?.map((item) => {
-        return <FilteredCourseExcerpt key={item._id} course={item} />
-    })
-    if (isLoading) return <FilteredCourseSeketon />
-    if (isLoading) return <FilteredCourseSeketon />
-    if (isError) return <ErrorMessage />
-    if (data && data.length == 0) return <EmptyMessage />
-    return (
-        <Stack>
-            <Stack divider={<StackDivider />} spacing={5}>
-                {coursesHtml}
-            </Stack>
-            <SearchPagination />
-        </Stack>
-    )
+  const { isLoading, isError, data } = useFilterCoursesQuery()
+  const coursesHtml = data?.map((item) => {
+    return <FilteredCourseExcerpt key={item._id} course={item} />
+  })
+  if (isLoading) return <FilteredCourseSeketon />
+  if (isLoading) return <FilteredCourseSeketon />
+  if (isError) return <ErrorMessage />
+  if (data && data.length == 0) return <EmptyMessage />
+  return (
+    <Stack>
+      <Stack divider={<StackDivider />} spacing={5}>
+        {coursesHtml}
+      </Stack>
+      <SearchPagination />
+    </Stack>
+  )
 }
 
 export default FilteredCourseList

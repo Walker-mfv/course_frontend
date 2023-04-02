@@ -16,45 +16,41 @@ import PathHelper from '../../../app/utils/helpers/path.helper'
 
 export const TRANSACTION_ROWS_PER_PAGE = 5
 const Main = () => {
-    const router = useRouter()
-    const { paymentId } = router.query
+  const router = useRouter()
+  const { paymentId } = router.query
 
-    const { isLoading: isPaymentLoading, data: paymentData } = useInstructorPayment(
-        paymentId as string
-    )
-    const action = useMemo(() => {
-        return (
-            <NextLink href={PathHelper.getInstructorRevenueReportPath()}>
-                <Button leftIcon={<Icon as={AppIcon.back} />} colorScheme="gray">
-                    Back
-                </Button>
-            </NextLink>
-        )
-    }, [])
-    const title = paymentData
-        ? moment(paymentData.history.createdAt).format('MMM, YYYY') + ' Revenue'
-        : ''
+  const { isLoading: isPaymentLoading, data: paymentData } = useInstructorPayment(paymentId as string)
+  const action = useMemo(() => {
     return (
-        <>
-            <MyHead title={title} />
-            <Skeleton isLoaded={!isPaymentLoading}>
-                <InstructorPage title={title} actionLeft={action}>
-                    <PaymentDetail paymentId={paymentId as string} />
-                </InstructorPage>
-            </Skeleton>
-        </>
+      <NextLink href={PathHelper.getInstructorRevenueReportPath()}>
+        <Button leftIcon={<Icon as={AppIcon.back} />} colorScheme="gray">
+          Back
+        </Button>
+      </NextLink>
     )
+  }, [])
+  const title = paymentData ? moment(paymentData.history.createdAt).format('MMM, YYYY') + ' Revenue' : ''
+  return (
+    <>
+      <MyHead title={title} />
+      <Skeleton isLoaded={!isPaymentLoading}>
+        <InstructorPage title={title} actionLeft={action}>
+          <PaymentDetail paymentId={paymentId as string} />
+        </InstructorPage>
+      </Skeleton>
+    </>
+  )
 }
 
 const Page: NextPageWithLayout = () => {
-    const router = useRouter()
-    const { paymentId } = router.query
-    const { data: totalItem } = useCountPaymentTransactionsQuery(paymentId as string)
-    return (
-        <SimplePaginationProvider totalItem={totalItem} rowsPerPage={TRANSACTION_ROWS_PER_PAGE}>
-            <Main />
-        </SimplePaginationProvider>
-    )
+  const router = useRouter()
+  const { paymentId } = router.query
+  const { data: totalItem } = useCountPaymentTransactionsQuery(paymentId as string)
+  return (
+    <SimplePaginationProvider totalItem={totalItem} rowsPerPage={TRANSACTION_ROWS_PER_PAGE}>
+      <Main />
+    </SimplePaginationProvider>
+  )
 }
 
 Page.getLayout = InstructorLayout

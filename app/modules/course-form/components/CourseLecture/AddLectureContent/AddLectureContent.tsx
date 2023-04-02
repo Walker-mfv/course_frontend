@@ -7,45 +7,37 @@ import LectureResource from '../LectureResource/LectureResource'
 import AddLectureVideo from '../AddLectureVideo'
 
 const PickContentType = () => {
-    const { methods: { setContentType, } } = useLectureParams();
-    return (
-        <Stack align='center'>
-            <Text>Select the main type of content. Files and links can be added as resources</Text>
-            <HStack spacing={4} >
-                <Button onClick={() => setContentType('video')} leftIcon={<Icon as={AppIcon.video} />}>Video</Button>
-                {/* <Button onClick={() => setContentType('article')} leftIcon={<Icon as={AppIcon.article} />}>Article</Button> */}
-            </HStack>
-        </Stack>
-    )
+  const {
+    methods: { setContentType },
+  } = useLectureParams()
+  return (
+    <Stack align="center">
+      <Text>Select the main type of content. Files and links can be added as resources</Text>
+      <HStack spacing={4}>
+        <Button onClick={() => setContentType('video')} leftIcon={<Icon as={AppIcon.video} />}>
+          Video
+        </Button>
+        {/* <Button onClick={() => setContentType('article')} leftIcon={<Icon as={AppIcon.article} />}>Article</Button> */}
+      </HStack>
+    </Stack>
+  )
 }
 
-
 export default function AddLectureContent() {
-    const { state: { contentType }, methods: { reset } } = useLectureParams();
-    useEffect(() => {
-        return () => {
-            reset();
-        }
-    }, [reset])
-    const renderContent = useMemo(() => {
-        switch (contentType) {
-            case 'video':
-                return <AddLectureVideo />
-        }
-    }, [contentType]);
-    return (
-        <>
-            {
-                contentType == 'resource' ? (
-                    <AddLectureResources />
-                ) : (
-                    !contentType ? (
-                        <PickContentType />
-                    ) : renderContent
-                )
-
-            }
-        </>
-
-    )
+  const {
+    state: { contentType },
+    methods: { reset },
+  } = useLectureParams()
+  useEffect(() => {
+    return () => {
+      reset()
+    }
+  }, [reset])
+  const renderContent = useMemo(() => {
+    switch (contentType) {
+      case 'video':
+        return <AddLectureVideo />
+    }
+  }, [contentType])
+  return <>{contentType == 'resource' ? <AddLectureResources /> : !contentType ? <PickContentType /> : renderContent}</>
 }

@@ -5,9 +5,9 @@ import { useRoleSelectDataQuery } from '../../../../queries/role-select-data-que
 import { AddNewRuleButton } from './AddNewRuleButton'
 
 export const PermissionActions = () => {
-    return (
-        <ButtonGroup justifyContent="end">
-            <AddNewRuleButton />
-        </ButtonGroup>
-    )
+  return (
+    <ButtonGroup justifyContent="end">
+      <AddNewRuleButton />
+    </ButtonGroup>
+  )
 }

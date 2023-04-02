@@ -16,49 +16,49 @@ import Card from '../../../shared/components/Card'
 import MyHead from '../../../shared/components/MyHead'
 
 export default function CourseForm() {
-    const { id, section } = useCourseFormParams()
-    const { isLoading, data } = useCourseQuery(id)
-    //
-    const dispatch = useAppDispatch()
+  const { id, section } = useCourseFormParams()
+  const { isLoading, data } = useCourseQuery(id)
+  //
+  const dispatch = useAppDispatch()
 
-    // form course
-    useEffect(() => {
-        if (data) {
-            dispatch(setFormCourse(data))
-        }
-    }, [dispatch, data])
+  // form course
+  useEffect(() => {
+    if (data) {
+      dispatch(setFormCourse(data))
+    }
+  }, [dispatch, data])
 
-    // status
-    useEffect(() => {
-        const status = isLoading ? 'loading' : 'succeeded'
-        dispatch(formCourseSetStatus(status))
-    }, [dispatch, isLoading])
+  // status
+  useEffect(() => {
+    const status = isLoading ? 'loading' : 'succeeded'
+    dispatch(formCourseSetStatus(status))
+  }, [dispatch, isLoading])
 
-    const renderSection = useCallback((section?: TCourseFormSection) => {
-        switch (section) {
-            case 'goal':
-                return <IntendedLearners />
-            case 'curriculum':
-                return <Curriculum />
-            case 'basics':
-                return <Basics />
-            case 'pricing':
-                return <Pricing />
-            case 'messages':
-                return <Messages />
-            case 'promotions':
-                return <Promotions />
-            case 'settings':
-                return <Settings />
-        }
-        return null
-    }, [])
+  const renderSection = useCallback((section?: TCourseFormSection) => {
+    switch (section) {
+      case 'goal':
+        return <IntendedLearners />
+      case 'curriculum':
+        return <Curriculum />
+      case 'basics':
+        return <Basics />
+      case 'pricing':
+        return <Pricing />
+      case 'messages':
+        return <Messages />
+      case 'promotions':
+        return <Promotions />
+      case 'settings':
+        return <Settings />
+    }
+    return null
+  }, [])
 
-    const title = data?.basicInfo.title ? `${data?.basicInfo.title} | ` : ''
-    return (
-        <>
-            <MyHead title={`${title}${AppTitle.COURSE_FORM}`} />
-            <Card>{renderSection(section)}</Card>
-        </>
-    )
+  const title = data?.basicInfo.title ? `${data?.basicInfo.title} | ` : ''
+  return (
+    <>
+      <MyHead title={`${title}${AppTitle.COURSE_FORM}`} />
+      <Card>{renderSection(section)}</Card>
+    </>
+  )
 }

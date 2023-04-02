@@ -11,25 +11,25 @@ import { NextPageWithLayout } from '../../../app/types/next'
 import AppTitle from '../../../app/utils/constants/app-title.constant'
 
 const Pagination = () => {
-    const { data } = useCountInstructorCoursesQuery()
-    return <InstructorPagination totalItems={data} />
+  const { data } = useCountInstructorCoursesQuery()
+  return <InstructorPagination totalItems={data} />
 }
 
 const Page: NextPageWithLayout = () => {
-    return (
-        <>
-            <MyHead title={AppTitle.INSTRUCTOR_COURSES} />
-            <CourseActionsProvider>
-                <InstructorPage title="Courses">
-                    <Stack>
-                        <CoursesToolbar />
-                        <CourseTable />
-                        <Pagination />
-                    </Stack>
-                </InstructorPage>
-            </CourseActionsProvider>
-        </>
-    )
+  return (
+    <>
+      <MyHead title={AppTitle.INSTRUCTOR_COURSES} />
+      <CourseActionsProvider>
+        <InstructorPage title="Courses">
+          <Stack>
+            <CoursesToolbar />
+            <CourseTable />
+            <Pagination />
+          </Stack>
+        </InstructorPage>
+      </CourseActionsProvider>
+    </>
+  )
 }
 
 Page.getLayout = InstructorLayout

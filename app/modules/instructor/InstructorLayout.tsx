@@ -15,31 +15,31 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 ChartJS.register(ChartDataLabels)
 
 const Main = ({ page }: { page: ReactElement }) => {
-    const sidebarWidth = useInstructorSidebarWidth()
-    const isMobile = useIsInstructorMobile()
-    return (
-        <SidebarProvider>
-            <Box>
-                <Stack spacing={0}>
-                    <InstructorTopBar />
-                    {isMobile ? <InstructorMobileSidebar /> : <InstructorSidebar />}
-                    <Box pl={!isMobile ? sidebarWidth + 'px' : 'unset'}>
-                        <Container maxW="full">{page}</Container>
-                    </Box>
-                </Stack>
-            </Box>
-        </SidebarProvider>
-    )
+  const sidebarWidth = useInstructorSidebarWidth()
+  const isMobile = useIsInstructorMobile()
+  return (
+    <SidebarProvider>
+      <Box>
+        <Stack spacing={0}>
+          <InstructorTopBar />
+          {isMobile ? <InstructorMobileSidebar /> : <InstructorSidebar />}
+          <Box pl={!isMobile ? sidebarWidth + 'px' : 'unset'}>
+            <Container maxW="full">{page}</Container>
+          </Box>
+        </Stack>
+      </Box>
+    </SidebarProvider>
+  )
 }
 
 export default function InstructorLayout(page: ReactElement) {
-    return (
-        <InstructorParamsProvider>
-            <SidebarProvider>
-                <InstructorMenuProvider>
-                    <Main page={page} />
-                </InstructorMenuProvider>
-            </SidebarProvider>
-        </InstructorParamsProvider>
-    )
+  return (
+    <InstructorParamsProvider>
+      <SidebarProvider>
+        <InstructorMenuProvider>
+          <Main page={page} />
+        </InstructorMenuProvider>
+      </SidebarProvider>
+    </InstructorParamsProvider>
+  )
 }

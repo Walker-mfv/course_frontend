@@ -6,11 +6,10 @@ import { useInstructorOverviewTotalQuery } from '../../../queries/instructor-ove
 
 export interface RatingChartProps {}
 export function RatingChart(props: RatingChartProps) {
-    const {
-        state: { courseId },
-    } = useCourseChartParams()
-    const { data: total } = useInstructorOverviewTotalQuery('rating', 'all', courseId)
-    const { isLoading: isStatsLoading, data: ratingStats } =
-        useInstructorCourseRatingStatsQuery(courseId)
-    return <CourseRatingChart isLoading={isStatsLoading} data={ratingStats} total={total} />
+  const {
+    state: { courseId },
+  } = useCourseChartParams()
+  const { data: total } = useInstructorOverviewTotalQuery('rating', 'all', courseId)
+  const { isLoading: isStatsLoading, data: ratingStats } = useInstructorCourseRatingStatsQuery(courseId)
+  return <CourseRatingChart isLoading={isStatsLoading} data={ratingStats} total={total} />
 }

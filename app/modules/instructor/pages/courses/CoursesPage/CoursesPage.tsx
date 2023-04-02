@@ -8,20 +8,20 @@ import CourseTable from './CourseTable'
 import CoursesToolbar from './CourseToolbar'
 
 const Pagination = () => {
-    const { data } = useCountInstructorCoursesQuery()
-    return <InstructorPagination totalItems={data} />
+  const { data } = useCountInstructorCoursesQuery()
+  return <InstructorPagination totalItems={data} />
 }
 
 export default function CoursesPage() {
-    return (
-        <CourseActionsProvider>
-            <InstructorPage title="Courses">
-                <Stack>
-                    <CoursesToolbar />
-                    <CourseTable />
-                    <Pagination />
-                </Stack>
-            </InstructorPage>
-        </CourseActionsProvider>
-    )
+  return (
+    <CourseActionsProvider>
+      <InstructorPage title="Courses">
+        <Stack>
+          <CoursesToolbar />
+          <CourseTable />
+          <Pagination />
+        </Stack>
+      </InstructorPage>
+    </CourseActionsProvider>
+  )
 }

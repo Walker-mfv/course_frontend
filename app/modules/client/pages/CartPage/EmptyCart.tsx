@@ -6,18 +6,18 @@ import NextLink from '../../../shared/components/NextLink'
 import { useBorderColor } from '../../../shared/hooks/style.hook'
 
 export default function EmptyCart() {
-    const borderColor = useBorderColor()
-    return (
-        <Box p={5} border="1px solid" borderColor={borderColor}>
-            <VStack>
-                <Image maxW={'250px'} alt="Cart image" src={AppImg.EMPTY_SHOPPING_CART} />
-                <VStack pb={10}>
-                    <Text>Your cart is empty. Keep shopping to find a course!</Text>
-                    <NextLink href={PathHelper.getClientPath()}>
-                        <Button colorScheme={'purple'}>Keep shopping</Button>
-                    </NextLink>
-                </VStack>
-            </VStack>
-        </Box>
-    )
+  const borderColor = useBorderColor()
+  return (
+    <Box p={5} border="1px solid" borderColor={borderColor}>
+      <VStack>
+        <Image maxW={'250px'} alt="Cart image" src={AppImg.EMPTY_SHOPPING_CART} />
+        <VStack pb={10}>
+          <Text>Your cart is empty. Keep shopping to find a course!</Text>
+          <NextLink href={PathHelper.getClientPath()}>
+            <Button colorScheme={'purple'}>Keep shopping</Button>
+          </NextLink>
+        </VStack>
+      </VStack>
+    </Box>
+  )
 }

@@ -8,25 +8,25 @@ import CartButton from '../../components/CartButton'
 import { useMobileSearch } from '../../providers/mobile-search-provider'
 
 function ClientMobileTopBar() {
-    const { onOpen: openMobileSearch } = useMobileSearch()
-    return (
-        <HStack justify={'space-between'}>
-            <HStack>
-                <SidebarToggler />
-                <AppHeading />
-            </HStack>
-            <ButtonGroup spacing={0}>
-                <CartButton variant="unstyled" />
-                <NotificationButton variant={'unstyled'} />
-                <IconButton
-                    onClick={openMobileSearch}
-                    aria-label="Open Search"
-                    variant={'unstyled'}
-                    icon={<Icon as={AppIcon.search} />}
-                />
-            </ButtonGroup>
-        </HStack>
-    )
+  const { onOpen: openMobileSearch } = useMobileSearch()
+  return (
+    <HStack justify={'space-between'}>
+      <HStack>
+        <SidebarToggler />
+        <AppHeading />
+      </HStack>
+      <ButtonGroup spacing={0}>
+        <CartButton variant="unstyled" />
+        <NotificationButton variant={'unstyled'} />
+        <IconButton
+          onClick={openMobileSearch}
+          aria-label="Open Search"
+          variant={'unstyled'}
+          icon={<Icon as={AppIcon.search} />}
+        />
+      </ButtonGroup>
+    </HStack>
+  )
 }
 
 export default React.memo(ClientMobileTopBar)

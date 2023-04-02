@@ -8,102 +8,86 @@ import { usePageParams } from './page-params.provider'
 const AdminPaginationContext = createContext<IPagination>({} as IPagination)
 
 export const useAdminPagination = () => {
-    return useContext(AdminPaginationContext)
+  return useContext(AdminPaginationContext)
 }
 
 const genStartPage = (pageRange: number, page: number, totalPage: number) => {
-    let startAt: number
-    let temp: number = Math.ceil(pageRange / 2) // 1
+  let startAt: number
+  let temp: number = Math.ceil(pageRange / 2) // 1
 
-    if (page <= temp) startAt = 1
-    else if (page > totalPage - (temp - 1)) {
-        startAt = totalPage - temp
-    } else startAt = page - temp + 1
-    return startAt
+  if (page <= temp) startAt = 1
+  else if (page > totalPage - (temp - 1)) {
+    startAt = totalPage - temp
+  } else startAt = page - temp + 1
+  return startAt
 }
 
 const calcNewParams = (itemsPerPage: number, totalItems: number, page: number) => {
-    const totalPage = Math.ceil(totalItems / itemsPerPage) || -1
-    const currentPage = page > totalPage ? totalPage : page || -1
-    return { totalPage, currentPage }
+  const totalPage = Math.ceil(totalItems / itemsPerPage) || -1
+  const currentPage = page > totalPage ? totalPage : page || -1
+  return { totalPage, currentPage }
 }
 
-export function AdminPaginationProvider({
-    params,
-    children,
-}: {
-    params: IPagination
-    children: ReactNode
-}) {
-    const [pagination, setPagination] = useState<IPagination>({
-        ...params,
-        currentPage: params.currentPage == undefined ? -1 : 1,
-        totalPage: params.currentPage == undefined ? -1 : 0,
+export function AdminPaginationProvider({ params, children }: { params: IPagination; children: ReactNode }) {
+  const [pagination, setPagination] = useState<IPagination>({
+    ...params,
+    currentPage: params.currentPage == undefined ? -1 : 1,
+    totalPage: params.currentPage == undefined ? -1 : 0,
+  })
+
+  const router = useRouter()
+  const clientQuery = useAdminUrlParams()
+  const { ctrlName } = usePageParams()
+  const { data: totalItems } = useAdminTableCount(ctrlName, { ...clientQuery })
+
+  // ON COUNT CHANGE
+  useEffect(() => {
+    if (totalItems != undefined) {
+      const { totalPage, currentPage } = calcNewParams(clientQuery._limit!, totalItems, pagination.currentPage!)
+      setPagination((pagination) => {
+        return {
+          ...pagination,
+          totalItems,
+          currentPage,
+          totalPage,
+        }
+      })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [totalItems])
+
+  // SYNC AND GEN PAGINATION DATA
+  useEffect(() => {
+    const { totalPage, currentPage } = calcNewParams(clientQuery._limit!, pagination.totalItems!, clientQuery._page!)
+    const start = genStartPage(pagination.pageRange, currentPage, totalPage)
+
+    setPagination((pagination) => {
+      return {
+        ...pagination,
+        totalPage,
+        currentPage,
+        itemsPerPage: clientQuery._limit!,
+        start,
+      }
     })
+  }, [clientQuery._limit, clientQuery._page, pagination.pageRange, pagination.totalItems])
 
-    const router = useRouter()
-    const clientQuery = useAdminUrlParams()
-    const { ctrlName } = usePageParams()
-    const { data: totalItems } = useAdminTableCount(ctrlName, { ...clientQuery })
-
-    // ON COUNT CHANGE
-    useEffect(() => {
-        if (totalItems != undefined) {
-            const { totalPage, currentPage } = calcNewParams(
-                clientQuery._limit!,
-                totalItems,
-                pagination.currentPage!
-            )
-            setPagination((pagination) => {
-                return {
-                    ...pagination,
-                    totalItems,
-                    currentPage,
-                    totalPage,
-                }
-            })
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [totalItems])
-
-    // SYNC AND GEN PAGINATION DATA
-    useEffect(() => {
-        const { totalPage, currentPage } = calcNewParams(
-            clientQuery._limit!,
-            pagination.totalItems!,
-            clientQuery._page!
-        )
-        const start = genStartPage(pagination.pageRange, currentPage, totalPage)
-
-        setPagination((pagination) => {
-            return {
-                ...pagination,
-                totalPage,
-                currentPage,
-                itemsPerPage: clientQuery._limit!,
-                start,
-            }
+  // CHECK PAGE > TOTAL PAGE => REDIRECT TO MAX PAGE
+  useEffect(() => {
+    if (clientQuery._page! > -1 && pagination.totalPage! > -1) {
+      if (clientQuery._page! > pagination.totalPage!) {
+        router.replace({
+          pathname: router.pathname,
+          query: {
+            ...router.query,
+            _page: pagination.totalPage,
+          },
         })
-    }, [clientQuery._limit, clientQuery._page, pagination.pageRange, pagination.totalItems])
+      }
+    }
+  }, [pagination.totalPage, clientQuery._page, router])
 
-    // CHECK PAGE > TOTAL PAGE => REDIRECT TO MAX PAGE
-    useEffect(() => {
-        if (clientQuery._page! > -1 && pagination.totalPage! > -1) {
-            if (clientQuery._page! > pagination.totalPage!) {
-                router.replace({
-                    pathname: router.pathname,
-                    query: {
-                        ...router.query,
-                        _page: pagination.totalPage,
-                    },
-                })
-            }
-        }
-    }, [pagination.totalPage, clientQuery._page, router])
+  const state = useMemo(() => pagination, [pagination])
 
-    const state = useMemo(() => pagination, [pagination])
-
-    return (
-        <AdminPaginationContext.Provider value={state}>{children}</AdminPaginationContext.Provider>
-    )
+  return <AdminPaginationContext.Provider value={state}>{children}</AdminPaginationContext.Provider>
 }

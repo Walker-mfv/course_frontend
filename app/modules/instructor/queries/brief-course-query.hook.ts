@@ -3,7 +3,7 @@ import { useInstructorCourseReviewsUrlParams } from '../hooks/instructor-course-
 
 export const RQK_BRIEF_COURSE = 'brief-course'
 export const useInstructorBriefCourseQuery = () => {
-    const { 'course._id_filter': courseIdFilter } = useInstructorCourseReviewsUrlParams()
-    const value = typeof courseIdFilter != 'undefined' ? courseIdFilter + '' : undefined
-    return useCourseBriefQuery(value)
+  const { 'course._id_filter': courseIdFilter } = useInstructorCourseReviewsUrlParams()
+  const value = typeof courseIdFilter != 'undefined' ? courseIdFilter + '' : undefined
+  return useCourseBriefQuery(value)
 }

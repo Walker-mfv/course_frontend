@@ -7,16 +7,16 @@ import MyCourseList from '../MyCourseList'
 import WishlistCourseExcerpt from './WishlistCourseExcerpt'
 
 export default function Wishlist() {
-    const { isLoading, data: items } = useWishlistQuery()
+  const { isLoading, data: items } = useWishlistQuery()
 
-    const renderItem = useCallback((item: ICourse, i) => {
-        return <WishlistCourseExcerpt key={i} item={item} />
-    }, [])
+  const renderItem = useCallback((item: ICourse, i) => {
+    return <WishlistCourseExcerpt key={i} item={item} />
+  }, [])
 
-    return (
-        <>
-            <MyHead title={AppTitle.WISHLIST} />
-            <MyCourseList isLoading={isLoading} items={items || []} renderItem={renderItem} />
-        </>
-    )
+  return (
+    <>
+      <MyHead title={AppTitle.WISHLIST} />
+      <MyCourseList isLoading={isLoading} items={items || []} renderItem={renderItem} />
+    </>
+  )
 }

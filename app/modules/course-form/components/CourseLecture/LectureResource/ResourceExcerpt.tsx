@@ -15,46 +15,44 @@ import { RQK_COURSE } from '../../../hooks/course-query.hook'
 import { useLectureParams } from '../../../providers/lecture-params.provider'
 
 export interface ResourceExcerptProps {
-    file: IFile
-    index: number
+  file: IFile
+  index: number
 }
 
 export default function ResourceExcerpt(props: ResourceExcerptProps) {
-    const toast = useAppToast()
-    const queryClient = useQueryClient()
-    const simpleDialog = useSimpleDialog()
-    const {
-        state: { lecture },
-    } = useLectureParams()
-    const { onXThunkUpdate } = useCrudActions()
-    const onDelete = () => {
-        simpleDialog.onShow({
-            title: `${Helper.lodash.capitalize(lan.DELETE)} ${Helper.cvtHtmlToText(
-                props.file.name
-            )}`,
-            content: lan.DELETE_WARNING,
-            onPositive: async () => {
-                try {
-                    await onXThunkUpdate(
-                        removeCourseLectureResource({
-                            lectureId: lecture._id,
-                            resourceId: props.file._id,
-                        })
-                    )
-                    queryClient.invalidateQueries(RQK_COURSE)
-                } catch (e: any) {
-                    toast(NotifyHelper.somethingWentWrong)
-                }
-            },
-        })
-    }
-    return (
-        <HStack justify={'space-between'}>
-            <HStack>
-                <Icon as={AppIcon.download} />
-                <Text>{props.file.name}</Text>
-            </HStack>
-            <DeleteButton onClick={onDelete} size="xs" />
-        </HStack>
-    )
+  const toast = useAppToast()
+  const queryClient = useQueryClient()
+  const simpleDialog = useSimpleDialog()
+  const {
+    state: { lecture },
+  } = useLectureParams()
+  const { onXThunkUpdate } = useCrudActions()
+  const onDelete = () => {
+    simpleDialog.onShow({
+      title: `${Helper.lodash.capitalize(lan.DELETE)} ${Helper.cvtHtmlToText(props.file.name)}`,
+      content: lan.DELETE_WARNING,
+      onPositive: async () => {
+        try {
+          await onXThunkUpdate(
+            removeCourseLectureResource({
+              lectureId: lecture._id,
+              resourceId: props.file._id,
+            })
+          )
+          queryClient.invalidateQueries(RQK_COURSE)
+        } catch (e: any) {
+          toast(NotifyHelper.somethingWentWrong)
+        }
+      },
+    })
+  }
+  return (
+    <HStack justify={'space-between'}>
+      <HStack>
+        <Icon as={AppIcon.download} />
+        <Text>{props.file.name}</Text>
+      </HStack>
+      <DeleteButton onClick={onDelete} size="xs" />
+    </HStack>
+  )
 }

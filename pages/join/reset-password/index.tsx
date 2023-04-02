@@ -7,14 +7,14 @@ import { NextPageWithLayout } from '../../../app/types/next'
 import AppTitle from '../../../app/utils/constants/app-title.constant'
 
 const ResetPassword: NextPageWithLayout = () => {
-    return (
-        <>
-            <MyHead title={AppTitle.RESET_PASSWORD} />
-            <AuthBox title={'Reset Password'}>
-                <ResetPasswordForm />
-            </AuthBox>
-        </>
-    )
+  return (
+    <>
+      <MyHead title={AppTitle.RESET_PASSWORD} />
+      <AuthBox title={'Reset Password'}>
+        <ResetPasswordForm />
+      </AuthBox>
+    </>
+  )
 }
 
 ResetPassword.getLayout = ClientLayout

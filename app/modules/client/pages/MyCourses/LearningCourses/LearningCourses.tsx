@@ -8,31 +8,31 @@ import MyCourseList from '../MyCourseList'
 import LearningCourseExcerpt from './LearningCourseExcerpt'
 
 export default function LearningCourses() {
-    const { isLoading, data: items } = useLearningCourses()
-    const { mutate: archiveCourses } = useArchiveCourses()
+  const { isLoading, data: items } = useLearningCourses()
+  const { mutate: archiveCourses } = useArchiveCourses()
 
-    const actions: IMenuItem<IUserCourse>[] = useMemo(() => {
-        return [
-            {
-                label: 'Archive',
-                onItemClick: (item) => {
-                    archiveCourses([item._id])
-                },
-            },
-        ]
-    }, [archiveCourses])
-
-    const renderItem = useCallback(
-        (item: IUserCourse, i) => {
-            return <LearningCourseExcerpt key={i} item={item} actions={actions} />
+  const actions: IMenuItem<IUserCourse>[] = useMemo(() => {
+    return [
+      {
+        label: 'Archive',
+        onItemClick: (item) => {
+          archiveCourses([item._id])
         },
-        [actions]
-    )
+      },
+    ]
+  }, [archiveCourses])
 
-    return (
-        <>
-            <MyHead title={AppTitle.MY_COURSES} />
-            <MyCourseList isLoading={isLoading} items={items || []} renderItem={renderItem} />
-        </>
-    )
+  const renderItem = useCallback(
+    (item: IUserCourse, i) => {
+      return <LearningCourseExcerpt key={i} item={item} actions={actions} />
+    },
+    [actions]
+  )
+
+  return (
+    <>
+      <MyHead title={AppTitle.MY_COURSES} />
+      <MyCourseList isLoading={isLoading} items={items || []} renderItem={renderItem} />
+    </>
+  )
 }

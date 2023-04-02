@@ -6,22 +6,22 @@ import { TTotalRange } from '../types/total-range.type'
 
 export const RQK_INSTRUCTOR_OVERVIEW_TOTAL = 'instructor-overview-total'
 export const useInstructorOverviewTotalQuery = (
-    type: TOverviewTotal,
-    range: TTotalRange,
-    courseId?: string,
-    options?: UseQueryOptions<number>
+  type: TOverviewTotal,
+  range: TTotalRange,
+  courseId?: string,
+  options?: UseQueryOptions<number>
 ) => {
-    const {
-        state: { viewInstructorId },
-    } = useInstructorParams()
-    return useQuery<number>(
-        [RQK_INSTRUCTOR_OVERVIEW_TOTAL, type, range, courseId],
-        () => fetchInstructorTotal(type, range, courseId, viewInstructorId),
-        {
-            notifyOnChangeProps: 'tracked',
-            keepPreviousData: true,
-            staleTime: Infinity,
-            ...options,
-        }
-    )
+  const {
+    state: { viewInstructorId },
+  } = useInstructorParams()
+  return useQuery<number>(
+    [RQK_INSTRUCTOR_OVERVIEW_TOTAL, type, range, courseId],
+    () => fetchInstructorTotal(type, range, courseId, viewInstructorId),
+    {
+      notifyOnChangeProps: 'tracked',
+      keepPreviousData: true,
+      staleTime: Infinity,
+      ...options,
+    }
+  )
 }

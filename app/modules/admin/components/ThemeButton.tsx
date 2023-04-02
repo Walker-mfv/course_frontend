@@ -6,16 +6,9 @@ import { FiMoon, FiSun } from 'react-icons/fi'
 export interface ThemeButtonProps extends ButtonProps {}
 
 function ThemeButton({ ...props }: ThemeButtonProps) {
-    const icon: IconType = useColorModeValue(FiMoon, FiSun)
-    const { toggleColorMode } = useColorMode()
-    return (
-        <IconButton
-            aria-label="theme-button"
-            onClick={toggleColorMode}
-            icon={<Icon as={icon} />}
-            {...props}
-        />
-    )
+  const icon: IconType = useColorModeValue(FiMoon, FiSun)
+  const { toggleColorMode } = useColorMode()
+  return <IconButton aria-label="theme-button" onClick={toggleColorMode} icon={<Icon as={icon} />} {...props} />
 }
 
 export default React.memo(ThemeButton)

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const RecommendCourse = () => {
-  return <div>Recommend courses</div>;
-};
+  return <div>Recommend courses</div>
+}
 
-export default RecommendCourse;
+export default RecommendCourse

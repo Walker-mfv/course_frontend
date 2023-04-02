@@ -5,18 +5,18 @@ import { IDateRange } from '../../stats-shared/providers/chart-provider'
 
 export const RQK_COURSE_ENROLLMENTS_STATS = 'course-enrollments-stats'
 export const useAdminCourseEnrollmentStatsQuery = (
-    dateRange: IDateRange,
-    courseId?: string,
-    options?: UseQueryOptions<IStat[]>
+  dateRange: IDateRange,
+  courseId?: string,
+  options?: UseQueryOptions<IStat[]>
 ) => {
-    return useQuery<IStat[]>(
-        [RQK_COURSE_ENROLLMENTS_STATS, dateRange, courseId],
-        () => fetchStats('enrollments', dateRange, courseId),
-        {
-            staleTime: Infinity,
-            notifyOnChangeProps: 'tracked',
-            keepPreviousData: true,
-            ...options,
-        }
-    )
+  return useQuery<IStat[]>(
+    [RQK_COURSE_ENROLLMENTS_STATS, dateRange, courseId],
+    () => fetchStats('enrollments', dateRange, courseId),
+    {
+      staleTime: Infinity,
+      notifyOnChangeProps: 'tracked',
+      keepPreviousData: true,
+      ...options,
+    }
+  )
 }

@@ -5,12 +5,12 @@ import CustomIconButton from '../../shared/components/CustomIconButton'
 import { useSettingSidebar } from '../providers/setting-sidebar.provider'
 
 export default function SettingSidebarToggler() {
-    const { onToggle } = useSettingSidebar()
-    return (
-        <CustomIconButton
-            onClick={onToggle}
-            aria-label="menu"
-            icon={<Icon fontSize="sm" as={FiSettings} />}
-        ></CustomIconButton>
-    )
+  const { onToggle } = useSettingSidebar()
+  return (
+    <CustomIconButton
+      onClick={onToggle}
+      aria-label="menu"
+      icon={<Icon fontSize="sm" as={FiSettings} />}
+    ></CustomIconButton>
+  )
 }

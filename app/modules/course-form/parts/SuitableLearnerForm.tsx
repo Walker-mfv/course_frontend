@@ -4,9 +4,9 @@ import React, { useEffect } from 'react'
 import { FormProvider, useFieldArray, useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
 import {
-    selectFormCourseStatus,
-    selectFormCourseSuitableLearners,
-    updateCourseById,
+  selectFormCourseStatus,
+  selectFormCourseSuitableLearners,
+  updateCourseById,
 } from '../../../store/course/form-course.slice'
 import { answerFieldArraySchema } from '../../../validations/answer-field-array.validation'
 import MyCircularProgress from '../../shared/components/MyCircularProgress'
@@ -22,82 +22,72 @@ const defaultQty: number = 1
 const placeholders: string[] = ['Example: Beginner Python developers curious about data science']
 
 function SuitableLearnerForm() {
-    const { onXThunkUpdate } = useCrudActions()
-    const status = useSelector(selectFormCourseStatus)
-    const suitableLearners = useSelector(selectFormCourseSuitableLearners)
+  const { onXThunkUpdate } = useCrudActions()
+  const status = useSelector(selectFormCourseStatus)
+  const suitableLearners = useSelector(selectFormCourseSuitableLearners)
 
-    // FORM HOOK
-    const fieldName = 'answers'
-    const methods = useForm<IAnswerFormData>({
-        resolver: yupResolver(answerFieldArraySchema(0)),
-    })
-    const {
-        reset,
-        control,
-        handleSubmit,
-        formState: { isDirty },
-    } = methods
-    const fieldArrayMethods = useFieldArray<IAnswerFormData>({
-        control,
-        name: fieldName,
-    })
+  // FORM HOOK
+  const fieldName = 'answers'
+  const methods = useForm<IAnswerFormData>({
+    resolver: yupResolver(answerFieldArraySchema(0)),
+  })
+  const {
+    reset,
+    control,
+    handleSubmit,
+    formState: { isDirty },
+  } = methods
+  const fieldArrayMethods = useFieldArray<IAnswerFormData>({
+    control,
+    name: fieldName,
+  })
 
-    // UPDATE FORM VALUES
-    useEffect(() => {
-        let formData: IAnswerFormData
-        if (suitableLearners?.length || 0 > 0) {
-            formData = { answers: suitableLearners?.map((item) => ({ content: item })) || [] }
-        } else {
-            formData = { answers: [...Array(defaultQty)].map((_) => ({ content: '' })) }
-        }
-        reset(formData)
-    }, [suitableLearners, reset])
+  // UPDATE FORM VALUES
+  useEffect(() => {
+    let formData: IAnswerFormData
+    if (suitableLearners?.length || 0 > 0) {
+      formData = { answers: suitableLearners?.map((item) => ({ content: item })) || [] }
+    } else {
+      formData = { answers: [...Array(defaultQty)].map((_) => ({ content: '' })) }
+    }
+    reset(formData)
+  }, [suitableLearners, reset])
 
-    // SUBMIT
-    const onSubmit = handleSubmit(async (values) => {
-        const strings: string[] = values.answers.map((item) => item.content)
-        const data: Partial<ICourse> = {
-            details: {
-                suitableLearner: strings,
-            },
-        }
-        await onXThunkUpdate(updateCourseById(data))
-        reset(values)
-    })
+  // SUBMIT
+  const onSubmit = handleSubmit(async (values) => {
+    const strings: string[] = values.answers.map((item) => item.content)
+    const data: Partial<ICourse> = {
+      details: {
+        suitableLearner: strings,
+      },
+    }
+    await onXThunkUpdate(updateCourseById(data))
+    reset(values)
+  })
 
-    return (
-        <FormProvider {...methods}>
-            <AnswerFieldArrayProvider
-                formName={formName}
-                minQty={minQty}
-                fieldName={fieldName}
-                {...fieldArrayMethods}
-            >
-                <form onSubmit={onSubmit}>
-                    <Stack spacing={2}>
-                        <Heading fontSize={'md'}>Who is this course for?</Heading>
-                        <Text>
-                            Write a clear description of the intended learners for your course who
-                            will find your course content valuable. This will help you attract the
-                            right learners to your course.
-                        </Text>
-                        <Box pt={6}>
-                            {status == 'loading' ? (
-                                <MyCircularProgress />
-                            ) : (
-                                <SortableAnswerCardList placeholders={placeholders} />
-                            )}
-                        </Box>
-                        <ButtonGroup justifyContent={'end'}>
-                            <Button disabled={!isDirty} colorScheme={'blue'} type="submit">
-                                Submit
-                            </Button>
-                        </ButtonGroup>
-                    </Stack>
-                </form>
-            </AnswerFieldArrayProvider>
-        </FormProvider>
-    )
+  return (
+    <FormProvider {...methods}>
+      <AnswerFieldArrayProvider formName={formName} minQty={minQty} fieldName={fieldName} {...fieldArrayMethods}>
+        <form onSubmit={onSubmit}>
+          <Stack spacing={2}>
+            <Heading fontSize={'md'}>Who is this course for?</Heading>
+            <Text>
+              Write a clear description of the intended learners for your course who will find your course content
+              valuable. This will help you attract the right learners to your course.
+            </Text>
+            <Box pt={6}>
+              {status == 'loading' ? <MyCircularProgress /> : <SortableAnswerCardList placeholders={placeholders} />}
+            </Box>
+            <ButtonGroup justifyContent={'end'}>
+              <Button disabled={!isDirty} colorScheme={'blue'} type="submit">
+                Submit
+              </Button>
+            </ButtonGroup>
+          </Stack>
+        </form>
+      </AnswerFieldArrayProvider>
+    </FormProvider>
+  )
 }
 
 export default React.memo(SuitableLearnerForm)

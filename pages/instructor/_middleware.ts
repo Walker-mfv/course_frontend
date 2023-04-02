@@ -3,5 +3,5 @@ import { NextFetchEvent, NextResponse } from 'next/server'
 import { accessICP } from './../../app/middlewares/role.middleware'
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-    return accessICP(req, NextResponse)
+  return accessICP(req, NextResponse)
 }

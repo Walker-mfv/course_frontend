@@ -4,5 +4,5 @@ import { authorized } from '../../app/middlewares/auth.middleware'
 import { accessICP } from './../../app/middlewares/role.middleware'
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-    return authorized(req, ev, NextResponse)
+  return authorized(req, ev, NextResponse)
 }

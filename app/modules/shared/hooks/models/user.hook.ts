@@ -3,23 +3,20 @@ import TemplateHelper from '../../../../utils/helpers/template.helper'
 import { IUser } from '../../interfaces/models/user.interface'
 
 export const transformUsers = (items: IUser[]): IUser[] => {
-    return items.map((item: IUser): IUser => {
-        const cloneItem = Helper.cloneObj(item)
-        // PROFILE
-        const profile = {
-            ...cloneItem.profile,
-            fullName: TemplateHelper.toFullName(
-                cloneItem.profile.firstName,
-                cloneItem.profile.lastName
-            ),
-        }
-        cloneItem.profile = profile
+  return items.map((item: IUser): IUser => {
+    const cloneItem = Helper.cloneObj(item)
+    // PROFILE
+    const profile = {
+      ...cloneItem.profile,
+      fullName: TemplateHelper.toFullName(cloneItem.profile.firstName, cloneItem.profile.lastName),
+    }
+    cloneItem.profile = profile
 
-        //
-        // cloneItem.createdAt = new Date(cloneItem.createdAt);
-        // cloneItem.modifiedAt = cloneItem.modifiedAt ? new Date(cloneItem.modifiedAt) : undefined;
-        return cloneItem
-    })
+    //
+    // cloneItem.createdAt = new Date(cloneItem.createdAt);
+    // cloneItem.modifiedAt = cloneItem.modifiedAt ? new Date(cloneItem.modifiedAt) : undefined;
+    return cloneItem
+  })
 }
 
 // const options: UseQueryOptions<IUser[]> = {

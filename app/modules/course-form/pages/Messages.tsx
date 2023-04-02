@@ -4,11 +4,11 @@ import CoursePageSection from '../parts/CoursePageSection'
 import MessageForm from '../parts/MessageForm'
 
 function Messages() {
-    return (
-        <CoursePageSection title={'Course messages'} >
-            <MessageForm />
-        </CoursePageSection>
-    )
+  return (
+    <CoursePageSection title={'Course messages'}>
+      <MessageForm />
+    </CoursePageSection>
+  )
 }
 
-export default  React.memo(Messages);
+export default React.memo(Messages)

@@ -16,56 +16,56 @@ import PopoverCategory from './PopoverCategory'
 import TeachingButton from './TeachingButton'
 
 const UserButtons = () => {
-    const {
-        state: { user },
-    } = useAuth()
-    if (!user) return <></>
-    return (
-        <>
-            <TeachingButton />
-            <MyCoursesButton />
-            <WishlistButton />
-        </>
-    )
+  const {
+    state: { user },
+  } = useAuth()
+  if (!user) return <></>
+  return (
+    <>
+      <TeachingButton />
+      <MyCoursesButton />
+      <WishlistButton />
+    </>
+  )
 }
 
 const Profile = () => {
-    const {
-        state: { user },
-    } = useAuth()
-    return (
-        <>
-            {!!user ? (
-                <ProfilePopover size="md" />
-            ) : typeof user == 'undefined' ? (
-                <AvatarSkeleton />
-            ) : (
-                <HStack>
-                    <AuthButtons />
-                </HStack>
-            )}
-        </>
-    )
+  const {
+    state: { user },
+  } = useAuth()
+  return (
+    <>
+      {!!user ? (
+        <ProfilePopover size="md" />
+      ) : typeof user == 'undefined' ? (
+        <AvatarSkeleton />
+      ) : (
+        <HStack>
+          <AuthButtons />
+        </HStack>
+      )}
+    </>
+  )
 }
 
 function DesktopTopBar() {
-    return (
-        <HStack spacing={2}>
-            <HStack spacing={4} pr={4}>
-                <AppHeading />
-                <PopoverCategory />
-            </HStack>
-            <SearchBar />
-            <HStack spacing={2}>
-                <UserButtons />
-                <CartButton />
-                <ThemeButton variant={'ghost'} />
-                <NotificationButton variant={'ghost'} />
-                <RoleSwitchButton />
-                <Profile />
-            </HStack>
-        </HStack>
-    )
+  return (
+    <HStack spacing={2}>
+      <HStack spacing={4} pr={4}>
+        <AppHeading />
+        <PopoverCategory />
+      </HStack>
+      <SearchBar />
+      <HStack spacing={2}>
+        <UserButtons />
+        <CartButton />
+        <ThemeButton variant={'ghost'} />
+        <NotificationButton variant={'ghost'} />
+        <RoleSwitchButton />
+        <Profile />
+      </HStack>
+    </HStack>
+  )
 }
 
 export default React.memo(DesktopTopBar)

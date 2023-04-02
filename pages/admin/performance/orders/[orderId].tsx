@@ -10,30 +10,26 @@ import { NextPageWithLayout } from '../../../../app/types/next'
 import AppTitle from '../../../../app/utils/constants/app-title.constant'
 
 const Page: NextPageWithLayout = () => {
-    const { isLoading, data } = useAdminOrderDetailQuery()
-    return (
-        <>
-            <MyHead title={AppTitle.ADMIN_ORDER_DETAIL} />
-            <Stack spacing={5}>
-                <SimpleGrid spacing={{ md: 5 }} columns={24}>
-                    <GridItem colSpan={{ base: 24, md: 12, lg: 11 }}>
-                        <OrderDetailsCard />
-                    </GridItem>
-                    <GridItem colSpan={{ base: 24, md: 12, lg: 12 }}>
-                        <CustomerDetailsCard />
-                    </GridItem>
-                </SimpleGrid>
+  const { isLoading, data } = useAdminOrderDetailQuery()
+  return (
+    <>
+      <MyHead title={AppTitle.ADMIN_ORDER_DETAIL} />
+      <Stack spacing={5}>
+        <SimpleGrid spacing={{ md: 5 }} columns={24}>
+          <GridItem colSpan={{ base: 24, md: 12, lg: 11 }}>
+            <OrderDetailsCard />
+          </GridItem>
+          <GridItem colSpan={{ base: 24, md: 12, lg: 12 }}>
+            <CustomerDetailsCard />
+          </GridItem>
+        </SimpleGrid>
 
-                <Card>
-                    <OrderCourses
-                        isLoading={isLoading}
-                        data={data?.coursesInOrder}
-                        totalPrice={data?.totalPrice}
-                    />
-                </Card>
-            </Stack>
-        </>
-    )
+        <Card>
+          <OrderCourses isLoading={isLoading} data={data?.coursesInOrder} totalPrice={data?.totalPrice} />
+        </Card>
+      </Stack>
+    </>
+  )
 }
 
 Page.getLayout = AdminLayout

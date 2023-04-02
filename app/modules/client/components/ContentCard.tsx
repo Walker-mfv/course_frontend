@@ -4,15 +4,15 @@ import { useBorderColor } from '../../shared/hooks/style.hook'
 import SectionTitle from './SectionTitle'
 
 export interface ContentCardProps extends StackProps {
-    title?: string
+  title?: string
 }
 
 export default function ContentCard({ children, ...props }: ContentCardProps) {
-    const borderColor = useBorderColor()
-    return (
-        <Stack border="1px solid" borderColor={borderColor} p={4} spacing={5} {...props}>
-            {props.title && <SectionTitle>{props.title}</SectionTitle>}
-            {children}
-        </Stack>
-    )
+  const borderColor = useBorderColor()
+  return (
+    <Stack border="1px solid" borderColor={borderColor} p={4} spacing={5} {...props}>
+      {props.title && <SectionTitle>{props.title}</SectionTitle>}
+      {children}
+    </Stack>
+  )
 }

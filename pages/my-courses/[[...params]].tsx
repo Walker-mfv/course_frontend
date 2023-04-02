@@ -6,12 +6,12 @@ import MyCoursesTabs from '../../app/modules/client/pages/MyCourses/MyCoursesTab
 import { NextPageWithLayout } from '../../app/types/next'
 
 const MyCoursesPage: NextPageWithLayout = () => {
-    useHideHCatBar()
-    return (
-        <Stack w="full">
-            <MyCoursesTabs />
-        </Stack>
-    )
+  useHideHCatBar()
+  return (
+    <Stack w="full">
+      <MyCoursesTabs />
+    </Stack>
+  )
 }
 
 MyCoursesPage.getLayout = ClientLayout

@@ -1,10 +1,10 @@
-import { ISwapByIds, ISwapByIndexes } from "./swap.inteface";
+import { ISwapByIds, ISwapByIndexes } from './swap.inteface'
 
 export interface IUnitSwapByIds extends ISwapByIds {
-    parentAId: string
-    parentBId: string
+  parentAId: string
+  parentBId: string
 }
 export interface IUnitSwapByIndexes extends ISwapByIndexes {
-    parentAIdx: number
-    parentBIdx: number
+  parentAIdx: number
+  parentBIdx: number
 }

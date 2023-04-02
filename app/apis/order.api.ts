@@ -5,5 +5,5 @@ import { axiosApiInstance } from './../utils/axios-utils'
 const prefix = CONTROLLER.order
 
 export function fetchOrderDetail(id: string): Promise<IOrderDetail> {
-    return axiosApiInstance.get(`${prefix}/${id}`).then((res) => res.data)
+  return axiosApiInstance.get(`${prefix}/${id}`).then((res) => res.data)
 }

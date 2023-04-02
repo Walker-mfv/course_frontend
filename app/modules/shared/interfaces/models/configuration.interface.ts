@@ -1,14 +1,14 @@
 import IModel from './model.interface'
 
 export interface ICourseConfiguration {
-    priceTiers: number[]
+  priceTiers: number[]
 }
 
 export interface IMoneyConfiguration {
-    instructorCommission: number
+  instructorCommission: number
 }
 
 export default interface IConfiguration extends IModel {
-    course: ICourseConfiguration
-    money: IMoneyConfiguration
+  course: ICourseConfiguration
+  money: IMoneyConfiguration
 }

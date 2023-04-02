@@ -6,21 +6,21 @@ import { useInstructorParams } from '../providers/instructor-params.provider'
 
 export const RQK_INSTRUCTOR_REVENUE_STATS = 'instructor-revenue-stats'
 export const useInstructorRevenueStatsQuery = (
-    dateRange: IDateRange,
-    courseId?: string,
-    options?: UseQueryOptions<IStat[]>
+  dateRange: IDateRange,
+  courseId?: string,
+  options?: UseQueryOptions<IStat[]>
 ) => {
-    const {
-        state: { viewInstructorId },
-    } = useInstructorParams()
-    return useQuery<IStat[]>(
-        [RQK_INSTRUCTOR_REVENUE_STATS, dateRange, courseId],
-        () => fetchInstructorStats('revenue', dateRange, courseId, viewInstructorId),
-        {
-            staleTime: Infinity,
-            notifyOnChangeProps: 'tracked',
-            keepPreviousData: true,
-            ...options,
-        }
-    )
+  const {
+    state: { viewInstructorId },
+  } = useInstructorParams()
+  return useQuery<IStat[]>(
+    [RQK_INSTRUCTOR_REVENUE_STATS, dateRange, courseId],
+    () => fetchInstructorStats('revenue', dateRange, courseId, viewInstructorId),
+    {
+      staleTime: Infinity,
+      notifyOnChangeProps: 'tracked',
+      keepPreviousData: true,
+      ...options,
+    }
+  )
 }

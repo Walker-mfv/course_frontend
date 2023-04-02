@@ -12,23 +12,23 @@ import { NextPageWithLayout } from '../../app/types/next'
 import AppTitle from '../../app/utils/constants/app-title.constant'
 
 const CartPage: NextPageWithLayout = () => {
-    const totalCourse = useSelector(selectTotalCourse)
-    return (
-        <>
-            <MyHead title={AppTitle.CART} />
-            <ClientPageContainer>
-                <Stack spacing={10}>
-                    <ClientPageHeading>Shopping Cart</ClientPageHeading>
-                    <Stack>
-                        <Heading fontSize="md">{totalCourse} Courses in Cart</Heading>
-                        {totalCourse > 0 ? <CartContent /> : <EmptyCart />}
-                    </Stack>
-                    {/* <Heading>{JSON.stringify(router.query)}</Heading> */}
-                    {/* <ShoppingCart /> */}
-                </Stack>
-            </ClientPageContainer>
-        </>
-    )
+  const totalCourse = useSelector(selectTotalCourse)
+  return (
+    <>
+      <MyHead title={AppTitle.CART} />
+      <ClientPageContainer>
+        <Stack spacing={10}>
+          <ClientPageHeading>Shopping Cart</ClientPageHeading>
+          <Stack>
+            <Heading fontSize="md">{totalCourse} Courses in Cart</Heading>
+            {totalCourse > 0 ? <CartContent /> : <EmptyCart />}
+          </Stack>
+          {/* <Heading>{JSON.stringify(router.query)}</Heading> */}
+          {/* <ShoppingCart /> */}
+        </Stack>
+      </ClientPageContainer>
+    </>
+  )
 }
 
 CartPage.getLayout = ClientLayout

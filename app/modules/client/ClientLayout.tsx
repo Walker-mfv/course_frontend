@@ -11,23 +11,23 @@ import { ClientParamsProvider } from './providers/client-params.provider'
 import { MobileSearchProvider } from './providers/mobile-search-provider'
 
 export default function ClientLayout(page: ReactElement) {
-    return (
-        <Box>
-            <AuthParamsProvider>
-                <ClientParamsProvider>
-                    <SidebarProvider>
-                        <CartProvider>
-                            <MobileSearchProvider>
-                                <TopBar />
-                                <Box>{page}</Box>
-                                <ClientMobileSidebar />
-                                <MobileSearch />
-                                {/* <Footer /> */}
-                            </MobileSearchProvider>
-                        </CartProvider>
-                    </SidebarProvider>
-                </ClientParamsProvider>
-            </AuthParamsProvider>
-        </Box>
-    )
+  return (
+    <Box>
+      <AuthParamsProvider>
+        <ClientParamsProvider>
+          <SidebarProvider>
+            <CartProvider>
+              <MobileSearchProvider>
+                <TopBar />
+                <Box>{page}</Box>
+                <ClientMobileSidebar />
+                <MobileSearch />
+                {/* <Footer /> */}
+              </MobileSearchProvider>
+            </CartProvider>
+          </SidebarProvider>
+        </ClientParamsProvider>
+      </AuthParamsProvider>
+    </Box>
+  )
 }

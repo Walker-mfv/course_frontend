@@ -7,17 +7,17 @@ import { NextPageWithLayout } from '../../app/types/next'
 import AppTitle from '../../app/utils/constants/app-title.constant'
 
 const SignUpPage: NextPageWithLayout = () => {
-    const {
-        state: { user },
-    } = useAuth()
-    return (
-        <>
-            <MyHead title={AppTitle.SIGN_UP} />
-            <AuthBox title="Sign Up and Start Learning!">
-                <SignUpForm />
-            </AuthBox>
-        </>
-    )
+  const {
+    state: { user },
+  } = useAuth()
+  return (
+    <>
+      <MyHead title={AppTitle.SIGN_UP} />
+      <AuthBox title="Sign Up and Start Learning!">
+        <SignUpForm />
+      </AuthBox>
+    </>
+  )
 }
 SignUpPage.getLayout = ClientLayout
 export default SignUpPage

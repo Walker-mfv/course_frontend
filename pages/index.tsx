@@ -12,21 +12,21 @@ import { APP_NAME } from '../app/utils/constants/app.constant'
 // code somthing...
 
 const HomePage: NextPageWithLayout = () => {
-    return (
-        <>
-            <MyHead title={APP_NAME} ogBasics={{ title: APP_NAME, path: '' }} />
-            <Box>
-                <HomeIntro />
-                <ClientPageContainer px={['5px', '16px']}>
-                    <Stack spacing={[4, 8, 10]}>
-                        <LatestCoursesGroup />
-                        <MostPopularCoursesGroup />
-                        <HighestRatingCoursesGroup />
-                    </Stack>
-                </ClientPageContainer>
-            </Box>
-        </>
-    )
+  return (
+    <>
+      <MyHead title={APP_NAME} ogBasics={{ title: APP_NAME, path: '' }} />
+      <Box>
+        <HomeIntro />
+        <ClientPageContainer px={['5px', '16px']}>
+          <Stack spacing={[4, 8, 10]}>
+            <LatestCoursesGroup />
+            <MostPopularCoursesGroup />
+            <HighestRatingCoursesGroup />
+          </Stack>
+        </ClientPageContainer>
+      </Box>
+    </>
+  )
 }
 HomePage.getLayout = ClientLayout
 export default HomePage
