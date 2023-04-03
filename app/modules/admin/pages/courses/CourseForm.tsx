@@ -18,7 +18,7 @@ import MyHead from '../../../shared/components/MyHead'
 export default function CourseForm() {
   const { id, section } = useCourseFormParams()
   const { isLoading, data } = useCourseQuery(id)
-  //
+
   const dispatch = useAppDispatch()
 
   // form course

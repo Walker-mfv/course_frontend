@@ -49,7 +49,7 @@ export default function AddCourseUnit(props: AddCourseUnitProps) {
       }}
       pb={addMode ? 2 : undefined}
     >
-      <Box ml={-24}>
+      <Box mb={1}>
         {!addMode ? (
           <Button
             colorScheme="purple"
