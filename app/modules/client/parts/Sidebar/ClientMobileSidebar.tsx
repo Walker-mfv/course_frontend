@@ -57,23 +57,20 @@ const Content = () => {
   const borderColor = useBorderColor()
   return (
     <Stack spacing={4} divider={<StackDivider color={borderColor} />}>
-      {!user && (
+      {!user ? (
         <Stack>
           <AuthButtons />
         </Stack>
+      ) : (
+        <Stack spacing={4}>
+          <TeachingButton variant={'link'} justifyContent="start" leftIcon={<Icon as={AppIcon.edit} />} />
+          <RoleSwitchButton onClick={onClose} variant={'link'} size="md" />
+          <MyCoursesButton onClick={onClose} variant={'link'} leftIcon={<Icon as={AppIcon.course} />} />
+          <WishlistButton />
+          <CartButton />
+        </Stack>
       )}
 
-      <Stack spacing={4}>
-        {!!user && (
-          <>
-            <TeachingButton variant={'link'} justifyContent="start" leftIcon={<Icon as={AppIcon.edit} />} />
-            <RoleSwitchButton onClick={onClose} variant={'link'} size="md" />
-            <MyCoursesButton onClick={onClose} variant={'link'} leftIcon={<Icon as={AppIcon.course} />} />
-            <WishlistButton />
-            <CartButton />
-          </>
-        )}
-      </Stack>
       <SidebarCategory />
       <Stack>
         <LogoutButton />
