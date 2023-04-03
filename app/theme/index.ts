@@ -13,6 +13,13 @@ const theme = extendTheme({
       500: '#E59819',
     },
   },
+  components: {
+    Input: {
+      defaultProps: {
+        focusBorderColor: 'purple.400',
+      },
+    },
+  },
   config,
   styles: {
     global: (props: any) => ({
