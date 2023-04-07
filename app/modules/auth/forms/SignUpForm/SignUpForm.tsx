@@ -85,7 +85,6 @@ export default function SignUpForm() {
                 required
                 field="email"
                 placeholder={'Email'}
-                type="email"
                 label={'Email'}
                 register={register}
                 error={errors.email}

@@ -16,7 +16,7 @@ interface FormData {
 }
 
 const vldSchema = yup.object({
-  email: yup.string().email().required(FormMsg.required),
+  email: yup.string().email('must be a valid email').required(FormMsg.required),
   password: yup.string().required(FormMsg.required),
 })
 
@@ -67,7 +67,6 @@ export default function LoginForm() {
           autoFocus
           required
           field="email"
-          type="email"
           placeholder={'Email'}
           label={'Email'}
           register={register}

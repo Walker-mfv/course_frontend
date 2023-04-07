@@ -6,8 +6,8 @@ import { IUser } from './../modules/shared/interfaces/models/user.interface'
 import { CONTROLLER } from './../utils/constants/app.constant'
 
 export const UserValidation = {
-  firstName: yup.string().required(FormMsg.required),
-  lastName: yup.string().required(FormMsg.required),
+  firstName: yup.string().trim().required(FormMsg.required),
+  lastName: yup.string().trim().required(FormMsg.required),
   status: yup.string().required(FormMsg.required),
   email: (currentEmail?: string) =>
     yup

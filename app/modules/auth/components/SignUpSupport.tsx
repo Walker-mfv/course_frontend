@@ -5,7 +5,7 @@ import NextLink from '../../shared/components/NextLink'
 
 export default function SignUpSupport() {
   return (
-    <HStack justify={'center'}>
+    <HStack justify={'center'} alignItems="baseline">
       <Text fontSize={'sm'}>Already have an account?</Text>
       <NextLink href={PathHelper.getLoginPath()}>
         <Button size="sm" colorScheme={'purple'} variant={'link'}>

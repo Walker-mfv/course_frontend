@@ -11,7 +11,7 @@ export default function LoginSupport() {
         <Text fontSize={'sm'}>or</Text>
         <ForgotPassword />
       </HStack>
-      <HStack>
+      <HStack alignItems={'baseline'}>
         <Text fontSize={'sm'}>{"Don't"} have an account?</Text>
         <NextLink href={PathHelper.getSignUpPath()}>
           <Button size="sm" colorScheme={'purple'} variant={'link'}>
