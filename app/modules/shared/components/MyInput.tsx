@@ -25,7 +25,6 @@ export default function MyInput({
   required,
   helperText,
   error,
-  onChange,
   autoFocus,
   tabIndex,
   showLabelRow = true,
@@ -46,14 +45,13 @@ export default function MyInput({
       {type == 'password' ? (
         <PasswordInput
           id={field}
-          //@ts-ignore
           placeholder={placeholder}
           spellCheck={false}
           autoFocus={autoFocus}
           tabIndex={tabIndex}
           isDisabled={isDisabled}
           {...register(field)}
-          // onChange={changeHandler}
+          _placeholder={{ fontSize: '15px' }}
         />
       ) : (
         <InputGroup>
@@ -61,7 +59,6 @@ export default function MyInput({
             size={size}
             id={field}
             type={type}
-            //@ts-ignore
             placeholder={placeholder}
             spellCheck={false}
             autoFocus={autoFocus}
@@ -72,6 +69,7 @@ export default function MyInput({
             accept={accept}
             isDisabled={isDisabled}
             {...register(field)}
+            _placeholder={{ fontSize: '15px' }}
           />
           {maxLength && (
             <InputRightElement>

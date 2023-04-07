@@ -1,15 +1,12 @@
 import { Badge, Button, Stack } from '@chakra-ui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter } from 'next/router'
-import React, { useEffect, useRef, useState } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
-import FormMsg from '../../../../utils/constants/form-message.constant'
-import NotifyHelper from '../../../../utils/helpers/notify.helper'
-import PathHelper from '../../../../utils/helpers/path.helper'
+import FormMsg from 'app/utils/constants/form-message.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
 import MyInput from '../../../shared/components/MyInput'
-import { useClientToast } from '../../../shared/hooks/client-toast.hook'
 import { useAuthParams } from '../../providers/auth-params.provider'
 import { useAuth } from '../../providers/auth.provider'
 
@@ -26,11 +23,9 @@ const vldSchema = yup.object({
 export default function LoginForm() {
   const [formError, setFormError] = useState('')
   const {
-    methods: { onLoginWithEmailAndPassword, isHuman },
+    methods: { onLoginWithEmailAndPassword },
   } = useAuth()
-  const reRef = useRef<ReCAPTCHA>(null)
 
-  //
   const {
     register,
     handleSubmit,
@@ -41,31 +36,20 @@ export default function LoginForm() {
     resolver: yupResolver(vldSchema),
   })
   const router = useRouter()
-  const toast = useClientToast()
   const {
     state: { waitingRedirectPath },
   } = useAuthParams()
-  //
 
   const onSubmit = handleSubmit(async (values) => {
-    const token = (await reRef.current?.executeAsync()) || undefined
-    if (!token) {
-      toast(NotifyHelper.somethingWentWrong)
-      return
+    const { email, password } = values
+    try {
+      await onLoginWithEmailAndPassword(email, password)
+      const path = waitingRedirectPath || PathHelper.getClientPath()
+      router.replace(path)
+    } catch (e) {
+      setFormError('Your credentials is invalid!')
+      reset({ password: '' })
     }
-    const notBot = await isHuman(token)
-    if (notBot) {
-      const { email, password } = values
-      try {
-        await onLoginWithEmailAndPassword(email, password)
-        const path = waitingRedirectPath || PathHelper.getClientPath()
-        router.replace(path)
-      } catch (e) {
-        setFormError('Your credentials is invalid!')
-        reset({ password: '' })
-      }
-    }
-    reRef.current?.reset()
   })
 
   useEffect(() => {
@@ -73,8 +57,12 @@ export default function LoginForm() {
   }, [isDirty])
   return (
     <form onSubmit={onSubmit}>
-      <Stack>
-        {formError && <Badge colorScheme={'red'}>{formError}</Badge>}
+      <Stack spacing={{ base: 2 }}>
+        {formError && (
+          <Badge colorScheme={'red'} px={4} py={2}>
+            {formError}
+          </Badge>
+        )}
         <MyInput
           autoFocus
           required
@@ -87,6 +75,7 @@ export default function LoginForm() {
           watch={watch}
           showLabelRow={false}
         />
+
         <MyInput
           type="password"
           required
@@ -98,13 +87,10 @@ export default function LoginForm() {
           watch={watch}
           showLabelRow={false}
         />
-
-        <ReCAPTCHA ref={reRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size="invisible" />
-
-        <Button type="submit" w="full" colorScheme={'purple'} disabled={!isDirty || isSubmitting}>
-          Log In
-        </Button>
       </Stack>
+      <Button mt={5} type="submit" w="full" colorScheme={'purple'} disabled={!isDirty || isSubmitting}>
+        Log In
+      </Button>
     </form>
   )
 }

@@ -8,5 +8,6 @@ const AppImg = {
   OG_APP_LOGO: `${prefix}/app/logo-image.png`,
   APP_BANNER: `${prefix}/app_banner.png`,
   INSTRUCTOR: `${prefix}/instructor.jpg`,
+  LOGO_IMAGE: `${prefix}/app/logo-image.png`,
 }
 export default AppImg

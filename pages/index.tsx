@@ -9,7 +9,6 @@ import MostPopularCoursesGroup from '../app/modules/client/pages/HomePage/MostPo
 import MyHead from '../app/modules/shared/components/MyHead'
 import { NextPageWithLayout } from '../app/types/next'
 import { APP_NAME } from '../app/utils/constants/app.constant'
-// code somthing...
 
 const HomePage: NextPageWithLayout = () => {
   return (

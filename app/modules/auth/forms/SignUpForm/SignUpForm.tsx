@@ -1,10 +1,8 @@
 import { Button, Stack } from '@chakra-ui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
-import React, { useRef, useState } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
-import NotifyHelper from '../../../../utils/helpers/notify.helper'
 import { UserValidation } from '../../../../validations/user.validation'
 import MyInput from '../../../shared/components/MyInput'
 import { useAppToast } from '../../../shared/hooks/app-toast.hook'
@@ -42,31 +40,20 @@ export default function SignUpForm() {
   } = useForm<FormData>({
     resolver: yupResolver(vldSchema),
   })
-  //
-  const reRef = useRef<ReCAPTCHA>(null)
 
   const onSubmit = handleSubmit(async (values) => {
-    const token = (await reRef.current?.executeAsync()) || undefined
-    if (!token) {
-      toast(NotifyHelper.somethingWentWrong)
-      return
-    }
-    const notBot = await isHuman(token)
-    if (notBot) {
-      const { firstName, lastName, email, password } = values
-      try {
-        await onSignUp({ firstName, lastName, email, password })
-        reset()
-        setSubmited(true)
-      } catch (e) {}
-    }
-    reRef.current?.reset()
+    const { firstName, lastName, email, password } = values
+    try {
+      await onSignUp({ firstName, lastName, email, password })
+      reset()
+      setSubmited(true)
+    } catch (e) {}
   })
 
   const isFormDisabled = isSubmitting || isSubmitted
 
   return (
-    <Stack>
+    <Stack spacing={{ base: 2 }}>
       {!isSubmitted ? (
         <>
           <form onSubmit={onSubmit}>
@@ -118,12 +105,10 @@ export default function SignUpForm() {
                 showLabelRow={false}
                 isDisabled={isFormDisabled}
               />
-
-              <ReCAPTCHA ref={reRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size="invisible" />
-              <Button type="submit" w="full" colorScheme={'purple'} disabled={!isDirty || isSubmitting}>
-                Sign Up
-              </Button>
             </Stack>
+            <Button mt={5} type="submit" w="full" colorScheme={'purple'} disabled={!isDirty || isSubmitting}>
+              Sign Up
+            </Button>
           </form>
           <SignUpSupport />
         </>
