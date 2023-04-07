@@ -37,7 +37,6 @@ const Narbar = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const isDark = colorMode === 'dark'
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // const variant = useBreakpointValue({ base: onOpen, md: onOpen });
 
   return (
     <HStack marginTop={2} w="full" padding="0 2.2rem">
@@ -48,7 +47,7 @@ const Narbar = () => {
           </Link>
         </Flex>
         <Box>
-          <Text fontSize={'sm'}>Catogories</Text>
+          <Text fontSize={'sm'}>Categories</Text>
         </Box>
         <Box flex-grow="1">
           <SearchBar />

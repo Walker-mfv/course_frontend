@@ -8,11 +8,11 @@ import HorizontalCategoryBar from './HorizontalCategoryBar'
 const TopBar = () => {
   const isMobile = useIsClientMobile()
   return (
-    <Stack spacing={0} shadow="lg">
-      <Stack py={2} px={4}>
+    <Stack spacing={0} shadow="0 1px 0 0 rgba(139,141,157,.05), 0 5px 10px 0 rgba(65,71,108,.15)">
+      <Stack py={5} px={4}>
         {!isMobile ? <DesktopTopBar /> : <ClientMobileTopBar />}
       </Stack>
-      <Box
+      {/* <Box
         sx={{
           display: 'none',
           '@media only screen and (min-width: 991.98px)': {
@@ -21,7 +21,7 @@ const TopBar = () => {
         }}
       >
         <HorizontalCategoryBar />
-      </Box>
+      </Box> */}
     </Stack>
   )
 }
