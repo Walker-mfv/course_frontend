@@ -6,6 +6,7 @@ import NextLink from '../../shared/components/NextLink'
 
 export default function GoogleLoginButton() {
   const bg = useColorModeValue('blackAlpha.50', undefined)
+
   return (
     <NextLink href={PathHelper.getGoogleLoginUrl()}>
       <Button

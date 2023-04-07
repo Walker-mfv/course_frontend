@@ -9,6 +9,7 @@ export interface AuthBoxProps {
   children: ReactNode
 }
 export default function AuthBox(props: AuthBoxProps) {
+  const bg = useColorModeValue('white', undefined)
   const borderColor = useBorderColor()
   const border = useColorModeValue('none', '2px solid')
   return (
@@ -17,15 +18,16 @@ export default function AuthBox(props: AuthBoxProps) {
       borderColor={borderColor}
       borderRadius="lg"
       mx="auto"
-      mt={4}
+      mt={10}
       maxW={'400px'}
       shadow="xl"
       p={{ base: undefined, md: 4, lg: 8 }}
       py={4}
+      bg={bg}
     >
       <Stack spacing={{ base: 4, md: 7 }} divider={<StackDivider color={borderColor} />}>
         <Heading fontSize={'lg'} textAlign="center">
-          <Image mb={3} src={AppImg.LOGO_IMAGE} alt={'logo'} width="120px" mx={{ base: 'auto' }} />
+          <Image mb={3} src={AppImg.LOGO_IMAGE} alt={'logo'} width="80px" mx={{ base: 'auto' }} />
           <p>{props.title}</p>
           <Text as="sub" color={'gray.500'} fontWeight="400">
             {props?.description}

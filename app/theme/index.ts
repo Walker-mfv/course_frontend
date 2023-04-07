@@ -3,6 +3,7 @@ import { mode } from '@chakra-ui/theme-tools'
 
 export const DEFAULT_LIGHT_BACKGROUND = '#faf9f7'
 export const DEFAULT_DARK_BACKGROUND = 'gray.800'
+
 const config: ThemeConfig = {}
 const theme = extendTheme({
   colors: {
