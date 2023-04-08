@@ -34,7 +34,7 @@ export default function SearchBar() {
     searchDebounce(e.target.value)
   }
   return (
-    <InputGroup flex={1}>
+    <InputGroup maxWidth={'250px'} marginLeft="auto">
       <InputLeftElement pointerEvents="none">
         <SearchIcon color="gray.300" />
       </InputLeftElement>
@@ -43,13 +43,14 @@ export default function SearchBar() {
         value={value}
         onChange={onChange}
         //@ts-ignore
-        placeholder="Search for anything"
+        placeholder="Search..."
         variant="outline"
         htmlSize={37}
         borderRadius={'99999px'}
         mr="0 1.2rem"
         borderWidth={borderWidth}
         borderColor={borderColor}
+        _placeholder={{ fontSize: '15px' }}
       />
     </InputGroup>
   )

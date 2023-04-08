@@ -50,13 +50,13 @@ const Profile = () => {
 
 function DesktopTopBar() {
   return (
-    <HStack spacing={2}>
+    <HStack spacing={2} justify="space-between">
       <HStack spacing={4} pr={4}>
         <AppHeading />
         <PopoverCategory />
       </HStack>
-      <SearchBar />
       <HStack spacing={2}>
+        <SearchBar />
         <UserButtons />
         <CartButton />
         <ThemeButton variant={'ghost'} />
