@@ -19,6 +19,7 @@ export default function AuthBox(props: AuthBoxProps) {
       borderRadius="lg"
       mx="auto"
       mt={10}
+      mb={5}
       maxW={'400px'}
       shadow="xl"
       p={{ base: undefined, md: 4, lg: 8 }}
