@@ -5,19 +5,15 @@ import PathHelper from '../../../utils/helpers/path.helper'
 import NextLink from '../../shared/components/NextLink'
 
 const AppLogo = () => {
-  return <Image src={AppImg.APP_LOGO} w="200px" h="40px" alt={'logo'} />
+  return <Image userSelect={'none'} maxWidth={'unset'} src={AppImg.APP_LOGO} w="200px" h="40px" alt={'logo'} />
 }
 
 export interface AppHeadingProps extends HeadingProps {}
 function AppHeading(props: AppHeadingProps) {
   return (
-    <HStack>
-      <NextLink href={PathHelper.getClientPath()}>
-        <Heading fontSize={{ base: 'lg', md: '2xl' }} {...props}>
-          <AppLogo />
-        </Heading>
-      </NextLink>
-    </HStack>
+    <NextLink href={PathHelper.getClientPath()}>
+      <AppLogo />
+    </NextLink>
   )
 }
 

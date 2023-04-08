@@ -34,7 +34,7 @@ export default function SearchBar() {
     searchDebounce(e.target.value)
   }
   return (
-    <InputGroup maxWidth={'250px'} marginLeft="auto">
+    <InputGroup maxWidth={'600px'} marginLeft="auto">
       <InputLeftElement pointerEvents="none">
         <SearchIcon color="gray.300" />
       </InputLeftElement>

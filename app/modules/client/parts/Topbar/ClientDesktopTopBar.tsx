@@ -55,8 +55,8 @@ function DesktopTopBar() {
         <AppHeading />
         <PopoverCategory />
       </HStack>
+      <SearchBar />
       <HStack spacing={2}>
-        <SearchBar />
         <UserButtons />
         <CartButton />
         <ThemeButton variant={'ghost'} />

@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, HStack, Icon, Stack, StackDivider, Text, TextProps } from '@chakra-ui/react'
 import React from 'react'
 import AppIcon from '../../../../utils/constants/app-icon.constant'
@@ -80,9 +81,11 @@ const Main = () => {
         },
       }}
       pos="relative"
+      minWidth={'120px'}
     >
-      <Text sx={{ cursor: 'pointer' }} _hover={{ color }}>
-        Categories
+      <Text sx={{ cursor: 'pointer' }} _hover={{ color }} display="flex" alignItems={'center'}>
+        All categories
+        <ChevronRightIcon ml={1} mt={'1px'} />
       </Text>
       <Box pt={'16px'} className="menu" pos="absolute" zIndex="sticky" display={'none'}>
         <HStack
