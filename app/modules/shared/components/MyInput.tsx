@@ -4,6 +4,7 @@ import {
   FormHelperText,
   Input,
   InputGroup,
+  InputLeftElement,
   InputRightElement,
   Text,
 } from '@chakra-ui/react'
@@ -32,6 +33,7 @@ export default function MyInput({
   size = 'md',
   isDisabled,
   register,
+  iconLeft,
 }: IMyInput) {
   const subColor = useSubtitleColor()
   const value = watch ? watch(field) : undefined
@@ -52,9 +54,14 @@ export default function MyInput({
           isDisabled={isDisabled}
           {...register(field)}
           _placeholder={{ fontSize: '15px' }}
+          iconLeft={iconLeft}
         />
       ) : (
         <InputGroup>
+          {iconLeft && (
+            // eslint-disable-next-line
+            <InputLeftElement pointerEvents="none" children={iconLeft} />
+          )}
           <Input
             size={size}
             id={field}

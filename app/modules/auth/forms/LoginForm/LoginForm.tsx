@@ -9,6 +9,7 @@ import PathHelper from 'app/utils/helpers/path.helper'
 import MyInput from '../../../shared/components/MyInput'
 import { useAuthParams } from '../../providers/auth-params.provider'
 import { useAuth } from '../../providers/auth.provider'
+import { EmailIcon, LockIcon } from '@chakra-ui/icons'
 
 interface FormData {
   email: string
@@ -73,6 +74,7 @@ export default function LoginForm() {
           error={errors.email}
           watch={watch}
           showLabelRow={false}
+          iconLeft={<EmailIcon color="gray.300" />}
         />
 
         <MyInput
@@ -85,6 +87,7 @@ export default function LoginForm() {
           error={errors.password}
           watch={watch}
           showLabelRow={false}
+          iconLeft={<LockIcon color="gray.300" />}
         />
       </Stack>
       <Button mt={5} type="submit" w="full" colorScheme={'purple'} disabled={!isDirty || isSubmitting}>

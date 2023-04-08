@@ -22,4 +22,5 @@ export interface IMyInput {
   accept?: string
   size?: TSize
   watch?: UseFormWatch<any>
+  iconLeft?: React.ReactNode
 }

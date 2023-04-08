@@ -1,3 +1,6 @@
+import { EmailIcon, LockIcon } from '@chakra-ui/icons'
+import { Icon } from '@chakra-ui/react'
+import { FaUser } from 'react-icons/fa'
 import { Button, Stack } from '@chakra-ui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import React, { useState } from 'react'
@@ -69,6 +72,7 @@ export default function SignUpForm() {
                 watch={watch}
                 showLabelRow={false}
                 isDisabled={isFormDisabled}
+                iconLeft={<Icon as={FaUser} color="gray.300" />}
               />
               <MyInput
                 required
@@ -80,6 +84,7 @@ export default function SignUpForm() {
                 watch={watch}
                 showLabelRow={false}
                 isDisabled={isFormDisabled}
+                iconLeft={<Icon as={FaUser} color="gray.300" />}
               />
               <MyInput
                 required
@@ -91,6 +96,7 @@ export default function SignUpForm() {
                 watch={watch}
                 showLabelRow={false}
                 isDisabled={isFormDisabled}
+                iconLeft={<EmailIcon color="gray.300" />}
               />
               <MyInput
                 type="password"
@@ -103,6 +109,7 @@ export default function SignUpForm() {
                 watch={watch}
                 showLabelRow={false}
                 isDisabled={isFormDisabled}
+                iconLeft={<LockIcon color="gray.300" />}
               />
             </Stack>
             <Button mt={5} type="submit" w="full" colorScheme={'purple'} disabled={!isDirty || isSubmitting}>
