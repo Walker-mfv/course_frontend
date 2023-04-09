@@ -27,11 +27,16 @@ const vldSchema = yup.object({
   password: UserValidation.password,
 })
 
-export default function SignUpForm() {
+export default function SignUpForm({
+  isSubmitted,
+  setSubmited,
+}: {
+  isSubmitted: boolean
+  setSubmited: (value: boolean) => void
+}) {
   const {
     methods: { onSignUp, isHuman },
   } = useAuth()
-  const [isSubmitted, setSubmited] = useState(false)
 
   const toast = useAppToast()
   const {
