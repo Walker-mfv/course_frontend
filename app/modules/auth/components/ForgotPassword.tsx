@@ -1,3 +1,4 @@
+import { EmailIcon } from '@chakra-ui/icons'
 import {
   Alert,
   Button,
@@ -105,14 +106,14 @@ const ForgotPassword = () => {
 
       <Modal initialFocusRef={initialRef} finalFocusRef={finalRef} isOpen={isOpen} onClose={onModalClose}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent pt={4} px={3}>
           <ModalHeader>Forgot Password</ModalHeader>
-          <ModalCloseButton />
+          <ModalCloseButton mt={5} />
           <ModalBody pb={6}>
             {!isSubmitted ? (
               <form onSubmit={onSubmit}>
-                <Stack spacing={4}>
-                  <Stack>
+                <Stack spacing={5}>
+                  <Stack spacing={3}>
                     <Text>
                       {`Enter your email address below and we'll send you a link
                                             to reset your password.`}
@@ -126,6 +127,7 @@ const ForgotPassword = () => {
                       register={register}
                       error={errors.email}
                       autoFocus
+                      iconLeft={<EmailIcon color="gray.300" />}
                     />
                     <ReCAPTCHA ref={reRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size="normal" />
                   </Stack>
