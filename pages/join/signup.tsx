@@ -16,7 +16,7 @@ const SignUpPage: NextPageWithLayout = () => {
       <MyHead title={AppTitle.SIGN_UP} />
       <AuthBox
         title="Sign Up and Start Learning!"
-        description={`Register now to access a diverse range of courses and start your learning journey today."`}
+        description={`Register now to access a diverse range of courses and start your learning journey today`}
       >
         <GoogleLoginButton />
         <SignUpForm />

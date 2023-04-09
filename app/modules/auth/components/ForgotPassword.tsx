@@ -114,10 +114,7 @@ const ForgotPassword = () => {
               <form onSubmit={onSubmit}>
                 <Stack spacing={5}>
                   <Stack spacing={3}>
-                    <Text>
-                      {`Enter your email address below and we'll send you a link
-                                            to reset your password.`}
-                    </Text>
+                    <Text>{`Enter your email address below and we'll send you a link to reset your password.`}</Text>
                     <MyInput
                       required
                       field="email"
