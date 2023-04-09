@@ -1,6 +1,6 @@
 import { Tr, Td } from '@chakra-ui/react'
 import React from 'react'
-import MyCircularProgress from './MyCircularProgress'
+import MyCircularProgress from '../MyCircularProgress'
 
 export default function LoadingMessageTr() {
   return (

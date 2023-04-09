@@ -8,8 +8,8 @@ import {
   Textarea,
 } from '@chakra-ui/react'
 import React from 'react'
-import { useSubtitleColor } from '../hooks/style.hook'
-import { IMyInput } from '../interfaces/my-input.interface'
+import { useSubtitleColor } from '../../hooks/style.hook'
+import { IMyInput } from '../../interfaces/my-input.interface'
 import MyFormLabel from './MyFormLabel'
 
 export interface IMyTextArea extends IMyInput {

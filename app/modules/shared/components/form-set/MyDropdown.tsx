@@ -12,11 +12,11 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import { useActiveColor } from '../../client/hooks/style.hook'
-import { useBorderColor } from '../hooks/style.hook'
-import { IMyDropDownItem } from '../interfaces/dropdown-item.interface'
-import NextLink from './NextLink'
-import { ProfileTile } from './ProfileBox/ProfileTile'
+import { useActiveColor } from '../../../client/hooks/style.hook'
+import { useBorderColor } from '../../hooks/style.hook'
+import { IMyDropDownItem } from '../../interfaces/dropdown-item.interface'
+import NextLink from '../NextLink'
+import { ProfileTile } from '../ProfileBox/ProfileTile'
 
 export interface IMyDropdownItemGroup {
   label: string

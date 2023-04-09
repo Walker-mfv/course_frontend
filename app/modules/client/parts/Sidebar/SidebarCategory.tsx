@@ -1,8 +1,8 @@
 import { HStack, Icon, Stack, Text, TextProps, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../../utils/constants/app-icon.constant'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import NextLink from '../../../shared/components/NextLink'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
+import NextLink from 'app/modules/shared/components/NextLink'
 import { useActiveColor } from '../../hooks/style.hook'
 import { ICatInfo, ISecondLevelCatInfo, useClientMenu } from '../../providers/client-menu.provider'
 

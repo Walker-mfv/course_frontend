@@ -1,6 +1,6 @@
 import { Skeleton, Stack } from '@chakra-ui/react'
 import React from 'react'
-import SimplePaginationButtons from '../../../shared/components/SimplePaginationButtons'
+import SimplePaginationButtons from '../../../shared/components/button-set/SimplePaginationButtons'
 import { SimplePaginationProvider, useSimplePagination } from '../../../shared/providers/simple-pagination.provider'
 import { TFileType, useCountMyFilesQuery, useMyFilesQuery } from '../../hooks/my-files-query.hook'
 import { LibraryProvider, useLibrary } from '../../providers/library.provider'

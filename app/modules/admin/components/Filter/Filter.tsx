@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { FiFilter } from 'react-icons/fi'
-import { SelectOption } from '../../../shared/components/MultiSelect'
+import { SelectOption } from '../../../shared/components/form-set/MultiSelect'
 import { useDeepCompareEffect } from '../../../shared/hooks/app.hook'
 import { IFilter, useFilter } from '../../../shared/hooks/filter.hook'
 import { useAdminUrlParams } from '../../providers/admin-query.provider'

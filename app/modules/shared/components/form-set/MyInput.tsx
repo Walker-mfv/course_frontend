@@ -9,9 +9,9 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React from 'react'
-import { useSubtitleColor } from '../hooks/style.hook'
-import { IMyInput } from '../interfaces/my-input.interface'
-import PasswordInput from '../interfaces/PasswordInput'
+import { useSubtitleColor } from '../../hooks/style.hook'
+import { IMyInput } from '../../interfaces/my-input.interface'
+import PasswordInput from '../../interfaces/PasswordInput'
 import MyFormLabel from './MyFormLabel'
 
 export default function MyInput({

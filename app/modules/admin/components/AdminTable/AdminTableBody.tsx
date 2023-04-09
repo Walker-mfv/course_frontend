@@ -7,8 +7,8 @@ import {
   selectIsItemSelected,
 } from '../../../../store/admin/multi-change.slice'
 import { useAppDispatch } from '../../../../store/hooks'
-import EmptyMessageTr from '../../../shared/components/EmptyMessageTr'
-import ErrorMessageTr from '../../../shared/components/ErrorMessageTr'
+import EmptyMessageTr from '../../../shared/components/message-set/EmptyMessageTr'
+import ErrorMessageTr from '../../../shared/components/message-set/ErrorMessageTr'
 import IModel from '../../../shared/interfaces/models/model.interface'
 import AdminHighlightSearchText from '../AdminHighlightSearchText'
 import { AdminTableProps } from './AdminTable'

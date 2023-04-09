@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import PathHelper from '../../../../utils/helpers/path.helper'
 import { useAuth } from '../../../auth/providers/auth.provider'
 import { TModule } from '../../types/module.type'
-import MyDropdown, { IMyDropdownItemGroup } from '../MyDropdown'
+import MyDropdown, { IMyDropdownItemGroup } from '../form-set/MyDropdown'
 
 export interface ProfilePopoverProps extends AvatarProps {
   context?: TModule

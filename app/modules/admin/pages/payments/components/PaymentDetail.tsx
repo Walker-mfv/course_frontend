@@ -5,7 +5,7 @@ import {
   useCountPaymentTransactionsQuery,
   usePaymentTransactionsQuery,
 } from '../../../../instructor/queries/payment-transactions-query.hook'
-import SimplePaginationButtons from '../../../../shared/components/SimplePaginationButtons'
+import SimplePaginationButtons from '../../../../shared/components/button-set/SimplePaginationButtons'
 import { SimplePaginationProvider, useSimplePagination } from '../../../../shared/providers/simple-pagination.provider'
 
 const ROWS_PER_PAGE = 5

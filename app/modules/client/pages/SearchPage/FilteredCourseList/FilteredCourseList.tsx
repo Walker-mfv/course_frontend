@@ -1,6 +1,6 @@
 import { Alert, HStack, Stack, StackDivider } from '@chakra-ui/react'
 import React from 'react'
-import ErrorMessage from '../../../../shared/components/ErrorMessage'
+import ErrorMessage from '../../../../shared/components/message-set/ErrorMessage'
 import MyCircularProgress from '../../../../shared/components/MyCircularProgress'
 import { useFilterCoursesQuery } from '../../../queries/filter-courses-query.hook'
 import FilteredCourseExcerpt from './FilteredCourseExcerpt'

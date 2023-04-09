@@ -1,7 +1,7 @@
 import { Icon, IconButton } from '@chakra-ui/react'
 import React from 'react'
 import { FiMenu } from 'react-icons/fi'
-import CustomIconButton from '../../../shared/components/CustomIconButton'
+import CustomIconButton from '../../../shared/components/button-set/CustomIconButton'
 import { useAdminSidebar } from '../../providers/admin-sidebar.provider'
 
 export default function NavSizeToggler() {

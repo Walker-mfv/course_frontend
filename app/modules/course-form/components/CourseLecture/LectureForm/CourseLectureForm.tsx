@@ -12,7 +12,7 @@ import {
 import { useAppSelector } from '../../../../../store/hooks'
 import FormMsg from '../../../../../utils/constants/form-message.constant'
 import TypeHelper from '../../../../../utils/helpers/type.helper'
-import MyInput from '../../../../shared/components/MyInput'
+import MyInput from '../../../../shared/components/form-set/MyInput'
 import { useCrudActions } from '../../../../shared/hooks/data/crud-actions.hook'
 import { ICourseUnit } from '../../../../shared/interfaces/models/course.interface'
 import ILecture from '../../../../shared/interfaces/models/lecture.interface'

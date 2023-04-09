@@ -7,8 +7,8 @@ import * as yup from 'yup'
 import { apiVerifyEmail } from '../../../apis/auth.api'
 import NotifyHelper from '../../../utils/helpers/notify.helper'
 import PathHelper from '../../../utils/helpers/path.helper'
-import MyInput from '../../shared/components/MyInput'
-import SubmitButton from '../../shared/components/SubmitButton'
+import MyInput from '../../shared/components/form-set/MyInput'
+import SubmitButton from '../../shared/components/button-set/SubmitButton'
 import { useAppToast } from '../../shared/hooks/app-toast.hook'
 
 interface FormData {

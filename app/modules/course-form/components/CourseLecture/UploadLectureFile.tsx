@@ -5,9 +5,9 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import FormMsg from '../../../../utils/constants/form-message.constant'
 import FileUploadHelper from '../../../../utils/helpers/file-upload.helper'
-import MyInput from '../../../shared/components/MyInput'
+import MyInput from '../../../shared/components/form-set/MyInput'
 import MyProgressBar from '../../../shared/components/MyProgress'
-import SubmitButton from '../../../shared/components/SubmitButton'
+import SubmitButton from '../../../shared/components/button-set/SubmitButton'
 import { useLectureParams } from '../../providers/lecture-params.provider'
 
 const vldSchema = yup.object({

@@ -10,9 +10,9 @@ import {
   UseFormSetValue,
   UseFormWatch,
 } from 'react-hook-form'
-import MyFormLabel from '../../../../shared/components/MyFormLabel'
-import MyInput from '../../../../shared/components/MyInput'
-import SubmitButton from '../../../../shared/components/SubmitButton'
+import MyFormLabel from '../../../../shared/components/form-set/MyFormLabel'
+import MyInput from '../../../../shared/components/form-set/MyInput'
+import SubmitButton from '../../../../shared/components/button-set/SubmitButton'
 import IQuiz, { IAnswerOption, IQuestion } from '../../../../shared/interfaces/models/quiz.interface'
 import Editor from '../../../../shared/parts/Editor/Editor'
 import FormMsg from '../../../../../utils/constants/form-message.constant'

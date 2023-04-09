@@ -19,7 +19,7 @@ import AppDialog from '../../../../app/modules/shared/components/AppDialog'
 import Card from '../../../../app/modules/shared/components/Card'
 import MyHead from '../../../../app/modules/shared/components/MyHead'
 import Price from '../../../../app/modules/shared/components/Price'
-import SimplePaginationButtons from '../../../../app/modules/shared/components/SimplePaginationButtons'
+import SimplePaginationButtons from '../../../../app/modules/shared/components/button-set/SimplePaginationButtons'
 import { useAppToast } from '../../../../app/modules/shared/hooks/app-toast.hook'
 import IPayment from '../../../../app/modules/shared/interfaces/models/payment.interface'
 import {

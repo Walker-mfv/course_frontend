@@ -9,7 +9,7 @@ import { useInstructorAllPaymentsQuery } from '../../../app/modules/instructor/q
 import { useCountInstructorPaymentsQuery } from '../../../app/modules/instructor/queries/instructor-payments-query.hook'
 import AppDialog from '../../../app/modules/shared/components/AppDialog'
 import MyHead from '../../../app/modules/shared/components/MyHead'
-import SimplePaginationButtons from '../../../app/modules/shared/components/SimplePaginationButtons'
+import SimplePaginationButtons from '../../../app/modules/shared/components/button-set/SimplePaginationButtons'
 import {
   SimplePaginationProvider,
   useSimplePagination,

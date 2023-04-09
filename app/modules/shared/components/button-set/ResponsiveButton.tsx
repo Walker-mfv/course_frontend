@@ -1,7 +1,7 @@
 import { Button, ButtonProps, Icon, IconButton } from '@chakra-ui/react'
 import React from 'react'
 import { IconType } from 'react-icons/lib'
-import { useDevice } from '../hooks/app.hook'
+import { useDevice } from '../../hooks/app.hook'
 
 export interface ResponsiveButtonProps extends ButtonProps {
   icon: IconType

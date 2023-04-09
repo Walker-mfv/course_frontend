@@ -1,6 +1,6 @@
 import { Tr, Td, Alert, AlertIcon } from '@chakra-ui/react'
 import React from 'react'
-import lan from '../../../utils/constants/lan.constant'
+import lan from '../../../../utils/constants/lan.constant'
 
 export default function ErrorMessage() {
   return (

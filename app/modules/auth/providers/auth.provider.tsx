@@ -52,7 +52,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loggedToken])
-  //
+
   useEffect(() => {
     const { accessToken } = CookieHelper.getAuthTokens()
     if (accessToken) {
@@ -81,7 +81,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, [enableAuthFetch, isAuthUserError, isAuthUserLoading, authUser])
 
-  //
   const onLogout = useCallback(async () => {
     await apiLogout()
     CookieHelper.removeAuthTokens()

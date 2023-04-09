@@ -1,11 +1,11 @@
 import { Button, ButtonProps } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React from 'react'
-import PathHelper from '../../../utils/helpers/path.helper'
-import { useAuth } from '../../auth/providers/auth.provider'
-import { TRoleName } from '../interfaces/models/role.interface'
-import { TColorScheme } from '../types/color-scheme.type'
-import NextLink from './NextLink'
+import PathHelper from 'app/utils/helpers/path.helper'
+import { useAuth } from 'app/modules/auth/providers/auth.provider'
+import { TRoleName } from '../../interfaces/models/role.interface'
+import { TColorScheme } from '../../types/color-scheme.type'
+import NextLink from '../NextLink'
 
 export interface RoleSwitchButtonProps extends ButtonProps {}
 function RoleSwitchButton(props: RoleSwitchButtonProps) {

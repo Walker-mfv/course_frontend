@@ -4,7 +4,7 @@ import React, { useCallback, useRef } from 'react'
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
 import { ReactQuillProps } from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
-import MyFormLabel from '../../components/MyFormLabel'
+import MyFormLabel from '../../components/form-set/MyFormLabel'
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
 export interface EditorProps extends ReactQuillProps {
