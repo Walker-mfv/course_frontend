@@ -22,7 +22,7 @@ export function AuthParamsProvider({ children }: { children: ReactNode }) {
     setWaitingPath(path)
     path ? CookieHelper.setWaitingRedirectPath(path) : CookieHelper.removeWaitingRedirectPath()
   }, [])
-  //
+
   const state = useMemo(
     () => ({
       state: {

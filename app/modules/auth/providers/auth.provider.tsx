@@ -116,7 +116,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     })
     return data
   }, [])
-  //
+
   const state: IAuthProvider = useMemo(() => {
     return {
       state: {
