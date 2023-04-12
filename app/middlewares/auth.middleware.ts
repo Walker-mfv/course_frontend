@@ -11,9 +11,10 @@ export const decodeJwtUser = async (accessToken?: string): Promise<IJwtUser | nu
   if (accessToken) {
     const secretKey = (process.env as any).JWT_SECRET_TOKEN
     const verified = await jwt.verify(accessToken, secretKey)
+
     if (verified) {
-      const data = await jwt.decode(accessToken)
-      return (data as any)?.sub
+      const data = jwt.decode(accessToken) as any
+      return data.payload.sub
     }
   }
   return null
