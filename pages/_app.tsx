@@ -5,18 +5,20 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
-import NotificationDialog from '../app/modules/admin/components/NotificationDialog'
-import SimpleDialog from '../app/modules/admin/components/SimpleDialog/SimpleDialog'
-import NotificationDialogProvider from '../app/modules/admin/providers/notification-dialog.provider'
-import SimpleDialogProvider from '../app/modules/admin/providers/simple-dialog.provider'
-import { AuthProvider } from '../app/modules/auth/providers/auth.provider'
-import { AppProvider } from '../app/modules/shared/providers/app.provider'
-import { store } from '../app/store/store'
-import theme from '../app/theme'
-import { AppPropsWithLayout, NextPageWithLayout } from '../app/types/next'
-import AppImg from '../app/utils/constants/app-img.constant'
-import { APP_NAME } from '../app/utils/constants/app.constant'
-import '../styles/globals.scss'
+import NotificationDialog from 'app/modules/admin/components/NotificationDialog'
+import SimpleDialog from 'app/modules/admin/components/SimpleDialog/SimpleDialog'
+import NotificationDialogProvider from 'app/modules/admin/providers/notification-dialog.provider'
+import SimpleDialogProvider from 'app/modules/admin/providers/simple-dialog.provider'
+import { AuthProvider } from 'app/modules/auth/providers/auth.provider'
+import { AppProvider } from 'app/modules/shared/providers/app.provider'
+import { store } from 'app/store/store'
+import theme from 'app/theme'
+import Router from 'next/router'
+import { AppPropsWithLayout, NextPageWithLayout } from 'app/types/next'
+import AppImg from 'app/utils/constants/app-img.constant'
+import { APP_NAME } from 'app/utils/constants/app.constant'
+import 'styles/globals.scss'
+import NProgress from 'nprogress'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,6 +28,14 @@ const queryClient = new QueryClient({
     },
   },
 })
+
+NProgress.configure({ showSpinner: false })
+Router.events.on('routeChangeStart', () => NProgress.start())
+Router.events.on('routeChangeComplete', () => {
+  NProgress.done()
+})
+Router.events.on('routeChangeError', () => NProgress.done())
+
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page: NextPageWithLayout) => page)
   return (
