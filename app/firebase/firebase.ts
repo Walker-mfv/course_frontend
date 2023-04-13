@@ -3,12 +3,13 @@ import { getStorage } from 'firebase/storage'
 
 import 'firebase/storage'
 const firebaseConfig = {
-  apiKey: 'AIzaSyBmG3Sw8qEN-5O-nxyWWyeYHb70vtH-wIQ',
-  authDomain: 'onlinecourse-704d6.firebaseapp.com',
-  projectId: 'onlinecourse-704d6',
-  storageBucket: 'onlinecourse-704d6.appspot.com',
-  messagingSenderId: '599574824224',
-  appId: '1:599574824224:web:f53baa52d1c8cdf3bb0345',
+  apiKey: 'AIzaSyB8uIqbFVOQqiC6noVMvAWA5f9ukDfVUw4',
+  authDomain: 'online-course-a5fe5.firebaseapp.com',
+  projectId: 'online-course-a5fe5',
+  storageBucket: 'online-course-a5fe5.appspot.com',
+  messagingSenderId: '172618449244',
+  appId: '1:172618449244:web:67e6ac16593676b5d80199',
+  measurementId: 'G-C50DL4MWHN',
 }
 
 // Initialize Firebase
