@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react'
-import FileUploadHelper from '../../../utils/helpers/file-upload.helper'
+import FileUploadHelper from 'app/utils/helpers/file-upload.helper'
 
 export const useUploadImage = (uploadDir: string, oldSrc?: string | null) => {
   const [uploadProgress, setUploadProgress] = useState<number>()

@@ -8,12 +8,15 @@ type TPageParams = {
 type TUpdatePageParams = (params: TPageParams) => void
 const PageParamsContext = createContext<TPageParams>({} as TPageParams)
 const UpdatePageParamsContext = createContext<TUpdatePageParams>({} as TUpdatePageParams)
+
 export const useUpdatePageParams = () => {
   return useContext(UpdatePageParamsContext)
 }
+
 export const usePageParams = () => {
   return useContext(PageParamsContext)
 }
+
 export default function PageParamsProvider({
   defaultValue,
   children,

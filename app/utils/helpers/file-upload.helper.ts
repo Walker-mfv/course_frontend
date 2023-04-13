@@ -1,7 +1,7 @@
 import { deleteObject, getDownloadURL, ref, StorageError, uploadBytesResumable } from 'firebase/storage'
 import { reject } from 'lodash'
 import { resolve } from 'path'
-import { storage } from '../../firebase/firebase'
+import { storage } from 'app/firebase/firebase'
 import { IMAGE_EXT } from '../constants/firebase.constant'
 import Helper from './helper.helper'
 

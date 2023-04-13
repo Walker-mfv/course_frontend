@@ -13,9 +13,15 @@ export interface RecImageUploadProps {
   getImgSrcFuncRef?: MutableRefObject<(() => string | undefined) | undefined>
   aspectRatio?: number
   containerRatio?: number[]
+  required?: boolean
 }
 
-function RecImageUpload({ containerRatio = [1, 1], aspectRatio = 16 / 9, ...props }: RecImageUploadProps) {
+function RecImageUpload({
+  containerRatio = [1, 1],
+  aspectRatio = 16 / 9,
+  required = false,
+  ...props
+}: RecImageUploadProps) {
   const {
     state: { src, newSrc, cropMode },
     methods: { reset },
@@ -23,7 +29,6 @@ function RecImageUpload({ containerRatio = [1, 1], aspectRatio = 16 / 9, ...prop
   } = useImageCropper(props.initialSrc, props.getImgSrcFuncRef)
 
   const cropFuncRef = useRef<() => string>()
-  //
   const onCropClick = () => {
     const url = cropFuncRef.current && cropFuncRef.current()
     if (url) {
@@ -35,7 +40,7 @@ function RecImageUpload({ containerRatio = [1, 1], aspectRatio = 16 / 9, ...prop
 
   return (
     <Stack>
-      {props.label ? <MyFormLabel>{props.label}</MyFormLabel> : null}
+      {props.label ? <MyFormLabel required={required}>{props.label}</MyFormLabel> : null}
       <SimpleGrid
         columns={{
           base: 1,
@@ -69,7 +74,14 @@ function RecImageUpload({ containerRatio = [1, 1], aspectRatio = 16 / 9, ...prop
             <Box>
               <Stack align={'start'}>
                 {!cropMode ? (
-                  <Input accept=".gif,.jpg,.jpeg,.png" type="file" onChange={onFileChange} />
+                  <Input
+                    accept=".gif,.jpg,.jpeg,.png"
+                    type="file"
+                    height={'12'}
+                    py={2}
+                    required={!newSrc && !src}
+                    onChange={onFileChange}
+                  />
                 ) : (
                   <Button onClick={onCropClick}>Crop</Button>
                 )}

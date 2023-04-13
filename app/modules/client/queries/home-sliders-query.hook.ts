@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useInfiniteQuery } from 'react-query'
-import { countHomeSliders, fetchHomeSliders } from '../../../apis/slider.api'
-import ISlider from '../../shared/interfaces/models/slider.interface'
+import { countHomeSliders, fetchHomeSliders } from 'app/apis/slider.api'
+import ISlider from 'app/modules/shared/interfaces/models/slider.interface'
 
 export const RQK_HOME_SLIDERS = 'home-sliders'
 export const useHomeSlidersQuery = (limit: number) => {

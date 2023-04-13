@@ -2,6 +2,7 @@ import firebase, { initializeApp } from 'firebase/app'
 import { getStorage } from 'firebase/storage'
 
 import 'firebase/storage'
+
 const firebaseConfig = {
   apiKey: 'AIzaSyB8uIqbFVOQqiC6noVMvAWA5f9ukDfVUw4',
   authDomain: 'online-course-a5fe5.firebaseapp.com',

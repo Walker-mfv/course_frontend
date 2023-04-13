@@ -1,7 +1,7 @@
 import { Image, Skeleton } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import Carousel from 'react-multi-carousel'
-import ISlider from '../../../shared/interfaces/models/slider.interface'
+import ISlider from 'app/modules/shared/interfaces/models/slider.interface'
 import ClientPageContainer from '../../components/ClientPageContainer'
 import { GroupProvider, useCourseGroup } from '../../providers/group.provider'
 import { useHomeSlidersQuery } from '../../queries/home-sliders-query.hook'
@@ -12,7 +12,9 @@ const List = (props: { items?: ISlider[] }) => {
     props.items?.map((item, i) => {
       return <Image draggable={false} key={i} src={item.picture || ''} alt="" />
     }) || []
-  return (
+
+  return images.length > 0 ? (
+    // @ts-ignore
     <Carousel
       arrows={false}
       containerClass="react-multi-carousel-list home-intro-carousel-container"
@@ -30,6 +32,8 @@ const List = (props: { items?: ISlider[] }) => {
     >
       {images}
     </Carousel>
+  ) : (
+    <></>
   )
 }
 
