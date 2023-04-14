@@ -7,8 +7,8 @@ import { useCourseDetailObjectives } from '../../../queries/course-detail-query.
 export interface ObjectiveProps extends StackProps {}
 export const Objective = ({ children, ...props }: ObjectiveProps) => {
   return (
-    <HStack align="start" spacing={6} {...props}>
-      <Box>
+    <HStack align="start" {...props}>
+      <Box mt={'2px'} mr={2}>
         <Icon as={AppIcon.check} />
       </Box>
       <Text flex={1}>{children}</Text>

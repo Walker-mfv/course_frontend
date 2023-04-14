@@ -10,7 +10,8 @@ export interface PriceProps {
 function Price({ style, value, currency = 'vnd' }: PriceProps) {
   if (typeof value == 'undefined') return <></>
   if (currency == 'vnd') value = Math.floor(value)
-  return <NumberFormat style={style} displayType="text" value={value} thousandSeparator suffix="đ" />
+  // @ts-ignore
+  return <NumberFormat style={style} displayType="text" value={value} thousandSeparator suffix="₫" />
 }
 
 export default React.memo(Price)

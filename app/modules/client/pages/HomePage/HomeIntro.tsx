@@ -10,10 +10,10 @@ const limit = 2
 const List = (props: { items?: ISlider[] }) => {
   const images =
     props.items?.map((item, i) => {
-      return <Image draggable={false} key={i} src={item.picture || ''} alt="" />
+      return <Image draggable={false} key={i} src={item.picture || ''} alt="" borderRadius={3} />
     }) || []
 
-  return images.length > 0 ? (
+  return (
     // @ts-ignore
     <Carousel
       arrows={false}
@@ -32,8 +32,6 @@ const List = (props: { items?: ISlider[] }) => {
     >
       {images}
     </Carousel>
-  ) : (
-    <></>
   )
 }
 

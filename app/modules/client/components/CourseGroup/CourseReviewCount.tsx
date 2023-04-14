@@ -3,7 +3,7 @@ import React from 'react'
 import { useSubtitleColor } from '../../../shared/hooks/style.hook'
 import { TSize } from '../../../shared/types/size.type'
 
-export default function CourseReviewCount({ children: value, size = 'xs' }: { children?: number; size?: TSize }) {
+export default function CourseReviewCount({ children: value, size = 'xs' }: { children?: number; size?: any }) {
   const subColor = useSubtitleColor()
   if (value == undefined) return <></>
   return (

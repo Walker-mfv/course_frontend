@@ -6,24 +6,22 @@ import AddToFavoriteButton from '../AddToFavoriteButton'
 import { HomeCourseExcerptProps } from './HomeCourseExcerpt'
 
 const BriefCourse = ({ course }: HomeCourseExcerptProps) => {
-  const objectivesHtml = course.details.objectives?.slice(0, 1).map((content, i) => {
+  const objectivesHtml = course.details.objectives?.slice(0, 3)?.map((content, i) => {
     return (
-      <Objective alignItems={'center'} spacing={2} key={i}>
-        <Text as="span" noOfLines={2}>
-          {content}
-        </Text>
+      <Objective alignItems={'start'} spacing={2} key={i}>
+        <Text as="span">{content}</Text>
       </Objective>
     )
   })
   return (
     <Stack>
       <Heading fontSize={'lg'}>{course.basicInfo.title}</Heading>
-      <Stack>
+      <Stack spacing={5}>
         <Text noOfLines={2} fontSize="sm">
           {course.basicInfo.subtitle}
         </Text>
-        <Stack>{objectivesHtml}</Stack>
-        <HStack>
+        <Stack fontSize="sm">{objectivesHtml}</Stack>
+        <HStack spacing={6}>
           <Box flex={1}>
             <AddToCartButton course={course} />
           </Box>

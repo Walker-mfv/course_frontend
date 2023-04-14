@@ -16,7 +16,7 @@ const HomePage: NextPageWithLayout = () => {
       <MyHead title={APP_NAME} ogBasics={{ title: APP_NAME, path: '' }} />
       <Box>
         <HomeIntro />
-        <ClientPageContainer px={['5px', '16px']}>
+        <ClientPageContainer px={{ sm: '5px', lg: '12px', xl: 0 }}>
           <Stack spacing={[4, 8, 10]}>
             <LatestCoursesGroup />
             <MostPopularCoursesGroup />
