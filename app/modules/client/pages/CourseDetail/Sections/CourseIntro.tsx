@@ -2,7 +2,7 @@ import { Box, Container, Heading, HStack, Stack, Text, useColorModeValue } from 
 import moment from 'moment'
 import React from 'react'
 import NumberFormat from 'react-number-format'
-import CourseImage from '../../../../shared/components/CourseImage'
+import CourseImage from 'app/modules/shared/components/CourseImage'
 import Rating from '../../../components/Rating'
 import { useShowPreviewCourse } from '../../../hooks/show-preview-course.hook'
 import { useCourseDetailQuery } from '../../../queries/course-detail-query.hook'
@@ -14,7 +14,7 @@ const Meta = () => {
   return (
     <Stack
       color={show ? 'whitesmoke' : 'unset'}
-      fontSize={['sm', 'unset']}
+      fontSize={'14px'}
       flexDir={{
         base: 'column',
         sm: 'row',
@@ -23,10 +23,11 @@ const Meta = () => {
         sm: 0,
       }}
       gap={{
-        sm: 2,
+        sm: 4,
       }}
+      alignItems={'baseline'}
     >
-      <Rating value={course?.meta.avgRatingScore} ratingCount={course?.meta.ratingCount} />
+      <Rating value={course?.meta.avgRatingScore} ratingCount={course?.meta.ratingCount} size={'sm'} />
       <Box>
         <Text>
           (
@@ -36,7 +37,12 @@ const Meta = () => {
       </Box>
       <Box>
         <Text>
-          <NumberFormat value={course?.meta.studentCount} displayType="text" thousandSeparator />
+          <NumberFormat
+            value={course?.meta.studentCount}
+            displayType="text"
+            thousandSeparator
+            // style={{ fontSize: '16px' }}
+          />
           &nbsp;students
         </Text>
       </Box>
@@ -48,10 +54,10 @@ const History = () => {
   const course = useCourseDetailQuery().data
   const show = useShowPreviewCourse()
   return (
-    <Stack fontSize={['sm', 'unset']} spacing={0}>
+    <Stack fontSize={'14px'} spacing={1}>
       <HStack>
         <Text color={show ? 'white' : 'unset'}>Create by</Text>
-        <Text color="pink.400" as="ins">
+        <Text color="purple.400" as="ins">
           {course?.history.createdBy.profile.fullName}
         </Text>
       </HStack>
@@ -77,7 +83,7 @@ const CourseIntro = () => {
     <Stack spacing={2} bg={showPreviewCourse ? bg : 'unset'}>
       <Container maxW="container.lg">
         <Box maxW="700px" margin={showPreviewCourse ? 'unset' : 'auto'}>
-          <Stack spacing={4} py={4}>
+          <Stack spacing={6} py={4}>
             <Box display={showPreviewCourse ? 'none' : 'block'}>
               <CourseImage src={course?.basicInfo.image || ''} w="full" />
             </Box>
@@ -86,17 +92,13 @@ const CourseIntro = () => {
               <Heading fontSize={['xl', '2xl', '3xl']} color={showPreviewCourse ? 'white' : 'unset'} mb={2} size="lg">
                 {course?.basicInfo.title}{' '}
               </Heading>
-
               <Text color={showPreviewCourse ? 'white' : 'unset'} fontSize="md">
                 {course?.basicInfo.subtitle}
               </Text>
             </Box>
 
             <Stack
-              spacing={{
-                base: 0,
-                sm: 'unset',
-              }}
+              spacing={1}
               flexDir={{
                 base: 'row',
                 sm: 'column',

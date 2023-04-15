@@ -12,7 +12,7 @@ export const useHoverColor = () => {
   return useColorModeValue('gray.100', 'gray.700')
 }
 export const useBorderColor = () => {
-  return useColorModeValue('gray.300', 'gray.700')
+  return useColorModeValue('#e0dfdb', 'gray.700')
 }
 export const useSubtitleColor = () => {
   return useColorModeValue('gray', 'gray.500')

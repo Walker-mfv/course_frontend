@@ -6,8 +6,13 @@ import { useCourseGroup } from '../../providers/group.provider'
 import HomeCourseExcerpt from './HomeCourseExcerpt'
 
 const responsive: ResponsiveType = {
+  xl: {
+    breakpoint: { max: 3000, min: 1280 },
+    items: 5,
+    slidesToSlide: 5,
+  },
   lg: {
-    breakpoint: { max: 3000, min: 768 },
+    breakpoint: { max: 1279, min: 768 },
     items: 4,
     slidesToSlide: 4,
   },
@@ -50,7 +55,6 @@ const CourseList = (props: CourseListProps) => {
   })
 
   return (
-    // @ts-ignore
     <Carousel
       className="course-group-carousel"
       beforeChange={onBeforeChange}

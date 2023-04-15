@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchCourseBySlug } from '../../../apis/course/client-course.api'
-import TypeHelper from '../../../utils/helpers/type.helper'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import { fetchCourseBySlug } from 'app/apis/course/client-course.api'
+import TypeHelper from 'app/utils/helpers/type.helper'
+import ICourse from 'app/modules/shared/interfaces/models/course.interface'
 
 export const RQK_COURSE_DETAIL = 'course-detail'
 export const getCourseDetailSlug = (params: any) => {

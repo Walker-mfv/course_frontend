@@ -1,6 +1,7 @@
-import { AiOutlineFilePdf, AiOutlineReload } from 'react-icons/ai'
+import { AiOutlineFilePdf, AiOutlineReload, AiOutlineFileText } from 'react-icons/ai'
 import { BiBarChart, BiCog, BiMessageDetail } from 'react-icons/bi'
-import { FaCircle, FaFacebook, FaHeart, FaPlayCircle, FaQuestionCircle } from 'react-icons/fa'
+import { BsQuestionCircle } from 'react-icons/bs'
+import { FaCircle, FaFacebook, FaHeart, FaPlayCircle } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import {
   FiAirplay,
@@ -34,7 +35,7 @@ import {
   FiX,
 } from 'react-icons/fi'
 import { IoCaretDown, IoCaretUp, IoStarSharp } from 'react-icons/io5'
-import { MdAttachMoney } from 'react-icons/md'
+import { MdAttachMoney, MdOutlineTopic } from 'react-icons/md'
 import { RiBankCardFill } from 'react-icons/ri'
 import { SiMicrosoftexcel } from 'react-icons/si'
 
@@ -55,13 +56,13 @@ const AppIcon = {
   sortDown: IoCaretDown,
   play: FaPlayCircle,
   back: FiArrowLeft,
-  //
+
   menu: FiMenu,
   none: FiMinus,
   check: FiCheck,
   circle: FaCircle,
   download: FiDownload,
-  quiz: FaQuestionCircle,
+  quiz: BsQuestionCircle,
   rating: IoStarSharp,
   arrowRight: FiChevronRight,
   arrowLeft: FiChevronLeft,
@@ -78,10 +79,10 @@ const AppIcon = {
   communication: BiMessageDetail,
   performance: BiBarChart,
   settings: FiSettings,
-  //
+
   facebook: FaFacebook,
   google: FcGoogle,
-  //
+
   course: FiAirplay,
   users: FiUsers,
   user: FiUser,
@@ -91,5 +92,7 @@ const AppIcon = {
   payment: FiCreditCard,
   excel: SiMicrosoftexcel,
   pdf: AiOutlineFilePdf,
+  lesson: AiOutlineFileText,
+  lecture: MdOutlineTopic,
 }
 export default AppIcon

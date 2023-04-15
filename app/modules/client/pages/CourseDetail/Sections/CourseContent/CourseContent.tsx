@@ -1,6 +1,6 @@
 import { Accordion, Stack } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import { useBorderColor } from '../../../../../shared/hooks/style.hook'
+import { useBorderColor } from 'app/modules/shared/hooks/style.hook'
 import SectionTitle from '../../../../components/SectionTitle'
 import { useCourseDetailCurriculum } from '../../../../queries/course-detail-query.hook'
 import CourseSection from './CourseSection'
@@ -15,11 +15,11 @@ const CourseContent = () => {
   }, [sections])
   if (sections?.length == 0) return <></>
   return (
-    <Stack spacing={5}>
+    <Stack>
       {/* TITLE */}
       <SectionTitle>Course content</SectionTitle>
       {/* CURRICULUM */}
-      <Accordion defaultIndex={[0]} allowMultiple border="1px solid" borderColor={borderColor}>
+      <Accordion defaultIndex={[0]} allowMultiple>
         {sectionsHtml}
       </Accordion>
     </Stack>

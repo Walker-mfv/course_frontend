@@ -1,6 +1,6 @@
 import { HStack, Icon } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../utils/constants/app-icon.constant'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 
 export interface RatingStarProps {
   value: number

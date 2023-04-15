@@ -1,8 +1,7 @@
-import { Box, Stack } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { ICourseMeta } from '../../../../shared/interfaces/models/course.interface'
 import ContentCard from '../../../components/ContentCard'
-import { useCourseDetailMeta } from '../../../queries/course-detail-query.hook'
 import RatingStatistic from './RatingStatistic'
 
 export interface ReviewStatProps {

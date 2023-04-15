@@ -42,7 +42,6 @@ export default function SearchBar() {
         spellCheck={false}
         value={value}
         onChange={onChange}
-        //@ts-ignore
         placeholder="Search..."
         variant="outline"
         htmlSize={37}

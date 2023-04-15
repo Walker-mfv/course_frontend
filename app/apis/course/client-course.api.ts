@@ -1,9 +1,9 @@
-import IClientUrlParams from '../../modules/admin/interfaces/client-url-params.interface'
-import ICountResult from '../../modules/client/interfaces/count-result.interface'
-import ICourse from '../../modules/shared/interfaces/models/course.interface'
-import { axiosApiInstance } from '../../utils/axios-utils'
-import { CONTROLLER } from '../../utils/constants/app.constant'
-import UrlHelper from '../../utils/helpers/url.heper'
+import IClientUrlParams from 'app/modules/admin/interfaces/client-url-params.interface'
+import ICountResult from 'app/modules/client/interfaces/count-result.interface'
+import ICourse from 'app/modules/shared/interfaces/models/course.interface'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
+import UrlHelper from 'app/utils/helpers/url.heper'
 
 const prefix = `${CONTROLLER.course}/client`
 

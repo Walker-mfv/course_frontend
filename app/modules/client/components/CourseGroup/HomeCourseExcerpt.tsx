@@ -12,11 +12,11 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React from 'react'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import TypeHelper from '../../../../utils/helpers/type.helper'
-import NextLink from '../../../shared/components/NextLink'
-import { useSubtitleColor } from '../../../shared/hooks/style.hook'
-import ICourse from '../../../shared/interfaces/models/course.interface'
+import PathHelper from 'app/utils/helpers/path.helper'
+import TypeHelper from 'app/utils/helpers/type.helper'
+import NextLink from 'app/modules/shared/components/NextLink'
+import { useBorderColor, useCardBg, useSubtitleColor } from 'app/modules/shared/hooks/style.hook'
+import ICourse from 'app/modules/shared/interfaces/models/course.interface'
 import { useIsClientMobile } from '../../hooks/is-client-mobile.hook'
 import Rating from '../Rating'
 import BriefCourse from './BriefCourse'
@@ -27,17 +27,17 @@ export interface HomeCourseExcerptProps {
 }
 
 function HomeCourseExcerpt({ course }: HomeCourseExcerptProps) {
-  console.log(course.basicInfo)
-
+  const borderColor = useBorderColor()
   const subColor = useSubtitleColor()
   const isMobile = useIsClientMobile()
+  const bgCard = useCardBg()
   const author = TypeHelper.isUser(course.history.createdBy) ? course.history.createdBy : undefined
   return (
     <>
       <Popover placement="right" boundary={'scrollParent'} trigger="hover">
         <NextLink href={PathHelper.getCourseDetailPath(course.basicInfo.slug)}>
           <PopoverTrigger>
-            <Stack bg="white" borderRadius={'lg'} border={'1px solid #e0dfdb'} height={'full'}>
+            <Stack bg={bgCard} borderRadius={'lg'} border={'1px solid'} borderColor={borderColor} height={'full'}>
               <AspectRatio ratio={16 / 9}>
                 <Image
                   src={course.basicInfo.image || ''}

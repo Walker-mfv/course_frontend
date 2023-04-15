@@ -1,8 +1,9 @@
 import { Box, GridItem, HStack, Icon, SimpleGrid, StackProps, Text } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import ContentCard from '../../../components/ContentCard'
-import { useCourseDetailObjectives } from '../../../queries/course-detail-query.hook'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import ContentCard from 'app/modules/client/components/ContentCard'
+import { useCourseDetailObjectives } from 'app/modules/client/queries/course-detail-query.hook'
+import { useCardBg } from 'app/modules/shared/hooks/style.hook'
 
 export interface ObjectiveProps extends StackProps {}
 export const Objective = ({ children, ...props }: ObjectiveProps) => {
@@ -17,6 +18,7 @@ export const Objective = ({ children, ...props }: ObjectiveProps) => {
 }
 
 function CourseObjective() {
+  const bgCard = useCardBg()
   const objectives = useCourseDetailObjectives()
   if (objectives?.length == 0) return <></>
   const objectivesHtml = objectives?.map((content, i) => {
@@ -26,8 +28,9 @@ function CourseObjective() {
       </GridItem>
     )
   })
+
   return (
-    <ContentCard title="What you'll learn" shadow="md">
+    <ContentCard title="What you'll learn" bg={bgCard} px={8}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
         {objectivesHtml}
       </SimpleGrid>

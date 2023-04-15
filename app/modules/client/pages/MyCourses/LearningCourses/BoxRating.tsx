@@ -194,7 +194,6 @@ const BoxRating = (props: BoxRatingProps) => {
                   <MyTextarea
                     field="content"
                     label={'Content'}
-                    //@ts-ignore
                     placeholder="How do you feel about this course?"
                     register={register}
                     error={errors.content}

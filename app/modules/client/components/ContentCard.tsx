@@ -10,7 +10,7 @@ export interface ContentCardProps extends StackProps {
 export default function ContentCard({ children, ...props }: ContentCardProps) {
   const borderColor = useBorderColor()
   return (
-    <Stack border="1px solid" borderColor={borderColor} p={4} spacing={5} {...props}>
+    <Stack border="1px solid" borderColor={borderColor} p={5} spacing={5} {...props} borderRadius={'lg'}>
       {props.title && <SectionTitle>{props.title}</SectionTitle>}
       {children}
     </Stack>

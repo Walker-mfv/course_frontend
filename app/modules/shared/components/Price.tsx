@@ -10,7 +10,6 @@ export interface PriceProps {
 function Price({ style, value, currency = 'vnd' }: PriceProps) {
   if (typeof value == 'undefined') return <></>
   if (currency == 'vnd') value = Math.floor(value)
-  // @ts-ignore
   return <NumberFormat style={style} displayType="text" value={value} thousandSeparator suffix="₫" />
 }
 

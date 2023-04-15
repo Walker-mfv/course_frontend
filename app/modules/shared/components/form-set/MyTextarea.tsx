@@ -46,7 +46,6 @@ export default function MyTextArea({
           rows={rows}
           size={size}
           id={field}
-          //@ts-ignore
           placeholder={placeholder}
           spellCheck={false}
           autoFocus={autoFocus}

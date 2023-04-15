@@ -10,8 +10,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import DateHelper from '../../../../../../utils/helpers/date.helper'
-import { useBorderColor } from '../../../../../shared/hooks/style.hook'
+import DateHelper from 'app/utils/helpers/date.helper'
+import { useBorderColor } from 'app/modules/shared/hooks/style.hook'
 import { useCourseDetailSection, useCourseDetailSectionDuration } from '../../../../queries/course-detail-query.hook'
 import CourseUnit from './CourseUnit'
 
@@ -20,6 +20,7 @@ export interface CourseSectionProps {
 }
 
 function CourseSection(props: CourseSectionProps) {
+  const borderColor = useBorderColor()
   const section = useCourseDetailSection(props.sIdx)
   const sectionDuration = useCourseDetailSectionDuration(props.sIdx)
   const unitsHtml = useMemo(() => {
@@ -28,14 +29,17 @@ function CourseSection(props: CourseSectionProps) {
     })
   }, [props.sIdx, section?.units])
   const sectionBg = useColorModeValue('gray.100', 'gray.700')
+
   const sectionHoverBg = useColorModeValue('gray.200', 'gray.600')
-  const borderColor = useBorderColor()
   return (
-    <AccordionItem>
+    <AccordionItem border={'none'}>
       <AccordionButton
-        bgColor={sectionBg}
-        borderBottom="1px solid"
+        mb={1.5}
+        mt={3}
+        border={'1px solid'}
+        bgColor={'rgba(146, 164, 183, 0.05)'}
         borderColor={borderColor}
+        borderRadius={'lg'}
         className="no-focus-shadow"
         py={4}
         sx={{
@@ -51,7 +55,7 @@ function CourseSection(props: CourseSectionProps) {
           </Text>
           <HStack fontSize={'sm'}>
             {/* <Text>{section?.units.length}</Text>
-                        <Text>-</Text> */}
+            <Text>-</Text> */}
             {!!sectionDuration && <Text>{DateHelper.getRoundMinute(sectionDuration)} min</Text>}
           </HStack>
         </HStack>

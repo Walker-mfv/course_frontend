@@ -14,7 +14,6 @@ const List = (props: { items?: ISlider[] }) => {
     }) || []
 
   return (
-    // @ts-ignore
     <Carousel
       arrows={false}
       containerClass="react-multi-carousel-list home-intro-carousel-container"

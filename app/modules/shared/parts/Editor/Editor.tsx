@@ -45,16 +45,46 @@ export default function Editor({
   //
 
   const value = watch ? watch(field) : undefined
+  /*
+   * Quill modules to attach to editor
+   */
   const modules = {
     toolbar: [
-      [{ header: [1, 2, false] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'code-block'],
+      [{ header: '1' }, { header: '2' }, { font: [] }],
+      [{ size: [] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote', 'blockquote', 'code', 'code-block'],
       [{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
+      [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
       [{ color: [] }, { background: [] }],
-
+      ['link'],
       ['clean'],
     ],
+    clipboard: {
+      // toggle to add extra line breaks when pasting HTML:
+      matchVisual: false,
+    },
   }
+  /*
+   * Quill editor formats
+   */
+  const formats = [
+    'header',
+    'font',
+    'size',
+    'bold',
+    'italic',
+    'underline',
+    'strike',
+    'blockquote',
+    'list',
+    'bullet',
+    'indent',
+    'link',
+    'align',
+    'direction',
+    'color',
+    'background',
+  ]
 
   return (
     <Stack spacing={1}>
@@ -63,14 +93,7 @@ export default function Editor({
           {label}
         </MyFormLabel>
       )}
-      <ReactQuill
-        // ref={handleRef}
-        theme="snow"
-        value={value}
-        onChange={setEditorVal}
-        {...props}
-        modules={modules}
-      />
+      <ReactQuill theme="snow" modules={modules} formats={formats} value={value} onChange={setEditorVal} {...props} />
     </Stack>
   )
 }

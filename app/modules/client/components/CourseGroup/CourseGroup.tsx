@@ -1,6 +1,6 @@
 import { Box, Heading, Stack } from '@chakra-ui/react'
 import React from 'react'
-import ICourse from '../../../shared/interfaces/models/course.interface'
+import ICourse from 'app/modules/shared/interfaces/models/course.interface'
 import CourseGroupSkeleton from './CourseGroupSkeleton'
 import CourseList from './CourseList'
 
