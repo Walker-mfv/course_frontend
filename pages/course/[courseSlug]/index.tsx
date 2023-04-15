@@ -57,7 +57,7 @@ const CoursePage: NextPageWithLayout = () => {
             <HStack justify={'start'}>
               <Container maxW={'container.lg'} mt={4}>
                 <Box maxW={'700px'} margin={show ? 'unset' : 'auto'}>
-                  <Stack spacing={10}>
+                  <Stack spacing={10} pb={8}>
                     <CourseObjective />
                     <CourseContent />
                     <CourseRequirement />
