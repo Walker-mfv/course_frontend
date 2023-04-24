@@ -22,8 +22,8 @@ const CoursePreview = () => {
         minH={'500px'}
         transitionProperty={'top'}
         transitionDuration={'normal'}
-        top={isTop ? '100px' : '50px'}
-        right="150px"
+        top={isTop ? '150px' : '50px'}
+        right="200px"
         overflowY="auto"
         flexDir="column"
         display={{ base: 'none', xl: 'flex' }}

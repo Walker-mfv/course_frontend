@@ -1,11 +1,11 @@
-import { useCardBg } from 'app/modules/shared/hooks/style.hook'
 import React from 'react'
 import ContentCard from 'app/modules/client/components/ContentCard'
 import MyContentList from 'app/modules/client/components/MyContentList'
 import { useCourseDetailRequirements } from '../../../queries/course-detail-query.hook'
+import { useContentCardBg } from 'app/modules/shared/hooks/style.hook'
 
 function CourseRequirement() {
-  const bgCard = useCardBg()
+  const bgCard = useContentCardBg()
   const requirements = useCourseDetailRequirements()
   if (requirements?.length == 0) return <></>
   return (

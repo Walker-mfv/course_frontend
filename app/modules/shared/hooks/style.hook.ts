@@ -1,22 +1,31 @@
 import { useColorModeValue, useTheme } from '@chakra-ui/react'
 import { DEFAULT_DARK_BACKGROUND } from '../../../theme/index'
-import { TColorScheme } from './../types/color-scheme.type'
+import { TColorScheme } from 'app/modules/shared/types/color-scheme.type'
 // colors
 export const useCardBg = () => {
   return useColorModeValue('white', 'gray.700')
 }
+
 export const useAppBg = () => {
   return useColorModeValue('gray.50', DEFAULT_DARK_BACKGROUND)
 }
+
+export const useContentCardBg = () => {
+  return useColorModeValue('rgba(146, 164, 183, 0.05)', 'gray.700')
+}
+
 export const useHoverColor = () => {
   return useColorModeValue('gray.100', 'gray.700')
 }
+
 export const useBorderColor = () => {
-  return useColorModeValue('#e0dfdb', 'gray.700')
+  return useColorModeValue('gray.300', 'gray.700')
 }
+
 export const useSubtitleColor = () => {
   return useColorModeValue('gray', 'gray.500')
 }
+
 export const useMutedColor = () => {
   return useColorModeValue('#A1A5B7', '#A1A5B7')
 }
@@ -31,6 +40,7 @@ export const useIColor = () => {
 export const useDefaultBg = () => {
   return useColorModeValue('white', 'gray.800')
 }
+
 export const useDarkBg = () => {
   return useColorModeValue('gray.800', 'teal.300')
 }

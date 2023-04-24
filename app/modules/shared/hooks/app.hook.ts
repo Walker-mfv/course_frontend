@@ -1,6 +1,6 @@
 import { useBreakpointValue } from '@chakra-ui/react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import Helper from '../../../utils/helpers/helper.helper'
+import Helper from 'app/utils/helpers/helper.helper'
 
 export const useIsMounted = () => {
   const [isMounted, setMounted] = useState<boolean>(false)

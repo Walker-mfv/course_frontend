@@ -11,7 +11,7 @@ function CourseDescription() {
   if (!description) return <></>
 
   return (
-    <ContentCard title="Description" border="none" spacing={2}>
+    <ContentCard title="Description" border="none" spacing={5}>
       <Box style={{ WebkitMaskImage: isShow ? 'unset' : 'linear-gradient(#ffffff,#ffffff,rgba(255,255,255,0)' }}>
         <Collapse startingHeight={'14rem'} in={isShow}>
           <div className="des-html" dangerouslySetInnerHTML={{ __html: description || '' }}></div>

@@ -1,17 +1,4 @@
-import {
-  BoxProps,
-  Heading,
-  HStack,
-  Icon,
-  Stack,
-  Text,
-  color,
-  StatArrow,
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-} from '@chakra-ui/react'
+import { BoxProps, Heading, HStack, Icon, Stack, Text, StatArrow, Stat, StatHelpText } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import DateHelper from 'app/utils/helpers/date.helper'
@@ -78,8 +65,8 @@ export default function CourseCheckout({ size = 'md', course, ...props }: Course
   return (
     <Stack spacing={3} {...props}>
       <Stack spacing={0}>
-        <Stack alignItems={'center'}>
-          <Heading as="h3" fontSize={'1.6rem'} color={'gray.700'}>
+        <Stack alignItems={'center'} spacing={0}>
+          <Heading as="h3" fontSize={'1.6rem'} color={'gray.700'} mb={2}>
             <Price value={prices?.sellPrice} currency={course.basicInfo.currency} />
           </Heading>
           <Stack>
@@ -99,11 +86,11 @@ export default function CourseCheckout({ size = 'md', course, ...props }: Course
               </>
             )}
           </Stack>
+          {prices?.discountPercent && <TimeLeft time={course.promotions.endAt!} />}
         </Stack>
-        {prices?.discountPercent && <TimeLeft time={course.promotions.endAt!} />}
       </Stack>
       <Stack>
-        <HStack flexDir="row" marginBottom={2} justify="space-between" spacing={4}>
+        <HStack flexDir="row" marginBottom={2} justify="space-between" spacing={4} mt={2}>
           <AddToCartButton course={course} flex={1} />
           <AddToFavoriteButton item={course} />
         </HStack>

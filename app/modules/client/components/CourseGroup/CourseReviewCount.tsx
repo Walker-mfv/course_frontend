@@ -1,7 +1,6 @@
 import { Text } from '@chakra-ui/react'
 import React from 'react'
-import { useSubtitleColor } from '../../../shared/hooks/style.hook'
-import { TSize } from '../../../shared/types/size.type'
+import { useSubtitleColor } from 'app/modules/shared/hooks/style.hook'
 
 export default function CourseReviewCount({ children: value, size = 'xs' }: { children?: number; size?: any }) {
   const subColor = useSubtitleColor()

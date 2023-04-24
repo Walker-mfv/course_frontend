@@ -3,7 +3,7 @@ import React from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import ContentCard from 'app/modules/client/components/ContentCard'
 import { useCourseDetailObjectives } from 'app/modules/client/queries/course-detail-query.hook'
-import { useCardBg } from 'app/modules/shared/hooks/style.hook'
+import { useContentCardBg } from 'app/modules/shared/hooks/style.hook'
 
 export interface ObjectiveProps extends StackProps {}
 export const Objective = ({ children, ...props }: ObjectiveProps) => {
@@ -18,7 +18,7 @@ export const Objective = ({ children, ...props }: ObjectiveProps) => {
 }
 
 function CourseObjective() {
-  const bgCard = useCardBg()
+  const bgCard = useContentCardBg()
   const objectives = useCourseDetailObjectives()
   if (objectives?.length == 0) return <></>
   const objectivesHtml = objectives?.map((content, i) => {

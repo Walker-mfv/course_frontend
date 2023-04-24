@@ -1,8 +1,5 @@
-import { StarIcon } from '@chakra-ui/icons'
-import { Text, HStack, Icon } from '@chakra-ui/react'
+import { Text, HStack } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../utils/constants/app-icon.constant'
-import { TSize } from '../../shared/types/size.type'
 import CourseReviewCount from './CourseGroup/CourseReviewCount'
 import RatingStar from './RatingStar'
 

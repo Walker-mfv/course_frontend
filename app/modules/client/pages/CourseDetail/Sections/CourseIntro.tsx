@@ -1,4 +1,4 @@
-import { Box, Container, Heading, HStack, Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { AspectRatio, Box, Container, Heading, HStack, Stack, Text, useColorModeValue, Image } from '@chakra-ui/react'
 import moment from 'moment'
 import React from 'react'
 import NumberFormat from 'react-number-format'
@@ -54,7 +54,7 @@ const History = () => {
   const course = useCourseDetailQuery().data
   const show = useShowPreviewCourse()
   return (
-    <Stack fontSize={'14px'} spacing={1}>
+    <Stack fontSize={'14px'} spacing={2}>
       <HStack>
         <Text color={show ? 'white' : 'unset'}>Create by</Text>
         <Text color="purple.400" as="ins">
@@ -77,19 +77,30 @@ const History = () => {
 const CourseIntro = () => {
   const { data: course } = useCourseDetailQuery()
   const showPreviewCourse = useShowPreviewCourse()
-  const bg = useColorModeValue('blackAlpha.900', 'blackAlpha.500')
+  const bg = useColorModeValue('rgba(0, 0, 0, 0.55);', 'blackAlpha.500')
   if (!course) return <></>
   return (
-    <Stack spacing={2} bg={showPreviewCourse ? bg : 'unset'}>
-      <Container maxW="container.lg">
-        <Box maxW="700px" margin={showPreviewCourse ? 'unset' : 'auto'}>
-          <Stack spacing={6} py={4}>
-            <Box display={showPreviewCourse ? 'none' : 'block'}>
+    <Stack spacing={2} bg={showPreviewCourse ? bg : 'unset'} pos={'relative'} overflow={'hidden'}>
+      <AspectRatio
+        display={showPreviewCourse ? 'block' : 'none'}
+        width={'full'}
+        ratio={21 / 7}
+        pos={'absolute'}
+        top={0}
+        left={0}
+        zIndex="-1"
+      >
+        {course?.basicInfo.image ? <Image src={course?.basicInfo.image} alt={'course image'} /> : <Box></Box>}
+      </AspectRatio>
+      <Container maxW="container.lg" margin={'auto!important'} pos={'relative'} pt={{ base: 0, '2xl': 6 }} pb={6}>
+        <Box maxW="700px" margin={showPreviewCourse ? 'unset' : 'auto'} pt={{ base: '2rem', xl: '4rem' }} pb={'2.5rem'}>
+          <Stack spacing={{ base: 6, '2xl': 10 }} py={4}>
+            <Box display={showPreviewCourse ? 'none' : 'block'} borderRadius={6}>
               <CourseImage src={course?.basicInfo.image || ''} w="full" />
             </Box>
             {/* TITLE AND SUBTITLE */}
             <Box>
-              <Heading fontSize={['xl', '2xl', '3xl']} color={showPreviewCourse ? 'white' : 'unset'} mb={2} size="lg">
+              <Heading fontSize={['xl', '2xl', '48px']} color={showPreviewCourse ? 'white' : 'unset'} mb={7} size="lg">
                 {course?.basicInfo.title}{' '}
               </Heading>
               <Text color={showPreviewCourse ? 'white' : 'unset'} fontSize="md">
@@ -98,7 +109,7 @@ const CourseIntro = () => {
             </Box>
 
             <Stack
-              spacing={1}
+              spacing={2}
               flexDir={{
                 base: 'row',
                 sm: 'column',
