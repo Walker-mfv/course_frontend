@@ -1,12 +1,12 @@
 import { Icon, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 import lodash from 'lodash'
 import React, { useCallback } from 'react'
-import AppIcon from '../../../../../../utils/constants/app-icon.constant'
-import { TPermission } from '../../../../../../utils/constants/role.constant'
-import EmptyMessageTr from '../../../../../shared/components/message-set/EmptyMessageTr'
-import LoadingMessageTr from '../../../../../shared/components/message-set/LoadingMessageTr'
-import { IRolePermission } from '../../../../../shared/interfaces/models/role.interface'
-import { useRolePermissionsQuery } from '../../../../queries/role-permissions-query.hook'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import { TPermission } from 'app/utils/constants/role.constant'
+import EmptyMessageTr from '@shared/components/message-set/EmptyMessageTr'
+import LoadingMessageTr from '@shared/components/message-set/LoadingMessageTr'
+import { IRolePermission } from '@shared/interfaces/models/role.interface'
+import { useRolePermissionsQuery } from '@admin/queries/role-permissions-query.hook'
 
 const permissions: TPermission[] = ['create', 'read', 'update', 'delete', 'export', 'import']
 

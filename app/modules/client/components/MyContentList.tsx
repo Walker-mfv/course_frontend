@@ -1,6 +1,6 @@
 import { Text, ListItem, HStack, ListIcon, List, ListProps, useColorModeValue } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import AppIcon from '../../../utils/constants/app-icon.constant'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 
 export interface MyContentListProps extends ListProps {
   data: string[]

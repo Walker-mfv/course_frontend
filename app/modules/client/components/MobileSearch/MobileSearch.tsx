@@ -12,7 +12,7 @@ import {
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import PathHelper from '../../../../utils/helpers/path.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
 import { useMobileSearch } from '../../providers/mobile-search-provider'
 
 interface FormData {

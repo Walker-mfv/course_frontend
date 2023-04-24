@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useCourseDetailQuery } from '../../../queries/course-detail-query.hook'
-import { useCourseReviews } from '../../../queries/course-reviews-query.hook'
+import { useCourseDetailQuery } from '@client/queries/course-detail-query.hook'
+import { useCourseReviews } from '@client/queries/course-reviews-query.hook'
 import Reviews from './Reviews'
 
 function CourseDetailReviews() {

@@ -1,11 +1,10 @@
-import { TDragUnit } from '../../modules/course-form/hooks/unit-sortable.hook'
-import ICourse, { ICourseSection, ICourseUnit } from '../../modules/shared/interfaces/models/course.interface'
-import IFile from '../../modules/shared/interfaces/models/file.interface'
-import ILecture from '../../modules/shared/interfaces/models/lecture.interface'
-import { ISwapByIds } from '../../modules/shared/interfaces/swap.inteface'
-import { IUnitSwapByIds } from '../../modules/shared/interfaces/unit-swap.interface'
-import { CONTROLLER } from '../../utils/constants/app.constant'
-import { axiosApiInstance } from './../../utils/axios-utils'
+import { TDragUnit } from 'app/modules/course-form/hooks/unit-sortable.hook'
+import ICourse, { ICourseSection, ICourseUnit } from 'app/modules/shared/interfaces/models/course.interface'
+import IFile from 'app/modules/shared/interfaces/models/file.interface'
+import { ISwapByIds } from 'app/modules/shared/interfaces/swap.inteface'
+import { IUnitSwapByIds } from 'app/modules/shared/interfaces/unit-swap.interface'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
+import { axiosApiInstance } from 'app/utils/axios-utils'
 
 const prefix = `${CONTROLLER.course}/curriculum`
 

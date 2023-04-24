@@ -13,9 +13,9 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React, { ChangeEventHandler, ReactNode } from 'react'
-import { useFilter } from '../../../../shared/hooks/filter.hook'
-import { useSubtitleColor } from '../../../../shared/hooks/style.hook'
-import { useClientUrlParams } from '../../../hooks/client-url-params.hook'
+import { useFilter } from '@shared/hooks/filter.hook'
+import { useSubtitleColor } from '@shared/hooks/style.hook'
+import { useClientUrlParams } from '@client/hooks/client-url-params.hook'
 
 const CheckboxFilterItem = (props: ClientFilterSelectItem & { field: string }) => {
   const query = useClientUrlParams()

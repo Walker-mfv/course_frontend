@@ -1,8 +1,8 @@
 import { Text, Box, Heading, HStack, Icon, Stack, StackDivider, Skeleton } from '@chakra-ui/react'
 import React, { ReactNode, useCallback } from 'react'
 import { IconType } from 'react-icons'
-import Card from '../../../../shared/components/Card'
-import { useBorderColor, useMutedColor, useSubtitleColor } from '../../../../shared/hooks/style.hook'
+import Card from 'app/modules/shared/components/Card'
+import { useBorderColor, useMutedColor, useSubtitleColor } from 'app/modules/shared/hooks/style.hook'
 
 type TItem = {
   icon: IconType

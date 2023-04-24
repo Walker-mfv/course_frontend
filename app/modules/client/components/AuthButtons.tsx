@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react'
 import React from 'react'
-import PathHelper from '../../../utils/helpers/path.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
 import { useAuth } from '../../auth/providers/auth.provider'
 import NextLink from '../../shared/components/NextLink'
 import { useSidebar } from '../../shared/providers/sidebar.provider'

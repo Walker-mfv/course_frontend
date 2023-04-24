@@ -3,9 +3,9 @@ import moment from 'moment'
 import React from 'react'
 import NumberFormat from 'react-number-format'
 import CourseImage from 'app/modules/shared/components/CourseImage'
-import Rating from '../../../components/Rating'
-import { useShowPreviewCourse } from '../../../hooks/show-preview-course.hook'
-import { useCourseDetailQuery } from '../../../queries/course-detail-query.hook'
+import Rating from '@client/components/Rating'
+import { useShowPreviewCourse } from '@client/hooks/show-preview-course.hook'
+import { useCourseDetailQuery } from '@client/queries/course-detail-query.hook'
 import CourseCheckout from './CourseCheckout'
 
 const Meta = () => {

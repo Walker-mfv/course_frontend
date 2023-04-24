@@ -12,11 +12,11 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import TypeHelper from '../../../../../utils/helpers/type.helper'
-import VideoTime from '../../../../shared/components/VideoTime'
-import { useLectureParams } from '../../../providers/lecture-params.provider'
-import { useUnitParams } from '../../../providers/unit-params.provider'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import TypeHelper from 'app/utils/helpers/type.helper'
+import VideoTime from '@shared/components/VideoTime'
+import { useLectureParams } from 'app/modules/course-form/providers/lecture-params.provider'
+import { useUnitParams } from 'app/modules/course-form/providers/unit-params.provider'
 
 export default function LectureVideo() {
   const {

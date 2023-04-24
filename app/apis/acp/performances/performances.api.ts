@@ -1,8 +1,8 @@
-import IActiveCourse from '../../../modules/admin/interfaces/active-course.interface'
-import IClientUrlParams from '../../../modules/admin/interfaces/client-url-params.interface'
-import IInstructorWithStat from '../../../modules/admin/interfaces/instructor-with-stat.interface'
-import { axiosApiInstance } from '../../../utils/axios-utils'
-import UrlHelper from '../../../utils/helpers/url.heper'
+import IActiveCourse from 'app/modules/admin/interfaces/active-course.interface'
+import IClientUrlParams from 'app/modules/admin/interfaces/client-url-params.interface'
+import IInstructorWithStat from 'app/modules/admin/interfaces/instructor-with-stat.interface'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import UrlHelper from 'app/utils/helpers/url.heper'
 
 const prefix = `performances`
 

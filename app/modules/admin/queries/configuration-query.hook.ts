@@ -1,8 +1,6 @@
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import { fetchSelectData, fetchSelectDataWithClientQuery } from '../../../apis/acp/admin.api'
-import { fetchConfiguration, fetchPriceTiers, updateConfiguration } from '../../../apis/configuration.api'
+import { fetchConfiguration, fetchPriceTiers, updateConfiguration } from 'app/apis/configuration.api'
 import IConfiguration from '../../shared/interfaces/models/configuration.interface'
-import { ISelectItem } from '../../shared/interfaces/select-data.interface'
 
 const RQK_CONFIGURATION = 'configuration'
 export function useConfigurationQuery(options?: UseQueryOptions<IConfiguration>) {

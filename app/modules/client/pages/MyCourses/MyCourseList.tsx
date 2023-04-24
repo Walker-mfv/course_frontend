@@ -1,7 +1,7 @@
 import { HStack } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import MyCircularProgress from '../../../shared/components/MyCircularProgress'
-import IModel from '../../../shared/interfaces/models/model.interface'
+import MyCircularProgress from '@shared/components/MyCircularProgress'
+import IModel from '@shared/interfaces/models/model.interface'
 import InfiniteHorizontalList from '../../components/InfiniteHorizontalList'
 import NoCoursesMessage from './NoCoursesMessage'
 

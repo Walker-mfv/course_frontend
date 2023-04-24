@@ -10,8 +10,8 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React from 'react'
-import { FRONTEND_DOMAIN } from '../../../../utils/constants/app.constant'
-import PathHelper from '../../../../utils/helpers/path.helper'
+import { FRONTEND_DOMAIN } from 'app/utils/constants/app.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
 import { useAppDialog } from '../../providers/app-dialog.provider'
 
 export function ViewInstructorDialog() {

@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchSelectData, fetchSelectDataWithClientQuery } from '../../../apis/acp/admin.api'
+import { fetchSelectData } from 'app/apis/acp/admin.api'
 import { ISelectItem } from '../../shared/interfaces/select-data.interface'
 
 const RQK_ROLE_SELECT_DATA = 'role-select-data'

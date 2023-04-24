@@ -11,12 +11,12 @@ import {
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
-import CookieHelper from '../../../../utils/helpers/cookie.helper'
-import NotifyHelper from '../../../../utils/helpers/notify.helper'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import { useAuth } from '../../../auth/providers/auth.provider'
-import { useSwitchToInstructor } from '../../../auth/queries/auth-user-query.hook'
-import { useClientToast } from '../../../shared/hooks/client-toast.hook'
+import CookieHelper from 'app/utils/helpers/cookie.helper'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
+import { useAuth } from '@auth/providers/auth.provider'
+import { useSwitchToInstructor } from '@auth/queries/auth-user-query.hook'
+import { useClientToast } from '@shared/hooks/client-toast.hook'
 
 export default function TeachingButton(props: ButtonProps) {
   const toast = useClientToast()

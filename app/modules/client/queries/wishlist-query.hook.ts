@@ -7,7 +7,7 @@ import {
   countWishlist,
   fetchWishlist,
   fetchWishlistCourseIds,
-} from './../../../apis/user/user-my-courses.api'
+} from 'app/apis/user/user-my-courses.api'
 
 export const RQK_WISHLIST = 'wishlist'
 

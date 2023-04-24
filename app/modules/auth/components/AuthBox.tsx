@@ -1,6 +1,6 @@
 import { Container, Heading, Stack, StackDivider, Text, Image, useColorModeValue } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import AppImg from '../../../utils/constants/app-img.constant'
+import AppImg from 'app/utils/constants/app-img.constant'
 import { useBorderColor } from '../../shared/hooks/style.hook'
 
 export interface AuthBoxProps {

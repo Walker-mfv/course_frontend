@@ -1,10 +1,10 @@
-import { TOverviewTotal } from '../../../modules/instructor/types/overview-total.type'
-import { TTotalRange } from '../../../modules/instructor/types/total-range.type'
-import { IRatingStat } from '../../../modules/shared/interfaces/rating-stat.interface'
-import { IStat } from '../../../modules/shared/interfaces/stat.interface'
-import { IDateRange } from '../../../modules/stats-shared/providers/chart-provider'
-import { axiosApiInstance } from '../../../utils/axios-utils'
-import UrlHelper from '../../../utils/helpers/url.heper'
+import { TOverviewTotal } from 'app/modules/instructor/types/overview-total.type'
+import { TTotalRange } from 'app/modules/instructor/types/total-range.type'
+import { IRatingStat } from 'app/modules/shared/interfaces/rating-stat.interface'
+import { IStat } from 'app/modules/shared/interfaces/stat.interface'
+import { IDateRange } from 'app/modules/stats-shared/providers/chart-provider'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import UrlHelper from 'app/utils/helpers/url.heper'
 
 const prefix = `performances/overview`
 

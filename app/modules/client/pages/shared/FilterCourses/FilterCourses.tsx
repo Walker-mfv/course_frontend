@@ -1,6 +1,6 @@
 import { HStack, Box, Stack } from '@chakra-ui/react'
 import React from 'react'
-import { useClientParams } from '../../../providers/client-params.provider'
+import { useClientParams } from '@client/providers/client-params.provider'
 import FilteredCourseList from '../../SearchPage/FilteredCourseList/FilteredCourseList'
 import FilterPanelSidebar from '../../SearchPage/FilterPanelSidebar/FilterPanelSidebar'
 import FilterPanelHeading from './FilterPanelHeading'

@@ -2,25 +2,25 @@ import { Button, ButtonGroup, GridItem, HStack, SimpleGrid, VStack } from '@chak
 import { yupResolver } from '@hookform/resolvers/yup'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { fetchById } from '../../../../../apis/acp/admin.api'
-import FieldLabel from '../../../../../utils/constants/field-label.constant'
-import { AVATAR_DIR } from '../../../../../utils/constants/firebase.constant'
-import lan from '../../../../../utils/constants/lan.constant'
-import { USER_STATUS_SELECT_DATA } from '../../../../../utils/data/user.data'
-import Helper from '../../../../../utils/helpers/helper.helper'
-import { userVldSchema } from '../../../../../validations/user.validation'
-import EditableAvatar from '../../../../shared/components/EditableAvatar'
-import MyCircularProgress from '../../../../shared/components/MyCircularProgress'
-import MyInput from '../../../../shared/components/form-set/MyInput'
-import MyProgressBar from '../../../../shared/components/MyProgress'
-import MySelect from '../../../../shared/components/form-set/MySelect'
-import { useCrudActions } from '../../../../shared/hooks/data/crud-actions.hook'
-import { useUploadImage } from '../../../../shared/hooks/upload-image.hook'
-import IRole from '../../../../shared/interfaces/models/role.interface'
-import { IProfile, IUser } from '../../../../shared/interfaces/models/user.interface'
-import { useAppDialog } from '../../../providers/app-dialog.provider'
-import { usePageParams } from '../../../providers/page-params.provider'
-import { useRoleSelectDataQuery } from '../../../queries/role-select-data-query.hook'
+import { fetchById } from 'app/apis/acp/admin.api'
+import FieldLabel from 'app/utils/constants/field-label.constant'
+import { AVATAR_DIR } from 'app/utils/constants/firebase.constant'
+import lan from 'app/utils/constants/lan.constant'
+import { USER_STATUS_SELECT_DATA } from 'app/utils/data/user.data'
+import Helper from 'app/utils/helpers/helper.helper'
+import { userVldSchema } from 'app/validations/user.validation'
+import EditableAvatar from '@shared/components/EditableAvatar'
+import MyCircularProgress from '@shared/components/MyCircularProgress'
+import MyInput from '@shared/components/form-set/MyInput'
+import MyProgressBar from '@shared/components/MyProgress'
+import MySelect from '@shared/components/form-set/MySelect'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
+import { useUploadImage } from '@shared/hooks/upload-image.hook'
+import IRole from '@shared/interfaces/models/role.interface'
+import { IProfile, IUser } from '@shared/interfaces/models/user.interface'
+import { useAppDialog } from '@admin/providers/app-dialog.provider'
+import { usePageParams } from '@admin/providers/page-params.provider'
+import { useRoleSelectDataQuery } from '@admin/queries/role-select-data-query.hook'
 
 export interface UserDetailFormProps {
   userId?: string
@@ -104,7 +104,7 @@ export default function UserDetailForm({ userId, onUserCreated }: UserDetailForm
         email: values.email,
         password: values.password ? Helper.md5(values.password) : undefined,
         role: values.role as any,
-        status: values.status,
+        status: values.status as any,
       }
       if (formType == 'add') {
         await onCreate(data)

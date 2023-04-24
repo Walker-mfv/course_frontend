@@ -1,12 +1,11 @@
 import { Button, HStack, Text, useQuery } from '@chakra-ui/react'
 import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
-import { selectMultiChangeIds, selectSelectedQty } from '../../../store/admin/multi-change.slice'
-import lan from '../../../utils/constants/lan.constant'
-import Helper from '../../../utils/helpers/helper.helper'
-import { useCrudActions } from '../../shared/hooks/data/crud-actions.hook'
-import IActionItem from '../../shared/interfaces/action-item.inteface'
-import { usePageParams } from '../providers/page-params.provider'
+import { selectMultiChangeIds, selectSelectedQty } from 'app/store/admin/multi-change.slice'
+import lan from 'app/utils/constants/lan.constant'
+import Helper from 'app/utils/helpers/helper.helper'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
+import IActionItem from '@shared/interfaces/action-item.inteface'
 
 export interface MultiChangeActions {
   actions?: IActionItem[]

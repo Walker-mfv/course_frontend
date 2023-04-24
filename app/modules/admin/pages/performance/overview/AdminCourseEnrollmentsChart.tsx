@@ -1,9 +1,9 @@
 import { Skeleton } from '@chakra-ui/react'
 import React from 'react'
-import CourseEnrollmentsChart from '../../../../stats-shared/components/Charts/CourseEnrollmentsChart'
-import { useMyChart } from '../../../../stats-shared/providers/chart-provider'
-import { useCourseChartParams } from '../../../../stats-shared/providers/course-chart-params.provider'
-import { useAdminCourseEnrollmentStatsQuery } from '../../../queries/admin-course-enrollments-stats-query'
+import CourseEnrollmentsChart from 'app/modules/stats-shared/components/Charts/CourseEnrollmentsChart'
+import { useMyChart } from 'app/modules/stats-shared/providers/chart-provider'
+import { useCourseChartParams } from 'app/modules/stats-shared/providers/course-chart-params.provider'
+import { useAdminCourseEnrollmentStatsQuery } from '@admin/queries/admin-course-enrollments-stats-query'
 
 const Main = (props: AdminCourseEnrollmentChartProps) => {
   const {

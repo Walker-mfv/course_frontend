@@ -1,8 +1,8 @@
 import { Button, Icon, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
 import { FaMapMarkerAlt } from 'react-icons/fa'
-import NextLink from '../../../shared/components/NextLink'
-import { IActivityLog } from '../../../shared/interfaces/models/activity-log.interface'
+import NextLink from '@shared/components/NextLink'
+import { IActivityLog } from '@shared/interfaces/models/activity-log.interface'
 
 export interface GeolocationInfoProps {
   activityLog: IActivityLog

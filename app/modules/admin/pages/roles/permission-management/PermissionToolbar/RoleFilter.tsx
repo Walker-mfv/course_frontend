@@ -1,11 +1,11 @@
 import { Select } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React, { ChangeEventHandler, useCallback, useEffect } from 'react'
-import { useUrlHelper } from '../../../../../shared/hooks/url-helper.hook'
-import { ISelectItem } from '../../../../../shared/interfaces/select-data.interface'
-import { usePermissionManagementParams } from '../../../../hooks/permission-management-url-params.hook'
-import { usePermissionManagement } from '../../../../providers/permission-management.provider'
-import { useRoleSelectDataQuery } from '../../../../queries/role-select-data-query.hook'
+import { useUrlHelper } from '@shared/hooks/url-helper.hook'
+import { ISelectItem } from '@shared/interfaces/select-data.interface'
+import { usePermissionManagementParams } from '@admin/hooks/permission-management-url-params.hook'
+import { usePermissionManagement } from '@admin/providers/permission-management.provider'
+import { useRoleSelectDataQuery } from '@admin/queries/role-select-data-query.hook'
 
 export const ROLE_FILTER_KEY = 'role._id_filter'
 export default function RoleFilter() {

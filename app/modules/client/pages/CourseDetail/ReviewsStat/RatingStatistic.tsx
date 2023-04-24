@@ -1,8 +1,8 @@
 import { Text, Progress, Stack, HStack, Box, VStack, Heading } from '@chakra-ui/react'
 import React from 'react'
-import RatingStar from '../../../components/RatingStar'
-import ICountResult from '../../../interfaces/count-result.interface'
-import { useCourseDetailMeta } from '../../../queries/course-detail-query.hook'
+import RatingStar from '@client/components/RatingStar'
+import ICountResult from '@client/interfaces/count-result.interface'
+import { useCourseDetailMeta } from '@client/queries/course-detail-query.hook'
 
 const ratingCountResultData: ICountResult = {
   field: 'ratingCount',

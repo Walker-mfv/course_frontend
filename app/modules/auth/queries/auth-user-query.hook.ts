@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import { fetchAuthUser } from '../../../apis/auth.api'
+import { fetchAuthUser } from 'app/apis/auth.api'
 import { IUser } from '../../shared/interfaces/models/user.interface'
-import { apiSwitchToInstructor } from './../../../apis/user/user.api'
+import { apiSwitchToInstructor } from 'app/apis/user/user.api'
 
 export const RQK_AUTH_USER = 'auth-user'
 export const useAuthUser = (options?: UseQueryOptions<IUser>) => {

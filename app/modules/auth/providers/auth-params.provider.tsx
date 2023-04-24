@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react'
-import CookieHelper from '../../../utils/helpers/cookie.helper'
+import CookieHelper from 'app/utils/helpers/cookie.helper'
 
 interface IAuthParamsProvider {
   state: {

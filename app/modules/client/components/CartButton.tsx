@@ -1,9 +1,9 @@
 import { ButtonProps } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectTotalCourse } from '../../../store/course/cart.slice'
-import AppIcon from '../../../utils/constants/app-icon.constant'
-import PathHelper from '../../../utils/helpers/path.helper'
+import { selectTotalCourse } from 'app/store/course/cart.slice'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
 import NextLink from '../../shared/components/NextLink'
 import IconButtonWithNumber from './IconButtonWithNumber'
 

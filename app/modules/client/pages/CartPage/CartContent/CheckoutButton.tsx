@@ -1,13 +1,13 @@
 import { Button, Icon } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React from 'react'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import NotifyHelper from '../../../../../utils/helpers/notify.helper'
-import PathHelper from '../../../../../utils/helpers/path.helper'
-import { useAuthParams } from '../../../../auth/providers/auth-params.provider'
-import { useAuth } from '../../../../auth/providers/auth.provider'
-import { useAppToast } from '../../../../shared/hooks/app-toast.hook'
-import { useCart } from '../../../providers/cart.provider'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
+import { useAuthParams } from '@auth/providers/auth-params.provider'
+import { useAuth } from '@auth/providers/auth.provider'
+import { useAppToast } from '@shared/hooks/app-toast.hook'
+import { useCart } from '@client/providers/cart.provider'
 
 export const CheckoutButton = () => {
   const router = useRouter()

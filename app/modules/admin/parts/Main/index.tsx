@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider, Flex, GridItem, Icon, IconButton, SimpleGrid, useColorModeValue, VStack } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import TopBar from '../TopBar'
-import Card from '../../../shared/components/Card'
+import Card from '@shared/components/Card'
 import BriefCard from '../../components/BriefCard'
 
 export default function Main() {

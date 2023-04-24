@@ -1,7 +1,7 @@
 import { Badge, BadgeProps } from '@chakra-ui/react'
 import React from 'react'
-import Helper from '../../../utils/helpers/helper.helper'
-import { TColorScheme } from '../../shared/types/color-scheme.type'
+import Helper from 'app/utils/helpers/helper.helper'
+import { TColorScheme } from '@shared/types/color-scheme.type'
 
 export type TStatus =
   | 'active'

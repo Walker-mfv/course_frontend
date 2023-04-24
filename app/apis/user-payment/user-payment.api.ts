@@ -1,7 +1,7 @@
-import IClientUrlParams from '../../modules/admin/interfaces/client-url-params.interface'
-import IInstructorWithPayment from '../../modules/admin/interfaces/instructor-with-payment.interface'
-import { axiosApiInstance } from '../../utils/axios-utils'
-import UrlHelper from '../../utils/helpers/url.heper'
+import IClientUrlParams from 'app/modules/admin/interfaces/client-url-params.interface'
+import IInstructorWithPayment from 'app/modules/admin/interfaces/instructor-with-payment.interface'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import UrlHelper from 'app/utils/helpers/url.heper'
 
 const prefix = 'user-payment'
 

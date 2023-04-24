@@ -1,11 +1,11 @@
 import { AspectRatio, Box, Heading, HStack, Image, Stack } from '@chakra-ui/react'
 import React from 'react'
-import PathHelper from '../../../../../utils/helpers/path.helper'
-import NextLink from '../../../../shared/components/NextLink'
-import ICourse from '../../../../shared/interfaces/models/course.interface'
-import AddToFavoriteButton from '../../../components/AddToFavoriteButton'
-import CoursePrice from '../../../components/CourseGroup/CoursePrice'
-import Rating from '../../../components/Rating'
+import PathHelper from 'app/utils/helpers/path.helper'
+import NextLink from '@shared/components/NextLink'
+import ICourse from '@shared/interfaces/models/course.interface'
+import AddToFavoriteButton from '@client/components/AddToFavoriteButton'
+import CoursePrice from '@client/components/CourseGroup/CoursePrice'
+import Rating from '@client/components/Rating'
 import MyCourseCard from '../MyCourseCard'
 
 export interface WishlistCourseExcerptProps {

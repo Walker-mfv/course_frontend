@@ -1,8 +1,7 @@
 import { Button, ButtonGroup, Stack, StackDivider } from '@chakra-ui/react'
 import React from 'react'
-import { useBorderColor } from '../../../../shared/hooks/style.hook'
-import IReview from '../../../../shared/interfaces/models/review.interface'
-import { useCourseReviews } from '../../../queries/course-reviews-query.hook'
+import { useBorderColor } from '@shared/hooks/style.hook'
+import IReview from '@shared/interfaces/models/review.interface'
 import ReviewExcerpt from './ReviewExcerpt'
 
 function ReviewList({

@@ -1,11 +1,11 @@
 import { Select } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React, { ChangeEventHandler, useCallback, useEffect } from 'react'
-import { useUrlHelper } from '../../../../../shared/hooks/url-helper.hook'
-import { ISelectItem } from '../../../../../shared/interfaces/select-data.interface'
-import { usePermissionManagementParams } from '../../../../hooks/permission-management-url-params.hook'
-import { usePermissionManagement } from '../../../../providers/permission-management.provider'
-import { useDocumentPermissionSelectDataQuery } from '../../../../queries/document-permission-query.hook'
+import { useUrlHelper } from '@shared/hooks/url-helper.hook'
+import { ISelectItem } from '@shared/interfaces/select-data.interface'
+import { usePermissionManagementParams } from '@admin/hooks/permission-management-url-params.hook'
+import { usePermissionManagement } from '@admin/providers/permission-management.provider'
+import { useDocumentPermissionSelectDataQuery } from '@admin/queries/document-permission-query.hook'
 
 export const DOCUMENT_TYPE_FILTER_KEY = 'documentType._id_filter'
 export default function DocumentTypeFilter() {

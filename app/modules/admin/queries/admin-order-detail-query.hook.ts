@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchOrderDetail } from '../../../apis/order.api'
+import { fetchOrderDetail } from 'app/apis/order.api'
 import IOrderDetail from '../interfaces/order-detail.interface'
 import { useAdminUrlParams } from '../providers/admin-query.provider'
 

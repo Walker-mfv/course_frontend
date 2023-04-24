@@ -1,4 +1,4 @@
-import { TDocumentName } from '../../../utils/constants/role.constant'
+import { TDocumentName } from 'app/utils/constants/role.constant'
 
 export interface IAdminNavItem {
   name?: TDocumentName

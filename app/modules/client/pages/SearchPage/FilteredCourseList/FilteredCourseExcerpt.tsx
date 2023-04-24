@@ -12,16 +12,16 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import React from 'react'
-import PathHelper from '../../../../../utils/helpers/path.helper'
-import Time from '../../../../admin/components/Time'
-import CourseImage from '../../../../shared/components/CourseImage'
-import NextLink from '../../../../shared/components/NextLink'
-import { useSubtitleColor } from '../../../../shared/hooks/style.hook'
-import ICourse from '../../../../shared/interfaces/models/course.interface'
-import CoursePrice from '../../../components/CourseGroup/CoursePrice'
-import BriefCourse from '../../../components/CourseGroup/BriefCourse'
-import Rating from '../../../components/Rating'
-import { useIsClientMobile } from '../../../hooks/is-client-mobile.hook'
+import PathHelper from 'app/utils/helpers/path.helper'
+import Time from '@admin/components/Time'
+import CourseImage from '@shared/components/CourseImage'
+import NextLink from '@shared/components/NextLink'
+import { useSubtitleColor } from '@shared/hooks/style.hook'
+import ICourse from '@shared/interfaces/models/course.interface'
+import CoursePrice from '@client/components/CourseGroup/CoursePrice'
+import BriefCourse from '@client/components/CourseGroup/BriefCourse'
+import Rating from '@client/components/Rating'
+import { useIsClientMobile } from '@client/hooks/is-client-mobile.hook'
 
 export const CourseExcerptMeta = ({ course }: { course: ICourse }) => {
   const subColor = useSubtitleColor()

@@ -16,13 +16,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import React, { useCallback, useEffect } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import * as yup from 'yup'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import FormMsg from '../../../../../utils/constants/form-message.constant'
-import NotifyHelper from '../../../../../utils/helpers/notify.helper'
-import SubmitButton from '../../../../shared/components/button-set/SubmitButton'
-import { useAppToast } from '../../../../shared/hooks/app-toast.hook'
-import IConfiguration from '../../../../shared/interfaces/models/configuration.interface'
-import { useConfigurationQuery, useUpdateConfiguration } from '../../../queries/configuration-query.hook'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import FormMsg from 'app/utils/constants/form-message.constant'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import SubmitButton from '@shared/components/button-set/SubmitButton'
+import { useAppToast } from '@shared/hooks/app-toast.hook'
+import IConfiguration from '@shared/interfaces/models/configuration.interface'
+import { useConfigurationQuery, useUpdateConfiguration } from '@admin/queries/configuration-query.hook'
 
 const vldSchema = yup.object({
   priceTiers: yup.array().min(3, FormMsg.minQty({ qty: 3 })),
@@ -124,7 +124,7 @@ export default function PriceTiersForm() {
               {fields.map(renderItem)}
               <ButtonGroup justifyContent={'space-between'} pl="75px">
                 <Button
-                  onClick={() => append({ value: undefined })}
+                  onClick={() => append({ value: undefined as any })}
                   colorScheme={'purple'}
                   leftIcon={<Icon as={AppIcon.add} />}
                   size="sm"

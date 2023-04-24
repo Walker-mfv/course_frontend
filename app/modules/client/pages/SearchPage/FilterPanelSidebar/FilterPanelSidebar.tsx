@@ -13,10 +13,10 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import React, { ReactNode, useMemo } from 'react'
-import { COURSE_LEVEL_SELECT_DATA } from '../../../../../utils/data/course.data'
-import Rating from '../../../components/Rating'
-import { useClientParams } from '../../../providers/client-params.provider'
-import { useCountClientFilterQuery } from '../../../queries/count-client-filter-query.hook'
+import { COURSE_LEVEL_SELECT_DATA } from 'app/utils/data/course.data'
+import Rating from '@client/components/Rating'
+import { useClientParams } from '@client/providers/client-params.provider'
+import { useCountClientFilterQuery } from '@client/queries/count-client-filter-query.hook'
 import ClearFilterButton from '../../shared/FilterCourses/ClearFilterButton'
 import FilterGroup, { FilterGroupProps } from './FilterGroup'
 

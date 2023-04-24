@@ -5,7 +5,7 @@ import {
   formCourseSetUnitExpandedIndexes,
   selectFormCourseSectionById,
   selectFormCourseUnitExpandedIndexes,
-} from '../../../store/course/form-course.slice'
+} from 'app/store/course/form-course.slice'
 import AddCourseUnit from './CourseUnit/AddUnit/AddCourseUnit'
 import CourseLecture from './CourseLecture/CourseLecture'
 import CourseUnit from './CourseUnit'

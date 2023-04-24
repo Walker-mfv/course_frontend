@@ -3,8 +3,8 @@ import { Input, InputGroup, InputLeftElement, useColorModeValue, useControllable
 import { debounce } from 'lodash'
 import { useRouter } from 'next/router'
 import React, { ChangeEventHandler, useCallback, useEffect } from 'react'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import { useBorderColor } from '../../../shared/hooks/style.hook'
+import PathHelper from 'app/utils/helpers/path.helper'
+import { useBorderColor } from '@shared/hooks/style.hook'
 import { useClientUrlParams } from '../../hooks/client-url-params.hook'
 
 export default function SearchBar() {

@@ -15,13 +15,13 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import NextLink from '../../../../shared/components/NextLink'
-import { useSubtitleColor } from '../../../../shared/hooks/style.hook'
-import { useUrlHelper } from '../../../../shared/hooks/url-helper.hook'
-import { useClientUrlParams } from '../../../hooks/client-url-params.hook'
-import { useClientParams } from '../../../providers/client-params.provider'
-import { useCountFilterCoursesQuery } from '../../../queries/filter-courses-query.hook'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import NextLink from '@shared/components/NextLink'
+import { useSubtitleColor } from '@shared/hooks/style.hook'
+import { useUrlHelper } from '@shared/hooks/url-helper.hook'
+import { useClientUrlParams } from '@client/hooks/client-url-params.hook'
+import { useClientParams } from '@client/providers/client-params.provider'
+import { useCountFilterCoursesQuery } from '@client/queries/filter-courses-query.hook'
 import ClearFilterButton from './ClearFilterButton'
 
 type SortItem = {

@@ -12,7 +12,7 @@ import {
 import React, { useMemo } from 'react'
 import DateHelper from 'app/utils/helpers/date.helper'
 import { useBorderColor } from 'app/modules/shared/hooks/style.hook'
-import { useCourseDetailSection, useCourseDetailSectionDuration } from '../../../../queries/course-detail-query.hook'
+import { useCourseDetailSection, useCourseDetailSectionDuration } from '@client/queries/course-detail-query.hook'
 import CourseUnit from './CourseUnit'
 
 export interface CourseSectionProps {

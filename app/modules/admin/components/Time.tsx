@@ -1,7 +1,7 @@
 import { HStack, Icon, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
 import { FiClock } from 'react-icons/fi'
-import DateHelper from '../../../utils/helpers/date.helper'
+import DateHelper from 'app/utils/helpers/date.helper'
 
 export type TTimeType = 'short' | 'long'
 

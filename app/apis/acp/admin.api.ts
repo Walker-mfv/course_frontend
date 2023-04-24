@@ -1,8 +1,8 @@
-import IClientUrlParams from '../../modules/admin/interfaces/client-url-params.interface'
-import { ISelectItem } from '../../modules/shared/interfaces/select-data.interface'
-import { axiosApiInstance } from '../../utils/axios-utils'
-import { TController, TOtherController } from '../../utils/data/data.type'
-import UrlHelper from '../../utils/helpers/url.heper'
+import IClientUrlParams from 'app/modules/admin/interfaces/client-url-params.interface'
+import { ISelectItem } from 'app/modules/shared/interfaces/select-data.interface'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import { TController, TOtherController } from 'app/utils/data/data.type'
+import UrlHelper from 'app/utils/helpers/url.heper'
 
 const getPrefix = (name: string) => `${name}`
 

@@ -1,8 +1,8 @@
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import { fetchCart } from '../../../apis/user/user.api'
+import { fetchCart } from 'app/apis/user/user.api'
 import { useAuth } from '../../auth/providers/auth.provider'
 import { ICart } from '../../shared/interfaces/models/user.interface'
-import { apiUpdateCart } from './../../../apis/user/user.api'
+import { apiUpdateCart } from 'app/apis/user/user.api'
 
 export const RQK_CART = 'cart'
 export const useCartQuery = (options?: UseQueryOptions<ICart>) => {

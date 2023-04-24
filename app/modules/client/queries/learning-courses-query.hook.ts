@@ -1,8 +1,8 @@
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import { apiArchiveCourses, fetchLearningCourses } from '../../../apis/user/user-my-courses.api'
-import { fetchLearningCourseIds } from './../../../apis/user/user-my-courses.api'
-import { useAuth } from './../../auth/providers/auth.provider'
-import { IUserCourse } from './../../shared/interfaces/models/user_course.interface'
+import { apiArchiveCourses, fetchLearningCourses } from 'app/apis/user/user-my-courses.api'
+import { fetchLearningCourseIds } from 'app/apis/user/user-my-courses.api'
+import { useAuth } from '@auth/providers/auth.provider'
+import { IUserCourse } from '@shared/interfaces/models/user_course.interface'
 
 export const RQK_LEARNING_COURSES = 'learning-courses'
 

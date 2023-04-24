@@ -1,8 +1,8 @@
 import { Skeleton, Stack } from '@chakra-ui/react'
 import React from 'react'
-import ClientPageHeading from '../../../components/ClientPageHeading'
-import { useClientUrlParams } from '../../../hooks/client-url-params.hook'
-import { useCountFilterCoursesQuery } from '../../../queries/filter-courses-query.hook'
+import ClientPageHeading from '@client/components/ClientPageHeading'
+import { useClientUrlParams } from '@client/hooks/client-url-params.hook'
+import { useCountFilterCoursesQuery } from '@client/queries/filter-courses-query.hook'
 
 const SearchHeading = () => {
   const { _searchValue } = useClientUrlParams()

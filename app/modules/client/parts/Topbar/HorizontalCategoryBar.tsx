@@ -1,7 +1,7 @@
 import { Box, HStack, Stack, Text, TextProps, useTheme, VStack } from '@chakra-ui/react'
 import React from 'react'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import NextLink from '../../../shared/components/NextLink'
+import PathHelper from 'app/utils/helpers/path.helper'
+import NextLink from '@shared/components/NextLink'
 import { ClientMenuProvider, ICatInfo, ISecondLevelCatInfo, useClientMenu } from '../../providers/client-menu.provider'
 import { useClientParams } from '../../providers/client-params.provider'
 

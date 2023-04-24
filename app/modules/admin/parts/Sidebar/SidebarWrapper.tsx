@@ -1,6 +1,6 @@
 import { Drawer, DrawerBody, DrawerContent, DrawerOverlay } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import { useDevice } from '../../../shared/hooks/app.hook'
+import { useDevice } from '@shared/hooks/app.hook'
 import { useAdminSidebar } from '../../providers/admin-sidebar.provider'
 import { ADMIN_SIDEBAR_EXPANDED_WIDTH } from './Sidebar'
 

@@ -2,20 +2,20 @@ import { Button, ButtonGroup, Stack } from '@chakra-ui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { fetchById } from '../../../../apis/acp/admin.api'
-import { CATEGORY_STATUS_SELECT_DATA } from '../../../../utils/data/category.data'
-import { TCategoryStatus } from '../../../../utils/data/data.type'
-import Helper from '../../../../utils/helpers/helper.helper'
-import TypeHelper from '../../../../utils/helpers/type.helper'
-import { categoryVldSchema } from '../../../../validations/category.validation'
-import { useAuth } from '../../../auth/providers/auth.provider'
-import MyInput from '../../../shared/components/form-set/MyInput'
-import MySelect from '../../../shared/components/form-set/MySelect'
-import SubmitButton from '../../../shared/components/button-set/SubmitButton'
-import { useCrudActions } from '../../../shared/hooks/data/crud-actions.hook'
-import { useCatPrimarySelectData } from '../../../shared/hooks/models/category.hook'
-import { ICategory } from '../../../shared/interfaces/models/category.interface'
-import { IHistory } from '../../../shared/interfaces/models/shared.interface'
+import { fetchById } from 'app/apis/acp/admin.api'
+import { CATEGORY_STATUS_SELECT_DATA } from 'app/utils/data/category.data'
+import { TCategoryStatus } from 'app/utils/data/data.type'
+import Helper from 'app/utils/helpers/helper.helper'
+import TypeHelper from 'app/utils/helpers/type.helper'
+import { categoryVldSchema } from 'app/validations/category.validation'
+import { useAuth } from '@auth/providers/auth.provider'
+import MyInput from '@shared/components/form-set/MyInput'
+import MySelect from '@shared/components/form-set/MySelect'
+import SubmitButton from '@shared/components/button-set/SubmitButton'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
+import { useCatPrimarySelectData } from '@shared/hooks/models/category.hook'
+import { ICategory } from '@shared/interfaces/models/category.interface'
+import { IHistory } from '@shared/interfaces/models/shared.interface'
 import PageTitle from '../../components/PageTitle'
 import { useFormParams } from '../../hooks/form-params-provider'
 import { usePageParams } from '../../providers/page-params.provider'
@@ -88,7 +88,6 @@ export default function CategoryForm() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ctrlName, editingId])
 
-  //
   const onSubmit = handleSubmit(async (values) => {
     const data: Partial<ICategory> = {
       name: values.name,
@@ -119,7 +118,7 @@ export default function CategoryForm() {
     resetFormParams()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }
-  //
+
   const nameWatch = watch('name')
   useEffect(() => {
     setValue('slug', Helper.toSlug(nameWatch))
@@ -150,7 +149,6 @@ export default function CategoryForm() {
               error={errors.status}
               options={CATEGORY_STATUS_SELECT_DATA}
             />
-            {/* // */}
             <ButtonGroup justifyContent={'left'}>
               <Button type="reset" onClick={onClear}>
                 Clear

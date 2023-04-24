@@ -1,6 +1,6 @@
 import { AspectRatio, Box, HStack, Skeleton, SkeletonText, Stack, StackDivider } from '@chakra-ui/react'
 import React, { useCallback } from 'react'
-import { AuthorSkeleton, PriceSkeleton, RatingSkeleton } from '../../../components/CourseGroup/CourseGroupSkeleton'
+import { AuthorSkeleton, PriceSkeleton, RatingSkeleton } from '@client/components/CourseGroup/CourseGroupSkeleton'
 
 const ImageSkeleton = () => {
   return (

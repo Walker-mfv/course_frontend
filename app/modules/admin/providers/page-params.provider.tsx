@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
-import { TController, TModel } from '../../../utils/data/data.type'
+import { TController, TModel } from 'app/utils/data/data.type'
 
 type TPageParams = {
   ctrlName: TController

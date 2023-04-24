@@ -10,7 +10,7 @@ import {
   useCallback,
   useMemo,
 } from 'react'
-import Helper from '../../../utils/helpers/helper.helper'
+import Helper from 'app/utils/helpers/helper.helper'
 import { useUrlHelper } from '../../shared/hooks/url-helper.hook'
 import { useAdminUrlParams } from './admin-query.provider'
 

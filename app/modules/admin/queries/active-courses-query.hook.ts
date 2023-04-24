@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { countActiveCourses, fetchActiveCourses } from '../../../apis/acp/performances/performances.api'
+import { countActiveCourses, fetchActiveCourses } from 'app/apis/acp/performances/performances.api'
 import IActiveCourse from '../interfaces/active-course.interface'
 import IClientUrlParams from '../interfaces/client-url-params.interface'
 import { useAdminUrlParams } from '../providers/admin-query.provider'

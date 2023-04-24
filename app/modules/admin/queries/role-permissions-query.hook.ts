@@ -4,9 +4,9 @@ import {
   deleteRolePermission,
   fetchRolePermissions,
   updateRolePermission,
-} from '../../../apis/role-permission.api'
-import { TPermission } from './../../../utils/constants/role.constant'
-import { IRolePermission } from './../../shared/interfaces/models/role.interface'
+} from 'app/apis/role-permission.api'
+import { TPermission } from 'app/utils/constants/role.constant'
+import { IRolePermission } from '@shared/interfaces/models/role.interface'
 
 const RQK_ROLE_PERMISSIONS = 'role-permissions'
 export function useRolePermissionsQuery(

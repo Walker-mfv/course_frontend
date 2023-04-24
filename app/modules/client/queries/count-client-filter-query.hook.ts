@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { countClientFilter } from '../../../apis/course/client-course.api'
+import { countClientFilter } from 'app/apis/course/client-course.api'
 import ICountResult from '../interfaces/count-result.interface'
 import { useFilterCoursesClientQuery } from './filter-courses-query.hook'
 

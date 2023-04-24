@@ -1,4 +1,4 @@
-import { axiosApiInstance } from '../../utils/axios-utils'
+import { axiosApiInstance } from 'app/utils/axios-utils'
 
 const prefix = 'payments'
 

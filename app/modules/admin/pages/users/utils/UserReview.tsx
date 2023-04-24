@@ -1,7 +1,7 @@
 import { Stack, VStack, Heading, HStack, Progress, Button, Text } from '@chakra-ui/react'
 import React from 'react'
-import Card from '../../../../shared/components/Card'
-import Subtitle from '../../../../shared/components/Subtitle'
+import Card from '@shared/components/Card'
+import Subtitle from '@shared/components/Subtitle'
 
 export const UserReview: React.FC = () => {
   return (

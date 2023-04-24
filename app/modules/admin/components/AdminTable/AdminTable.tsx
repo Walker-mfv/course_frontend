@@ -1,11 +1,11 @@
 import { Skeleton, Table, TableContainer, VStack } from '@chakra-ui/react'
 import React from 'react'
-import { MyTableHeader } from '../../../shared/interfaces/my-table-header.interface'
+import { MyTableHeader } from '@shared/interfaces/my-table-header.interface'
 import { useAdminUrlParams } from '../../providers/admin-query.provider'
 import AdminPagination from '../AdminPagination'
 import AdminTableBody from './AdminTableBody'
-import { ITableColumn as ITableColumn } from '../../../shared/interfaces/table-column.interface'
-import { ITableRow } from '../../../shared/interfaces/table-row.interface'
+import { ITableColumn as ITableColumn } from '@shared/interfaces/table-column.interface'
+import { ITableRow } from '@shared/interfaces/table-row.interface'
 
 export interface AdminTableProps {
   columns: ITableColumn[]

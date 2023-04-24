@@ -1,8 +1,8 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { Text, Collapse, Box, Stack } from '@chakra-ui/react'
 import React from 'react'
-import ContentCard from '../../../components/ContentCard'
-import { useCourseDetailDescription } from '../../../queries/course-detail-query.hook'
+import ContentCard from '@client/components/ContentCard'
+import { useCourseDetailDescription } from '@client/queries/course-detail-query.hook'
 
 function CourseDescription() {
   const [isShow, setShow] = React.useState(false)

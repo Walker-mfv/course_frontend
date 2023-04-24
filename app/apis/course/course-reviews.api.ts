@@ -1,8 +1,8 @@
-import IClientUrlParams from '../../modules/admin/interfaces/client-url-params.interface'
-import IReview from '../../modules/shared/interfaces/models/review.interface'
-import { axiosApiInstance } from '../../utils/axios-utils'
-import { CONTROLLER } from '../../utils/constants/app.constant'
-import UrlHelper from '../../utils/helpers/url.heper'
+import IClientUrlParams from 'app/modules/admin/interfaces/client-url-params.interface'
+import IReview from 'app/modules/shared/interfaces/models/review.interface'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
+import UrlHelper from 'app/utils/helpers/url.heper'
 
 const getPrefix = (id: string) => `${CONTROLLER.course}/${id}/reviews`
 

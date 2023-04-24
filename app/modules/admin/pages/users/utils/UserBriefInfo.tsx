@@ -1,7 +1,7 @@
 import { GridItem, SimpleGrid } from '@chakra-ui/react'
 import React from 'react'
 import { FiUser } from 'react-icons/fi'
-import BriefCard, { BriefCardProps } from '../../../components/BriefCard'
+import BriefCard, { BriefCardProps } from '@admin/components/BriefCard'
 
 const briefCardsData: BriefCardProps[] = [
   {

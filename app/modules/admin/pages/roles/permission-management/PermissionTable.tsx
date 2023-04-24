@@ -20,20 +20,20 @@ import {
 import update from 'immutability-helper'
 import lodash from 'lodash'
 import React, { ChangeEventHandler, useCallback, useEffect, useMemo, useState } from 'react'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import lan from '../../../../../utils/constants/lan.constant'
-import { PERMISSION, TPermission } from '../../../../../utils/constants/role.constant'
-import NotifyHelper from '../../../../../utils/helpers/notify.helper'
-import LoadingMessageTr from '../../../../shared/components/message-set/LoadingMessageTr'
-import { useAppToast } from '../../../../shared/hooks/app-toast.hook'
-import { IRolePermission } from '../../../../shared/interfaces/models/role.interface'
-import { usePermissionManagement } from '../../../providers/permission-management.provider'
-import { useSimpleDialog } from '../../../providers/simple-dialog.provider'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import lan from 'app/utils/constants/lan.constant'
+import { PERMISSION, TPermission } from 'app/utils/constants/role.constant'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import LoadingMessageTr from '@shared/components/message-set/LoadingMessageTr'
+import { useAppToast } from '@shared/hooks/app-toast.hook'
+import { IRolePermission } from '@shared/interfaces/models/role.interface'
+import { usePermissionManagement } from '@admin/providers/permission-management.provider'
+import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
 import {
   useDeleteRolePermission,
   useRolePermissionsQuery,
   useUpdateRolePermission,
-} from '../../../queries/role-permissions-query.hook'
+} from '@admin/queries/role-permissions-query.hook'
 import { AddNewRuleButton } from './PermissionToolbar/AddNewRuleButton'
 
 const Row = ({ item: rolePermission }: { item: IRolePermission }) => {

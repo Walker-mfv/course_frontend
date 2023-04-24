@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { fetchInstructorWithPayment } from '../../../apis/user-payment/user-payment.api'
+import { fetchInstructorWithPayment } from 'app/apis/user-payment/user-payment.api'
 import IInstructorWithPayment from '../interfaces/instructor-with-payment.interface'
 import { useInstructorId } from './instructor-payments-query.hook'
 

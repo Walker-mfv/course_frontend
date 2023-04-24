@@ -2,7 +2,7 @@ import { useContentCardBg } from 'app/modules/shared/hooks/style.hook'
 import React from 'react'
 import ContentCard from 'app/modules/client/components/ContentCard'
 import MyContentList from 'app/modules/client/components/MyContentList'
-import { useCourseDetailSuitableLearners } from '../../../queries/course-detail-query.hook'
+import { useCourseDetailSuitableLearners } from '@client/queries/course-detail-query.hook'
 
 function CourseSuitableLearner() {
   const bgCard = useContentCardBg()

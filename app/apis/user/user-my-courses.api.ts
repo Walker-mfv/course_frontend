@@ -1,7 +1,7 @@
-import ICourse from '../../modules/shared/interfaces/models/course.interface'
-import { IUserCourse } from '../../modules/shared/interfaces/models/user_course.interface'
-import { axiosApiInstance } from '../../utils/axios-utils'
-import { CONTROLLER } from '../../utils/constants/app.constant'
+import ICourse from 'app/modules/shared/interfaces/models/course.interface'
+import { IUserCourse } from 'app/modules/shared/interfaces/models/user_course.interface'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
 
 const prefix = `${CONTROLLER.user}/my-courses`
 

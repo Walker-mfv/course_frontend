@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchAvgCourseRating } from '../../../apis/acp/performances/performances-overview.api'
+import { fetchAvgCourseRating } from 'app/apis/acp/performances/performances-overview.api'
 import { TTotalRange } from '../../instructor/types/total-range.type'
 
 export const RQK_ADMIN_AVG_COURSE_RATING = 'admin-avg-course-rating'

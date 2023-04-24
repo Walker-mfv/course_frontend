@@ -1,10 +1,9 @@
-import { TModule } from '../../../../shared/types/module.type'
-import CourseRatingTabContent from '../../../../stats-shared/components/TabContents/CourseRatingTabContent'
-import EnrollmentTabContent from '../../../../stats-shared/components/TabContents/EnrollmentTabContent'
-import RevenueTabContent from '../../../../stats-shared/components/TabContents/RevenueTabContent'
-import { useCourseChartParams } from '../../../../stats-shared/providers/course-chart-params.provider'
-import { useAdminAvgCourseRatingQuery } from '../../../queries/admin-avg-course-rating-query.hook'
-import { useAdminOverviewTotalQuery } from '../../../queries/admin-overview-total-query.hook'
+import CourseRatingTabContent from 'app/modules/stats-shared/components/TabContents/CourseRatingTabContent'
+import EnrollmentTabContent from 'app/modules/stats-shared/components/TabContents/EnrollmentTabContent'
+import RevenueTabContent from 'app/modules/stats-shared/components/TabContents/RevenueTabContent'
+import { useCourseChartParams } from 'app/modules/stats-shared/providers/course-chart-params.provider'
+import { useAdminAvgCourseRatingQuery } from '@admin/queries/admin-avg-course-rating-query.hook'
+import { useAdminOverviewTotalQuery } from '@admin/queries/admin-overview-total-query.hook'
 
 export const AdminRevenueTabContent = () => {
   const {

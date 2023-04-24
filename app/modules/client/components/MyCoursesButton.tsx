@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from '@chakra-ui/react'
 import React from 'react'
-import PathHelper from '../../../utils/helpers/path.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
 import NextLink from '../../shared/components/NextLink'
 
 export interface MyCoursesButtonProps extends ButtonProps {}

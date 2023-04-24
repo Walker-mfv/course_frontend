@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { countInstructors, fetchInstructors } from '../../../apis/acp/performances/performances.api'
+import { countInstructors, fetchInstructors } from 'app/apis/acp/performances/performances.api'
 import IClientUrlParams from '../interfaces/client-url-params.interface'
 import IInstructorWithStat from '../interfaces/instructor-with-stat.interface'
 import { useAdminUrlParams } from '../providers/admin-query.provider'

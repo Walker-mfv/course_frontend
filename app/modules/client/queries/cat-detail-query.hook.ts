@@ -1,6 +1,6 @@
 import { ICategory } from '../../shared/interfaces/models/category.interface'
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchBySlug } from '../../../apis/acp/admin.api'
+import { fetchBySlug } from 'app/apis/acp/admin.api'
 import { useRouter } from 'next/router'
 
 export const RQK_CAT_DETAIL = 'cat-detail'

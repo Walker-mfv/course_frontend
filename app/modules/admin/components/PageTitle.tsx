@@ -1,7 +1,6 @@
 import { BoxProps, Button, ButtonProps, Heading, HStack, Icon, IconButton } from '@chakra-ui/react'
 import React from 'react'
-import { IconType } from 'react-icons'
-import { useDevice } from '../../shared/hooks/app.hook'
+import { useDevice } from '@shared/hooks/app.hook'
 
 export interface TableHeaderProps extends BoxProps {
   title: string

@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchStats } from '../../../apis/acp/performances/performances-overview.api'
+import { fetchStats } from 'app/apis/acp/performances/performances-overview.api'
 import { IStat } from '../../shared/interfaces/stat.interface'
 import { IDateRange } from '../../stats-shared/providers/chart-provider'
 

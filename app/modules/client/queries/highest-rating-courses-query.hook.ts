@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useInfiniteQuery } from 'react-query'
-import { countHighestRatingItems, fetchHighestRatingItems } from '../../../apis/course/client-course.api'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import { countHighestRatingItems, fetchHighestRatingItems } from 'app/apis/course/client-course.api'
+import ICourse from '@shared/interfaces/models/course.interface'
 
 export const RQK_HIGHEST_RATING_COURSES = 'highest-rating-courses'
 export const useHighestRatingCoursesQuery = (limit: number) => {

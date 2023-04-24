@@ -1,9 +1,8 @@
 import { Button, HStack, Icon, Stack, Text } from '@chakra-ui/react'
 import React, { useEffect, useMemo } from 'react'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import { useLectureParams } from '../../../providers/lecture-params.provider'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import { useLectureParams } from 'app/modules/course-form/providers/lecture-params.provider'
 import AddLectureResources from '../LectureResource/AddLectureResources'
-import LectureResource from '../LectureResource/LectureResource'
 import AddLectureVideo from '../AddLectureVideo'
 
 const PickContentType = () => {

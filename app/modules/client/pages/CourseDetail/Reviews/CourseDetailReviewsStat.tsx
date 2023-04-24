@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCourseDetailQuery } from '../../../queries/course-detail-query.hook'
+import { useCourseDetailQuery } from '@client/queries/course-detail-query.hook'
 import ReviewsStat from '../ReviewsStat/StudentStat'
 
 function CourseDetailReviewsStat() {

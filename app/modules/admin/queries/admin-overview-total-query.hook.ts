@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchOverviewTotal } from '../../../apis/acp/performances/performances-overview.api'
+import { fetchOverviewTotal } from 'app/apis/acp/performances/performances-overview.api'
 import { TOverviewTotal } from '../../instructor/types/overview-total.type'
 import { TTotalRange } from '../../instructor/types/total-range.type'
 

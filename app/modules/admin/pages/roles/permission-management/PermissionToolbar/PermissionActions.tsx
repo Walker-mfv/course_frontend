@@ -1,7 +1,5 @@
 import { ButtonGroup } from '@chakra-ui/react'
-import React, { useMemo } from 'react'
-import { useDocumentPermissionSelectDataQuery } from '../../../../queries/document-permission-query.hook'
-import { useRoleSelectDataQuery } from '../../../../queries/role-select-data-query.hook'
+import React from 'react'
 import { AddNewRuleButton } from './AddNewRuleButton'
 
 export const PermissionActions = () => {

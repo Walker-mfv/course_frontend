@@ -1,8 +1,8 @@
 import { HStack, Select } from '@chakra-ui/react'
 import React, { ChangeEventHandler } from 'react'
 import { InfiniteData } from 'react-query'
-import IReview from '../../../../shared/interfaces/models/review.interface'
-import ContentCard from '../../../components/ContentCard'
+import IReview from '@shared/interfaces/models/review.interface'
+import ContentCard from '@client/components/ContentCard'
 import ReviewList from './ReviewList'
 
 const RatingFilter = (props: { setFilterStar: (val?: number) => void }) => {

@@ -1,7 +1,7 @@
-import { apiArchiveCourses, apiUnArchiveCourses, fetchArchivedCourses } from './../../../apis/user/user-my-courses.api'
+import { apiUnArchiveCourses, fetchArchivedCourses } from 'app/apis/user/user-my-courses.api'
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import { useAuth } from '../../auth/providers/auth.provider'
-import { IUserCourse } from '../../shared/interfaces/models/user_course.interface'
+import { useAuth } from '@auth/providers/auth.provider'
+import { IUserCourse } from '@shared/interfaces/models/user_course.interface'
 
 export const RQK_ARCHIVED_COURSES = 'archived-courses'
 

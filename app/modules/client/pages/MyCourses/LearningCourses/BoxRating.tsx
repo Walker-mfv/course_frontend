@@ -19,22 +19,22 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useQueryClient } from 'react-query'
 import * as yup from 'yup'
-import { apiCreateUserReview } from '../../../../../apis/user/user-review.api'
-import FormMsg from '../../../../../utils/constants/form-message.constant'
-import lan from '../../../../../utils/constants/lan.constant'
-import { useSimpleDialog } from '../../../../admin/providers/simple-dialog.provider'
-import MyTextarea from '../../../../shared/components/form-set/MyTextarea'
-import SubmitButton from '../../../../shared/components/button-set/SubmitButton'
-import { useAppToast } from '../../../../shared/hooks/app-toast.hook'
-import { useClientToast } from '../../../../shared/hooks/client-toast.hook'
-import IReview from '../../../../shared/interfaces/models/review.interface'
+import { apiCreateUserReview } from 'app/apis/user/user-review.api'
+import FormMsg from 'app/utils/constants/form-message.constant'
+import lan from 'app/utils/constants/lan.constant'
+import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
+import MyTextarea from '@shared/components/form-set/MyTextarea'
+import SubmitButton from '@shared/components/button-set/SubmitButton'
+import { useAppToast } from '@shared/hooks/app-toast.hook'
+import { useClientToast } from '@shared/hooks/client-toast.hook'
+import IReview from '@shared/interfaces/models/review.interface'
 import {
   RQK_USER_REVIEW,
   useDeleteUserReview,
   useUpdateUserReview,
   useUserRatingQuery,
-} from '../../../queries/user-review-query.hook'
-import NotifyHelper from './../../../../../utils/helpers/notify.helper'
+} from '@client/queries/user-review-query.hook'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
 
 interface FormData {
   rating: number

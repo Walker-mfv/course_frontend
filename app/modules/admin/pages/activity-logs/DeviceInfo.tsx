@@ -1,6 +1,6 @@
 import { Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import { IActivityLog } from '../../../shared/interfaces/models/activity-log.interface'
+import { IActivityLog } from '@shared/interfaces/models/activity-log.interface'
 
 export interface DeviceInfoProps {
   activityLog: IActivityLog

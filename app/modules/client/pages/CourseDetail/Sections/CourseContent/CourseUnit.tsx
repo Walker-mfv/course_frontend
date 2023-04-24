@@ -9,13 +9,12 @@ import {
   Icon,
 } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import AppIcon from '../../../../../../utils/constants/app-icon.constant'
-import DateHelper from '../../../../../../utils/helpers/date.helper'
-import TypeHelper from '../../../../../../utils/helpers/type.helper'
-import IFile from '../../../../../shared/interfaces/models/file.interface'
-import ILecture from '../../../../../shared/interfaces/models/lecture.interface'
-import IQuiz from '../../../../../shared/interfaces/models/quiz.interface'
-import { useCourseDetailUnit } from '../../../../queries/course-detail-query.hook'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import DateHelper from 'app/utils/helpers/date.helper'
+import IFile from '@shared/interfaces/models/file.interface'
+import ILecture from '@shared/interfaces/models/lecture.interface'
+import IQuiz from '@shared/interfaces/models/quiz.interface'
+import { useCourseDetailUnit } from '@client/queries/course-detail-query.hook'
 
 export interface CourseUnitProps {
   sIdx: number

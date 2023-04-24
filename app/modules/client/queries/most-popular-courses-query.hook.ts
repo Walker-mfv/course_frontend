@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useInfiniteQuery } from 'react-query'
-import { countMostPopularItems, fetchMostPopularItems } from '../../../apis/course/client-course.api'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import { countMostPopularItems, fetchMostPopularItems } from 'app/apis/course/client-course.api'
+import ICourse from '@shared/interfaces/models/course.interface'
 
 export const RQK_MOST_POPULAR_COURSES = 'most-popular-courses'
 export const useMostPopularCoursesQuery = (limit: number) => {

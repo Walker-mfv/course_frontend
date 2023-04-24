@@ -1,11 +1,11 @@
 import { Avatar, Box, Button, Heading, HStack, Stack, Text } from '@chakra-ui/react'
 import moment from 'moment'
 import React, { useEffect, useMemo, useState } from 'react'
-import DateHelper from '../../../../../utils/helpers/date.helper'
-import { InstructorRespondExcerpt } from '../../../../shared/components/InstructorRespondExcerpt'
-import { useSubtitleColor } from '../../../../shared/hooks/style.hook'
-import IReview from '../../../../shared/interfaces/models/review.interface'
-import RatingStar from '../../../components/RatingStar'
+import DateHelper from 'app/utils/helpers/date.helper'
+import { InstructorRespondExcerpt } from '@shared/components/InstructorRespondExcerpt'
+import { useSubtitleColor } from '@shared/hooks/style.hook'
+import IReview from '@shared/interfaces/models/review.interface'
+import RatingStar from '@client/components/RatingStar'
 
 const briefLength = 180
 const ReviewContent = ({ review, showAllContent }: { review: IReview; showAllContent: boolean }) => {

@@ -1,5 +1,5 @@
 import { UseQueryOptions, useQuery } from 'react-query'
-import { countInstructorsWithPayment, fetchInstructorsWithPayment } from '../../../apis/user-payment/user-payment.api'
+import { countInstructorsWithPayment, fetchInstructorsWithPayment } from 'app/apis/user-payment/user-payment.api'
 import IClientUrlParams from '../interfaces/client-url-params.interface'
 import IInstructorWithPayment from '../interfaces/instructor-with-payment.interface'
 import { useAdminUrlParams } from '../providers/admin-query.provider'

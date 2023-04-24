@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
-import AppTitle from '../../../../../utils/constants/app-title.constant'
-import MyHead from '../../../../shared/components/MyHead'
-import ICourse from '../../../../shared/interfaces/models/course.interface'
-import { useWishlistQuery } from '../../../queries/wishlist-query.hook'
+import AppTitle from 'app/utils/constants/app-title.constant'
+import MyHead from '@shared/components/MyHead'
+import ICourse from '@shared/interfaces/models/course.interface'
+import { useWishlistQuery } from '@client/queries/wishlist-query.hook'
 import MyCourseList from '../MyCourseList'
 import WishlistCourseExcerpt from './WishlistCourseExcerpt'
 

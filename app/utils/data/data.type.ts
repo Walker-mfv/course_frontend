@@ -1,8 +1,11 @@
-import { TCategoryStatus } from '../../modules/shared/interfaces/models/category.interface'
-import { TCourseStatus } from '../../modules/shared/interfaces/models/course.interface'
-import { TSliderStatus } from '../../modules/shared/interfaces/models/slider.interface'
-import { TUserStatus } from '../../modules/shared/interfaces/models/user.interface'
-import { ISelectItem } from '../../modules/shared/interfaces/select-data.interface'
+import { TCategoryStatus } from '@shared/interfaces/models/category.interface'
+import { TCourseStatus } from '@shared/interfaces/models/course.interface'
+import { TSliderStatus } from '@shared/interfaces/models/slider.interface'
+import { TUserStatus } from '@shared/interfaces/models/user.interface'
+import { ISelectItem } from '@shared/interfaces/select-data.interface'
+
+export { type TCategoryStatus }
+
 export type TOtherController = 'document-permission'
 
 export type TController =
@@ -22,6 +25,7 @@ export type TController =
   | 'payments'
   | 'sliders'
   | 'activity-logs'
+
 export type TModel =
   | 'notification'
   | 'order'
@@ -40,14 +44,14 @@ export type TModel =
   | 'slider'
   | 'activity log'
 
-//
 export type TRoleStatus = 'active' | 'inactive'
+
 export type TRoleSelectItem = ISelectItem<string> & { value: TRoleStatus }
-//
+
 export type TUserSelectItem = ISelectItem<string> & { value: TUserStatus }
-//
+
 export type TSliderSelectItem = ISelectItem<string> & { value: TSliderStatus }
-//
+
 export type TCategorySelectItem = ISelectItem<string> & { value: TCategoryStatus }
-//
+
 export type TCourseSelectItem = ISelectItem<string> & { value: TCourseStatus }

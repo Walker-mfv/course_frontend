@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
-import { countClientCourses, fetchClientCourses } from '../../../apis/course/client-course.api'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import { countClientCourses, fetchClientCourses } from 'app/apis/course/client-course.api'
+import ICourse from '@shared/interfaces/models/course.interface'
 import { useClientUrlParams } from './../hooks/client-url-params.hook'
 import { useCatDetailQuery } from './cat-detail-query.hook'
 

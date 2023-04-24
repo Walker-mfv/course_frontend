@@ -14,7 +14,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@admin/*": ["app/modules/admin/*"],
+      "@auth/*": ["app/modules/auth/*"],
+      "@client/*": ["app/modules/client/*"],
+      "@shared/*": ["app/modules/shared/*"]
+    }
   },
   "exclude": ["node_modules"],
   "include": [

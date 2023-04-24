@@ -1,9 +1,9 @@
 import { Skeleton } from '@chakra-ui/react'
 import React from 'react'
-import RevenueChart from '../../../../stats-shared/components/Charts/RevenueChart'
-import { useMyChart } from '../../../../stats-shared/providers/chart-provider'
-import { useCourseChartParams } from '../../../../stats-shared/providers/course-chart-params.provider'
-import { useAdminRevenueStatsQuery } from '../../../queries/admin-revenue-stats-query.hook'
+import RevenueChart from 'app/modules/stats-shared/components/Charts/RevenueChart'
+import { useMyChart } from 'app/modules/stats-shared/providers/chart-provider'
+import { useCourseChartParams } from 'app/modules/stats-shared/providers/course-chart-params.provider'
+import { useAdminRevenueStatsQuery } from '@admin/queries/admin-revenue-stats-query.hook'
 
 const Main = (props: AdminRevenueChartProps) => {
   const {

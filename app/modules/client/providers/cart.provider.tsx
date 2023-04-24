@@ -1,21 +1,21 @@
 import lodash from 'lodash'
 import React, { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { apiCheckoutMomo } from '../../../apis/user/user.api'
+import { apiCheckoutMomo } from 'app/apis/user/user.api'
 import {
   addCourseToCart,
   removeCourseInCart,
   setCart,
   xAddCourseToCart,
   xRemoveCourseInCart,
-} from '../../../store/course/cart.slice'
-import AppMsg from '../../../utils/constants/app-messsage.constant'
-import Helper from '../../../utils/helpers/helper.helper'
-import LocalStorageHelper from '../../../utils/helpers/localStorage.helper'
-import NotifyHelper from '../../../utils/helpers/notify.helper'
-import { useAuth } from '../../auth/providers/auth.provider'
-import { useClientToast } from '../../shared/hooks/client-toast.hook'
-import ICourse from '../../shared/interfaces/models/course.interface'
+} from 'app/store/course/cart.slice'
+import AppMsg from 'app/utils/constants/app-messsage.constant'
+import Helper from 'app/utils/helpers/helper.helper'
+import LocalStorageHelper from 'app/utils/helpers/localStorage.helper'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import { useAuth } from '@auth/providers/auth.provider'
+import { useClientToast } from '@shared/hooks/client-toast.hook'
+import ICourse from '@shared/interfaces/models/course.interface'
 import { useCartQuery, useUpdateCart } from '../queries/cart-query.hook'
 
 interface ICartProvider {

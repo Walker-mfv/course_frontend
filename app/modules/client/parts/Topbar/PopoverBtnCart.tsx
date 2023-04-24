@@ -1,7 +1,7 @@
 import { Box, Button, Heading, HStack, Icon, StackDivider, VStack, Text, Stack } from '@chakra-ui/react'
 import React from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { useCardBg } from '../../../shared/hooks/style.hook'
+import { useCardBg } from '@shared/hooks/style.hook'
 import { useActiveColor } from '../../hooks/style.hook'
 import { ClientMenuProvider } from '../../providers/client-menu.provider'
 

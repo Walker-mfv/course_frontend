@@ -1,5 +1,5 @@
-import IReview from '../../modules/shared/interfaces/models/review.interface'
-import { axiosApiInstance } from '../../utils/axios-utils'
+import IReview from 'app/modules/shared/interfaces/models/review.interface'
+import { axiosApiInstance } from 'app/utils/axios-utils'
 
 const prefix = `reviews`
 

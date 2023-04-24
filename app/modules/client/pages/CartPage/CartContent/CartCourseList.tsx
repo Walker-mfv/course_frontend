@@ -1,8 +1,8 @@
 import { Stack, StackDivider } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectCoursesInCart } from '../../../../../store/course/cart.slice'
-import { useBorderColor } from '../../../../shared/hooks/style.hook'
+import { selectCoursesInCart } from 'app/store/course/cart.slice'
+import { useBorderColor } from '@shared/hooks/style.hook'
 import CartCourse from './CartCourse'
 
 export default function CartCourseList() {

@@ -1,8 +1,8 @@
 import { HStack, Stack } from '@chakra-ui/react'
 import React from 'react'
-import Pagination from '../../../../shared/components/Pagination/Pagination'
-import { useClientUrlParams } from '../../../hooks/client-url-params.hook'
-import { useCountFilterCoursesQuery } from '../../../queries/filter-courses-query.hook'
+import Pagination from '@shared/components/Pagination/Pagination'
+import { useClientUrlParams } from '@client/hooks/client-url-params.hook'
+import { useCountFilterCoursesQuery } from '@client/queries/filter-courses-query.hook'
 
 const SearchPagination = () => {
   const { data: totalItems = 0 } = useCountFilterCoursesQuery()

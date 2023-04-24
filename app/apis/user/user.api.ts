@@ -1,6 +1,6 @@
-import { ICart, IUser } from '../../modules/shared/interfaces/models/user.interface'
-import { axiosApiInstance } from '../../utils/axios-utils'
-import { CONTROLLER } from '../../utils/constants/app.constant'
+import { ICart, IUser } from 'app/modules/shared/interfaces/models/user.interface'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
 
 const prefix = `${CONTROLLER.user}`
 

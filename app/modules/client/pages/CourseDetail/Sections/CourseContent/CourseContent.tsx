@@ -1,8 +1,8 @@
 import { Accordion, Stack } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
 import { useBorderColor } from 'app/modules/shared/hooks/style.hook'
-import SectionTitle from '../../../../components/SectionTitle'
-import { useCourseDetailCurriculum } from '../../../../queries/course-detail-query.hook'
+import SectionTitle from '@client/components/SectionTitle'
+import { useCourseDetailCurriculum } from '@client/queries/course-detail-query.hook'
 import CourseSection from './CourseSection'
 
 const CourseContent = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useInfiniteQuery } from 'react-query'
-import { countLatestItems, fetchLatestCourses } from '../../../apis/course/client-course.api'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import { countLatestItems, fetchLatestCourses } from 'app/apis/course/client-course.api'
+import ICourse from '@shared/interfaces/models/course.interface'
 
 export const RQK_LATEST_COURSES = 'latest-courses'
 export const useLatestCoursesQuery = (limit: number) => {

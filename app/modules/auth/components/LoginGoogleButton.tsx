@@ -1,7 +1,7 @@
 import { Button, Icon, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../utils/constants/app-icon.constant'
-import PathHelper from '../../../utils/helpers/path.helper'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
 import NextLink from '../../shared/components/NextLink'
 
 export default function GoogleLoginButton() {

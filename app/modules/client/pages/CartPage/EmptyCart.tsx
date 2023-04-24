@@ -1,9 +1,9 @@
 import { Text, Image, Box, VStack, Button } from '@chakra-ui/react'
 import React from 'react'
-import AppImg from '../../../../utils/constants/app-img.constant'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import NextLink from '../../../shared/components/NextLink'
-import { useBorderColor } from '../../../shared/hooks/style.hook'
+import AppImg from 'app/utils/constants/app-img.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
+import NextLink from '@shared/components/NextLink'
+import { useBorderColor } from '@shared/hooks/style.hook'
 
 export default function EmptyCart() {
   const borderColor = useBorderColor()
