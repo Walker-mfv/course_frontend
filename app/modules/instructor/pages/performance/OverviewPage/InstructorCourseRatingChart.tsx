@@ -1,8 +1,8 @@
 import React from 'react'
-import CourseRatingChart from '../../../../stats-shared/components/Charts/CourseRatingChart'
-import { useCourseChartParams } from '../../../../stats-shared/providers/course-chart-params.provider'
-import { useInstructorCourseRatingStatsQuery } from '../../../queries/instructor-course-rating-stats-query.hook'
-import { useInstructorOverviewTotalQuery } from '../../../queries/instructor-overview-total-query.hook'
+import CourseRatingChart from 'app/modules/stats-shared/components/Charts/CourseRatingChart'
+import { useCourseChartParams } from 'app/modules/stats-shared/providers/course-chart-params.provider'
+import { useInstructorCourseRatingStatsQuery } from 'app/modules/instructor/queries/instructor-course-rating-stats-query.hook'
+import { useInstructorOverviewTotalQuery } from 'app/modules/instructor/queries/instructor-overview-total-query.hook'
 
 export interface RatingChartProps {}
 export function RatingChart(props: RatingChartProps) {

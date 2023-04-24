@@ -8,7 +8,7 @@ import {
 } from 'app/apis/my-notification.api'
 import QueryHelper from 'app/utils/helpers/QueryHelper'
 import INotification from '../interfaces/models/notification.interface'
-import { countMyUnreadNotifications } from './../../../apis/my-notification.api'
+import { countMyUnreadNotifications } from 'app/apis/my-notification.api'
 import { useAuth } from './../../auth/providers/auth.provider'
 
 const ROWS_PER_PAGE = 5

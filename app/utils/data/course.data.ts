@@ -1,5 +1,5 @@
-import { SearchItem } from '../../modules/admin/components/Search'
-import { ISelectItem } from '../../modules/shared/interfaces/select-data.interface'
+import { SearchItem } from 'app/modules/admin/components/Search'
+import { ISelectItem } from 'app/modules/shared/interfaces/select-data.interface'
 import FieldLabel from '../constants/field-label.constant'
 import { TCourseSelectItem } from './data.type'
 

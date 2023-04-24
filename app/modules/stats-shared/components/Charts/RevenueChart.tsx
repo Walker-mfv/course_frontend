@@ -1,7 +1,6 @@
 import { Stack, useTheme } from '@chakra-ui/react'
 import React from 'react'
-import { MyLineChart } from '../../../instructor/components/MyLineChart'
-import { useMyChart } from '../../providers/chart-provider'
+import { MyLineChart } from 'app/modules/instructor/components/MyLineChart'
 
 export interface RevenueChartProps {
   labels: any[]

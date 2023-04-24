@@ -2,11 +2,11 @@ import { Button, Icon } from '@chakra-ui/react'
 import { ExportToCsv, Options } from 'export-to-csv'
 import lodash from 'lodash'
 import React, { useCallback, useEffect, useState } from 'react'
-import AppIcon from '../../../../../../utils/constants/app-icon.constant'
-import DateHelper from '../../../../../../utils/helpers/date.helper'
-import { useAppDialog } from '../../../../../admin/providers/app-dialog.provider'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import DateHelper from 'app/utils/helpers/date.helper'
+import { useAppDialog } from '@admin/providers/app-dialog.provider'
 import { useAuth } from '@auth/providers/auth.provider'
-import { useInstructorAllPaymentsQuery } from '../../../../queries/instructor-all-payments-query.hook'
+import { useInstructorAllPaymentsQuery } from 'app/modules/instructor/queries/instructor-all-payments-query.hook'
 
 const options: Options = {
   filename: 'revenue-report',

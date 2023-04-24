@@ -15,8 +15,8 @@ import React from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import TypeHelper from 'app/utils/helpers/type.helper'
 import VideoTime from '@shared/components/VideoTime'
-import { useLectureParams } from 'app/modules/course-form/providers/lecture-params.provider'
-import { useUnitParams } from 'app/modules/course-form/providers/unit-params.provider'
+import { useLectureParams } from '@course-form/providers/lecture-params.provider'
+import { useUnitParams } from '@course-form/providers/unit-params.provider'
 
 export default function LectureVideo() {
   const {

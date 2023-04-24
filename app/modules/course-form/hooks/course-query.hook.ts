@@ -2,12 +2,7 @@ import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { fetchById } from 'app/apis/acp/admin.api'
 import { CONTROLLER } from 'app/utils/constants/app.constant'
 import ICourse from '@shared/interfaces/models/course.interface'
-import {
-  apiApproveCourse,
-  apiSubmitForReview,
-  fetchCourseBriefById,
-  TApproveStatus,
-} from './../../../apis/course/course.api'
+import { apiApproveCourse, apiSubmitForReview, fetchCourseBriefById, TApproveStatus } from 'app/apis/course/course.api'
 
 export const RQK_COURSE = 'course'
 export const useCourseQuery = (id?: string) => {

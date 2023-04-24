@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { apiUpdate } from 'app/apis/acp/admin.api'
 import { apiCompletedUnit, apiUncompletedUnit } from 'app/apis/user/user-learning.api'
-import { IUserCourse } from '../../modules/shared/interfaces/models/user_course.interface'
+import { IUserCourse } from 'app/modules/shared/interfaces/models/user_course.interface'
 import Helper from 'app/utils/helpers/helper.helper'
 import SliceHelper from 'app/utils/helpers/SliceHelper.tsx'
 import TypeHelper from 'app/utils/helpers/type.helper'
-import { RootState } from 'app/store'
+import { RootState } from '../store'
 import { TAsyncStatus } from '../types/slice-status.type'
 import { ICourseSection, ICourseUnit } from './../../modules/shared/interfaces/models/course.interface'
 import { ILearnDetail } from './../../modules/shared/interfaces/models/user_course.interface'
@@ -34,7 +34,7 @@ const initialState: LearnSlice = {
 
 export const updateCourseById = createAsyncThunk('learn/updateById', async (data: Partial<IUserCourse>, thunkApi) => {
   const state = thunkApi.getState() as RootState
-  const response = await apiUpdate('user-course', state.learnCourse.data!._id, data)
+  const response = await apiUpdate('user-course' as any, state.learnCourse.data!._id, data)
   return response
 })
 //
@@ -48,7 +48,7 @@ export const setActiveContent = createAsyncThunk(
     const state = thunkApi.getState() as RootState
     const section = state.learnCourse.data?.course.details.sections?.at(data.sIdx)
     const uId = section?.units.at(data.uIdx)
-    const response = await apiUpdate<IUserCourse>('user-course', state.learnCourse.data!._id, {
+    const response = await apiUpdate<IUserCourse>('user-course' as any, state.learnCourse.data!._id, {
       learnDetail: {
         activeContentIds: [section?._id!, uId?._id!],
       } as ILearnDetail,

@@ -13,7 +13,7 @@ import {
 import React from 'react'
 import { useBorderColor, useHoverColor } from '@shared/hooks/style.hook'
 import { IAnswerOption } from '@shared/interfaces/models/quiz.interface'
-import { useLearnQuiz } from '../../../providers/learn-quiz.provider'
+import { useLearnQuiz } from 'app/modules/learn/providers/learn-quiz.provider'
 
 const AnswerCard = ({ answer }: { answer: IAnswerOption }) => {
   const {

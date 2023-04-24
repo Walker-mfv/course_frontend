@@ -1,4 +1,4 @@
-import { TController, TModel } from './../../../utils/data/data.type'
+import { TController, TModel } from 'app/utils/data/data.type'
 export default interface IActionOptions {
   referenceType?: string
   deletionValidate?: boolean

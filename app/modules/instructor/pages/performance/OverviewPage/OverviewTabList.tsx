@@ -1,10 +1,10 @@
 import { TModule } from '@shared/types/module.type'
-import CourseRatingTabContent from '../../../../stats-shared/components/TabContents/CourseRatingTabContent'
-import EnrollmentTabContent from '../../../../stats-shared/components/TabContents/EnrollmentTabContent'
-import RevenueTabContent from '../../../../stats-shared/components/TabContents/RevenueTabContent'
-import { useCourseChartParams } from '../../../../stats-shared/providers/course-chart-params.provider'
-import { useInstructorAvgCourseRatingQuery } from '../../../queries/instructor-avg-course-rating-query.hook'
-import { useInstructorOverviewTotalQuery } from '../../../queries/instructor-overview-total-query.hook'
+import CourseRatingTabContent from 'app/modules/stats-shared/components/TabContents/CourseRatingTabContent'
+import EnrollmentTabContent from 'app/modules/stats-shared/components/TabContents/EnrollmentTabContent'
+import RevenueTabContent from 'app/modules/stats-shared/components/TabContents/RevenueTabContent'
+import { useCourseChartParams } from 'app/modules/stats-shared/providers/course-chart-params.provider'
+import { useInstructorAvgCourseRatingQuery } from 'app/modules/instructor/queries/instructor-avg-course-rating-query.hook'
+import { useInstructorOverviewTotalQuery } from 'app/modules/instructor/queries/instructor-overview-total-query.hook'
 
 export interface RevenueTabContentProps {
   module?: TModule

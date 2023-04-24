@@ -3,8 +3,8 @@ import { countPayments, fetchPayment, fetchPayments, fetchPendingPayments } from
 import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
 import { RQK_ADMIN_INSTRUCTOR_WITH_PAYMENT } from '@admin/queries/admin-instructor-query.hook'
 import IPayment from '@shared/interfaces/models/payment.interface'
-import { apiPayAllPayment, apiPayPayment } from './../../../apis/payments/payments.api'
-import { useInstructorId } from './../../admin/queries/instructor-payments-query.hook'
+import { apiPayAllPayment, apiPayPayment } from 'app/apis/payments/payments.api'
+import { useInstructorId } from '@admin/queries/instructor-payments-query.hook'
 
 export const RQK_PAYMENTS = 'payments'
 export const usePaymentsQuery = (

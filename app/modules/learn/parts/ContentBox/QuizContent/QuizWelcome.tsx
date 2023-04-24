@@ -2,7 +2,7 @@ import { Button, Heading, HStack, Stack, Text, useBreakpointValue } from '@chakr
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { nextContent } from 'app/store/course/learn-course.slice'
-import { useLearnQuiz } from '../../../providers/learn-quiz.provider'
+import { useLearnQuiz } from 'app/modules/learn/providers/learn-quiz.provider'
 
 export default function QuizWelcome({ type }: { type: 'start' | 'resume' }) {
   const dispatch = useDispatch()

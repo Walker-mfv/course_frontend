@@ -25,10 +25,13 @@ import { useAppToast } from '@shared/hooks/app-toast.hook'
 import { useSubtitleColor } from '@shared/hooks/style.hook'
 import ICourse from '@shared/interfaces/models/course.interface'
 import { TSize } from '@shared/types/size.type'
-import InstructorTableContainer from '../../../components/InstructorTableContainer'
-import { useInstructorCoursesUrlParams } from '../../../hooks/instructor-courses-url-params.hook'
-import IInstructorCourse from '../../../interfaces/instructor-course.interface'
-import { useConvertCourseToDraft, useInstructorCoursesQuery } from '../../../queries/instructor-courses-query.hook'
+import InstructorTableContainer from 'app/modules/instructor/components/InstructorTableContainer'
+import { useInstructorCoursesUrlParams } from 'app/modules/instructor/hooks/instructor-courses-url-params.hook'
+import IInstructorCourse from 'app/modules/instructor/interfaces/instructor-course.interface'
+import {
+  useConvertCourseToDraft,
+  useInstructorCoursesQuery,
+} from 'app/modules/instructor/queries/instructor-courses-query.hook'
 
 interface OverlayBoxProps extends BoxProps {}
 const OverlayBox = ({ children, ...props }: OverlayBoxProps) => {

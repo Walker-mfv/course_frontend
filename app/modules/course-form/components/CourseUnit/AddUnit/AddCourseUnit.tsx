@@ -3,10 +3,9 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import { useCurriculumFormBg } from '@shared/hooks/style.hook'
 import { TUnitType } from '@shared/interfaces/models/course.interface'
-import { IUnitAddress } from '../../../interaces/unit-address.interface'
+import { IUnitAddress } from '@course-form/interaces/unit-address.interface'
 import CourseLectureForm from '../../CourseLecture/LectureForm/CourseLectureForm'
 import CourseQuizForm from '../../CourseQuiz/QuizForm/CourseQuizForm'
-import AddCourseLecture from './AddCourseLecture'
 import AddUnitOptionBar from './AddUnitOptionBar'
 
 export interface AddCourseUnitProps extends IUnitAddress {

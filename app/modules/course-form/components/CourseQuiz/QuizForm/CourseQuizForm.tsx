@@ -18,7 +18,7 @@ import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
 import { ICourseUnit } from '@shared/interfaces/models/course.interface'
 import IQuiz from '@shared/interfaces/models/quiz.interface'
 import Editor from '@shared/parts/Editor/Editor'
-import { IUnitAddress } from '../../../interaces/unit-address.interface'
+import { IUnitAddress } from '@course-form/interaces/unit-address.interface'
 import CurriculumFormWrapper from '../../CurriculumFormWrapper'
 
 const validateSchema = yup.object({

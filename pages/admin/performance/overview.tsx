@@ -1,11 +1,11 @@
 import { Stack } from '@chakra-ui/react'
-import AdminLayout from '../../../app/modules/admin/AdminLayout'
-import PageTitle from '../../../app/modules/admin/components/PageTitle'
-import CourseOverview from '../../../app/modules/admin/pages/performance/overview/CourseOverview'
-import Card from '../../../app/modules/shared/components/Card'
-import MyHead from '../../../app/modules/shared/components/MyHead'
-import { NextPageWithLayout } from '../../../app/types/next'
-import AppTitle from '../../../app/utils/constants/app-title.constant'
+import AdminLayout from 'app/modules/admin/AdminLayout'
+import PageTitle from 'app/modules/admin/components/PageTitle'
+import CourseOverview from 'app/modules/admin/pages/performance/overview/CourseOverview'
+import Card from 'app/modules/shared/components/Card'
+import MyHead from 'app/modules/shared/components/MyHead'
+import { NextPageWithLayout } from 'app/types/next'
+import AppTitle from 'app/utils/constants/app-title.constant'
 
 const OverviewPage: NextPageWithLayout = () => {
   return (

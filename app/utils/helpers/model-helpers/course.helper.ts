@@ -1,7 +1,7 @@
-import { ICoursePromotions } from '../../../modules/shared/interfaces/models/course.interface'
-import { ICart } from '../../../modules/shared/interfaces/models/user.interface'
+import { ICoursePromotions } from 'app/modules/shared/interfaces/models/course.interface'
+import { ICart } from 'app/modules/shared/interfaces/models/user.interface'
 import DateHelper from '../date.helper'
-import { TCourseCurrency } from './../../../modules/shared/interfaces/models/course.interface'
+import { TCourseCurrency } from 'app/modules/shared/interfaces/models/course.interface'
 
 export default class CourseHelper {
   static getPrices(originPrice: number, currency: TCourseCurrency, promotions?: ICoursePromotions) {

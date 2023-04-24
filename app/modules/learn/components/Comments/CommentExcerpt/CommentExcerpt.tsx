@@ -26,8 +26,11 @@ import { useAuth } from '@auth/providers/auth.provider'
 import { useAppToast } from '@shared/hooks/app-toast.hook'
 import { useSubtitleColor } from '@shared/hooks/style.hook'
 import IComment from '@shared/interfaces/models/comment.interface'
-import { useDeleteUnitComment } from '../../../queries/unit-comments-query.hook'
-import { useDeleteUnitSubComment, useUnitSubCommentsQuery } from '../../../queries/unit-sub-comments-query.hook'
+import { useDeleteUnitComment } from 'app/modules/learn/queries/unit-comments-query.hook'
+import {
+  useDeleteUnitSubComment,
+  useUnitSubCommentsQuery,
+} from 'app/modules/learn/queries/unit-sub-comments-query.hook'
 import CommentForm from '../CommentForm'
 import CommentList from '../CommentList'
 

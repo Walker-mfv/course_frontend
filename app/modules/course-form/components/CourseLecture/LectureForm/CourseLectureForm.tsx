@@ -16,7 +16,7 @@ import MyInput from '@shared/components/form-set/MyInput'
 import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
 import { ICourseUnit } from '@shared/interfaces/models/course.interface'
 import ILecture from '@shared/interfaces/models/lecture.interface'
-import { IUnitAddress } from 'app/modules/course-form/interaces/unit-address.interface'
+import { IUnitAddress } from '@course-form/interaces/unit-address.interface'
 import CurriculumFormWrapper from '../../CurriculumFormWrapper'
 
 const validateSchema = yup.object({

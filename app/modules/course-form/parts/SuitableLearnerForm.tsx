@@ -8,7 +8,7 @@ import {
   selectFormCourseSuitableLearners,
   updateCourseById,
 } from 'app/store/course/form-course.slice'
-import { answerFieldArraySchema } from '../../../validations/answer-field-array.validation'
+import { answerFieldArraySchema } from 'app/validations/answer-field-array.validation'
 import MyCircularProgress from '@shared/components/MyCircularProgress'
 import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
 import ICourse from '@shared/interfaces/models/course.interface'

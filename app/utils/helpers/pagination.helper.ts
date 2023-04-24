@@ -1,4 +1,4 @@
-import { IPagination } from '../../modules/shared/interfaces/pagination.interface'
+import { IPagination } from 'app/modules/shared/interfaces/pagination.interface'
 
 export default class PaginationHelper implements IPagination {
   itemsPerPage: number

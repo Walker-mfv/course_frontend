@@ -1,12 +1,12 @@
 import { Box, Flex, Stack, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import React, { ChangeEventHandler, useCallback, useState } from 'react'
-import { MyChartProvider } from '../../../../stats-shared/providers/chart-provider'
+import { MyChartProvider } from 'app/modules/stats-shared/providers/chart-provider'
 import {
   CourseChartParamsProvider,
   useCourseChartParams,
-} from '../../../../stats-shared/providers/course-chart-params.provider'
-import InstructorCourseFilter from '../../../components/InstructorCourseFilter'
-import InstructorPage from '../../../components/InstructorPage'
+} from 'app/modules/stats-shared/providers/course-chart-params.provider'
+import InstructorCourseFilter from 'app/modules/instructor/components/InstructorCourseFilter'
+import InstructorPage from 'app/modules/instructor/components/InstructorPage'
 import DateRangeFilter from './DateRangeFilter'
 import InstructorCourseEnrollmentsChart from './InstructorCourseEnrollmentsChart'
 import {

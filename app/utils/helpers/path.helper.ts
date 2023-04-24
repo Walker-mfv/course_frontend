@@ -1,4 +1,4 @@
-import { TCourseFormSection } from '../../modules/course-form/types/course-form-sectiontype'
+import { TCourseFormSection } from '@course-form/types/course-form-sectiontype'
 import { API_DOMAIN } from '../constants/app.constant'
 import { ROLE_FILTER_KEY } from './../../modules/admin/pages/roles/permission-management/PermissionToolbar/RoleFilter'
 import { TInstructorSection } from './../../modules/instructor/types/instructor-section.type'

@@ -8,12 +8,12 @@ import NextLink from '@shared/components/NextLink'
 import { useBorderColor } from '@shared/hooks/style.hook'
 import ICourse from '@shared/interfaces/models/course.interface'
 import IReview from '@shared/interfaces/models/review.interface'
-import InstructorRespondForm from '../../../components/ReviewResponseForm'
+import InstructorRespondForm from 'app/modules/instructor/components/ReviewResponseForm'
 import {
   InstructorCourseReviewProvider,
   useInstructorCourseReview,
-} from '../../../providers/instructor-course-review.provider'
-import { useInstructorParams } from '../../../providers/instructor-params.provider'
+} from 'app/modules/instructor/providers/instructor-course-review.provider'
+import { useInstructorParams } from 'app/modules/instructor/providers/instructor-params.provider'
 import { InstructorCourseReviewExcerptBottomBar } from './IntructorCourseReviewExcerptBottomBar'
 
 export const ReviewCourseExcerpt = ({ item }: { item: ICourse }) => {

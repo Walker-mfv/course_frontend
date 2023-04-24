@@ -5,10 +5,10 @@ import TdAvatar from '@admin/components/TdAvatar'
 import { IUser } from '@shared/interfaces/models/user.interface'
 import { MyTableHeader } from '@shared/interfaces/my-table-header.interface'
 import { ITableColumn } from '@shared/interfaces/table-column.interface'
-import InstructorTableContainer from '../../../components/InstructorTableContainer'
-import { useStudentsUrlParams } from '../../../hooks/students.url-params.hook'
-import IStudent from '../../../interfaces/student.interface'
-import { useStudentsQuery } from '../../../queries/students-query.hook'
+import InstructorTableContainer from 'app/modules/instructor/components/InstructorTableContainer'
+import { useStudentsUrlParams } from 'app/modules/instructor/hooks/students.url-params.hook'
+import IStudent from 'app/modules/instructor/interfaces/student.interface'
+import { useStudentsQuery } from 'app/modules/instructor/queries/students-query.hook'
 
 const columns: ITableColumn[] = [
   {

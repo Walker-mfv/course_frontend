@@ -1,11 +1,11 @@
 import { Heading, Skeleton, Stack } from '@chakra-ui/react'
-import ClientLayout from '../../app/modules/client/ClientLayout'
-import ClientPageContainer from '../../app/modules/client/components/ClientPageContainer'
-import FilterCourses from '../../app/modules/client/pages/shared/FilterCourses/FilterCourses'
-import { useCatDetailQuery } from '../../app/modules/client/queries/cat-detail-query.hook'
-import MyHead from '../../app/modules/shared/components/MyHead'
-import { NextPageWithLayout } from '../../app/types/next'
-import Helper from '../../app/utils/helpers/helper.helper'
+import ClientLayout from 'app/modules/client/ClientLayout'
+import ClientPageContainer from 'app/modules/client/components/ClientPageContainer'
+import FilterCourses from 'app/modules/client/pages/shared/FilterCourses/FilterCourses'
+import { useCatDetailQuery } from 'app/modules/client/queries/cat-detail-query.hook'
+import MyHead from 'app/modules/shared/components/MyHead'
+import { NextPageWithLayout } from 'app/types/next'
+import Helper from 'app/utils/helpers/helper.helper'
 
 const CategoryPage: NextPageWithLayout = () => {
   const { data, isLoading } = useCatDetailQuery()

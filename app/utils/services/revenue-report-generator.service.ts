@@ -1,7 +1,7 @@
 import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
 import moment from 'moment'
-import { IUser } from '../../modules/shared/interfaces/models/user.interface'
+import { IUser } from 'app/modules/shared/interfaces/models/user.interface'
 import AppImg from '../constants/app-img.constant'
 import { IReportTableData, ReportGenerator } from './report-generator.service'
 export class RevenueReportGenerator extends ReportGenerator {

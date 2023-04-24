@@ -1,4 +1,4 @@
-import { SearchItem } from '../../modules/admin/components/Search'
+import { SearchItem } from 'app/modules/admin/components/Search'
 import FieldLabel from '../constants/field-label.constant'
 
 export const ORDER_SEARCH_MENU: SearchItem[] = [

@@ -1,21 +1,18 @@
 import { Stack } from '@chakra-ui/react'
 import React from 'react'
-import AppDialogProvider from '../../../app/modules/admin/providers/app-dialog.provider'
-import InstructorPage from '../../../app/modules/instructor/components/InstructorPage'
-import InstructorLayout from '../../../app/modules/instructor/InstructorLayout'
-import ExportRevenueReportButton from '../../../app/modules/instructor/pages/performance/RevenueReportPage/ExportReport/ExportRevenueReportButton'
-import RevenueReportTable from '../../../app/modules/instructor/pages/performance/RevenueReportPage/RevenueReportTable'
-import { useInstructorAllPaymentsQuery } from '../../../app/modules/instructor/queries/instructor-all-payments-query.hook'
-import { useCountInstructorPaymentsQuery } from '../../../app/modules/instructor/queries/instructor-payments-query.hook'
-import AppDialog from '../../../app/modules/shared/components/AppDialog'
-import MyHead from '../../../app/modules/shared/components/MyHead'
-import SimplePaginationButtons from '../../../app/modules/shared/components/button-set/SimplePaginationButtons'
-import {
-  SimplePaginationProvider,
-  useSimplePagination,
-} from '../../../app/modules/shared/providers/simple-pagination.provider'
-import { NextPageWithLayout } from '../../../app/types/next'
-import AppTitle from '../../../app/utils/constants/app-title.constant'
+import AppDialogProvider from 'app/modules/admin/providers/app-dialog.provider'
+import InstructorPage from 'app/modules/instructor/components/InstructorPage'
+import InstructorLayout from 'app/modules/instructor/InstructorLayout'
+import ExportRevenueReportButton from 'app/modules/instructor/pages/performance/RevenueReportPage/ExportReport/ExportRevenueReportButton'
+import RevenueReportTable from 'app/modules/instructor/pages/performance/RevenueReportPage/RevenueReportTable'
+import { useInstructorAllPaymentsQuery } from 'app/modules/instructor/queries/instructor-all-payments-query.hook'
+import { useCountInstructorPaymentsQuery } from 'app/modules/instructor/queries/instructor-payments-query.hook'
+import AppDialog from 'app/modules/shared/components/AppDialog'
+import MyHead from 'app/modules/shared/components/MyHead'
+import SimplePaginationButtons from 'app/modules/shared/components/button-set/SimplePaginationButtons'
+import { SimplePaginationProvider, useSimplePagination } from 'app/modules/shared/providers/simple-pagination.provider'
+import { NextPageWithLayout } from 'app/types/next'
+import AppTitle from 'app/utils/constants/app-title.constant'
 
 export const ROWS_PER_PAGE = 5
 const RevenueReportContent = () => {

@@ -1,8 +1,6 @@
 import { Box, Button, Icon, Stack, useColorModeValue } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
-import { IUnitAddress } from '../../../interaces/unit-address.interface'
-import CourseLectureForm from '../../CourseLecture/LectureForm/CourseLectureForm'
 import { AddCourseUnitProps } from './AddCourseUnit'
 
 export default function AddCourseUnit(props: AddCourseUnitProps) {

@@ -1,33 +1,30 @@
 import { Button, GridItem, HStack, SimpleGrid, Skeleton, Stack, Text } from '@chakra-ui/react'
 import moment from 'moment'
 import { ReactNode, useCallback, useMemo } from 'react'
-import AdminLayout from '../../../../app/modules/admin/AdminLayout'
-import PageTitle from '../../../../app/modules/admin/components/PageTitle'
-import TdAvatar from '../../../../app/modules/admin/components/TdAvatar'
-import PaymentDetail from '../../../../app/modules/admin/pages/payments/components/PaymentDetail'
-import AppDialogProvider, { useAppDialog } from '../../../../app/modules/admin/providers/app-dialog.provider'
-import { useSimpleDialog } from '../../../../app/modules/admin/providers/simple-dialog.provider'
-import { useAdminInstructorWithPayment } from '../../../../app/modules/admin/queries/admin-instructor-query.hook'
+import AdminLayout from 'app/modules/admin/AdminLayout'
+import PageTitle from 'app/modules/admin/components/PageTitle'
+import TdAvatar from 'app/modules/admin/components/TdAvatar'
+import PaymentDetail from 'app/modules/admin/pages/payments/components/PaymentDetail'
+import AppDialogProvider, { useAppDialog } from 'app/modules/admin/providers/app-dialog.provider'
+import { useSimpleDialog } from 'app/modules/admin/providers/simple-dialog.provider'
+import { useAdminInstructorWithPayment } from 'app/modules/admin/queries/admin-instructor-query.hook'
 import {
   useAcpCountInstructorPaymentsQuery,
   useAcpInstructorPaymentsQuery,
   useAcpInstructorPendingPaymentsQuery,
-} from '../../../../app/modules/admin/queries/instructor-payments-query.hook'
-import RevenueReportTable from '../../../../app/modules/instructor/pages/performance/RevenueReportPage/RevenueReportTable'
-import { usePayAllPayment, usePayPayment } from '../../../../app/modules/instructor/queries/payments-query.hook'
-import AppDialog from '../../../../app/modules/shared/components/AppDialog'
-import Card from '../../../../app/modules/shared/components/Card'
-import MyHead from '../../../../app/modules/shared/components/MyHead'
-import Price from '../../../../app/modules/shared/components/Price'
-import SimplePaginationButtons from '../../../../app/modules/shared/components/button-set/SimplePaginationButtons'
-import { useAppToast } from '../../../../app/modules/shared/hooks/app-toast.hook'
-import IPayment from '../../../../app/modules/shared/interfaces/models/payment.interface'
-import {
-  SimplePaginationProvider,
-  useSimplePagination,
-} from '../../../../app/modules/shared/providers/simple-pagination.provider'
-import { NextPageWithLayout } from '../../../../app/types/next'
-import NotifyHelper from '../../../../app/utils/helpers/notify.helper'
+} from 'app/modules/admin/queries/instructor-payments-query.hook'
+import RevenueReportTable from 'app/modules/instructor/pages/performance/RevenueReportPage/RevenueReportTable'
+import { usePayAllPayment, usePayPayment } from 'app/modules/instructor/queries/payments-query.hook'
+import AppDialog from 'app/modules/shared/components/AppDialog'
+import Card from 'app/modules/shared/components/Card'
+import MyHead from 'app/modules/shared/components/MyHead'
+import Price from 'app/modules/shared/components/Price'
+import SimplePaginationButtons from 'app/modules/shared/components/button-set/SimplePaginationButtons'
+import { useAppToast } from 'app/modules/shared/hooks/app-toast.hook'
+import IPayment from 'app/modules/shared/interfaces/models/payment.interface'
+import { SimplePaginationProvider, useSimplePagination } from 'app/modules/shared/providers/simple-pagination.provider'
+import { NextPageWithLayout } from 'app/types/next'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
 
 const ROWS_PER_PAGE = 5
 const Table = () => {

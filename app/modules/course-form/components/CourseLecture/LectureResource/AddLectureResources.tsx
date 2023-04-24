@@ -5,9 +5,9 @@ import FileUploadHelper from 'app/utils/helpers/file-upload.helper'
 import { useAuth } from '@auth/providers/auth.provider'
 import IFile from '@shared/interfaces/models/file.interface'
 import { IHistory } from '@shared/interfaces/models/shared.interface'
-import Library from 'app/modules/course-form/parts/library/Library'
-import LibraryTable from 'app/modules/course-form/parts/library/LibraryTable'
-import { useLectureParams } from 'app/modules/course-form/providers/lecture-params.provider'
+import Library from '@course-form/parts/library/Library'
+import LibraryTable from '@course-form/parts/library/LibraryTable'
+import { useLectureParams } from '@course-form/providers/lecture-params.provider'
 import UploadLectureFile, { UploadFileFormData } from '../UploadLectureFile'
 
 const UploadLectureResource = () => {

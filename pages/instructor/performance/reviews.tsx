@@ -1,18 +1,18 @@
 import { Flex, Stack } from '@chakra-ui/react'
-import InstructorFeatureNumber from '../../../app/modules/instructor/components/InstructorCount'
-import InstructorCourseFilter from '../../../app/modules/instructor/components/InstructorCourseFilter'
-import InstructorPage from '../../../app/modules/instructor/components/InstructorPage'
-import InstructorLayout from '../../../app/modules/instructor/InstructorLayout'
-import { ReviewCourseExcerpt } from '../../../app/modules/instructor/pages/performance/ReviewPage/InstructorCourseReviewExcerpt'
-import InstructorCourseReviewList from '../../../app/modules/instructor/pages/performance/ReviewPage/InstructorCourseReviewList'
-import { useInstructorBriefCourseQuery } from '../../../app/modules/instructor/queries/brief-course-query.hook'
+import InstructorFeatureNumber from 'app/modules/instructor/components/InstructorCount'
+import InstructorCourseFilter from 'app/modules/instructor/components/InstructorCourseFilter'
+import InstructorPage from 'app/modules/instructor/components/InstructorPage'
+import InstructorLayout from 'app/modules/instructor/InstructorLayout'
+import { ReviewCourseExcerpt } from 'app/modules/instructor/pages/performance/ReviewPage/InstructorCourseReviewExcerpt'
+import InstructorCourseReviewList from 'app/modules/instructor/pages/performance/ReviewPage/InstructorCourseReviewList'
+import { useInstructorBriefCourseQuery } from 'app/modules/instructor/queries/brief-course-query.hook'
 import {
   useCountInstructorCourseReviewsQuery,
   useInstructorCourseReviewsQuery,
-} from '../../../app/modules/instructor/queries/instructor-course-reviews-query'
-import MyHead from '../../../app/modules/shared/components/MyHead'
-import { NextPageWithLayout } from '../../../app/types/next'
-import AppTitle from '../../../app/utils/constants/app-title.constant'
+} from 'app/modules/instructor/queries/instructor-course-reviews-query'
+import MyHead from 'app/modules/shared/components/MyHead'
+import { NextPageWithLayout } from 'app/types/next'
+import AppTitle from 'app/utils/constants/app-title.constant'
 
 const Count = () => {
   const { isLoading, data } = useCountInstructorCourseReviewsQuery()

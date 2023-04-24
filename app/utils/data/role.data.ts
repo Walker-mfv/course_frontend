@@ -1,4 +1,4 @@
-import { SearchItem } from '../../modules/admin/components/Search'
+import { SearchItem } from 'app/modules/admin/components/Search'
 import FieldLabel from '../constants/field-label.constant'
 import { TRoleSelectItem } from './data.type'
 

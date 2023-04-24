@@ -1,8 +1,8 @@
-import { selectLearnId } from './../../../store/course/learn-course.slice'
+import { selectLearnId } from 'app/store/course/learn-course.slice'
 import { useSelector } from 'react-redux'
 import { useQuery, UseQueryOptions } from 'react-query'
 import { ILearnUnit } from './../../shared/interfaces/models/user_course.interface'
-import { fetchLearnUnit } from '../../../../app/apis/user/user-learning.api'
+import { fetchLearnUnit } from 'app/apis/user/user-learning.api'
 
 export const RQK_LEARN_UNIT = 'learn-unit'
 

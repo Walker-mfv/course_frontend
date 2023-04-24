@@ -1,9 +1,9 @@
-import { Stack, Button, Icon, HStack, Box, StackDivider, Divider, Heading } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { Stack, Button, Icon, Box, Divider, Heading } from '@chakra-ui/react'
+import React from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import IFile from '@shared/interfaces/models/file.interface'
-import { useLectureParams } from '../../../providers/lecture-params.provider'
-import { useUnitParams } from '../../../providers/unit-params.provider'
+import { useLectureParams } from '@course-form/providers/lecture-params.provider'
+import { useUnitParams } from '@course-form/providers/unit-params.provider'
 import ResourceExcerpt from './ResourceExcerpt'
 
 const ResourceList = () => {

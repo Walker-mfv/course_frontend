@@ -5,8 +5,8 @@ import { useRouter } from 'next/router'
 import React, { ChangeEventHandler, useCallback, useEffect, useState } from 'react'
 import { useUrlHelper } from '@shared/hooks/url-helper.hook'
 import { useCourseActions } from '@shared/providers/course-actions.provider'
-import { useInstructorCoursesUrlParams } from '../../../hooks/instructor-courses-url-params.hook'
-import { useInstructorParams } from '../../../providers/instructor-params.provider'
+import { useInstructorCoursesUrlParams } from 'app/modules/instructor/hooks/instructor-courses-url-params.hook'
+import { useInstructorParams } from 'app/modules/instructor/providers/instructor-params.provider'
 
 const SearchBar = () => {
   const router = useRouter()

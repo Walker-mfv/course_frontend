@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { apiCreate, apiDeleteOne, apiUpdate } from 'app/apis/acp/admin.api'
 import { fetchUnitSubComments } from 'app/apis/comment.api'
 import IComment from '@shared/interfaces/models/comment.interface'
-import { selectActiveUnit, selectLearnCourseId } from './../../../store/course/learn-course.slice'
+import { selectActiveUnit, selectLearnCourseId } from 'app/store/course/learn-course.slice'
 export const RQK_UNIT_SUB_COMMENTS = 'unit-sub-comments'
 export const useUnitSubCommentsQuery = (
   parentId?: string,

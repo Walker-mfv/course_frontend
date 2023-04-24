@@ -11,7 +11,7 @@ import {
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectLearnSection } from 'app/store/course/learn-course.slice'
-import { useBorderColor } from '../../../../../shared/hooks/style.hook'
+import { useBorderColor } from '@shared/hooks/style.hook'
 import LearnUnit from './LearnUnit/LearnUnit'
 
 const genTitle = (idx: number, title?: string) => {

@@ -19,7 +19,8 @@
       "@admin/*": ["app/modules/admin/*"],
       "@auth/*": ["app/modules/auth/*"],
       "@client/*": ["app/modules/client/*"],
-      "@shared/*": ["app/modules/shared/*"]
+      "@shared/*": ["app/modules/shared/*"],
+      "@course-form/*": ["app/modules/course-form/*"]
     }
   },
   "exclude": ["node_modules"],

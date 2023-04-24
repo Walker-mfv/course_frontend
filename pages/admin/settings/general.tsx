@@ -1,11 +1,11 @@
 import { Stack } from '@chakra-ui/react'
-import AdminLayout from '../../../app/modules/admin/AdminLayout'
-import InstructorCommissionForm from '../../../app/modules/admin/pages/settings/generals/InstructorComissionForm'
-import PriceTiersForm from '../../../app/modules/admin/pages/settings/generals/PriceTiersForm'
-import Card from '../../../app/modules/shared/components/Card'
-import MyHead from '../../../app/modules/shared/components/MyHead'
-import { NextPageWithLayout } from '../../../app/types/next'
-import AppTitle from '../../../app/utils/constants/app-title.constant'
+import AdminLayout from 'app/modules/admin/AdminLayout'
+import InstructorCommissionForm from 'app/modules/admin/pages/settings/generals/InstructorComissionForm'
+import PriceTiersForm from 'app/modules/admin/pages/settings/generals/PriceTiersForm'
+import Card from 'app/modules/shared/components/Card'
+import MyHead from 'app/modules/shared/components/MyHead'
+import { NextPageWithLayout } from 'app/types/next'
+import AppTitle from 'app/utils/constants/app-title.constant'
 
 const GeneralPage: NextPageWithLayout = () => {
   return (

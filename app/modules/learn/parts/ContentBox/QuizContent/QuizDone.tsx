@@ -1,13 +1,11 @@
 import { Text, Heading, Stack, useColorModeValue, HStack, Divider, Icon, Box } from '@chakra-ui/react'
-import update from 'immutability-helper'
 import React, { useMemo } from 'react'
 import { IconType } from 'react-icons'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import Helper from 'app/utils/helpers/helper.helper'
-import { useIColor } from '@shared/hooks/style.hook'
 import { IQuestion } from '@shared/interfaces/models/quiz.interface'
 import { TColorScheme } from '@shared/types/color-scheme.type'
-import { useLearnQuiz } from '../../../providers/learn-quiz.provider'
+import { useLearnQuiz } from 'app/modules/learn/providers/learn-quiz.provider'
 import { QuizContentContainer } from './QuizContent'
 
 const ResultList = (props: { icon?: IconType; iconColor?: TColorScheme; title: string; questions: IQuestion[] }) => {

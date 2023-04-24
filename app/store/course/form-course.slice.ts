@@ -12,13 +12,13 @@ import {
 } from 'app/apis/course/course-form.api'
 import { apiAddResource, apiAddResourceId, apiRemoveResource, apiUpdateLecture } from 'app/apis/lecture.api'
 import { apiAddQuizQuestion, apiDeleteQuizQuestion, apiUpdateQuiz, apiUpdateQuizQuestion } from 'app/apis/quiz.api'
-import ICourse, { ICourseSection, ICourseUnit } from '../../modules/shared/interfaces/models/course.interface'
-import IFile from '../../modules/shared/interfaces/models/file.interface'
-import ILecture from '../../modules/shared/interfaces/models/lecture.interface'
-import IQuiz, { IQuestion } from '../../modules/shared/interfaces/models/quiz.interface'
+import ICourse, { ICourseSection, ICourseUnit } from 'app/modules/shared/interfaces/models/course.interface'
+import IFile from 'app/modules/shared/interfaces/models/file.interface'
+import ILecture from 'app/modules/shared/interfaces/models/lecture.interface'
+import IQuiz, { IQuestion } from 'app/modules/shared/interfaces/models/quiz.interface'
 import Helper from 'app/utils/helpers/helper.helper'
 import TypeHelper from 'app/utils/helpers/type.helper'
-import { RootState } from 'app/store'
+import { RootState } from '../store'
 import {
   apiAddCourseSection,
   apiDeleteCourseSection,
@@ -334,7 +334,7 @@ export const formCourseSlice = createSlice({
         } = action.meta.arg
         const [sectionIdx, unitIdx] = getSectionNUnitIdx(sectionId, unitId)(state)
         const item = state.curriculum![sectionIdx].units[unitIdx].lecture
-        state.curriculum![sectionIdx].units[unitIdx].lecture = Object.assign(item, data)
+        state.curriculum![sectionIdx].units[unitIdx].lecture = Object.assign(item as any, data)
       })
       .addCase(updateCourseLectureVideo.fulfilled, (state, action) => {
         const { sectionId, unitId } = action.meta.arg
@@ -358,7 +358,7 @@ export const formCourseSlice = createSlice({
         } = action.meta.arg
         const [sectionIdx, unitIdx] = getSectionNUnitIdx(sectionId, unitId)(state)
         const item = state.curriculum![sectionIdx].units[unitIdx].quiz
-        state.curriculum![sectionIdx].units[unitIdx].quiz = Object.assign(item, data)
+        state.curriculum![sectionIdx].units[unitIdx].quiz = Object.assign(item as any, data)
       })
       .addCase(addQuizQuestion.fulfilled, (state, action) => {
         const {

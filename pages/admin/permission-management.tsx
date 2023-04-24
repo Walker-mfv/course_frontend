@@ -1,18 +1,18 @@
 import { Alert, AlertIcon, Stack } from '@chakra-ui/react'
-import AdminLayout from '../../app/modules/admin/AdminLayout'
-import PageTitle from '../../app/modules/admin/components/PageTitle'
-import PermissionTable from '../../app/modules/admin/pages/roles/permission-management/PermissionTable'
-import PermissionToolbar from '../../app/modules/admin/pages/roles/permission-management/PermissionToolbar/PermissionToolbar'
-import AppDialogProvider from '../../app/modules/admin/providers/app-dialog.provider'
+import AdminLayout from 'app/modules/admin/AdminLayout'
+import PageTitle from 'app/modules/admin/components/PageTitle'
+import PermissionTable from 'app/modules/admin/pages/roles/permission-management/PermissionTable'
+import PermissionToolbar from 'app/modules/admin/pages/roles/permission-management/PermissionToolbar/PermissionToolbar'
+import AppDialogProvider from 'app/modules/admin/providers/app-dialog.provider'
 import {
   PermissionManagementProvider,
   usePermissionManagement,
-} from '../../app/modules/admin/providers/permission-management.provider'
-import AppDialog from '../../app/modules/shared/components/AppDialog'
-import Card from '../../app/modules/shared/components/Card'
-import MyHead from '../../app/modules/shared/components/MyHead'
-import { NextPageWithLayout } from '../../app/types/next'
-import AppTitle from '../../app/utils/constants/app-title.constant'
+} from 'app/modules/admin/providers/permission-management.provider'
+import AppDialog from 'app/modules/shared/components/AppDialog'
+import Card from 'app/modules/shared/components/Card'
+import MyHead from 'app/modules/shared/components/MyHead'
+import { NextPageWithLayout } from 'app/types/next'
+import AppTitle from 'app/utils/constants/app-title.constant'
 
 const Content = () => {
   const {

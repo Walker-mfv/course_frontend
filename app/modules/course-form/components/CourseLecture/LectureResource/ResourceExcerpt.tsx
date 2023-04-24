@@ -11,8 +11,8 @@ import DeleteButton from '@shared/components/button-set/DeleteButton'
 import { useAppToast } from '@shared/hooks/app-toast.hook'
 import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
 import IFile from '@shared/interfaces/models/file.interface'
-import { RQK_COURSE } from '../../../hooks/course-query.hook'
-import { useLectureParams } from '../../../providers/lecture-params.provider'
+import { RQK_COURSE } from '@course-form/hooks/course-query.hook'
+import { useLectureParams } from '@course-form/providers/lecture-params.provider'
 
 export interface ResourceExcerptProps {
   file: IFile

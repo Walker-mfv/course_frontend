@@ -5,7 +5,7 @@ import { countUnitComments, fetchUnitComments } from 'app/apis/comment.api'
 import Helper from 'app/utils/helpers/helper.helper'
 import QueryHelper from 'app/utils/helpers/QueryHelper'
 import IComment from '@shared/interfaces/models/comment.interface'
-import { selectLearnCourseId } from './../../../store/course/learn-course.slice'
+import { selectLearnCourseId } from 'app/store/course/learn-course.slice'
 
 const itemsPerPage = 5
 

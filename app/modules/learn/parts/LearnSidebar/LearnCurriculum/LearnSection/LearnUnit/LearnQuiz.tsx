@@ -2,7 +2,7 @@ import { Text, HStack, Stack, Icon } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectLearnQuiz, selectLearnUnitNo } from 'app/store/course/learn-course.slice'
-import AppIcon from '../../../../../../../utils/constants/app-icon.constant'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 import { LearnUnitProps } from './LearnUnit'
 
 export interface LearnQuizProps extends LearnUnitProps {}

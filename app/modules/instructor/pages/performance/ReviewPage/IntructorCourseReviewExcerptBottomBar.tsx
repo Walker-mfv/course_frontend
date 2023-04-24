@@ -4,8 +4,8 @@ import lan from 'app/utils/constants/lan.constant'
 import NotifyHelper from 'app/utils/helpers/notify.helper'
 import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
 import { useAppToast } from '@shared/hooks/app-toast.hook'
-import { useInstructorCourseReview } from '../../../providers/instructor-course-review.provider'
-import { useDeleteReviewResponse } from '../../../queries/instructor-course-reviews-query'
+import { useInstructorCourseReview } from 'app/modules/instructor/providers/instructor-course-review.provider'
+import { useDeleteReviewResponse } from 'app/modules/instructor/queries/instructor-course-reviews-query'
 
 const Actions = () => {
   const simpleDialog = useSimpleDialog()

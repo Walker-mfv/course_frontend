@@ -2,9 +2,9 @@ import { Text, Stack, HStack, Icon, useTheme } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectLearnLecture, selectLearnUnitNo } from 'app/store/course/learn-course.slice'
-import AppIcon from '../../../../../../../utils/constants/app-icon.constant'
-import DateHelper from '../../../../../../../utils/helpers/date.helper'
-import IFile from '../../../../../../shared/interfaces/models/file.interface'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import DateHelper from 'app/utils/helpers/date.helper'
+import IFile from '@shared/interfaces/models/file.interface'
 import { LearnUnitProps } from './LearnUnit'
 
 export interface LearnLectureProps extends LearnUnitProps {}

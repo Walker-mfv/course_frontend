@@ -2,10 +2,10 @@ import { Button, HStack, Skeleton, Stack } from '@chakra-ui/react'
 import React from 'react'
 import PathHelper from 'app/utils/helpers/path.helper'
 import NextLink from '@shared/components/NextLink'
-import RevenueChart from '../../../../stats-shared/components/Charts/RevenueChart'
-import { useMyChart } from '../../../../stats-shared/providers/chart-provider'
-import { useCourseChartParams } from '../../../../stats-shared/providers/course-chart-params.provider'
-import { useInstructorRevenueStatsQuery } from '../../../queries/instructor-revenue-stats-query.hook'
+import RevenueChart from 'app/modules/stats-shared/components/Charts/RevenueChart'
+import { useMyChart } from 'app/modules/stats-shared/providers/chart-provider'
+import { useCourseChartParams } from 'app/modules/stats-shared/providers/course-chart-params.provider'
+import { useInstructorRevenueStatsQuery } from 'app/modules/instructor/queries/instructor-revenue-stats-query.hook'
 
 const Main = (props: InstructorRevenueChartProps) => {
   const {

@@ -1,4 +1,4 @@
-import { TDragUnit } from 'app/modules/course-form/hooks/unit-sortable.hook'
+import { TDragUnit } from '@course-form/hooks/unit-sortable.hook'
 import ICourse, { ICourseSection, ICourseUnit } from 'app/modules/shared/interfaces/models/course.interface'
 import IFile from 'app/modules/shared/interfaces/models/file.interface'
 import { ISwapByIds } from 'app/modules/shared/interfaces/swap.inteface'

@@ -1,5 +1,5 @@
 import { useColorModeValue, useTheme } from '@chakra-ui/react'
-import { DEFAULT_DARK_BACKGROUND } from '../../../theme/index'
+import { DEFAULT_DARK_BACKGROUND } from 'app/theme/index'
 import { TColorScheme } from 'app/modules/shared/types/color-scheme.type'
 // colors
 export const useCardBg = () => {

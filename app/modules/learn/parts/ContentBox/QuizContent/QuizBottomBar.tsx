@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { nextContent } from 'app/store/course/learn-course.slice'
 import { useBorderColor } from '@shared/hooks/style.hook'
-import { useLearnQuiz } from '../../../providers/learn-quiz.provider'
+import { useLearnQuiz } from 'app/modules/learn/providers/learn-quiz.provider'
 
 const DoingActions = () => {
   const {

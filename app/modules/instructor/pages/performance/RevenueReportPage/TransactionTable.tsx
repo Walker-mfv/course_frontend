@@ -4,7 +4,7 @@ import React, { useCallback } from 'react'
 import DateHelper from 'app/utils/helpers/date.helper'
 import TdAvatar from '@admin/components/TdAvatar'
 import Price from '@shared/components/Price'
-import IPaymentTransaction from '../../../interfaces/payment-transaction.interface'
+import IPaymentTransaction from 'app/modules/instructor/interfaces/payment-transaction.interface'
 //
 
 const Row = ({ item }: { item: IPaymentTransaction }) => {

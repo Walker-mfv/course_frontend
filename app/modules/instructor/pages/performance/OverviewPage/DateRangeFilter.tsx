@@ -1,6 +1,6 @@
 import { FormControl, FormLabel, Select } from '@chakra-ui/react'
 import React, { ChangeEventHandler, useCallback } from 'react'
-import { IDateRange, useMyChart } from '../../../../stats-shared/providers/chart-provider'
+import { IDateRange, useMyChart } from 'app/modules/stats-shared/providers/chart-provider'
 
 type TOption = { label: string; value: string }
 const optionData: TOption[] = [

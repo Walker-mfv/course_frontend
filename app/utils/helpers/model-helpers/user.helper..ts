@@ -1,7 +1,7 @@
 import TypeHelper from '../type.helper'
-import { IRolePermission } from './../../../modules/shared/interfaces/models/role.interface'
-import { IUser } from './../../../modules/shared/interfaces/models/user.interface'
-import { TDocumentName, TPermission } from './../../constants/role.constant'
+import { IRolePermission } from 'app/modules/shared/interfaces/models/role.interface'
+import { IUser } from 'app/modules/shared/interfaces/models/user.interface'
+import { TDocumentName, TPermission } from 'app/utils/constants/role.constant'
 export default class UserHelper {
   static getUserPermissions(user: IUser) {
     const role = TypeHelper.isRole(user.role) ? user.role : undefined

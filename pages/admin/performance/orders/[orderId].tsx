@@ -1,13 +1,13 @@
 import { GridItem, SimpleGrid, Stack } from '@chakra-ui/react'
-import AdminLayout from '../../../../app/modules/admin/AdminLayout'
-import { CustomerDetailsCard } from '../../../../app/modules/admin/pages/performance/orders/CustomerDetailsCard'
-import OrderCourses from '../../../../app/modules/admin/pages/performance/orders/OrderCourses'
-import { OrderDetailsCard } from '../../../../app/modules/admin/pages/performance/orders/OrderDetailsCard'
-import { useAdminOrderDetailQuery } from '../../../../app/modules/admin/queries/admin-order-detail-query.hook'
-import Card from '../../../../app/modules/shared/components/Card'
-import MyHead from '../../../../app/modules/shared/components/MyHead'
-import { NextPageWithLayout } from '../../../../app/types/next'
-import AppTitle from '../../../../app/utils/constants/app-title.constant'
+import AdminLayout from 'app/modules/admin/AdminLayout'
+import { CustomerDetailsCard } from 'app/modules/admin/pages/performance/orders/CustomerDetailsCard'
+import OrderCourses from 'app/modules/admin/pages/performance/orders/OrderCourses'
+import { OrderDetailsCard } from 'app/modules/admin/pages/performance/orders/OrderDetailsCard'
+import { useAdminOrderDetailQuery } from 'app/modules/admin/queries/admin-order-detail-query.hook'
+import Card from 'app/modules/shared/components/Card'
+import MyHead from 'app/modules/shared/components/MyHead'
+import { NextPageWithLayout } from 'app/types/next'
+import AppTitle from 'app/utils/constants/app-title.constant'
 
 const Page: NextPageWithLayout = () => {
   const { isLoading, data } = useAdminOrderDetailQuery()

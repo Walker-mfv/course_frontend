@@ -1,9 +1,9 @@
 import { ICategory } from './../../modules/shared/interfaces/models/category.interface'
-import IFile from '../../modules/shared/interfaces/models/file.interface'
-import ILecture from '../../modules/shared/interfaces/models/lecture.interface'
-import IQuiz from '../../modules/shared/interfaces/models/quiz.interface'
-import { IUser } from '../../modules/shared/interfaces/models/user.interface'
-import IRole from '../../modules/shared/interfaces/models/role.interface'
+import IFile from 'app/modules/shared/interfaces/models/file.interface'
+import ILecture from 'app/modules/shared/interfaces/models/lecture.interface'
+import IQuiz from 'app/modules/shared/interfaces/models/quiz.interface'
+import { IUser } from 'app/modules/shared/interfaces/models/user.interface'
+import IRole from 'app/modules/shared/interfaces/models/role.interface'
 
 export default class TypeHelper {
   static isFile(item: IFile | string | undefined): item is IFile {

@@ -1,6 +1,6 @@
 import { Button, useBreakpointValue } from '@chakra-ui/react'
 import React, { useCallback } from 'react'
-import { useAppDialog } from '../../../../../admin/providers/app-dialog.provider'
+import { useAppDialog } from '@admin/providers/app-dialog.provider'
 import ExportReportDialogContent from './ExportReportDialogContent'
 
 function ExportRevenueReportButton() {

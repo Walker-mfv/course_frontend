@@ -1,25 +1,25 @@
 import { Box, Flex, Stack, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import { ChangeEventHandler, useCallback, useState } from 'react'
-import InstructorCourseFilter from '../../../app/modules/instructor/components/InstructorCourseFilter'
-import InstructorPage from '../../../app/modules/instructor/components/InstructorPage'
-import InstructorLayout from '../../../app/modules/instructor/InstructorLayout'
-import DateRangeFilter from '../../../app/modules/instructor/pages/performance/OverviewPage/DateRangeFilter'
-import InstructorCourseEnrollmentsChart from '../../../app/modules/instructor/pages/performance/OverviewPage/InstructorCourseEnrollmentsChart'
-import { RatingChart } from '../../../app/modules/instructor/pages/performance/OverviewPage/InstructorCourseRatingChart'
-import InstructorRevenueChart from '../../../app/modules/instructor/pages/performance/OverviewPage/InstructorRevenueChart'
+import InstructorCourseFilter from 'app/modules/instructor/components/InstructorCourseFilter'
+import InstructorPage from 'app/modules/instructor/components/InstructorPage'
+import InstructorLayout from 'app/modules/instructor/InstructorLayout'
+import DateRangeFilter from 'app/modules/instructor/pages/performance/OverviewPage/DateRangeFilter'
+import InstructorCourseEnrollmentsChart from 'app/modules/instructor/pages/performance/OverviewPage/InstructorCourseEnrollmentsChart'
+import { RatingChart } from 'app/modules/instructor/pages/performance/OverviewPage/InstructorCourseRatingChart'
+import InstructorRevenueChart from 'app/modules/instructor/pages/performance/OverviewPage/InstructorRevenueChart'
 import {
   InstructorCoursesRatingTabContent,
   InstructorEnrollmentTabContent,
   InstructorRevenueTabContent,
-} from '../../../app/modules/instructor/pages/performance/OverviewPage/OverviewTabList'
-import MyHead from '../../../app/modules/shared/components/MyHead'
-import { MyChartProvider } from '../../../app/modules/stats-shared/providers/chart-provider'
+} from 'app/modules/instructor/pages/performance/OverviewPage/OverviewTabList'
+import MyHead from 'app/modules/shared/components/MyHead'
+import { MyChartProvider } from 'app/modules/stats-shared/providers/chart-provider'
 import {
   CourseChartParamsProvider,
   useCourseChartParams,
-} from '../../../app/modules/stats-shared/providers/course-chart-params.provider'
-import { NextPageWithLayout } from '../../../app/types/next'
-import AppTitle from '../../../app/utils/constants/app-title.constant'
+} from 'app/modules/stats-shared/providers/course-chart-params.provider'
+import { NextPageWithLayout } from 'app/types/next'
+import AppTitle from 'app/utils/constants/app-title.constant'
 
 const Main = () => {
   const [index, setIndex] = useState<number>(0)
