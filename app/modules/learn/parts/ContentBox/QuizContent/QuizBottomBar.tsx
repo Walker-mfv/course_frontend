@@ -1,8 +1,8 @@
 import { Button, HStack, Text, useColorModeValue } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
-import { nextContent } from '../../../../../store/course/learn-course.slice'
-import { useBorderColor } from '../../../../shared/hooks/style.hook'
+import { nextContent } from 'app/store/course/learn-course.slice'
+import { useBorderColor } from '@shared/hooks/style.hook'
 import { useLearnQuiz } from '../../../providers/learn-quiz.provider'
 
 const DoingActions = () => {

@@ -1,8 +1,8 @@
 import { useDisclosure } from '@chakra-ui/react'
 import { SxProps } from 'chakra-react-select'
 import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react'
-import { useIgnoreFirstEffect } from '../../shared/hooks/use-ignore-first-effect'
-import { TSize } from '../../shared/types/size.type'
+import { useIgnoreFirstEffect } from '@shared/hooks/use-ignore-first-effect'
+import { TSize } from '@shared/types/size.type'
 
 export interface IAppDialogData {
   title?: string

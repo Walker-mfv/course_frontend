@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { fetchById, apiUpdate } from '../../apis/acp/admin.api'
+import { fetchById, apiUpdate } from 'app/apis/acp/admin.api'
 import {
   apiAddCourseUnit,
   apiMoveCourseUnitToSection,
@@ -9,23 +9,23 @@ import {
   apiUpdateLectureVideo,
   TMoveCourseUnitToSection,
   TUpdateCourseSection,
-} from '../../apis/course/course-form.api'
-import { apiAddResource, apiAddResourceId, apiRemoveResource, apiUpdateLecture } from '../../apis/lecture.api'
-import { apiAddQuizQuestion, apiDeleteQuizQuestion, apiUpdateQuiz, apiUpdateQuizQuestion } from '../../apis/quiz.api'
+} from 'app/apis/course/course-form.api'
+import { apiAddResource, apiAddResourceId, apiRemoveResource, apiUpdateLecture } from 'app/apis/lecture.api'
+import { apiAddQuizQuestion, apiDeleteQuizQuestion, apiUpdateQuiz, apiUpdateQuizQuestion } from 'app/apis/quiz.api'
 import ICourse, { ICourseSection, ICourseUnit } from '../../modules/shared/interfaces/models/course.interface'
 import IFile from '../../modules/shared/interfaces/models/file.interface'
 import ILecture from '../../modules/shared/interfaces/models/lecture.interface'
 import IQuiz, { IQuestion } from '../../modules/shared/interfaces/models/quiz.interface'
-import Helper from '../../utils/helpers/helper.helper'
-import TypeHelper from '../../utils/helpers/type.helper'
-import { RootState } from '../store'
+import Helper from 'app/utils/helpers/helper.helper'
+import TypeHelper from 'app/utils/helpers/type.helper'
+import { RootState } from 'app/store'
 import {
   apiAddCourseSection,
   apiDeleteCourseSection,
   apiDeleteCourseUnit,
   TAddCourseSection,
   TDeleteCourseSection,
-} from '../../apis/course/course-form.api'
+} from 'app/apis/course/course-form.api'
 import { IUnitAddress } from './../../modules/course-form/interaces/unit-address.interface'
 import { ISwapByIds } from './../../modules/shared/interfaces/swap.inteface'
 import { IUnitSwapByIds } from './../../modules/shared/interfaces/unit-swap.interface'

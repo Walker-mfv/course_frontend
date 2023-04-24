@@ -1,6 +1,6 @@
 import { ButtonProps, Icon, IconButton } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../utils/constants/app-icon.constant'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 import { useSidebar } from '../providers/sidebar.provider'
 
 export interface SidebarTogglerProps extends ButtonProps {}

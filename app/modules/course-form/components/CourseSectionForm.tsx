@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux'
 import * as yup from 'yup'
 import { addCourseSection, selectFormCourseSection, updateCourseSection } from 'app/store/course/form-course.slice'
 import FormMsg from 'app/utils/constants/form-message.constant'
-import MyInput from '../../shared/components/form-set/MyInput'
-import { useCrudActions } from '../../shared/hooks/data/crud-actions.hook'
+import MyInput from '@shared/components/form-set/MyInput'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
 import CurriculumFormWrapper from './CurriculumFormWrapper'
 
 export const validateSchema = yup.object({

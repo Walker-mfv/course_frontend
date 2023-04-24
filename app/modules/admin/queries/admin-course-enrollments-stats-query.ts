@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions } from 'react-query'
 import { fetchStats } from 'app/apis/acp/performances/performances-overview.api'
-import { IStat } from '../../shared/interfaces/stat.interface'
+import { IStat } from '@shared/interfaces/stat.interface'
 import { IDateRange } from '../../stats-shared/providers/chart-provider'
 
 export const RQK_COURSE_ENROLLMENTS_STATS = 'course-enrollments-stats'

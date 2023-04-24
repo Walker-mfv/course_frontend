@@ -4,9 +4,9 @@ import {
   apiUpdateReviewResponse,
   countInstructorCourseReviews,
   fetchInstructorCourseReviews,
-} from '../../../apis/user/user-instructor.api'
-import QueryHelper from '../../../utils/helpers/QueryHelper'
-import IReview from '../../shared/interfaces/models/review.interface'
+} from 'app/apis/user/user-instructor.api'
+import QueryHelper from 'app/utils/helpers/QueryHelper'
+import IReview from '@shared/interfaces/models/review.interface'
 import { useInstructorParams } from '../providers/instructor-params.provider'
 import { IReviewResponse } from './../../shared/interfaces/models/review.interface'
 import { useInstructorCourseReviewsUrlParams } from './../hooks/instructor-course-reviews-url-params-hook'

@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
-import { fetchUserCourseBySlug } from '../../../apis/user/user-learning.api'
-import { useAuth } from '../../auth/providers/auth.provider'
-import { IUserCourse } from '../../shared/interfaces/models/user_course.interface'
+import { fetchUserCourseBySlug } from 'app/apis/user/user-learning.api'
+import { useAuth } from '@auth/providers/auth.provider'
+import { IUserCourse } from '@shared/interfaces/models/user_course.interface'
 import { getCourseDetailSlug } from './../../client/queries/course-detail-query.hook'
 
 export const RQK_LEARN_COURSE = 'learn-course'

@@ -1,6 +1,6 @@
 import { ISecondLevelCatInfo } from '../modules/client/providers/client-menu.provider'
 import { ISelectItem } from '../modules/shared/interfaces/select-data.interface'
-import { CONTROLLER } from '../utils/constants/app.constant'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
 import { axiosApiInstance } from './../utils/axios-utils'
 
 const prefix = `${CONTROLLER.category}`

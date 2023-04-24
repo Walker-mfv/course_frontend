@@ -1,7 +1,7 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchInstructorCourseRatingStats } from '../../../apis/user/user-instructor.api'
+import { fetchInstructorCourseRatingStats } from 'app/apis/user/user-instructor.api'
 import { IDateRange } from '../../stats-shared/providers/chart-provider'
-import { IRatingStat } from '../../shared/interfaces/rating-stat.interface'
+import { IRatingStat } from '@shared/interfaces/rating-stat.interface'
 import { useInstructorParams } from '../providers/instructor-params.provider'
 
 export const RQK_INSTRUCTOR_COURSE_RATING_STATS = 'instructor-course-rating-stats'

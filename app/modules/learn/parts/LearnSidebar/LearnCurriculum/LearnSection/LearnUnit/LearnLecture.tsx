@@ -1,7 +1,7 @@
 import { Text, Stack, HStack, Icon, useTheme } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectLearnLecture, selectLearnUnitNo } from '../../../../../../../store/course/learn-course.slice'
+import { selectLearnLecture, selectLearnUnitNo } from 'app/store/course/learn-course.slice'
 import AppIcon from '../../../../../../../utils/constants/app-icon.constant'
 import DateHelper from '../../../../../../../utils/helpers/date.helper'
 import IFile from '../../../../../../shared/interfaces/models/file.interface'

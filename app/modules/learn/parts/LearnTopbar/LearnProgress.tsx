@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { countCompletedUnit, countTotalUnit } from '../../../../store/course/learn-course.slice'
+import { countCompletedUnit, countTotalUnit } from 'app/store/course/learn-course.slice'
 
 export default function LearnProgress() {
   const total = useSelector(countTotalUnit)

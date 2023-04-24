@@ -1,6 +1,6 @@
 import React from 'react'
 import Subtitle from '../Subtitle'
-import { useAdminPagination } from '../../../admin/providers/admin-pagination-provider'
+import { useAdminPagination } from '@admin/providers/admin-pagination-provider'
 
 // DESCRIPTION
 export const PaginationDescription = () => {

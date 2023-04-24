@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { countPaymentTransactions, fetchPaymentTransactions } from '../../../apis/user/user-instructor.api'
+import { countPaymentTransactions, fetchPaymentTransactions } from 'app/apis/user/user-instructor.api'
 import { useInstructorTransactionsUrlParams } from '../hooks/instructor-transactions-url-params.hook'
 import IPaymentTransaction from '../interfaces/payment-transaction.interface'
 

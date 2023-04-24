@@ -1,8 +1,8 @@
 import React, { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useQueryClient } from 'react-query'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectFormCourseUnitByIds } from '../../../store/course/form-course.slice'
-import IQuiz, { IQuestion } from '../../shared/interfaces/models/quiz.interface'
+import { selectFormCourseUnitByIds } from 'app/store/course/form-course.slice'
+import IQuiz, { IQuestion } from '@shared/interfaces/models/quiz.interface'
 import { useUnitParams } from './unit-params.provider'
 
 interface IQuizParamsProvider {

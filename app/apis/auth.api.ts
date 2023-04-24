@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { IUserSignUp } from '../modules/auth/interfaces/user-sign-up.interface'
 import { IUser } from '../modules/shared/interfaces/models/user.interface'
-import { axiosApiInstance } from '../utils/axios-utils'
-import { CONTROLLER } from '../utils/constants/app.constant'
-import { IAuthTokens } from '../utils/helpers/cookie.helper'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
+import { IAuthTokens } from 'app/utils/helpers/cookie.helper'
 import { API_DOMAIN } from './../utils/constants/app.constant'
 
 const prefix = `${CONTROLLER.auth}`

@@ -1,9 +1,9 @@
 import jwt from '@tsndr/cloudflare-worker-jwt'
-import { apiRefreshToken } from '../apis/auth.api'
+import { apiRefreshToken } from 'app/apis/auth.api'
 import IJwtUser from '../modules/auth/interfaces/jwt-user.interface'
-import { FRONTEND_DOMAIN } from '../utils/constants/app.constant'
-import { TDocumentName, TPermission } from '../utils/constants/role.constant'
-import { hasPermission } from '../utils/helpers/model-helpers/user.helper.'
+import { FRONTEND_DOMAIN } from 'app/utils/constants/app.constant'
+import { TDocumentName, TPermission } from 'app/utils/constants/role.constant'
+import { hasPermission } from 'app/utils/helpers/model-helpers/user.helper.'
 import { LOGIN_PATH } from './middleware.constant'
 
 // HELPER FUNCTIONS

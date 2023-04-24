@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import Helper from '../../utils/helpers/helper.helper'
-import SliceHelper from '../../utils/helpers/SliceHelper.tsx'
-import { RootState } from '../store'
+import Helper from 'app/utils/helpers/helper.helper'
+import SliceHelper from 'app/utils/helpers/SliceHelper.tsx'
+import { RootState } from 'app/store'
 
 // Define a type for the slice state
 interface MultiChangeState {

@@ -1,5 +1,5 @@
 import { IRolePermission } from '../modules/shared/interfaces/models/role.interface'
-import { axiosApiInstance } from '../utils/axios-utils'
+import { axiosApiInstance } from 'app/utils/axios-utils'
 import { TPermission } from './../utils/constants/role.constant'
 
 const prefix = `roles/permission`

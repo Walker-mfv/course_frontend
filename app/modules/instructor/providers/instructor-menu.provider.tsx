@@ -2,7 +2,7 @@ import { useBreakpointValue, useDisclosure } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React, { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react'
 import { IconType } from 'react-icons'
-import AppIcon from '../../../utils/constants/app-icon.constant'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 import { TInstructorSection } from '../types/instructor-section.type'
 import { useInstructorParams } from './instructor-params.provider'
 

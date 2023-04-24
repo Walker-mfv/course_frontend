@@ -1,6 +1,6 @@
 import { Button, ButtonGroup, GridItem, SimpleGrid, Stack } from '@chakra-ui/react'
 import React, { ReactNode, useCallback } from 'react'
-import IModel from '../../shared/interfaces/models/model.interface'
+import IModel from '@shared/interfaces/models/model.interface'
 
 export interface InfiniteHorizontalListProps<T extends IModel> {
   list: T[]

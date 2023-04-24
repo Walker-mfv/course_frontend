@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import PathHelper from '../../../../utils/helpers/path.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
 import NextLink from '../NextLink'
 import { NotificationItemProps } from './NotificationItem'
 

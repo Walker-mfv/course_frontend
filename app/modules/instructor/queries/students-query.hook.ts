@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { countStudents, fetchStudents } from '../../../apis/user/user-instructor.api'
+import { countStudents, fetchStudents } from 'app/apis/user/user-instructor.api'
 import IStudent from '../interfaces/student.interface'
 import { useInstructorParams } from '../providers/instructor-params.provider'
 import { useStudentsUrlParams } from './../hooks/students.url-params.hook'

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
-import PathHelper from '../../../utils/helpers/path.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
 import { TCourseFormSection } from '../types/course-form-sectiontype'
 
 export const useCourseFormParams = () => {

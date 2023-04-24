@@ -5,7 +5,7 @@ import { apiLogin, apiLogout, apiSignUp, apiVerifyEmail, verifyRecaptcha } from 
 import CookieHelper from 'app/utils/helpers/cookie.helper'
 import Helper from 'app/utils/helpers/helper.helper'
 import UrlHelper from 'app/utils/helpers/url.heper'
-import { IUser } from '../../shared/interfaces/models/user.interface'
+import { IUser } from '@shared/interfaces/models/user.interface'
 import { IUserSignUp } from '../interfaces/user-sign-up.interface'
 import { RQK_AUTH_USER, useAuthUser } from '../queries/auth-user-query.hook'
 interface IAuthProvider {

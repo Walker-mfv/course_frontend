@@ -1,7 +1,7 @@
 import { Badge, BadgeProps } from '@chakra-ui/react'
 import React from 'react'
 import Helper from 'app/utils/helpers/helper.helper'
-import { TRoleName } from '../../shared/interfaces/models/role.interface'
+import { TRoleName } from '@shared/interfaces/models/role.interface'
 
 interface RoleBadgeProps extends BadgeProps {
   role: TRoleName

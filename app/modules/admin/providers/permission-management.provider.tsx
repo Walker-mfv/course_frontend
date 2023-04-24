@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useMemo, useState } from 'react'
-import { useFetchById } from '../../shared/hooks/data/admin-query.hook'
-import IRole from '../../shared/interfaces/models/role.interface'
+import { useFetchById } from '@shared/hooks/data/admin-query.hook'
+import IRole from '@shared/interfaces/models/role.interface'
 
 interface IPermissionManagementProvider {
   state: {

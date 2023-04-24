@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import React, { ReactNode, useEffect } from 'react'
-import { apiCreateActivityLog } from '../../../apis/activity-logs.api'
+import { apiCreateActivityLog } from 'app/apis/activity-logs.api'
 
 export function AppProvider({ children }: { children: ReactNode }) {
   const router = useRouter()

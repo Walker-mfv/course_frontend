@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { selectTotalCourse } from 'app/store/course/cart.slice'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import PathHelper from 'app/utils/helpers/path.helper'
-import NextLink from '../../shared/components/NextLink'
+import NextLink from '@shared/components/NextLink'
 import IconButtonWithNumber from './IconButtonWithNumber'
 
 export interface CartButtonProps extends ButtonProps {}

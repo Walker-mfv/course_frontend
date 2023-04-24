@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import { useAuth } from '../../auth/providers/auth.provider'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import { useAuth } from '@auth/providers/auth.provider'
+import ICourse from '@shared/interfaces/models/course.interface'
 import {
   apiAddToWishlist,
   apiDeleteFromWishlist,

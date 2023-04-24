@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react'
-import { TUnitType } from '../../shared/interfaces/models/course.interface'
+import { TUnitType } from '@shared/interfaces/models/course.interface'
 import { IUnitAddress } from '../interaces/unit-address.interface'
 
 interface TUnitParamsProvider {

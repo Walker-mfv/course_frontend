@@ -1,6 +1,6 @@
 import { Text, HStack, Stack, StackProps, useColorModeValue } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import { useCurriculumFormBg } from '../../shared/hooks/style.hook'
+import { useCurriculumFormBg } from '@shared/hooks/style.hook'
 
 export interface CurriculumFormWrapperProps extends StackProps {
   label: ReactNode

@@ -1,7 +1,7 @@
 import { IDateRange } from '../../stats-shared/providers/chart-provider'
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchInstructorStats } from '../../../apis/user/user-instructor.api'
-import { IStat } from '../../shared/interfaces/stat.interface'
+import { fetchInstructorStats } from 'app/apis/user/user-instructor.api'
+import { IStat } from '@shared/interfaces/stat.interface'
 import { useInstructorParams } from '../providers/instructor-params.provider'
 
 export const RQK_INSTRUCTOR_ENROLLMENTS_STATS = 'instructor-enrollments-stats'

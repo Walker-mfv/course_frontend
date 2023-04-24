@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useMemo, useState } from 'react'
-import IReview from '../../shared/interfaces/models/review.interface'
+import IReview from '@shared/interfaces/models/review.interface'
 
 interface IInstructorCourseReviewProvider {
   state: {

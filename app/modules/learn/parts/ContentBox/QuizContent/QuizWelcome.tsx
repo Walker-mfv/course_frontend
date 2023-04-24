@@ -1,7 +1,7 @@
 import { Button, Heading, HStack, Stack, Text, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { nextContent } from '../../../../../store/course/learn-course.slice'
+import { nextContent } from 'app/store/course/learn-course.slice'
 import { useLearnQuiz } from '../../../providers/learn-quiz.provider'
 
 export default function QuizWelcome({ type }: { type: 'start' | 'resume' }) {

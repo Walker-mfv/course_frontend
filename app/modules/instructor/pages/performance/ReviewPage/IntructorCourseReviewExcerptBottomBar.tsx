@@ -1,9 +1,9 @@
 import { Button, HStack, Stack } from '@chakra-ui/react'
 import React from 'react'
-import lan from '../../../../../utils/constants/lan.constant'
-import NotifyHelper from '../../../../../utils/helpers/notify.helper'
-import { useSimpleDialog } from '../../../../admin/providers/simple-dialog.provider'
-import { useAppToast } from '../../../../shared/hooks/app-toast.hook'
+import lan from 'app/utils/constants/lan.constant'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
+import { useAppToast } from '@shared/hooks/app-toast.hook'
 import { useInstructorCourseReview } from '../../../providers/instructor-course-review.provider'
 import { useDeleteReviewResponse } from '../../../queries/instructor-course-reviews-query'
 

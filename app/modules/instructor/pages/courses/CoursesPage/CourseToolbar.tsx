@@ -3,8 +3,8 @@ import { Button, Flex, Input, InputGroup, InputRightElement, Select, useControll
 import { debounce } from 'lodash'
 import { useRouter } from 'next/router'
 import React, { ChangeEventHandler, useCallback, useEffect, useState } from 'react'
-import { useUrlHelper } from '../../../../shared/hooks/url-helper.hook'
-import { useCourseActions } from '../../../../shared/providers/course-actions.provider'
+import { useUrlHelper } from '@shared/hooks/url-helper.hook'
+import { useCourseActions } from '@shared/providers/course-actions.provider'
 import { useInstructorCoursesUrlParams } from '../../../hooks/instructor-courses-url-params.hook'
 import { useInstructorParams } from '../../../providers/instructor-params.provider'
 

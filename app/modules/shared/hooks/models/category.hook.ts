@@ -1,7 +1,7 @@
 import { ISelectItem } from '../../interfaces/select-data.interface'
 import { ICategory } from '../../interfaces/models/category.interface'
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchPrimarySelectData, fetchSubSelectData } from '../../../../apis/category.api'
+import { fetchPrimarySelectData, fetchSubSelectData } from 'app/apis/category.api'
 
 export const RQK_CATEGORY_PRIMARY_SELECT_DATA = 'categories-primary-select-data'
 export const useCatPrimarySelectData = (options?: UseQueryOptions<ISelectItem<string>[]>) => {

@@ -8,7 +8,7 @@ import {
   selectLearnUnit,
   setActiveContent,
   uncompletedUnit,
-} from '../../../../../../../store/course/learn-course.slice'
+} from 'app/store/course/learn-course.slice'
 import LearnLecture from './LearnLecture'
 import LearnQuiz from './LearnQuiz'
 

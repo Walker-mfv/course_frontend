@@ -1,8 +1,8 @@
 import IClientUrlParams from '../modules/admin/interfaces/client-url-params.interface'
 import INotification from '../modules/shared/interfaces/models/notification.interface'
-import { axiosApiInstance } from '../utils/axios-utils'
-import { CONTROLLER } from '../utils/constants/app.constant'
-import UrlHelper from '../utils/helpers/url.heper'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
+import UrlHelper from 'app/utils/helpers/url.heper'
 const prefix = `${CONTROLLER.notification}/me`
 
 export const fetchMyNotifications = ({ queryKey, pageParam: _page }: any): Promise<INotification[]> => {

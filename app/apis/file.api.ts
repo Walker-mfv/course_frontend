@@ -1,6 +1,6 @@
 import IFile from '../modules/shared/interfaces/models/file.interface'
-import { API_DOMAIN, CONTROLLER } from '../utils/constants/app.constant'
-import UrlHelper from '../utils/helpers/url.heper'
+import { API_DOMAIN, CONTROLLER } from 'app/utils/constants/app.constant'
+import UrlHelper from 'app/utils/helpers/url.heper'
 import { TFileType } from '../modules/course-form/hooks/my-files-query.hook'
 import { axiosApiInstance } from './../utils/axios-utils'
 

@@ -5,8 +5,8 @@ import {
   countMyNewNotifications,
   countMyNotifications,
   fetchMyNotifications,
-} from '../../../apis/my-notification.api'
-import QueryHelper from '../../../utils/helpers/QueryHelper'
+} from 'app/apis/my-notification.api'
+import QueryHelper from 'app/utils/helpers/QueryHelper'
 import INotification from '../interfaces/models/notification.interface'
 import { countMyUnreadNotifications } from './../../../apis/my-notification.api'
 import { useAuth } from './../../auth/providers/auth.provider'

@@ -1,5 +1,5 @@
 import * as yup from 'yup'
-import FormMsg from '../utils/constants/form-message.constant'
+import FormMsg from 'app/utils/constants/form-message.constant'
 
 export const answerFieldArraySchema = (requiredLength: number) =>
   yup.object({

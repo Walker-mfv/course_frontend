@@ -1,5 +1,5 @@
 import { useMediaQuery } from '@chakra-ui/react'
-import { useIsMounted } from '../../shared/hooks/app.hook'
+import { useIsMounted } from '@shared/hooks/app.hook'
 
 export const useShowPreviewCourse = () => {
   const mounted = useIsMounted()

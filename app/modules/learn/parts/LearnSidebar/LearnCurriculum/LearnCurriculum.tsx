@@ -1,7 +1,7 @@
 import { Accordion } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { selectActiveSectionIdx, selectLearnSections } from '../../../../../store/course/learn-course.slice'
+import { selectActiveSectionIdx, selectLearnSections } from 'app/store/course/learn-course.slice'
 import LearnSection from './LearnSection/LearnSection'
 
 function LearnCurriculum() {

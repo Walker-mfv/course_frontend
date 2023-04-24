@@ -1,5 +1,5 @@
 import IConfiguration from '../modules/shared/interfaces/models/configuration.interface'
-import { axiosApiInstance } from '../utils/axios-utils'
+import { axiosApiInstance } from 'app/utils/axios-utils'
 
 const prefix = 'configuration'
 

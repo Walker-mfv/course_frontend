@@ -1,10 +1,10 @@
 import { useInfiniteQuery, UseInfiniteQueryOptions, useMutation, useQuery, useQueryClient } from 'react-query'
 import { useSelector } from 'react-redux'
-import { apiCreate, apiDeleteOne, apiUpdate } from '../../../apis/acp/admin.api'
-import { countUnitComments, fetchUnitComments } from '../../../apis/comment.api'
-import Helper from '../../../utils/helpers/helper.helper'
-import QueryHelper from '../../../utils/helpers/QueryHelper'
-import IComment from '../../shared/interfaces/models/comment.interface'
+import { apiCreate, apiDeleteOne, apiUpdate } from 'app/apis/acp/admin.api'
+import { countUnitComments, fetchUnitComments } from 'app/apis/comment.api'
+import Helper from 'app/utils/helpers/helper.helper'
+import QueryHelper from 'app/utils/helpers/QueryHelper'
+import IComment from '@shared/interfaces/models/comment.interface'
 import { selectLearnCourseId } from './../../../store/course/learn-course.slice'
 
 const itemsPerPage = 5

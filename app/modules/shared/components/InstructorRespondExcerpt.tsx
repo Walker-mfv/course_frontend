@@ -1,7 +1,7 @@
 import { Avatar, Heading, HStack, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import DateHelper from '../../../utils/helpers/date.helper'
-import UserHelper from '../../../utils/helpers/model-helpers/user.helper.'
+import DateHelper from 'app/utils/helpers/date.helper'
+import UserHelper from 'app/utils/helpers/model-helpers/user.helper.'
 import { useSubtitleColor } from '../hooks/style.hook'
 import { IReviewResponse } from '../interfaces/models/review.interface'
 

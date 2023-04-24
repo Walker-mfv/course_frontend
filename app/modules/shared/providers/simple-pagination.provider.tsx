@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react'
-import QueryHelper from '../../../utils/helpers/QueryHelper'
+import QueryHelper from 'app/utils/helpers/QueryHelper'
 
 interface ISimplePaginationProvider {
   state: {

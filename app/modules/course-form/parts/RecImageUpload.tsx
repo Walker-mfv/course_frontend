@@ -1,10 +1,10 @@
 import { AspectRatio, Box, Button, GridItem, Image, Input, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import lodash from 'lodash'
 import React, { MutableRefObject, useRef } from 'react'
-import AppImg from '../../../utils/constants/app-img.constant'
-import MyFormLabel from '../../shared/components/form-set/MyFormLabel'
-import MyImageCropper from '../../shared/components/MyImageCropper/MyImageCropper'
-import { useImageCropper } from '../../shared/hooks/image-cropper.hook'
+import AppImg from 'app/utils/constants/app-img.constant'
+import MyFormLabel from '@shared/components/form-set/MyFormLabel'
+import MyImageCropper from '@shared/components/MyImageCropper/MyImageCropper'
+import { useImageCropper } from '@shared/hooks/image-cropper.hook'
 
 export interface RecImageUploadProps {
   label?: string

@@ -1,6 +1,6 @@
 import { Stack, StackProps, useBreakpointValue } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import { useSidebar } from '../../../../shared/providers/sidebar.provider'
+import { useSidebar } from '@shared/providers/sidebar.provider'
 import ContentSkeleton from '../../../components/ContentSkeleton'
 import { LearnQuizProvider, useLearnQuiz } from '../../../providers/learn-quiz.provider'
 import { LEARN_TOP_BAR_HEIGHT } from '../../LearnTopbar/LearnTopBar'

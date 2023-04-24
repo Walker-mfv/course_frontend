@@ -1,6 +1,6 @@
 import { Box, Heading, HStack, Stack, StackDivider, StackProps } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import { useBorderColor } from '../../shared/hooks/style.hook'
+import { useBorderColor } from '@shared/hooks/style.hook'
 
 export interface InstructorPageProps extends StackProps {
   title: string

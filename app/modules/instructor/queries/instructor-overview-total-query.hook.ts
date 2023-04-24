@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchInstructorTotal } from '../../../apis/user/user-instructor.api'
+import { fetchInstructorTotal } from 'app/apis/user/user-instructor.api'
 import { useInstructorParams } from '../providers/instructor-params.provider'
 import { TOverviewTotal } from '../types/overview-total.type'
 import { TTotalRange } from '../types/total-range.type'

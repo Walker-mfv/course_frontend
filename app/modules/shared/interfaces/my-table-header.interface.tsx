@@ -8,13 +8,13 @@ import {
   multiChangeResetData,
   multiChangeSyncData,
   selectIsAllItemsSelected,
-} from '../../../store/admin/multi-change.slice'
-import { useAppDispatch } from '../../../store/hooks'
-import AppIcon from '../../../utils/constants/app-icon.constant'
-import AdminTableCheckbox from '../../admin/components/AdminTable/AdminTableCheckbox'
+} from 'app/store/admin/multi-change.slice'
+import { useAppDispatch } from 'app/store/hooks'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import AdminTableCheckbox from '@admin/components/AdminTable/AdminTableCheckbox'
 import { ITableColumn } from './table-column.interface'
-import IClientUrlParams from '../../admin/interfaces/client-url-params.interface'
-import { usePageParams } from '../../admin/providers/page-params.provider'
+import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
+import { usePageParams } from '@admin/providers/page-params.provider'
 import NextLink from '../components/NextLink'
 import { useDeepCompareEffect } from '../hooks/app.hook'
 import { useAdminTableRows } from '../hooks/data/admin-query.hook'

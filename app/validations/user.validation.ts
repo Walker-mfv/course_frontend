@@ -1,7 +1,7 @@
 import * as yup from 'yup'
-import { apiCheckUnique } from '../apis/acp/admin.api'
-import FieldLabel from '../utils/constants/field-label.constant'
-import FormMsg from '../utils/constants/form-message.constant'
+import { apiCheckUnique } from 'app/apis/acp/admin.api'
+import FieldLabel from 'app/utils/constants/field-label.constant'
+import FormMsg from 'app/utils/constants/form-message.constant'
 import { IUser } from './../modules/shared/interfaces/models/user.interface'
 import { CONTROLLER } from './../utils/constants/app.constant'
 

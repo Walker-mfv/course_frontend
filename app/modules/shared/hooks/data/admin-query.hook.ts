@@ -1,9 +1,9 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchAll, fetchById, fetchCount, fetchSelectDataWithClientQuery } from '../../../../apis/acp/admin.api'
-import { CONTROLLER } from '../../../../utils/constants/app.constant'
-import { TController } from '../../../../utils/data/data.type'
-import IClientUrlParams from '../../../admin/interfaces/client-url-params.interface'
-import { useAdminUrlParams } from '../../../admin/providers/admin-query.provider'
+import { fetchAll, fetchById, fetchCount, fetchSelectDataWithClientQuery } from 'app/apis/acp/admin.api'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
+import { TController } from 'app/utils/data/data.type'
+import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
+import { useAdminUrlParams } from '@admin/providers/admin-query.provider'
 import { ISelectItem } from '../../interfaces/select-data.interface'
 
 const fetchAllOptions: UseQueryOptions = {

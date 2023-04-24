@@ -1,7 +1,7 @@
 import IClientUrlParams from '../modules/admin/interfaces/client-url-params.interface'
 import IComment from '../modules/shared/interfaces/models/comment.interface'
-import { axiosApiInstance } from '../utils/axios-utils'
-import UrlHelper from '../utils/helpers/url.heper'
+import { axiosApiInstance } from 'app/utils/axios-utils'
+import UrlHelper from 'app/utils/helpers/url.heper'
 import { CONTROLLER } from './../utils/constants/app.constant'
 const prefix = `${CONTROLLER.comment}`
 

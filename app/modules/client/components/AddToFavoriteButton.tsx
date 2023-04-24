@@ -2,9 +2,9 @@ import { Icon, IconButton, useTheme } from '@chakra-ui/react'
 import React, { useCallback, useMemo } from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import NotifyHelper from 'app/utils/helpers/notify.helper'
-import { useAuth } from '../../auth/providers/auth.provider'
-import { useClientToast } from '../../shared/hooks/client-toast.hook'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import { useAuth } from '@auth/providers/auth.provider'
+import { useClientToast } from '@shared/hooks/client-toast.hook'
+import ICourse from '@shared/interfaces/models/course.interface'
 import { useAddToWishlist, useDeleteFromWishlist, useWishlistCourseIdsQuery } from '../queries/wishlist-query.hook'
 
 function AddToFavoriteButton({ item, size = 'md' }: { item: ICourse; size?: 'md' | 'sm' }) {

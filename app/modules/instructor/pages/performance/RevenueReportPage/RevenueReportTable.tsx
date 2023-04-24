@@ -1,12 +1,12 @@
 import { Button, Skeleton, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react'
 import moment from 'moment'
 import React, { useCallback } from 'react'
-import PathHelper from '../../../../../utils/helpers/path.helper'
-import StatusBadge from '../../../../admin/components/StatusBadge'
-import ExpectedPaidDate from '../../../../shared/components/ExpectedPaidDate'
-import NextLink from '../../../../shared/components/NextLink'
-import Price from '../../../../shared/components/Price'
-import IPayment from '../../../../shared/interfaces/models/payment.interface'
+import PathHelper from 'app/utils/helpers/path.helper'
+import StatusBadge from '@admin/components/StatusBadge'
+import ExpectedPaidDate from '@shared/components/ExpectedPaidDate'
+import NextLink from '@shared/components/NextLink'
+import Price from '@shared/components/Price'
+import IPayment from '@shared/interfaces/models/payment.interface'
 //
 
 const Row = ({ item, onPay, onViewDetail }: { item: IPayment } & Actions) => {

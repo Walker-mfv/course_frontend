@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import AppIcon from '../../../../../../utils/constants/app-icon.constant'
 import DateHelper from '../../../../../../utils/helpers/date.helper'
 import { useAppDialog } from '../../../../../admin/providers/app-dialog.provider'
-import { useAuth } from '../../../../../auth/providers/auth.provider'
+import { useAuth } from '@auth/providers/auth.provider'
 import { useInstructorAllPaymentsQuery } from '../../../../queries/instructor-all-payments-query.hook'
 
 const options: Options = {

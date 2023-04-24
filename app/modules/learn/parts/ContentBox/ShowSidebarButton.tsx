@@ -1,7 +1,7 @@
 import { Text, Button, Icon } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../../utils/constants/app-icon.constant'
-import { useSidebar } from '../../../shared/providers/sidebar.provider'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import { useSidebar } from '@shared/providers/sidebar.provider'
 
 export default function ShowSidebarButton() {
   const { onOpen } = useSidebar()

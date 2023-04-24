@@ -7,7 +7,7 @@ import {
   usePaymentsQuery,
   usePendingPaymentsQuery,
 } from '../../instructor/queries/payments-query.hook'
-import IPayment from '../../shared/interfaces/models/payment.interface'
+import IPayment from '@shared/interfaces/models/payment.interface'
 
 export const useInstructorId = () => {
   const router = useRouter()

@@ -1,4 +1,4 @@
-import Helper from '../../../../utils/helpers/helper.helper'
+import Helper from 'app/utils/helpers/helper.helper'
 import { IHistory } from '../../interfaces/models/shared.interface'
 export const transformHistory = (history: IHistory): IHistory => {
   const cloneItem = Helper.cloneObj<IHistory>(history)

@@ -1,5 +1,5 @@
 import { IQuestion } from './../modules/shared/interfaces/models/quiz.interface'
-import { API_DOMAIN, CONTROLLER } from '../utils/constants/app.constant'
+import { API_DOMAIN, CONTROLLER } from 'app/utils/constants/app.constant'
 import ILecture from '../modules/shared/interfaces/models/lecture.interface'
 import axios from 'axios'
 import IFile from '../modules/shared/interfaces/models/file.interface'

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react'
-import { useAdminTableCount } from '../../shared/hooks/data/admin-query.hook'
-import { IPagination } from '../../shared/interfaces/pagination.interface'
+import { useAdminTableCount } from '@shared/hooks/data/admin-query.hook'
+import { IPagination } from '@shared/interfaces/pagination.interface'
 import { useAdminUrlParams } from './admin-query.provider'
 import { usePageParams } from './page-params.provider'
 

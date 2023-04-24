@@ -1,5 +1,5 @@
-import Helper from '../../../../utils/helpers/helper.helper'
-import TemplateHelper from '../../../../utils/helpers/template.helper'
+import Helper from 'app/utils/helpers/helper.helper'
+import TemplateHelper from 'app/utils/helpers/template.helper'
 import { IUser } from '../../interfaces/models/user.interface'
 
 export const transformUsers = (items: IUser[]): IUser[] => {

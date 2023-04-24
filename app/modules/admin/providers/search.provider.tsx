@@ -11,7 +11,7 @@ import {
   useMemo,
 } from 'react'
 import Helper from 'app/utils/helpers/helper.helper'
-import { useUrlHelper } from '../../shared/hooks/url-helper.hook'
+import { useUrlHelper } from '@shared/hooks/url-helper.hook'
 import { useAdminUrlParams } from './admin-query.provider'
 
 let debounceTimeout: any

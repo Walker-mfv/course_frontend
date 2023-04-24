@@ -1,6 +1,6 @@
 import { useAppToast } from './app-toast.hook'
 import { useMemo, useCallback } from 'react'
-import NotifyHelper from '../../../utils/helpers/notify.helper'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
 export const useToastActions = () => {
   const toast = useAppToast()
   const handleError = useCallback(

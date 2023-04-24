@@ -1,7 +1,7 @@
 import { Button, HStack, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import PathHelper from 'app/utils/helpers/path.helper'
-import NextLink from '../../shared/components/NextLink'
+import NextLink from '@shared/components/NextLink'
 import ForgotPassword from './ForgotPassword'
 
 export default function LoginSupport() {

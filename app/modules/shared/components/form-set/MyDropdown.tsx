@@ -12,7 +12,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import { useActiveColor } from '../../../client/hooks/style.hook'
+import { useActiveColor } from '@client/hooks/style.hook'
 import { useBorderColor } from '../../hooks/style.hook'
 import { IMyDropDownItem } from '../../interfaces/dropdown-item.interface'
 import NextLink from '../NextLink'

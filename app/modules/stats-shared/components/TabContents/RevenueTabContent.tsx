@@ -1,5 +1,5 @@
 import React from 'react'
-import Price from '../../../shared/components/Price'
+import Price from '@shared/components/Price'
 import { StatTabContent } from './StatTab'
 
 export interface RevenueTabContentProps {

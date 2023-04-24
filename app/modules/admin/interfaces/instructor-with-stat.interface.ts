@@ -1,4 +1,4 @@
-import { IUser } from '../../shared/interfaces/models/user.interface'
+import { IUser } from '@shared/interfaces/models/user.interface'
 
 export default interface IInstructorWithStat extends IUser {
   meta: {

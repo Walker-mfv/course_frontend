@@ -9,15 +9,15 @@ import {
   selectFormCourseUnitNo,
   selectSectionNUnitIndex,
   updateQuiz,
-} from '../../../../../store/course/form-course.slice'
-import { useAppSelector } from '../../../../../store/hooks'
-import FormMsg from '../../../../../utils/constants/form-message.constant'
-import TypeHelper from '../../../../../utils/helpers/type.helper'
-import MyInput from '../../../../shared/components/form-set/MyInput'
-import { useCrudActions } from '../../../../shared/hooks/data/crud-actions.hook'
-import { ICourseUnit } from '../../../../shared/interfaces/models/course.interface'
-import IQuiz from '../../../../shared/interfaces/models/quiz.interface'
-import Editor from '../../../../shared/parts/Editor/Editor'
+} from 'app/store/course/form-course.slice'
+import { useAppSelector } from 'app/store/hooks'
+import FormMsg from 'app/utils/constants/form-message.constant'
+import TypeHelper from 'app/utils/helpers/type.helper'
+import MyInput from '@shared/components/form-set/MyInput'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
+import { ICourseUnit } from '@shared/interfaces/models/course.interface'
+import IQuiz from '@shared/interfaces/models/quiz.interface'
+import Editor from '@shared/parts/Editor/Editor'
 import { IUnitAddress } from '../../../interaces/unit-address.interface'
 import CurriculumFormWrapper from '../../CurriculumFormWrapper'
 

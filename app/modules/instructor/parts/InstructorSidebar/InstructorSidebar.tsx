@@ -1,7 +1,7 @@
 import { Box, Heading, HStack, Icon, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
 import React, { useCallback } from 'react'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import NextLink from '../../../shared/components/NextLink'
+import PathHelper from 'app/utils/helpers/path.helper'
+import NextLink from '@shared/components/NextLink'
 import {
   INSTRUCTOR_SIDEBAR_EXPANDED_WIDTH,
   INSTRUCTOR_SIDEBAR_PRIMARY_WIDTH,

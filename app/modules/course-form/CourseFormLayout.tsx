@@ -1,6 +1,6 @@
 import { Box, Stack, useBreakpointValue } from '@chakra-ui/react'
 import React, { ReactElement } from 'react'
-import PageParamsProvider from '../admin/providers/page-params.provider'
+import PageParamsProvider from '@admin/providers/page-params.provider'
 import { SidebarProvider } from '../shared/providers/sidebar.provider'
 import Sidebar from './components/Sidebar/Sidebar'
 import MobileSubTopBar from './parts/MobileSubTopBar'

@@ -1,6 +1,6 @@
 import { HStack, Stack } from '@chakra-ui/react'
 import React from 'react'
-import Pagination from '../../../../shared/components/Pagination/Pagination'
+import Pagination from '@shared/components/Pagination/Pagination'
 import { useInstructorCoursesUrlParams } from '../../../hooks/instructor-courses-url-params.hook'
 
 export interface InstructorPaginationProps {

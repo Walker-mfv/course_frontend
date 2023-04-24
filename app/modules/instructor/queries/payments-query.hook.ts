@@ -1,13 +1,8 @@
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import {
-  countPayments,
-  fetchPayment,
-  fetchPayments,
-  fetchPendingPayments,
-} from '../../../apis/user/user-instructor.api'
-import IClientUrlParams from '../../admin/interfaces/client-url-params.interface'
-import { RQK_ADMIN_INSTRUCTOR_WITH_PAYMENT } from '../../admin/queries/admin-instructor-query.hook'
-import IPayment from '../../shared/interfaces/models/payment.interface'
+import { countPayments, fetchPayment, fetchPayments, fetchPendingPayments } from 'app/apis/user/user-instructor.api'
+import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
+import { RQK_ADMIN_INSTRUCTOR_WITH_PAYMENT } from '@admin/queries/admin-instructor-query.hook'
+import IPayment from '@shared/interfaces/models/payment.interface'
 import { apiPayAllPayment, apiPayPayment } from './../../../apis/payments/payments.api'
 import { useInstructorId } from './../../admin/queries/instructor-payments-query.hook'
 

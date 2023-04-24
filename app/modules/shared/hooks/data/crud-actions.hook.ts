@@ -11,14 +11,14 @@ import {
   apiReactivate,
   apiUpdate,
   apiValidateDeletion,
-} from '../../../../apis/acp/admin.api'
-import { useAppDispatch } from '../../../../store/hooks'
-import lan from '../../../../utils/constants/lan.constant'
-import Helper from '../../../../utils/helpers/helper.helper'
-import NotifyHelper from '../../../../utils/helpers/notify.helper'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import { usePageParams } from '../../../admin/providers/page-params.provider'
-import { useSimpleDialog } from '../../../admin/providers/simple-dialog.provider'
+} from 'app/apis/acp/admin.api'
+import { useAppDispatch } from 'app/store/hooks'
+import lan from 'app/utils/constants/lan.constant'
+import Helper from 'app/utils/helpers/helper.helper'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
+import { usePageParams } from '@admin/providers/page-params.provider'
+import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
 import IActionOptions from '../../interfaces/action-options.interface'
 import IConflictData from '../../interfaces/conflict-data.interface'
 import { useAppToast } from '../app-toast.hook'

@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
-import AppMsg from '../../../utils/constants/app-messsage.constant'
-import lan from '../../../utils/constants/lan.constant'
-import NotifyHelper from '../../../utils/helpers/notify.helper'
-import UrlHelper from '../../../utils/helpers/url.heper'
+import AppMsg from 'app/utils/constants/app-messsage.constant'
+import lan from 'app/utils/constants/lan.constant'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import UrlHelper from 'app/utils/helpers/url.heper'
 import { useClientToast } from './client-toast.hook'
 
 export const useQueryMessage = () => {

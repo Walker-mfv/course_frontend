@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchInstructorAvgCourseRating } from '../../../apis/user/user-instructor.api'
+import { fetchInstructorAvgCourseRating } from 'app/apis/user/user-instructor.api'
 import { useInstructorParams } from '../providers/instructor-params.provider'
 import { TTotalRange } from '../types/total-range.type'
 

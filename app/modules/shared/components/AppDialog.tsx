@@ -7,7 +7,7 @@ import {
   ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/react'
-import { useAppDialog } from '../../admin/providers/app-dialog.provider'
+import { useAppDialog } from '@admin/providers/app-dialog.provider'
 
 export default function AppDialog() {
   const {

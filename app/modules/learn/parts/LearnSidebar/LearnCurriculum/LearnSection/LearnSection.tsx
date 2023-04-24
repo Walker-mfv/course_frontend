@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectLearnSection } from '../../../../../../store/course/learn-course.slice'
+import { selectLearnSection } from 'app/store/course/learn-course.slice'
 import { useBorderColor } from '../../../../../shared/hooks/style.hook'
 import LearnUnit from './LearnUnit/LearnUnit'
 

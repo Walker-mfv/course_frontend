@@ -1,7 +1,7 @@
 import { Heading, HStack, Icon, IconButton, Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import AppIcon from '../../../../utils/constants/app-icon.constant'
-import { useSidebar } from '../../../shared/providers/sidebar.provider'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import { useSidebar } from '@shared/providers/sidebar.provider'
 import { LEARN_TOP_BAR_HEIGHT } from '../LearnTopbar/LearnTopBar'
 import LearnCurriculum from './LearnCurriculum/LearnCurriculum'
 

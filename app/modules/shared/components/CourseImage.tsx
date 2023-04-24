@@ -1,6 +1,6 @@
 import { AspectRatio, Box, BoxProps, Image } from '@chakra-ui/react'
 import React from 'react'
-import AppImg from '../../../utils/constants/app-img.constant'
+import AppImg from 'app/utils/constants/app-img.constant'
 
 export interface CourseImageProps extends BoxProps {
   src?: string

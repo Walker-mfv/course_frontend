@@ -1,4 +1,4 @@
-import { TPermission } from '../../../../utils/constants/role.constant'
+import { TPermission } from 'app/utils/constants/role.constant'
 import IDocumentPermission from './document-permission.interface'
 import IModel from './model.interface'
 

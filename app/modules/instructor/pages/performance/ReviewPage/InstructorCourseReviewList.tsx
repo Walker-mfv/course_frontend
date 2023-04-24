@@ -1,9 +1,9 @@
 import { Skeleton, Stack, StackDivider } from '@chakra-ui/react'
 import React, { useCallback } from 'react'
 import { InfiniteData } from 'react-query'
-import InfiniteMoreButton from '../../../../shared/components/InfiniteList/InfiniteMoreButton'
-import { useBorderColor } from '../../../../shared/hooks/style.hook'
-import IReview from '../../../../shared/interfaces/models/review.interface'
+import InfiniteMoreButton from '@shared/components/InfiniteList/InfiniteMoreButton'
+import { useBorderColor } from '@shared/hooks/style.hook'
+import IReview from '@shared/interfaces/models/review.interface'
 import InstructorCourseReviewExcerpt from './InstructorCourseReviewExcerpt'
 
 export interface InstructorCourseReviewListProps {

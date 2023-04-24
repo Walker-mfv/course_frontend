@@ -1,9 +1,9 @@
 import { Skeleton, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from '@chakra-ui/react'
 import moment from 'moment'
 import React, { useCallback } from 'react'
-import DateHelper from '../../../../../utils/helpers/date.helper'
-import TdAvatar from '../../../../admin/components/TdAvatar'
-import Price from '../../../../shared/components/Price'
+import DateHelper from 'app/utils/helpers/date.helper'
+import TdAvatar from '@admin/components/TdAvatar'
+import Price from '@shared/components/Price'
 import IPaymentTransaction from '../../../interfaces/payment-transaction.interface'
 //
 

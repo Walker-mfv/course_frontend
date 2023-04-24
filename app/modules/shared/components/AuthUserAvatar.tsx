@@ -1,6 +1,6 @@
 import { Avatar, AvatarProps } from '@chakra-ui/react'
 import React from 'react'
-import { useAuth } from '../../auth/providers/auth.provider'
+import { useAuth } from '@auth/providers/auth.provider'
 
 export interface AuthUserAvatarProps extends AvatarProps {}
 export default function AuthUserAvatar(props: AuthUserAvatarProps) {

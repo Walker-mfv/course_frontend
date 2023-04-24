@@ -1,7 +1,7 @@
 import { Button, HStack, Icon } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import { TUnitType } from '../../../../shared/interfaces/models/course.interface'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import { TUnitType } from '@shared/interfaces/models/course.interface'
 
 export interface AddUnitOptionBarProps {
   setUnitType: (val: TUnitType) => void

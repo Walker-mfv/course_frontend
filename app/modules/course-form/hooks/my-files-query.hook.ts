@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
-import { countMyFiles, fetchMyFiles, IFileQuery } from '../../../apis/file.api'
-import IFile from '../../shared/interfaces/models/file.interface'
+import { countMyFiles, fetchMyFiles, IFileQuery } from 'app/apis/file.api'
+import IFile from '@shared/interfaces/models/file.interface'
 import { useLibrary } from '../providers/library.provider'
 
 export const RQK_MY_FILES = 'files'

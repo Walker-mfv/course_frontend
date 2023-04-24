@@ -1,7 +1,7 @@
 import { Icon, IconButton } from '@chakra-ui/react'
 import React from 'react'
 import { FiSettings } from 'react-icons/fi'
-import CustomIconButton from '../../shared/components/button-set/CustomIconButton'
+import CustomIconButton from '@shared/components/button-set/CustomIconButton'
 import { useSettingSidebar } from '../providers/setting-sidebar.provider'
 
 export default function SettingSidebarToggler() {

@@ -1,6 +1,6 @@
 import { useDisclosure } from '@chakra-ui/react'
 import { createContext, useContext, ReactNode, useState, useMemo, useCallback } from 'react'
-import { TColorScheme } from '../../shared/types/color-scheme.type'
+import { TColorScheme } from '@shared/types/color-scheme.type'
 
 type TNotificationDialogData = {
   title: string

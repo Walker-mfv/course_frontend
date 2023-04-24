@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react'
 import moment from 'moment'
 import React from 'react'
-import DateHelper from '../../../utils/helpers/date.helper'
+import DateHelper from 'app/utils/helpers/date.helper'
 
 export interface ExpectedPaidDateProps {
   dateStr?: string

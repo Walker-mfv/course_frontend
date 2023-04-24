@@ -2,9 +2,9 @@ import { Text, Button, HStack } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectFormCourse, selectFormCourseId } from '../../../store/course/form-course.slice'
-import PathHelper from '../../../utils/helpers/path.helper'
-import { useCrudActions } from '../../shared/hooks/data/crud-actions.hook'
+import { selectFormCourse, selectFormCourseId } from 'app/store/course/form-course.slice'
+import PathHelper from 'app/utils/helpers/path.helper'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
 import CoursePageSection from '../parts/CoursePageSection'
 
 function Settings() {

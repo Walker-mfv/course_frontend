@@ -1,6 +1,6 @@
 import { ButtonGroup, Icon, IconButton } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from '../../../../utils/constants/app-icon.constant'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 import { useSimplePagination } from '../../providers/simple-pagination.provider'
 
 export default function SimplePaginationButtons() {

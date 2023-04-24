@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions } from 'react-query'
 import { fetchSelectData } from 'app/apis/acp/admin.api'
-import { ISelectItem } from '../../shared/interfaces/select-data.interface'
+import { ISelectItem } from '@shared/interfaces/select-data.interface'
 
 const RQK_DOCUMENT_PERMISSION_SELECT_DATA = 'document-permission-select-data'
 export function useDocumentPermissionSelectDataQuery(options?: UseQueryOptions<ISelectItem<string>[]>) {

@@ -5,10 +5,10 @@ import {
   addCourseLectureResource,
   selectFormCourseUnitByIds,
   updateCourseLectureVideo,
-} from '../../../store/course/form-course.slice'
-import { useAuth } from '../../auth/providers/auth.provider'
-import IFile from '../../shared/interfaces/models/file.interface'
-import ILecture from '../../shared/interfaces/models/lecture.interface'
+} from 'app/store/course/form-course.slice'
+import { useAuth } from '@auth/providers/auth.provider'
+import IFile from '@shared/interfaces/models/file.interface'
+import ILecture from '@shared/interfaces/models/lecture.interface'
 import { RQK_MY_FILES } from '../hooks/my-files-query.hook'
 import { useUnitParams } from './unit-params.provider'
 

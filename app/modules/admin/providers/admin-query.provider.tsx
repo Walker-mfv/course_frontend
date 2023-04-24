@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import IClientUrlParams from '../interfaces/client-url-params.interface'
-import { standardizeClientQuery } from '../../shared/hooks/url-helper.hook'
+import { standardizeClientQuery } from '@shared/hooks/url-helper.hook'
 
 const AdminUrlParamsContext = createContext<IClientUrlParams>({} as IClientUrlParams)
 

@@ -7,11 +7,11 @@ import {
   selectFormCourseRequirements,
   selectFormCourseStatus,
   updateCourseById,
-} from '../../../store/course/form-course.slice'
+} from 'app/store/course/form-course.slice'
 import { answerFieldArraySchema } from '../../../validations/answer-field-array.validation'
-import MyCircularProgress from '../../shared/components/MyCircularProgress'
-import { useCrudActions } from '../../shared/hooks/data/crud-actions.hook'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import MyCircularProgress from '@shared/components/MyCircularProgress'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
+import ICourse from '@shared/interfaces/models/course.interface'
 import SortableAnswerCardList from '../components/SortableAnswerCardList/SortableAnswerCardList'
 import IAnswerFormData from '../interaces/answer-form-data.inteface'
 import { AnswerFieldArrayProvider } from '../providers/answer-field-array.provider'

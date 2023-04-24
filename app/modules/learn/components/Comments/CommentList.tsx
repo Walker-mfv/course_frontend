@@ -1,8 +1,8 @@
 import { Button, ButtonGroup, Stack, StackDivider } from '@chakra-ui/react'
 import React, { useCallback } from 'react'
-import MyCircularProgress from '../../../shared/components/MyCircularProgress'
-import { useBorderColor } from '../../../shared/hooks/style.hook'
-import IComment from '../../../shared/interfaces/models/comment.interface'
+import MyCircularProgress from '@shared/components/MyCircularProgress'
+import { useBorderColor } from '@shared/hooks/style.hook'
+import IComment from '@shared/interfaces/models/comment.interface'
 import CommentExcerpt from './CommentExcerpt/CommentExcerpt'
 
 function CommentList({

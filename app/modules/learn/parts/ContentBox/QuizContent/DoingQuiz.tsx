@@ -11,8 +11,8 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React from 'react'
-import { useBorderColor, useHoverColor } from '../../../../shared/hooks/style.hook'
-import { IAnswerOption } from '../../../../shared/interfaces/models/quiz.interface'
+import { useBorderColor, useHoverColor } from '@shared/hooks/style.hook'
+import { IAnswerOption } from '@shared/interfaces/models/quiz.interface'
 import { useLearnQuiz } from '../../../providers/learn-quiz.provider'
 
 const AnswerCard = ({ answer }: { answer: IAnswerOption }) => {

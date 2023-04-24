@@ -1,6 +1,6 @@
 import { Icon, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import React, { useCallback } from 'react'
-import AppIcon from '../../../utils/constants/app-icon.constant'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 import { IMenuItem } from '../interfaces/menu-item.interface'
 import IModel from '../interfaces/models/model.interface'
 import NextLink from './NextLink'

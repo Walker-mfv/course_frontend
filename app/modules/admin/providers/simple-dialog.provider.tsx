@@ -1,6 +1,6 @@
 import { useDisclosure } from '@chakra-ui/react'
 import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react'
-import { TColorScheme } from '../../shared/types/color-scheme.type'
+import { TColorScheme } from '@shared/types/color-scheme.type'
 
 type TSimpleDialogData = {
   title: string

@@ -1,7 +1,7 @@
 import { Badge, Button, ButtonProps, HStack, Icon, Menu, MenuButton } from '@chakra-ui/react'
 import React, { useCallback } from 'react'
 import { FiBell } from 'react-icons/fi'
-import { useAuth } from '../../../auth/providers/auth.provider'
+import { useAuth } from '@auth/providers/auth.provider'
 import { useCountMyNewNotificationQuery, useReachMyNotifications } from '../../queries/my-notification-query.hook.ts'
 import NotificationList from './NotificationList'
 

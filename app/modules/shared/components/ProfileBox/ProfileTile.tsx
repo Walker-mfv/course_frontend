@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from '../../../auth/providers/auth.provider'
+import { useAuth } from '@auth/providers/auth.provider'
 import ListTile from '../ListTile'
 
 export const ProfileTile = () => {

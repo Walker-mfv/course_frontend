@@ -9,7 +9,7 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import React from 'react'
-import { useSidebar } from '../../../shared/providers/sidebar.provider'
+import { useSidebar } from '@shared/providers/sidebar.provider'
 import LearnCurriculum from '../../parts/LearnSidebar/LearnCurriculum/LearnCurriculum'
 
 export default function LearnMobileSidebar() {

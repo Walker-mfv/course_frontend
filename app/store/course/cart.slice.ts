@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { apiAddCourseToCart, apiDeleteCourseInCart, updateMe } from '../../apis/user/user.api'
+import { apiAddCourseToCart, apiDeleteCourseInCart, updateMe } from 'app/apis/user/user.api'
 import ICourse from '../../modules/shared/interfaces/models/course.interface'
 import { ICart } from '../../modules/shared/interfaces/models/user.interface'
-import Helper from '../../utils/helpers/helper.helper'
-import LocalStorageHelper from '../../utils/helpers/localStorage.helper'
-import CourseHelper from '../../utils/helpers/model-helpers/course.helper'
-import { RootState } from '../store'
+import Helper from 'app/utils/helpers/helper.helper'
+import LocalStorageHelper from 'app/utils/helpers/localStorage.helper'
+import CourseHelper from 'app/utils/helpers/model-helpers/course.helper'
+import { RootState } from 'app/store'
 interface CartSlice {
   data: ICart
 }

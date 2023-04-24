@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import IClientUrlParams from '../interfaces/client-url-params.interface'
-import { getClientUrlParams } from '../../shared/hooks/url-helper.hook'
+import { getClientUrlParams } from '@shared/hooks/url-helper.hook'
 
 export const usePermissionManagementParams = (defaultVal: IClientUrlParams = {}) => {
   const router = useRouter()

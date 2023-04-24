@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
 import { fetchAuthUser } from 'app/apis/auth.api'
-import { IUser } from '../../shared/interfaces/models/user.interface'
+import { IUser } from '@shared/interfaces/models/user.interface'
 import { apiSwitchToInstructor } from 'app/apis/user/user.api'
 
 export const RQK_AUTH_USER = 'auth-user'

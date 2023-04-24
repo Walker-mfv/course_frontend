@@ -1,5 +1,5 @@
 import { UseQueryOptions } from 'react-query'
-import IPayment from '../../shared/interfaces/models/payment.interface'
+import IPayment from '@shared/interfaces/models/payment.interface'
 import { useInstructorCoursesUrlParams } from '../hooks/instructor-courses-url-params.hook'
 import { useInstructorParams } from '../providers/instructor-params.provider'
 import {

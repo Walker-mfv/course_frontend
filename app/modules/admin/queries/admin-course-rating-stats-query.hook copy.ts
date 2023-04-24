@@ -1,5 +1,5 @@
 import { useQuery, UseQueryOptions } from 'react-query'
-import { IRatingStat } from '../../shared/interfaces/rating-stat.interface'
+import { IRatingStat } from '@shared/interfaces/rating-stat.interface'
 import { fetchCourseRatingStats } from 'app/apis/acp/performances/performances-overview.api'
 
 export const RQK_ADMIN_COURSE_RATING_STATS = 'admin-course-rating-stats'

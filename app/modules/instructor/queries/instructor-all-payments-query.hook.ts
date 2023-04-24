@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { UseQueryOptions } from 'react-query'
-import IPayment from '../../shared/interfaces/models/payment.interface'
+import IPayment from '@shared/interfaces/models/payment.interface'
 import { useInstructorPaymentsQuery, useInstructorPendingPayments } from './instructor-payments-query.hook'
 
 export const useInstructorAllPaymentsQuery = (

@@ -8,7 +8,7 @@ import CourseHelper from '../../../../../../utils/helpers/model-helpers/course.h
 import { IReportTableColumn, IReportTableRow } from '../../../../../../utils/services/report-generator.service'
 import { RevenueReportGenerator } from '../../../../../../utils/services/revenue-report-generator.service'
 import { useAppDialog } from '../../../../../admin/providers/app-dialog.provider'
-import { useAuth } from '../../../../../auth/providers/auth.provider'
+import { useAuth } from '@auth/providers/auth.provider'
 import { useInstructorAllPaymentsQuery } from '../../../../queries/instructor-all-payments-query.hook'
 
 const columns: IReportTableColumn[] = [

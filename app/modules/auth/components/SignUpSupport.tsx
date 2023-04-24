@@ -1,7 +1,7 @@
 import { Button, HStack, Text } from '@chakra-ui/react'
 import React from 'react'
 import PathHelper from 'app/utils/helpers/path.helper'
-import NextLink from '../../shared/components/NextLink'
+import NextLink from '@shared/components/NextLink'
 
 export default function SignUpSupport() {
   return (

@@ -1,6 +1,6 @@
 import { Stack } from '@chakra-ui/react'
 import React from 'react'
-import { CourseActionsProvider } from '../../../../shared/providers/course-actions.provider'
+import { CourseActionsProvider } from '@shared/providers/course-actions.provider'
 import InstructorPage from '../../../components/InstructorPage'
 import { useCountInstructorCoursesQuery } from '../../../queries/instructor-courses-query.hook'
 import InstructorPagination from './CoursesPagination'

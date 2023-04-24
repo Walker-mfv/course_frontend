@@ -1,10 +1,10 @@
 import update from 'immutability-helper'
 import React, { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { updateLearnUnit } from '../../../apis/user/user-learning.api'
-import { selectActiveUnit, selectLearnId } from '../../../store/course/learn-course.slice'
-import { IAnswerOption } from '../../shared/interfaces/models/quiz.interface'
-import { ILearnQuiz, TLearnQuizStatus } from '../../shared/interfaces/models/user_course.interface'
+import { updateLearnUnit } from 'app/apis/user/user-learning.api'
+import { selectActiveUnit, selectLearnId } from 'app/store/course/learn-course.slice'
+import { IAnswerOption } from '@shared/interfaces/models/quiz.interface'
+import { ILearnQuiz, TLearnQuizStatus } from '@shared/interfaces/models/user_course.interface'
 import { useLearnUnit } from '../queries/learn-unit-query.hook'
 
 interface LearnQuizProvider {

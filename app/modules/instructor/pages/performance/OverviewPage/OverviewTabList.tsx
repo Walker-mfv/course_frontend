@@ -1,4 +1,4 @@
-import { TModule } from '../../../../shared/types/module.type'
+import { TModule } from '@shared/types/module.type'
 import CourseRatingTabContent from '../../../../stats-shared/components/TabContents/CourseRatingTabContent'
 import EnrollmentTabContent from '../../../../stats-shared/components/TabContents/EnrollmentTabContent'
 import RevenueTabContent from '../../../../stats-shared/components/TabContents/RevenueTabContent'

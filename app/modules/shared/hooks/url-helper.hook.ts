@@ -1,8 +1,8 @@
 import { useDeepCompareCallback, useDeepCompareMemo } from './app.hook'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
-import Helper from '../../../utils/helpers/helper.helper'
-import IClientUrlParams from '../../admin/interfaces/client-url-params.interface'
+import Helper from 'app/utils/helpers/helper.helper'
+import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
 import { TSort } from '../types/sort.type'
 
 export const getClientUrlParams = (

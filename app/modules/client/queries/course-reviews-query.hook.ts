@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useInfiniteQuery, UseInfiniteQueryOptions } from 'react-query'
 import { countCourseReviews, fetchCourseReviews } from 'app/apis/course/course-reviews.api'
 import QueryHelper from 'app/utils/helpers/QueryHelper'
-import IReview from '../../shared/interfaces/models/review.interface'
+import IReview from '@shared/interfaces/models/review.interface'
 
 const itemsPerPage = 2
 export const RQK_COURSE_REVIEWS = 'course-reviews'

@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { fetchById } from '../../../apis/acp/admin.api'
-import { CONTROLLER } from '../../../utils/constants/app.constant'
-import ICourse from '../../shared/interfaces/models/course.interface'
+import { fetchById } from 'app/apis/acp/admin.api'
+import { CONTROLLER } from 'app/utils/constants/app.constant'
+import ICourse from '@shared/interfaces/models/course.interface'
 import {
   apiApproveCourse,
   apiSubmitForReview,

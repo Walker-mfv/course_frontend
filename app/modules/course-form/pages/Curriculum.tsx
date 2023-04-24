@@ -5,8 +5,8 @@ import {
   formCourseSetSectionExpandedIndexes,
   selectFormCourseCurriculum,
   selectFormCourseSectionExpandedIndexes,
-} from '../../../store/course/form-course.slice'
-import MyCircularProgress from '../../shared/components/MyCircularProgress'
+} from 'app/store/course/form-course.slice'
+import MyCircularProgress from '@shared/components/MyCircularProgress'
 import AddCourseSection from '../components/AddCourseSection'
 import CourseSection from '../components/CourseSection'
 import CoursePageSection from '../parts/CoursePageSection'

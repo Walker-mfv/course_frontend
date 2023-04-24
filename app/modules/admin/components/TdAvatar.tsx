@@ -1,6 +1,6 @@
 import { Avatar, BoxProps, Heading, HStack, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import { TSize } from '../../shared/types/size.type'
+import { TSize } from '@shared/types/size.type'
 import AdminHighlightSearchText from './AdminHighlightSearchText'
 
 export interface TdAvatarProps extends BoxProps {

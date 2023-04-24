@@ -10,20 +10,20 @@ import {
   UseFormSetValue,
   UseFormWatch,
 } from 'react-hook-form'
-import MyFormLabel from '../../../../shared/components/form-set/MyFormLabel'
-import MyInput from '../../../../shared/components/form-set/MyInput'
-import SubmitButton from '../../../../shared/components/button-set/SubmitButton'
-import IQuiz, { IAnswerOption, IQuestion } from '../../../../shared/interfaces/models/quiz.interface'
-import Editor from '../../../../shared/parts/Editor/Editor'
-import FormMsg from '../../../../../utils/constants/form-message.constant'
+import MyFormLabel from '@shared/components/form-set/MyFormLabel'
+import MyInput from '@shared/components/form-set/MyInput'
+import SubmitButton from '@shared/components/button-set/SubmitButton'
+import IQuiz, { IAnswerOption, IQuestion } from '@shared/interfaces/models/quiz.interface'
+import Editor from '@shared/parts/Editor/Editor'
+import FormMsg from 'app/utils/constants/form-message.constant'
 import { yupResolver } from '@hookform/resolvers/yup'
-import FormErrorBox from '../../../../shared/components/FormErrorBox'
+import FormErrorBox from '@shared/components/FormErrorBox'
 import { useUnitParams } from '../../../providers/unit-params.provider'
-import { useCrudActions } from '../../../../shared/hooks/data/crud-actions.hook'
-import { addQuizQuestion, updateQuizQuestion } from '../../../../../store/course/form-course.slice'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
+import { addQuizQuestion, updateQuizQuestion } from 'app/store/course/form-course.slice'
 import { useQuizParams } from '../../../providers/quiz-params.provider'
-import AppIcon from '../../../../../utils/constants/app-icon.constant'
-import Helper from '../../../../../utils/helpers/helper.helper'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import Helper from 'app/utils/helpers/helper.helper'
 
 interface FormData extends IQuestion {}
 

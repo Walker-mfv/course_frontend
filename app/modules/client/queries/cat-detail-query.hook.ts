@@ -1,4 +1,4 @@
-import { ICategory } from '../../shared/interfaces/models/category.interface'
+import { ICategory } from '@shared/interfaces/models/category.interface'
 import { useQuery, UseQueryOptions } from 'react-query'
 import { fetchBySlug } from 'app/apis/acp/admin.api'
 import { useRouter } from 'next/router'

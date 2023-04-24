@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useCallback, useMemo } from 'react'
-import IClientUrlParams from '../../admin/interfaces/client-url-params.interface'
+import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
 import { useUrlHelper } from './url-helper.hook'
 
 export interface IFilter {

@@ -1,6 +1,6 @@
 import { Stack, StackProps } from '@chakra-ui/react'
 import React from 'react'
-import { useBorderColor } from '../../shared/hooks/style.hook'
+import { useBorderColor } from '@shared/hooks/style.hook'
 import SectionTitle from './SectionTitle'
 
 export interface ContentCardProps extends StackProps {

@@ -1,7 +1,7 @@
 import { Heading, Stack } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectActiveUnit } from '../../../../store/course/learn-course.slice'
+import { selectActiveUnit } from 'app/store/course/learn-course.slice'
 import CommentForm from '../../components/Comments/CommentForm'
 import CommentList from '../../components/Comments/CommentList'
 import { useUnitComments } from '../../queries/unit-comments-query.hook'

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-undef */
 import { Button, Flex, Input, Menu, MenuButton, MenuItem, MenuList, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
-import { useDevice } from '../../shared/hooks/app.hook'
+import { useDevice } from '@shared/hooks/app.hook'
 import { useSearch } from '../providers/search.provider'
 
 export type SearchItem = {

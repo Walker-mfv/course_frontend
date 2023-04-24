@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
-import AppImg from '../../../utils/constants/app-img.constant'
-import PathHelper from '../../../utils/helpers/path.helper'
+import AppImg from 'app/utils/constants/app-img.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
 
 const Meta = ({ name, content }: { name?: string; content?: string }) => {
   if (!name || !content) return <></>

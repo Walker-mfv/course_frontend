@@ -1,7 +1,7 @@
 import { Skeleton, useTheme } from '@chakra-ui/react'
 import React from 'react'
 import { Pie } from 'react-chartjs-2'
-import { IRatingStat } from '../../../shared/interfaces/rating-stat.interface'
+import { IRatingStat } from '@shared/interfaces/rating-stat.interface'
 
 export interface CourseRatingChartProps {
   isLoading: boolean

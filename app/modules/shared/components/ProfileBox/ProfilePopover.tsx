@@ -1,7 +1,7 @@
 import { Avatar, AvatarProps } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import PathHelper from '../../../../utils/helpers/path.helper'
-import { useAuth } from '../../../auth/providers/auth.provider'
+import PathHelper from 'app/utils/helpers/path.helper'
+import { useAuth } from '@auth/providers/auth.provider'
 import { TModule } from '../../types/module.type'
 import MyDropdown, { IMyDropdownItemGroup } from '../form-set/MyDropdown'
 

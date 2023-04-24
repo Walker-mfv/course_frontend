@@ -10,7 +10,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { IStat } from '../../shared/interfaces/stat.interface'
+import { IStat } from '@shared/interfaces/stat.interface'
 
 type TTimeUnit = 'd' | 'M' | 'all'
 const timeUnits: string[] = ['d', 'M', 'all']

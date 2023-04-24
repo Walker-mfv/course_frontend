@@ -2,7 +2,7 @@ import { Alert, AlertIcon, Button, Icon, List, ListItem } from '@chakra-ui/react
 import React, { useCallback } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { FiPlus } from 'react-icons/fi'
-import lan from '../../../../utils/constants/lan.constant'
+import lan from 'app/utils/constants/lan.constant'
 import IAnswerFormData from '../../interaces/answer-form-data.inteface'
 import { useAnswerFieldArray } from '../../providers/answer-field-array.provider'
 import SortableAnswerCard from '../SortableAnswerCard/SortableAnswerCard'

@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
-import { useQueryMessage } from '../../shared/hooks/query-message'
+import { useQueryMessage } from '@shared/hooks/query-message'
 
 interface ClientParamsProvider {
   state: {

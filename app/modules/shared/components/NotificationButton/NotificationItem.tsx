@@ -1,7 +1,7 @@
 import { Avatar, Box, HStack, MenuDivider, MenuItem, Stack, Text } from '@chakra-ui/react'
 import moment from 'moment'
 import React, { useCallback } from 'react'
-import AppImg from '../../../../utils/constants/app-img.constant'
+import AppImg from 'app/utils/constants/app-img.constant'
 import { useSubtitleColor } from '../../hooks/style.hook'
 import INotification from '../../interfaces/models/notification.interface'
 import { useReadNotification } from '../../queries/my-notification-query.hook.ts'
