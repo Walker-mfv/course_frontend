@@ -22,7 +22,6 @@ export default function EditableAvatar({
   helperText = 'Allowed file types: png, jpg, jpeg.',
 }: EditableAvatarProps) {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  //
   const fileRef = useRef<HTMLInputElement>(null)
   const iconPos = -3
   const {

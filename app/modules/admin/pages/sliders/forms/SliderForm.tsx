@@ -35,7 +35,7 @@ export default function SliderForm(props: { id?: string }) {
   const { onClose } = useAppDialog()
 
   const [loading, setLoading] = useState<boolean>(true)
-  const [isDisable, setDisable] = useState<boolean>(false)
+  const [isDisabled, setDisabled] = useState<boolean>(false)
   const [item, setItem] = useState<ISlider>()
   const [initialValues, setInitialValues] = useState<FormData>()
   const { handleUpload, uploadProgress, getImgSrcFuncRef } = useUploadImage(SLIDER_dir, item?.picture)
@@ -70,7 +70,7 @@ export default function SliderForm(props: { id?: string }) {
 
   // ON SUBMIT
   const onSubmit = handleSubmit(async (values) => {
-    setDisable(true)
+    setDisabled(true)
     handleUpload(async (_, imgSrc) => {
       const data: Partial<ISlider> = {
         name: values.name,
@@ -80,17 +80,16 @@ export default function SliderForm(props: { id?: string }) {
       }
       if (!props.id) {
         await onCreate(data)
-        setDisable(false)
         onClose()
       } else {
         const updatedItem = await onUpdate(item!._id, data)
-        setDisable(false)
         if (updatedItem) {
           setItem(updatedItem)
           setInitialValues(values)
           reset(values)
         }
       }
+      setDisabled(false)
     })
   })
 
@@ -125,7 +124,7 @@ export default function SliderForm(props: { id?: string }) {
             </VStack>
             <ButtonGroup justifyContent={'end'}>
               <Button onClick={onClose}>Cancel</Button>
-              <Button colorScheme={'blue'} type="submit" disabled={!isDirty || isDisable}>
+              <Button colorScheme={'blue'} type="submit" disabled={!isDirty || isDisabled}>
                 Submit
               </Button>
             </ButtonGroup>

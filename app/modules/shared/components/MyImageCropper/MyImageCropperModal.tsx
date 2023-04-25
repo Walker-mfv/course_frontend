@@ -7,10 +7,8 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  ModalProps,
-  useDisclosure,
 } from '@chakra-ui/react'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useRef } from 'react'
 import { TSize } from '../../types/size.type'
 import MyImageCropper from './MyImageCropper'
 
