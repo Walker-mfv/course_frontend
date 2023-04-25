@@ -23,7 +23,7 @@ const tabs: ITab[] = [
     path: 'wishlist',
   },
   {
-    label: 'archived',
+    label: 'Archived',
     path: 'archived',
   },
 ]

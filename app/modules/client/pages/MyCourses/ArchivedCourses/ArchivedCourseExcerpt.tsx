@@ -17,7 +17,7 @@ function ArchivedCourseExcerpt({ item, actions }: ArchivedCourseExcerptProps) {
   return (
     <MyCourseCard>
       <NextLink href={PathHelper.getLearnCoursePath(item.course.basicInfo.slug)}>
-        <Stack shadow={'lg'} height="full">
+        <Stack shadow={'lg'} height="full" borderRadius={'lg'} overflow={'hidden'}>
           {/* IMAGE */}
           <AspectRatio ratio={16 / 9} pos="relative">
             <Box
@@ -47,11 +47,10 @@ function ArchivedCourseExcerpt({ item, actions }: ArchivedCourseExcerptProps) {
             </Box>
           </AspectRatio>
           {/* INFO */}
-          <Stack p={[2, 4]} flex={1}>
-            {/* TITLE & SUBTITLE */}
-            <Stack spacing={1} minH="75px">
+          <Stack pt={2} px={[2, 4]} pb={[2, 4]} flex={1}>
+            {/* TITLE */}
+            <Stack mb={1} minH="45px">
               <Heading fontSize={'md'}>{item.course.basicInfo.title}</Heading>
-              {/* <Text color={subColor}>{item.course.basicInfo.subtitle}</Text> */}
             </Stack>
             {/* PROGRESS */}
             <Stack spacing={0} flex={1} justify="end">

@@ -19,7 +19,7 @@ function LearningCourseExcerpt({ item, actions }: LearningCourseExcerptProps) {
   return (
     <MyCourseCard overflow={'hidden'}>
       <NextLink href={PathHelper.getLearnCoursePath(item.course.basicInfo.slug)}>
-        <Stack shadow={'lg'} height="full">
+        <Stack shadow={'lg'} height="full" borderRadius={'lg'} overflow={'hidden'}>
           {/* IMAGE */}
           <AspectRatio ratio={16 / 9} pos="relative">
             <Box
@@ -50,11 +50,12 @@ function LearningCourseExcerpt({ item, actions }: LearningCourseExcerptProps) {
           </AspectRatio>
 
           {/* INFO */}
-          <Stack p={[2, 4]} flex={1}>
-            {/* TITLE & SUBTITLE */}
-            <Stack spacing={1} minH="75px">
-              <Heading fontSize={'md'}>{item.course.basicInfo.title}</Heading>
-              {/* <Text color={subColor}>{item.course.basicInfo.subtitle}</Text> */}
+          <Stack pt={2} px={[2, 4]} pb={[2, 4]} flex={1}>
+            {/* TITLE */}
+            <Stack mb={1} minH="45px">
+              <Heading fontSize={'md'} noOfLines={3} lineHeight={'1.4'}>
+                {item.course.basicInfo.title}
+              </Heading>
             </Stack>
             {/* PROGRESS */}
 
