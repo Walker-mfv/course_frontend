@@ -4,6 +4,7 @@ import PathHelper from 'app/utils/helpers/path.helper'
 import { useAuth } from '@auth/providers/auth.provider'
 import { TModule } from '../../types/module.type'
 import MyDropdown, { IMyDropdownItemGroup } from '../form-set/MyDropdown'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 
 export interface ProfilePopoverProps extends AvatarProps {
   context?: TModule
@@ -20,16 +21,18 @@ function ProfilePopover({ postLogout, context = 'client', ...props }: ProfilePop
         label: 'profile',
         list: [
           {
-            label: 'Edit profile',
+            label: 'Profile',
             path: PathHelper.getProfliePath(),
+            icon: <AppIcon.userBi fontSize={'1.2rem'} />,
           },
           {
             label: 'Logout',
-            onClick: async () => {
-              await onLogout()
+            onClick: () => {
+              onLogout()
               // postLogout && postLogout()
-              window.location.reload()
+              // window.location.reload()
             },
+            icon: <AppIcon.logout fontSize={'1rem'} />,
           },
         ],
       },
@@ -42,18 +45,17 @@ function ProfilePopover({ postLogout, context = 'client', ...props }: ProfilePop
             {
               label: 'My learning',
               path: PathHelper.getMyCoursesPath('learning'),
+              icon: <AppIcon.course fontSize={'1rem'} />,
             },
             {
               label: 'My cart',
               path: PathHelper.getCartPath(),
+              icon: <AppIcon.cart fontSize={'1rem'} />,
             },
             {
               label: 'Wishlist',
               path: PathHelper.getMyCoursesPath('wishlist'),
-            },
-            {
-              label: '',
-              path: '#',
+              icon: <AppIcon.withlist fontSize={'1.1rem'} />,
             },
           ],
         },

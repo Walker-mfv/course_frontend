@@ -26,14 +26,14 @@ function CourseDescription() {
           cursor={'pointer'}
           _hover={{ color: 'purple.700' }}
         >
-          Show
+          Show&nbsp;
           {isShow ? (
             <>
-              &nbsp;less <ChevronUpIcon fontSize={'md'} />
+              less <ChevronUpIcon fontSize={'md'} />
             </>
           ) : (
             <>
-              &nbsp;more <ChevronDownIcon fontSize={'md'} />
+              more <ChevronDownIcon fontSize={'md'} />
             </>
           )}
         </Text>

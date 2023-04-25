@@ -26,17 +26,21 @@ export interface IMyDropdownItemGroup {
 const ListItem = (props: IMyDropDownItem) => {
   const activeColor = useActiveColor()
   return (
-    <HStack py={2}>
-      {/* <ListIcon as={MdCheckCircle} color="green.500" /> */}
-      <Text
-        h="full"
-        w="full"
-        sx={{
-          '&:hover': {
-            color: activeColor,
-          },
-        }}
-      >
+    <HStack
+      py={2}
+      sx={{
+        '&:hover': {
+          color: activeColor,
+        },
+        '&:hover svg': {
+          color: activeColor,
+        },
+      }}
+    >
+      <Text color={'#aaaaaa'} mr={1}>
+        {props.icon}
+      </Text>
+      <Text h="full" w="full">
         {props.label}
       </Text>
     </HStack>
@@ -84,7 +88,7 @@ function MyDropdown(props: DropDownProps) {
       <PopoverTrigger>{props.trigger}</PopoverTrigger>
       <PopoverContent border={'none'} shadow="lg" p={4} maxW="300px">
         <PopoverArrow />
-        <PopoverHeader>
+        <PopoverHeader mb={2} pb={5}>
           <ProfileTile />
         </PopoverHeader>
         <PopoverBody>
