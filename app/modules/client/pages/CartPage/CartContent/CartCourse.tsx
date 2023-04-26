@@ -75,7 +75,11 @@ function CartCourse({ course }: { course: ICourse }) {
       >
         <HStack align={'end'} justify="space-between">
           <NextLink href={courseLink}>
-            <CourseImage src={course.basicInfo.image || AppImg.MEDIA_PLACEHOLDER} />
+            <CourseImage
+              src={course.basicInfo.image || AppImg.MEDIA_PLACEHOLDER}
+              borderRadius={'md'}
+              overflow={'hidden'}
+            />
           </NextLink>
           <Box display={{ md: 'none' }}>
             <CartCoursePrice course={course} />
@@ -93,11 +97,13 @@ function CartCourse({ course }: { course: ICourse }) {
           {/* TITLE & SUBTITLE */}
           <Stack spacing={0}>
             <NextLink href={courseLink}>
-              <Heading fontSize={'sm'}>{course.basicInfo.title}</Heading>
+              <Heading fontSize={'sm'} noOfLines={2}>
+                {course.basicInfo.title}
+              </Heading>
             </NextLink>
 
             <NextLink href={courseLink}>
-              <Text color={subColor} fontSize="xs">
+              <Text color={subColor} fontSize="xs" noOfLines={2}>
                 {course.basicInfo.subtitle}
               </Text>
             </NextLink>

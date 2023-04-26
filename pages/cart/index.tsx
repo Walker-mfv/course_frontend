@@ -1,4 +1,4 @@
-import { Container, Heading, HStack, Stack } from '@chakra-ui/react'
+import { Heading, Stack } from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import ClientLayout from 'app/modules/client/ClientLayout'
@@ -23,8 +23,6 @@ const CartPage: NextPageWithLayout = () => {
             <Heading fontSize="md">{totalCourse} Courses in Cart</Heading>
             {totalCourse > 0 ? <CartContent /> : <EmptyCart />}
           </Stack>
-          {/* <Heading>{JSON.stringify(router.query)}</Heading> */}
-          {/* <ShoppingCart /> */}
         </Stack>
       </ClientPageContainer>
     </>

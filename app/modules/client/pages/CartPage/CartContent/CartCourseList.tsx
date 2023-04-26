@@ -16,6 +16,7 @@ export default function CartCourseList() {
       divider={<StackDivider color={borderColor} />}
       border="1px solid"
       borderColor={borderColor}
+      borderRadius={'lg'}
       spacing={4}
       p={4}
     >

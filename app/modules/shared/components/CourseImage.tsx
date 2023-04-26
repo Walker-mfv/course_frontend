@@ -17,7 +17,7 @@ function CourseImage({
 }: CourseImageProps) {
   const placeholderSrc = defaultImage ? AppImg.MEDIA_PLACEHOLDER : ''
   return (
-    <AspectRatio bgColor={'black'} minW={w} maxW={w} ratio={16 / 9} {...props}>
+    <AspectRatio bgColor={'gray.300'} minW={w} maxW={w} ratio={16 / 9} {...props}>
       {src || defaultImage ? <Image src={src || placeholderSrc} alt={alt} /> : <Box></Box>}
     </AspectRatio>
   )

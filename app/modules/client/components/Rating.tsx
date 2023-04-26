@@ -23,7 +23,7 @@ function Rating({ value = 0, ratingCount, fw = false, showLabel = true, size = '
       <HStack spacing={0.5} minW={fw ? '90px' : undefined}>
         <RatingStar value={val} w={starWidth + 'px'} />
       </HStack>
-      {ratingCount != undefined && <CourseReviewCount size={'14px'}>{ratingCount}</CourseReviewCount>}
+      {ratingCount != undefined && <CourseReviewCount size={'13px'}>{ratingCount}</CourseReviewCount>}
     </HStack>
   )
 }

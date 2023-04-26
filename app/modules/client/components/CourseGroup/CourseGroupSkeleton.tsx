@@ -10,8 +10,9 @@ const CourseSekeleton = () => {
         </AspectRatio>
       </Skeleton>
       <TitleSkeleton />
-      <RatingSkeleton />
+      <AuthorSkeleton />
       <PriceSkeleton />
+      <RatingSkeleton />
     </Stack>
   )
 }
@@ -21,7 +22,7 @@ export const TitleSkeleton = (props: SkeletonProps) => {
 }
 
 export const AuthorSkeleton = (props: SkeletonProps) => {
-  return <Skeleton w="60px" h="20px" {...props} />
+  return <Skeleton w="100px" h="20px" {...props} />
 }
 export const RatingSkeleton = (props: SkeletonProps) => {
   return <Skeleton w="170px" h="20px" {...props} />
