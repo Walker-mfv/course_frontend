@@ -1,4 +1,4 @@
-import { Alert, HStack, Stack, StackDivider } from '@chakra-ui/react'
+import { Alert, Stack, StackDivider } from '@chakra-ui/react'
 import React from 'react'
 import ErrorMessage from '@shared/components/message-set/ErrorMessage'
 import { useFilterCoursesQuery } from '@client/queries/filter-courses-query.hook'

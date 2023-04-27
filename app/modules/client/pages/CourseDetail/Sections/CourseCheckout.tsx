@@ -1,4 +1,16 @@
-import { BoxProps, Heading, HStack, Icon, Stack, Text, StatArrow, Stat, StatHelpText } from '@chakra-ui/react'
+import {
+  BoxProps,
+  Heading,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+  StatArrow,
+  Stat,
+  StatHelpText,
+  useColorModeValue,
+  LightMode,
+} from '@chakra-ui/react'
 import React, { useMemo } from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import DateHelper from 'app/utils/helpers/date.helper'
@@ -28,6 +40,8 @@ export interface CourseCheckoutProps extends BoxProps {
 }
 
 export default function CourseCheckout({ size = 'md', course, ...props }: CourseCheckoutProps) {
+  const bg = useColorModeValue('gray.700', 'white')
+
   const prices = useMemo(() => {
     return CourseHelper.getPrices(course.basicInfo.price, course.basicInfo.currency, course.promotions)
   }, [course])
@@ -66,7 +80,7 @@ export default function CourseCheckout({ size = 'md', course, ...props }: Course
     <Stack spacing={3} {...props}>
       <Stack spacing={0}>
         <Stack alignItems={'center'} spacing={0}>
-          <Heading as="h3" fontSize={'1.6rem'} color={'gray.700'} mb={2}>
+          <Heading as="h3" fontSize={'1.6rem'} color={bg} mb={2}>
             <Price value={prices?.sellPrice} currency={course.basicInfo.currency} />
           </Heading>
           <Stack>
@@ -90,10 +104,12 @@ export default function CourseCheckout({ size = 'md', course, ...props }: Course
         </Stack>
       </Stack>
       <Stack>
-        <HStack flexDir="row" marginBottom={2} justify="space-between" spacing={4} mt={2}>
-          <AddToCartButton course={course} flex={1} />
-          <AddToFavoriteButton item={course} />
-        </HStack>
+        <LightMode>
+          <HStack flexDir="row" marginBottom={2} justify="space-between" spacing={4} mt={2}>
+            <AddToCartButton course={course} flex={1} />
+            <AddToFavoriteButton item={course} />
+          </HStack>
+        </LightMode>
       </Stack>
       <Stack>
         <Heading as="h4" fontSize={'18px'} mt={3} mb={2}>

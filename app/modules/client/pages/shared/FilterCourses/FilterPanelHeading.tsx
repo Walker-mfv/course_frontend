@@ -47,7 +47,6 @@ const sortData: SortItem[] = [
 const SortMenu = () => {
   const { _sortBy, _order } = useClientUrlParams()
   const { getUrlWithQueryParams } = useUrlHelper()
-  //
   const currentSortItem = sortData.find((item) => item.field == _sortBy)
   const menuItemsHtml = sortData.map((item) => {
     const url = getUrlWithQueryParams({
@@ -62,12 +61,12 @@ const SortMenu = () => {
   })
   return (
     <Menu>
-      <MenuButton p={{ base: 6, md: 8 }} as={Button} rightIcon={<ChevronDownIcon />} variant="outline">
+      <MenuButton p={6} as={Button} rightIcon={<ChevronDownIcon />} variant="outline">
         <Stack align="start" spacing={{ base: 1 }}>
-          <Text fontSize={'xs'} as="strong">
-            Sort By
-          </Text>
-          <Text fontWeight={'light'}>{currentSortItem?.label}</Text>
+          <HStack as="strong">
+            <AppIcon.sort fontSize={'1.3rem'} color={'#aaaaaa'} />
+            <Text>{currentSortItem?.label}</Text>
+          </HStack>
         </Stack>
       </MenuButton>
       <MenuList>{menuItemsHtml}</MenuList>
@@ -83,12 +82,12 @@ const FilterPanelHeading = () => {
   const { data: totalItems, isLoading } = useCountFilterCoursesQuery()
   return (
     <HStack justifyContent="space-between">
-      <Flex alignItems={'end'} flex={[1, 'unset']}>
+      <Flex alignItems={'center'} flex={[1, 'unset']} gap={2}>
         <Button
           onClick={toggleFilter}
-          p={{ base: 4, md: 8 }}
+          p={6}
           variant="outline"
-          leftIcon={<Icon as={AppIcon.filter} />}
+          leftIcon={<Icon as={AppIcon.filter} color={'#aaaaaa'} />}
           flex={[1, 'unset']}
         >
           <Text as="strong">Filter</Text>
@@ -102,7 +101,7 @@ const FilterPanelHeading = () => {
       </Flex>
       <Skeleton isLoaded={!isLoading} w="fit-content">
         <Heading display={['none', 'unset']} color={subtitleColor} size={'sm'} as="span">
-          {totalItems} results{' '}
+          {totalItems} results
         </Heading>
       </Skeleton>
     </HStack>

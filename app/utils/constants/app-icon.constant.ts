@@ -1,5 +1,5 @@
 import { AiOutlineFilePdf, AiOutlineReload, AiOutlineFileText, AiOutlineAppstore } from 'react-icons/ai'
-import { BiBarChart, BiCog, BiMessageDetail, BiUserCircle } from 'react-icons/bi'
+import { BiBarChart, BiCog, BiMessageDetail, BiUserCircle, BiSortAlt2 } from 'react-icons/bi'
 import { BsQuestionCircle } from 'react-icons/bs'
 import { FaCircle, FaFacebook, FaHeart, FaPlayCircle } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
@@ -57,6 +57,7 @@ const AppIcon = {
   sortDown: IoCaretDown,
   play: FaPlayCircle,
   back: FiArrowLeft,
+  sort: BiSortAlt2,
 
   menu: FiMenu,
   none: FiMinus,

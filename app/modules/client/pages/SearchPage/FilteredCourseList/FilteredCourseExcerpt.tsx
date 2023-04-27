@@ -7,6 +7,7 @@ import {
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
+  Portal,
   Stack,
   Text,
   useBreakpointValue,
@@ -22,6 +23,7 @@ import CoursePrice from '@client/components/CourseGroup/CoursePrice'
 import BriefCourse from '@client/components/CourseGroup/BriefCourse'
 import Rating from '@client/components/Rating'
 import { useIsClientMobile } from '@client/hooks/is-client-mobile.hook'
+import Helper from 'app/utils/helpers/helper.helper'
 
 export const CourseExcerptMeta = ({ course }: { course: ICourse }) => {
   const subColor = useSubtitleColor()
@@ -29,7 +31,7 @@ export const CourseExcerptMeta = ({ course }: { course: ICourse }) => {
   return (
     <HStack mb={'0.4rem'} spacing={1} color={subColor}>
       <Text fontSize={'xs'}>{hour} total hours •</Text>
-      <Text fontSize={'xs'}>{course.basicInfo.level || 'All Levels'}</Text>
+      <Text fontSize={'xs'}>{Helper.capitalizeFirstLetter(course.basicInfo?.level as string) || 'All Levels'}</Text>
     </HStack>
   )
 }
@@ -39,11 +41,16 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
   const subColor = useSubtitleColor()
   const showOriginPrice = useBreakpointValue([false, false, true])
   return (
-    <Popover placement="bottom" boundary={'scrollParent'} trigger="hover">
+    <Popover placement="right" boundary={'scrollParent'} trigger="hover">
       <NextLink href={PathHelper.getCourseDetailPath(course.basicInfo.slug)}>
         <PopoverTrigger>
           <HStack align="start">
-            <CourseImage src={course.basicInfo.image || ''} w={{ base: '100px', sm: '150px', md: '250px' }} />
+            <CourseImage
+              src={course.basicInfo.image || ''}
+              w={{ base: '100px', sm: '150px', md: '250px' }}
+              borderRadius={'lg'}
+              overflow={'hidden'}
+            />
             <Stack flex={1} spacing={0} pl={{ md: 4 }}>
               {/* TITLE & SUBTITLE */}
               <Box>
@@ -77,7 +84,14 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
                 </Box>
               </Stack>
             </Stack>
-            <Box display={{ base: 'none', md: 'block' }} alignSelf={'start'} fontSize={'lg'} ml={4}>
+            <Box
+              display={{ base: 'none', md: 'flex' }}
+              alignSelf={'start'}
+              justifyContent={'flex-end'}
+              fontSize={'lg'}
+              ml={2}
+              minWidth={'100px'}
+            >
               <CoursePrice
                 currency={course.basicInfo.currency!}
                 originPrice={course.basicInfo.price || 0}
@@ -90,12 +104,14 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
       </NextLink>
 
       {!isMobile ? (
-        <PopoverContent>
-          <PopoverArrow />
-          <PopoverBody shadow="md" p={5}>
-            <BriefCourse course={course} />
-          </PopoverBody>
-        </PopoverContent>
+        <Portal>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverBody shadow="md" p={5}>
+              <BriefCourse course={course} />
+            </PopoverBody>
+          </PopoverContent>
+        </Portal>
       ) : null}
     </Popover>
   )

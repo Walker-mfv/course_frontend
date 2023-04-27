@@ -9,7 +9,7 @@ export default function ClearFilterButton() {
   const { reset } = useFilter(query)
   const btnSize = useButtonSize()
   return (
-    <Button size={btnSize} ml={2} onClick={reset}>
+    <Button size={btnSize} ml={2} onClick={reset} p={6}>
       Clear Filter
     </Button>
   )

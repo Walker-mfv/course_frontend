@@ -23,13 +23,13 @@ import PathHelper from 'app/utils/helpers/path.helper'
 const getAddressByUnitId = (course: ICourse, unitId: string) => {
   if (!course.details.sections) return { sIdx: 0, uIdx: 0 }
   let sIdx = course.details.sections.findIndex((section) => section.units.some((item) => item._id == unitId))
-  //
+
   if (sIdx < 0)
     return {
       sIdx: 0,
       uIdx: 0,
     }
-  //
+
   const uIdx = course.details.sections[sIdx].units.findIndex((unit) => unit._id == unitId)
   return {
     sIdx,
@@ -86,7 +86,6 @@ const LearningPage: NextPageWithLayout = () => {
     }
   }, [router, isNoAuth])
 
-  //
   useEffect(() => {
     if (learnCourse) {
       dispatch(setLearnCourse(learnCourse))

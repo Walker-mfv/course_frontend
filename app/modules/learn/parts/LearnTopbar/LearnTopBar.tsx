@@ -18,7 +18,8 @@ export default function LearnTopBar() {
   return (
     <HStack
       h={LEARN_TOP_BAR_HEIGHT + 'px'}
-      p={{ base: 2, lg: 4 }}
+      px={{ base: 2, lg: 4 }}
+      py={8}
       // bgColor="gray.900"
       borderBottom={border}
       borderColor={borderColor}

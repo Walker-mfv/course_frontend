@@ -1,3 +1,4 @@
+import { useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import NumberFormat from 'react-number-format'
 import { TCourseCurrency } from '../interfaces/models/course.interface'

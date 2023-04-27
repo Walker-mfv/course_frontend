@@ -17,31 +17,10 @@ import { COURSE_LEVEL_SELECT_DATA } from 'app/utils/data/course.data'
 import Rating from '@client/components/Rating'
 import { useClientParams } from '@client/providers/client-params.provider'
 import { useCountClientFilterQuery } from '@client/queries/count-client-filter-query.hook'
-import ClearFilterButton from '@shared/FilterCourses/ClearFilterButton'
+import ClearFilterButton from '../../shared/FilterCourses/ClearFilterButton'
 import FilterGroup, { FilterGroupProps } from './FilterGroup'
 
 const data: FilterGroupProps[] = [
-  // {
-  //     field: 'topic',
-  //     title: 'Topic',
-  //     data: [
-  //         {
-  //             value: 1,
-  //             label: 'Excel',
-  //             count: 221
-  //         },
-  //         {
-  //             value: 2,
-  //             label: 'Javascript',
-  //             count: 1000
-  //         },
-  //         {
-  //             value: 3,
-  //             label: 'Python',
-  //             count: 342
-  //         },
-  //     ]
-  // },
   {
     field: 'basicInfo.level',
     title: 'Level',

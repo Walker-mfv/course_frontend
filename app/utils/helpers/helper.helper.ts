@@ -15,53 +15,65 @@ export default class Helper {
     }, str)
     return result
   }
+
+  static capitalizeFirstLetter(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
   static get pluralize() {
     return pluralize
   }
+
   static cvtNumber(value: any, defaultVal: number): number {
     value = Number.parseInt(value)
     value = isNaN(value) ? defaultVal : value
     return value
   }
+
   static reverseString(val: string): string {
     return val.split(' ').reverse().join(' ')
   }
+
   static isEmpty(str: string) {
     return !str || str.length === 0
   }
+
   static cloneObj<T>(obj: T): T {
     const newObjString = JSON.stringify(obj)
     return JSON.parse(newObjString)
   }
+
   static sleep(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms))
   }
+
   static toValidBase64UploadString(base64: string) {
     if (base64) {
       return base64.slice(22)
     }
     return undefined
   }
-  //
+
   static logInfo(...args: any) {
     console.info(...args)
   }
+
   static extractFileName(fileName: string) {
-    const dotIdx = fileName.length - 1 - this.stringReverse(fileName).indexOf('.')
+    const dotIdx = fileName.length - 1 - this.reverseString(fileName).indexOf('.')
     const name = fileName.slice(0, dotIdx)
     const ext = fileName.slice(dotIdx + 1)
     return [name, ext]
   }
-  static stringReverse(value: string) {
-    return value.split('').reverse().join('')
-  }
+
   static toSlug(value: string) {
     return slug(value)
   }
+
   static cvtHtmlToText(value?: string) {
     if (!value) return ''
     return String(value).replace(/(<([^>]+)>)/gi, '')
   }
+
   static md5(string: string): string {
     return md5(string)
   }
