@@ -37,7 +37,7 @@ const ListItem = (props: IMyDropDownItem) => {
         },
       }}
     >
-      <Text color={'#aaaaaa'} mr={1}>
+      <Text color={'#aaaaaa'} minWidth={'1.1rem'}>
         {props.icon}
       </Text>
       <Text h="full" w="full">

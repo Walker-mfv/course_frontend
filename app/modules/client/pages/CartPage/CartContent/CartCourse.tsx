@@ -49,9 +49,6 @@ const CourseActions = ({ course }: { course: ICourse }) => {
       <Button onClick={onRemove} size="sm" variant="link" colorScheme={'purple'}>
         Remove
       </Button>
-      {/* <Button onClick={onRemove} size="sm" variant="link" colorScheme={'purple'}>
-                Save for Later
-            </Button> */}
       {!!user && (
         <Button onClick={onMoveToWishlist} size="sm" variant="link" colorScheme={'purple'}>
           Move to Wishlist

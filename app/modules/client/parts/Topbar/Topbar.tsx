@@ -1,8 +1,9 @@
-import { Stack, useColorModeValue } from '@chakra-ui/react'
+import { Box, Stack, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { useIsClientMobile } from '../../hooks/is-client-mobile.hook'
 import DesktopTopBar from './ClientDesktopTopBar'
 import ClientMobileTopBar from './ClientMobileTopBar'
+import HorizontalCategoryBar from './HorizontalCategoryBar'
 
 const TopBar = () => {
   const bg = useColorModeValue('white', undefined)
@@ -13,16 +14,6 @@ const TopBar = () => {
       <Stack py={5} px={4}>
         {!isMobile ? <DesktopTopBar /> : <ClientMobileTopBar />}
       </Stack>
-      {/* <Box
-        sx={{
-          display: 'none',
-          '@media only screen and (min-width: 991.98px)': {
-            display: 'block',
-          },
-        }}
-      >
-        <HorizontalCategoryBar />
-      </Box> */}
     </Stack>
   )
 }
