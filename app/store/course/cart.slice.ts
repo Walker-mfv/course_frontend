@@ -44,7 +44,6 @@ export const cartSlice = createSlice({
       }
       state.data && LocalStorageHelper.setCart(state.data as any)
     },
-    //
     addCourseToCart: (state, action: PayloadAction<ICourse>) => {
       const existIdx = state.data?.courses?.findIndex((item) => item._id == action.payload._id)
       if (existIdx == -1) state.data?.courses.push(action.payload as any)

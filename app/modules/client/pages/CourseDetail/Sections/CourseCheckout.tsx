@@ -79,7 +79,7 @@ export default function CourseCheckout({ size = 'md', course, ...props }: Course
               <>
                 <Stat>
                   <StatHelpText>
-                    <StatArrow type="decrease" />
+                    <StatArrow color="red.500" type="decrease" />
                     {Math.floor(prices?.discountPercent * 100)}% off
                   </StatHelpText>
                 </Stat>

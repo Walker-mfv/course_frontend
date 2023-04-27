@@ -21,11 +21,11 @@ export const CheckoutButton = () => {
   } = useAuth()
 
   if (typeof user == 'undefined') return <></>
-  //
-  const onCheckoutClick = async () => {
+
+  const onCheckoutClick = () => {
     if (!!user) {
       try {
-        await onCheckout()
+        onCheckout()
       } catch (e) {
         toast(NotifyHelper.somethingWentWrong)
       }

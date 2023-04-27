@@ -27,7 +27,7 @@ export const apiDeleteCourseInCart = (courseId: string): Promise<void> => {
   return axiosApiInstance.delete(`/${prefix}/cart/${courseId}`).then((res) => res.data)
 }
 
-export const apiCheckoutMomo = (): Promise<string> => {
+export const apiCheckoutMomo = async (): Promise<string> => {
   return axiosApiInstance.post(`/${prefix}/cart/checkout-momo`).then((res) => res.data)
 }
 

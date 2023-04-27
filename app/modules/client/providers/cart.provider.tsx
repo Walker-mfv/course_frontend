@@ -61,6 +61,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
     }
   }, [userCart, dispatch, updateCart])
+
   const addToCart = useCallback(
     (item: ICourse) => {
       if (user) {
@@ -70,7 +71,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     },
     [dispatch, toast, user]
   )
-  //
+
   const deleteCourseInCart = useCallback(
     (item: ICourse) => {
       if (user) {
