@@ -119,7 +119,7 @@ function CartCourse({ course }: { course: ICourse }) {
         </Stack>
       </Stack>
       {/* PRICE */}
-      <Box display={{ base: 'none', md: 'block' }}>
+      <Box display={{ base: 'none', md: 'block' }} minWidth={'100px'} textAlign={'end'}>
         <CartCoursePrice course={course} />
       </Box>
     </HStack>
