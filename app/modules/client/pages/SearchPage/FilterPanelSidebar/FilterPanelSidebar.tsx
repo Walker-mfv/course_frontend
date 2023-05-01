@@ -36,7 +36,7 @@ const data: FilterGroupProps[] = [
         label: (
           <HStack>
             <Rating fw={true} value={4.5} showLabel={false} />
-            <Text>4.5 and up</Text>
+            <Text fontSize={'0.9rem'}>4.5 & up</Text>
           </HStack>
         ),
       },
@@ -45,7 +45,7 @@ const data: FilterGroupProps[] = [
         label: (
           <HStack>
             <Rating fw={true} value={4.0} showLabel={false} />
-            <Text>4.0 and up</Text>
+            <Text fontSize={'0.9rem'}>4.0 & up</Text>
           </HStack>
         ),
       },
@@ -54,7 +54,7 @@ const data: FilterGroupProps[] = [
         label: (
           <HStack>
             <Rating fw={true} value={3.5} showLabel={false} />
-            <Text>3.5 and up</Text>
+            <Text fontSize={'0.9rem'}>3.5 & up</Text>
           </HStack>
         ),
       },
@@ -63,7 +63,7 @@ const data: FilterGroupProps[] = [
         label: (
           <HStack>
             <Rating fw={true} value={3.0} showLabel={false} />
-            <Text>3.0 and up</Text>
+            <Text fontSize={'0.9rem'}>3.0 & up</Text>
           </HStack>
         ),
       },
