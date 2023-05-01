@@ -62,7 +62,7 @@ function ReviewExcerpt({
               {moment(review.timestamps.createdAt).fromNow()}
             </Text>
           </HStack>
-          <RatingStar value={review.rating} w={'20px'} />
+          <RatingStar value={review.rating} w={'18px'} />
           <ReviewContent review={review} showAllContent={showAllContent} />
         </Stack>
       </HStack>

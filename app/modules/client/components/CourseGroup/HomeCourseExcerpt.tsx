@@ -21,6 +21,8 @@ import { useIsClientMobile } from '../../hooks/is-client-mobile.hook'
 import Rating from '../Rating'
 import BriefCourse from './BriefCourse'
 import CoursePrice from './CoursePrice'
+import AvatarSkeleton from '@shared/components/AvatarSkeleton'
+import AppImg from 'app/utils/constants/app-img.constant'
 
 export interface HomeCourseExcerptProps {
   course: ICourse
@@ -32,6 +34,7 @@ function HomeCourseExcerpt({ course }: HomeCourseExcerptProps) {
   const isMobile = useIsClientMobile()
   const bgCard = useCardBg()
   const author = TypeHelper.isUser(course.history.createdBy) ? course.history.createdBy : undefined
+
   return (
     <>
       <Popover placement="right" boundary={'scrollParent'} trigger="hover">
@@ -54,13 +57,13 @@ function HomeCourseExcerpt({ course }: HomeCourseExcerptProps) {
                 </Stack>
                 <Stack spacing={0.5}>
                   <Stack spacing={0} direction={'row'} alignItems={'center'} mb={'2'}>
-                    <Image
-                      src={author?.profile.avatar || ''}
-                      alt={course.basicInfo.title}
-                      borderRadius={'50%'}
-                      maxWidth={'28px'}
-                      mr={'2.5'}
-                    />
+                    <AspectRatio ratio={1 / 1} w={'28px'} mr={'2.5'}>
+                      <Image
+                        src={author?.profile.avatar || AppImg.MEDIA_PLACEHOLDER}
+                        alt={course.basicInfo.title}
+                        borderRadius={'50%'}
+                      />
+                    </AspectRatio>
                     <Text fontSize={['xs', 'sm']} color={subColor}>
                       {author?.profile.fullName}
                     </Text>

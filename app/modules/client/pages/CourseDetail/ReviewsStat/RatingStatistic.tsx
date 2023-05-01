@@ -35,7 +35,7 @@ const Stars = () => {
     return (
       <HStack key={i}>
         <Box minW={'100px'}>
-          <RatingStar value={value} w={16} />
+          <RatingStar value={value} w={15} />
         </Box>
         <Text fontSize={'15px'} fontWeight={700}>
           {percent}%
