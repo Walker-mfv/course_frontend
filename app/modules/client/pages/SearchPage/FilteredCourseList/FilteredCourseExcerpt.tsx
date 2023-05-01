@@ -24,6 +24,7 @@ import BriefCourse from '@client/components/CourseGroup/BriefCourse'
 import Rating from '@client/components/Rating'
 import { useIsClientMobile } from '@client/hooks/is-client-mobile.hook'
 import Helper from 'app/utils/helpers/helper.helper'
+import TypeHelper from 'app/utils/helpers/type.helper'
 
 export const CourseExcerptMeta = ({ course }: { course: ICourse }) => {
   const subColor = useSubtitleColor()
@@ -40,8 +41,10 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
   const isMobile = useIsClientMobile()
   const subColor = useSubtitleColor()
   const showOriginPrice = useBreakpointValue([false, false, true])
+  const author = TypeHelper.isUser(course.history.createdBy) ? course.history.createdBy : undefined
+
   return (
-    <Popover placement="right" boundary={'scrollParent'} trigger="hover">
+    <Popover placement="bottom" boundary={'scrollParent'} trigger="hover">
       <NextLink href={PathHelper.getCourseDetailPath(course.basicInfo.slug)}>
         <PopoverTrigger>
           <HStack align="start">
@@ -64,7 +67,7 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
               </Box>
               {/* CREATED BY */}
               <Text fontSize={'xs'} color={subColor}>
-                Peter Anh
+                {author?.profile.fullName}
               </Text>
               {/* META */}
               <Stack spacing={0}>

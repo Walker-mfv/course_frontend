@@ -12,9 +12,10 @@ export interface RatingProps {
 }
 function Rating({ value = 0, ratingCount, fw = false, showLabel = true, size = 'md', ...props }: RatingProps) {
   const val = Number.parseFloat(value.toFixed(1))
-  const starWidth = size == 'md' ? 20 : 14
+
+  const starWidth = size == 'md' ? 16 : 14
   return (
-    <HStack spacing={1} fontSize={'14px'}>
+    <HStack spacing={1} fontSize={'14px'} alignItems={'center'}>
       {showLabel && (
         <Text fontSize={size} fontWeight={'bold'} color="yellow.600">
           {val}

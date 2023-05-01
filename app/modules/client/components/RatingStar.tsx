@@ -1,16 +1,14 @@
-import { HStack, Icon } from '@chakra-ui/react'
 import React from 'react'
-import AppIcon from 'app/utils/constants/app-icon.constant'
+import StarRatings from 'react-star-ratings'
 
 export interface RatingStarProps {
   value: number
   w?: any
 }
-function RatingStar({ w = 20, ...props }: RatingStarProps) {
-  const starsHtml = [...Array(Math.round(props.value))].map((_, i) => {
-    return <Icon key={i} fontSize={w + 'px'} as={AppIcon.rating} color="var(--chakra-colors-rating-500)" />
-  })
-  return <HStack spacing={0}>{starsHtml}</HStack>
+function RatingStar({ w = 16, value }: RatingStarProps) {
+  return (
+    <StarRatings rating={value} starDimension={w} starSpacing="0px" starRatedColor="var(--chakra-colors-rating-500)" />
+  )
 }
 
 export default React.memo(RatingStar)
