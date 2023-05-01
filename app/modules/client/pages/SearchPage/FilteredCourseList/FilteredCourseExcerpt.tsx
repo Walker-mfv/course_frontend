@@ -12,7 +12,7 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import PathHelper from 'app/utils/helpers/path.helper'
 import Time from '@admin/components/Time'
 import CourseImage from '@shared/components/CourseImage'
@@ -25,6 +25,7 @@ import Rating from '@client/components/Rating'
 import { useIsClientMobile } from '@client/hooks/is-client-mobile.hook'
 import Helper from 'app/utils/helpers/helper.helper'
 import TypeHelper from 'app/utils/helpers/type.helper'
+import { useObserveElementWidth } from '@shared/hooks/observe-resize-element'
 
 export const CourseExcerptMeta = ({ course }: { course: ICourse }) => {
   const subColor = useSubtitleColor()
@@ -42,9 +43,16 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
   const subColor = useSubtitleColor()
   const showOriginPrice = useBreakpointValue([false, false, true])
   const author = TypeHelper.isUser(course.history.createdBy) ? course.history.createdBy : undefined
+  const { width: widthContent, ref: refContent } = useObserveElementWidth<HTMLDivElement>()
+  const { width: widthPrice, ref: refPrice } = useObserveElementWidth<HTMLDivElement>()
 
   return (
-    <Popover placement="bottom" boundary={'scrollParent'} trigger="hover">
+    <Popover
+      placement="right"
+      offset={[0, -widthContent + -widthPrice + -20]}
+      boundary={'scrollParent'}
+      trigger="hover"
+    >
       <NextLink href={PathHelper.getCourseDetailPath(course.basicInfo.slug)}>
         <PopoverTrigger>
           <HStack align="start">
@@ -54,7 +62,7 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
               borderRadius={'lg'}
               overflow={'hidden'}
             />
-            <Stack flex={1} spacing={0} pl={{ md: 4 }}>
+            <Stack flex={1} spacing={0} pl={{ md: 4 }} ref={refContent}>
               {/* TITLE & SUBTITLE */}
               <Box>
                 <Heading noOfLines={2} fontSize={'sm'}>
@@ -94,6 +102,7 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
               fontSize={'lg'}
               ml={2}
               minWidth={'100px'}
+              ref={refPrice}
             >
               <CoursePrice
                 currency={course.basicInfo.currency!}

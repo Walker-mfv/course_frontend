@@ -9,6 +9,7 @@ export default function FilterCourses() {
   const {
     state: { showFilter },
   } = useClientParams()
+
   return (
     <Stack spacing={8}>
       <FilterPanelHeading />

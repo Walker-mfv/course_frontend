@@ -21,13 +21,11 @@ export function ClientParamsProvider({ children }: { children: ReactNode }) {
   const [showHCatBar, setShowHCatBar] = useState<boolean>(true)
   const [showFilter, setShowFilter] = useState<boolean>(true)
 
-  //
   const { toastMessage } = useQueryMessage()
   useEffect(() => {
     toastMessage()
   }, [toastMessage])
 
-  //
   const toggleFilter = useCallback(() => {
     setShowFilter((value) => !value)
   }, [])
