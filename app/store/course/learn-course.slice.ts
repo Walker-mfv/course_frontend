@@ -30,25 +30,26 @@ const initialState: LearnSlice = {
   activeContent: undefined,
   data: undefined,
 }
-// THUNKS
 
+// THUNKS
 export const updateCourseById = createAsyncThunk('learn/updateById', async (data: Partial<IUserCourse>, thunkApi) => {
   const state = thunkApi.getState() as RootState
-  const response = await apiUpdate('user-course' as any, state.learnCourse.data!._id, data)
+  const response = await apiUpdate('user-course', state.learnCourse.data!._id, data)
   return response
 })
-//
+
 export const nextContent = createAsyncThunk('learn/next-content', async (_, thunkApi) => {
   const { nextSIdx, nextUIdx } = selectNextContentAddress(thunkApi.getState() as RootState)
   thunkApi.dispatch(setActiveContent({ sIdx: nextSIdx, uIdx: nextUIdx }))
 })
+
 export const setActiveContent = createAsyncThunk(
   'learn/set-active-content',
   async (data: IContentAddress, thunkApi) => {
     const state = thunkApi.getState() as RootState
     const section = state.learnCourse.data?.course.details.sections?.at(data.sIdx)
     const uId = section?.units.at(data.uIdx)
-    const response = await apiUpdate<IUserCourse>('user-course' as any, state.learnCourse.data!._id, {
+    const response = await apiUpdate<IUserCourse>('user-course', state.learnCourse.data!._id, {
       learnDetail: {
         activeContentIds: [section?._id!, uId?._id!],
       } as ILearnDetail,
@@ -56,7 +57,7 @@ export const setActiveContent = createAsyncThunk(
     return response
   }
 )
-//
+
 export const completedUnit = createAsyncThunk('learn/completed-unit', async (payload: { unitId: string }, thunkApi) => {
   const state = thunkApi.getState() as RootState
   const data = await apiCompletedUnit({
@@ -65,7 +66,7 @@ export const completedUnit = createAsyncThunk('learn/completed-unit', async (pay
   })
   return data
 })
-//
+
 export const uncompletedUnit = createAsyncThunk(
   'learn/uncompleted-unit',
   async (payload: { unitId: string }, thunkApi) => {
@@ -154,22 +155,22 @@ export const learnCourseSlice = createSlice({
 })
 // SELECTORS
 export const selectLearnSections = (state: RootState) => state.learnCourse.data?.course.details.sections
-//
+
 export const selectLearnSection = (sIdx: number) => (state: RootState) => selectLearnSections(state)?.at(sIdx)
-//
+
 export const selectLearnUnit = (sIdx: number, uIdx: number) => (state: RootState) =>
   selectLearnSections(state)?.at(sIdx)?.units.at(uIdx)
-//
+
 export const selectLearnLecture = (sIdx: number, uIdx: number) => (state: RootState) => {
   const unit = selectLearnUnit(sIdx, uIdx)(state)
   return TypeHelper.isLecture(unit?.lecture) ? unit?.lecture : undefined
 }
-//
+
 export const selectLearnQuiz = (sIdx: number, uIdx: number) => (state: RootState) => {
   const unit = selectLearnUnit(sIdx, uIdx)(state)
   return TypeHelper.isQuiz(unit?.quiz) ? unit?.quiz : undefined
 }
-//
+
 export const selectActiveLecture = (state: RootState) => {
   const unit = state.learnCourse.activeContent?.unit
   return TypeHelper.isLecture(unit?.lecture) ? unit?.lecture : undefined
@@ -178,15 +179,15 @@ export const selectActiveQuiz = (state: RootState) => {
   const unit = state.learnCourse.activeContent?.unit
   return TypeHelper.isQuiz(unit?.quiz) ? unit?.quiz : undefined
 }
-//
+
 export const selectActiveUnit = (state: RootState) => {
   return state.learnCourse.activeContent?.unit
 }
-//
+
 export const isActiveUnit = (id: string) => (state: RootState) => {
   return state.learnCourse.activeContent?.unit?._id == id
 }
-//
+
 export const selectActiveSectionIdx = (state: RootState) => {
   const activeSectionId = state.learnCourse.activeContent?.section?._id
   if (activeSectionId) {
@@ -201,12 +202,12 @@ export const selectActiveUnitIdx = (state: RootState) => {
   )
   return typeof idx == 'undefined' ? -1 : idx
 }
-//
+
 export const checkIsCompletedUnit = (id: string) => (state: RootState) => {
   const learnUnit = state.learnCourse.data?.learnDetail.learnUnits.find((item) => item.unitId == id)
   return learnUnit?.isCompleted || false
 }
-//
+
 export const selectLearnUnitNo = (sectionIdx: number, unitIdx: number) => {
   return (state: RootState) => {
     let no = 0
@@ -219,20 +220,21 @@ export const selectLearnUnitNo = (sectionIdx: number, unitIdx: number) => {
     }
   }
 }
-//
+
 export const countCompletedUnit = (state: RootState) => {
   const total = state.learnCourse.data?.learnDetail.learnUnits.reduce((prev, current) => {
     return prev + (current.isCompleted ? 1 : 0)
   }, 0)
   return total
 }
+
 export const countTotalUnit = (state: RootState) => {
   const total = state.learnCourse.data?.course.details.sections?.reduce((prev, current) => {
     return prev + current.units.length
   }, 0)
   return total
 }
-//
+
 export const selectLearnTitle = (state: RootState) => {
   return state.learnCourse.data?.course.basicInfo.title
 }
@@ -244,16 +246,17 @@ export const selectLearnCourseSlug = (state: RootState) => {
 export const selectLearnCourseId = (state: RootState) => {
   return state.learnCourse.data?.course._id
 }
+
 export const selectLearnId = (state: RootState) => {
   return state.learnCourse.data?._id
 }
+
 export const selectNextContentAddress = (state: RootState) => {
   const sIdx = selectActiveSectionIdx(state)
   const uIdx = selectActiveUnitIdx(state)
   let nextSIdx = sIdx,
     nextUIdx = uIdx
   const activeSection = state.learnCourse.activeContent?.section
-  const activeUnit = state.learnCourse.activeContent?.unit
 
   if (activeSection) {
     if (uIdx < activeSection.units.length - 1) nextUIdx++

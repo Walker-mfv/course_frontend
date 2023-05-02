@@ -1,5 +1,4 @@
 import {
-  Text,
   Popover,
   PopoverTrigger,
   Button,
@@ -21,6 +20,7 @@ export default function LearnProgress() {
   const completed = useSelector(countCompletedUnit)
   let percent = completed != undefined && total != undefined ? Math.floor((completed / total) * 100) : 0
   const progressColor = useColorModeValue('purple.500', 'purple.300')
+
   return (
     <Popover>
       <PopoverTrigger>

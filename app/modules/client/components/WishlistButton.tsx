@@ -9,7 +9,7 @@ export default function WishlistButton() {
   const { data: countWishlist } = useCountWishlist()
   return (
     <NextLink href={PathHelper.getMyCoursesPath('wishlist')}>
-      <IconButtonWithNumber icon={AppIcon.favoriteOutline} number={countWishlist} />
+      <IconButtonWithNumber px={2} icon={AppIcon.favoriteOutline} number={countWishlist} />
     </NextLink>
   )
 }

@@ -93,7 +93,6 @@ const LearningPage: NextPageWithLayout = () => {
   }, [dispatch, learnCourse])
   const isMobile = useIsLearnMobile()
 
-  // if (!user) return <></>
   return (
     <>
       <MyHead title={AppTitle.LEARN + ` ${learnCourse?.course?.basicInfo.title}`} />

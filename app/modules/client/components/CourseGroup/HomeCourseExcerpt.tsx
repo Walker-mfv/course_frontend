@@ -57,7 +57,14 @@ function HomeCourseExcerpt({ course }: HomeCourseExcerptProps) {
                 </Stack>
                 <Stack spacing={0.5}>
                   <Stack spacing={0} direction={'row'} alignItems={'center'} mb={'2'}>
-                    <AspectRatio ratio={1 / 1} w={'28px'} mr={'2.5'}>
+                    <AspectRatio
+                      ratio={1 / 1}
+                      w={'28px'}
+                      mr={'2.5'}
+                      background={'gray.400'}
+                      borderRadius={'50%'}
+                      overflow={'hidden'}
+                    >
                       <Image
                         src={author?.profile.avatar || AppImg.MEDIA_PLACEHOLDER}
                         alt={course.basicInfo.title}

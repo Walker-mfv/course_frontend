@@ -9,6 +9,7 @@ function LearnCurriculum() {
   const activeSectionIdx = useSelector(selectActiveSectionIdx)
   const sections = useSelector(selectLearnSections)
   const sectionsHtml = sections?.map((_, i) => <LearnSection key={i} sIdx={i} />)
+
   useEffect(() => {
     if (activeSectionIdx > -1) {
       setIndexes((indexes) => {
@@ -17,6 +18,7 @@ function LearnCurriculum() {
       })
     }
   }, [activeSectionIdx, setIndexes])
+
   return (
     <Accordion flex={1} index={indexes} onChange={(val) => setIndexes(val as number[])} allowMultiple overflow={'auto'}>
       {sectionsHtml}

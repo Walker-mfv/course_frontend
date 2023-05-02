@@ -59,8 +59,8 @@ function DesktopTopBar() {
       <HStack spacing={2}>
         <UserButtons />
         <CartButton />
-        <ThemeButton variant={'ghost'} />
-        <NotificationButton variant={'ghost'} />
+        <ThemeButton px={2} variant={'ghost'} />
+        <NotificationButton px={2} variant={'ghost'} />
         <RoleSwitchButton />
         <Profile />
       </HStack>

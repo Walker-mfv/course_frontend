@@ -25,6 +25,7 @@ export type TController =
   | 'payments'
   | 'sliders'
   | 'activity-logs'
+  | 'user-course'
 
 export type TModel =
   | 'notification'

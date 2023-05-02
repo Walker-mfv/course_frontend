@@ -12,7 +12,7 @@ export default function CartButton(props: CartButtonProps) {
   const totalCourse = useSelector(selectTotalCourse)
   return (
     <NextLink href={PathHelper.getCartPath()}>
-      <IconButtonWithNumber icon={AppIcon.cart} number={totalCourse} {...props} />
+      <IconButtonWithNumber px={2} icon={AppIcon.cart} number={totalCourse} {...props} />
     </NextLink>
   )
 }

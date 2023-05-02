@@ -10,17 +10,16 @@ import LearnCourseTitle from './LearnCourseTitle'
 import LearnMenu from './LearnMenu'
 import LearnProgress from './LearnProgress'
 
-export const LEARN_TOP_BAR_HEIGHT = 55
+export const LEARN_TOP_BAR_HEIGHT = 65
 export default function LearnTopBar() {
   const borderColor = useBorderColor()
   const border = useColorModeValue(undefined, '1px solid')
   const isMobile = useIsLearnMobile()
+
   return (
     <HStack
       h={LEARN_TOP_BAR_HEIGHT + 'px'}
-      px={{ base: 2, lg: 4 }}
-      py={8}
-      // bgColor="gray.900"
+      p={{ base: 2, lg: 4 }}
       borderBottom={border}
       borderColor={borderColor}
       justify="space-between"

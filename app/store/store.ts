@@ -3,7 +3,6 @@ import multiChangeReducer from './admin/multi-change.slice'
 import cartReducer from './course/cart.slice'
 import formCourseReducer from './course/form-course.slice'
 import learnCourseReducer from './course/learn-course.slice'
-// ...
 
 export const store = configureStore({
   reducer: {

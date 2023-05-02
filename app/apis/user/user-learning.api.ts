@@ -20,9 +20,11 @@ export interface ILearnUnitAddress {
 export function apiCompletedUnit(data: ILearnUnitAddress): Promise<ILearnUnit> {
   return axiosApiInstance.patch(`${prefix}/completed-unit/${data.id}/${data.unitId}`).then((res) => res.data)
 }
+
 export function apiUncompletedUnit(data: ILearnUnitAddress): Promise<ILearnUnit> {
   return axiosApiInstance.patch(`${prefix}/uncompleted-unit/${data.id}/${data.unitId}`).then((res) => res.data)
 }
+
 export function fetchLearnUnit(userCourseId: string, unitId: string): Promise<ILearnUnit> {
   return axiosApiInstance.get(`${prefix}/${userCourseId}/learn-unit/${unitId}`).then((res) => res.data)
 }
