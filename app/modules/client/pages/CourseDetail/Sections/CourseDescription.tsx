@@ -12,7 +12,7 @@ function CourseDescription() {
 
   return (
     <ContentCard title="Description" border="none" spacing={5}>
-      <Stack spacing={isShow ? -2 : 1}>
+      <Stack spacing={1}>
         <Box style={{ WebkitMaskImage: isShow ? 'unset' : 'linear-gradient(#ffffff,#ffffff,rgba(255,255,255,0)' }}>
           <Collapse startingHeight={'14rem'} in={isShow}>
             <div className="des-html" dangerouslySetInnerHTML={{ __html: description || '' }}></div>
@@ -25,6 +25,7 @@ function CourseDescription() {
           fontWeight={'bold'}
           cursor={'pointer'}
           _hover={{ color: 'purple.700' }}
+          w={'fit-content'}
         >
           Show&nbsp;
           {isShow ? (

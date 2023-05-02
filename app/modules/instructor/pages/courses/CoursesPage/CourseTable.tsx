@@ -109,7 +109,7 @@ const hoverShowOverlayStyle = {
 const TdContent = ({ item }: { item: ICourse }) => {
   return (
     <HStack align={'stretch'} spacing={4}>
-      <CourseImage src={item.basicInfo.image || ''} defaultImage />
+      <CourseImage src={item.basicInfo.image || ''} defaultImage borderRadius={'md'} overflow={'hidden'} />
       <Stack flex={1} justify={'center'}>
         <Heading as="div" fontSize={'md'} whiteSpace="pre-wrap" minW={'200px'} noOfLines={2}>
           <HighlightSearchText value={item.basicInfo.title} />

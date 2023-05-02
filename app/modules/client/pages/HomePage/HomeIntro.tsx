@@ -10,7 +10,7 @@ const limit = 2
 const List = (props: { items?: ISlider[] }) => {
   const images =
     props.items?.map((item, i) => {
-      return <Image draggable={false} key={i} src={item.picture || ''} alt="" borderRadius={3} />
+      return <Image draggable={false} key={i} src={item.picture || ''} alt="" borderRadius={3} w={'full'} />
     }) || []
 
   return (

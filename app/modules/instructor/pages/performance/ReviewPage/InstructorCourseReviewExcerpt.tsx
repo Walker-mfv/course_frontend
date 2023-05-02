@@ -20,7 +20,7 @@ export const ReviewCourseExcerpt = ({ item }: { item: ICourse }) => {
   return (
     <NextLink href={PathHelper.getCourseDetailPath(item.basicInfo.slug)}>
       <HStack align="start" spacing={4}>
-        <CourseImage src={item.basicInfo.image || ''} w="150px" />
+        <CourseImage src={item.basicInfo.image || ''} w="150px" borderRadius={'md'} overflow={'hidden'} />
         <Stack>
           <Heading fontSize={'xl'}>{item.basicInfo.title}</Heading>
           <Rating value={item.meta.avgRatingScore || 0} />

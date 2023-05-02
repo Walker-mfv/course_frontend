@@ -16,7 +16,13 @@ const Row = ({ item }: { item: ICourseInOrder }) => {
       <Td whiteSpace={'pre-wrap'}>
         <HStack align={'start'} spacing={4}>
           <NextLink href={PathHelper.getCourseDetailPath(item.course.basicInfo.slug)}>
-            <CourseImage w={['100px', '150px', '200px']} src={item.course.basicInfo.image || ''} defaultImage={false} />
+            <CourseImage
+              w={['100px', '150px', '200px']}
+              src={item.course.basicInfo.image || ''}
+              defaultImage={false}
+              borderRadius={'md'}
+              overflow={'hidden'}
+            />
           </NextLink>
 
           <Stack spacing={1}>
