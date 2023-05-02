@@ -155,3 +155,17 @@ a {
 .star-ratings {
   display: flex !important;
 }
+
+.quill > .ql-toolbar.ql-snow {
+  border-top-left-radius: var(--chakra-radii-md);
+  border-top-right-radius: var(--chakra-radii-md);
+}
+
+.quill > .ql-container.ql-snow {
+  border-bottom-left-radius: var(--chakra-radii-md);
+  border-bottom-right-radius: var(--chakra-radii-md);
+}
+
+.react-datepicker__input-container > input {
+  padding: 5px 10px;
+}

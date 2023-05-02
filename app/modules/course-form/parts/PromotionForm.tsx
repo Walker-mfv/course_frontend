@@ -1,28 +1,16 @@
-import {
-  Text,
-  ButtonGroup,
-  FormControl,
-  FormLabel,
-  GridItem,
-  SimpleGrid,
-  Stack,
-  Switch,
-  HStack,
-} from '@chakra-ui/react'
+import { ButtonGroup, FormControl, FormLabel, GridItem, SimpleGrid, Stack, Switch } from '@chakra-ui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
 import * as yup from 'yup'
 import { selectFormCourse, updateCourseById } from 'app/store/course/form-course.slice'
 import FormMsg from 'app/utils/constants/form-message.constant'
-import CoursePrice from '@client/components/CourseGroup/CoursePrice'
 import MyDatePicker from '@shared/components/form-set/MyDatePicker'
-import MyFormLabel from '@shared/components/form-set/MyFormLabel'
 import MyInput from '@shared/components/form-set/MyInput'
 import SubmitButton from '@shared/components/button-set/SubmitButton'
 import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
-import ICourse, { ICoursePromotions } from '@shared/interfaces/models/course.interface'
+import ICourse from '@shared/interfaces/models/course.interface'
 
 type FormData = {
   enabled: boolean
@@ -39,7 +27,6 @@ const vldSchema = yup.object({
 
 export default function PromotionForm() {
   const item = useSelector(selectFormCourse)
-  //
   const { onXThunkUpdate } = useCrudActions()
   const {
     register,

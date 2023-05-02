@@ -154,6 +154,7 @@ const Main = ({
         transitionDuration="normal"
         bgColor={isOver ? 'cyan.100' : bg}
         p={4}
+        borderRadius={'md'}
       >
         <Stack opacity={opacity} spacing={0}>
           {/* HEADER */}

@@ -59,6 +59,7 @@ const Main = ({
           border="1px solid black"
           transitionProperty={'background-color'}
           transitionDuration="normal"
+          borderRadius={'md'}
         >
           <Stack opacity={opacity} spacing={0}>
             {renderUnitContent}
@@ -73,7 +74,6 @@ const MainMemo = React.memo(Main)
 const CourseUnit = (props: CourseLectureProps) => {
   const dispatch = useDispatch()
   const unit = useSelector(selectFormCourseUnitByIds(props.sectionId, props.unitId))!
-  //
   const address: IUnitAddress = { ...props, unitId: unit?._id || '' }
   const {
     ref,

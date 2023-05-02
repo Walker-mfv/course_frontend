@@ -32,7 +32,7 @@ const CourseUnitHeader = (props: CourseUnitHeaderProps) => {
   const toast = useAppToast()
   const simpleAlert = useSimpleDialog()
   const unitNo = useSelector(selectFormCourseUnitNo(sectionId, unitId))
-  //
+
   const onDelete: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.stopPropagation()
     simpleAlert.onShow({
@@ -50,7 +50,7 @@ const CourseUnitHeader = (props: CourseUnitHeaderProps) => {
   }
 
   const [editMode, setEditMode] = useState<boolean>(false)
-  //
+
   const { title, action } = props
   // actions
   const onEdit: MouseEventHandler<HTMLButtonElement> = (e) => {

@@ -7,7 +7,6 @@ import {
   selectFormCourseUnitExpandedIndexes,
 } from 'app/store/course/form-course.slice'
 import AddCourseUnit from './CourseUnit/AddUnit/AddCourseUnit'
-import CourseLecture from './CourseLecture/CourseLecture'
 import CourseUnit from './CourseUnit'
 
 export interface CourseUnitListProps {
