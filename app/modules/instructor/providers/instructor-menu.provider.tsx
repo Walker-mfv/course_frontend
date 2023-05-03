@@ -86,7 +86,7 @@ export function InstructorMenuProvider({ children }: { children: ReactNode }) {
       return navGroup
     })
   }, [section])
-  //
+
   const state: IInstructorMenuProvider = useMemo(() => {
     return {
       state: {

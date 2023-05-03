@@ -95,7 +95,11 @@ export const SubBar = () => {
     [activeNavGroup?.path]
   )
   if (!activeNavGroup) return <></>
-  return <Stack p={10}>{activeNavGroup.items?.map(renderItem)}</Stack>
+  return (
+    <Stack p={10} mt={6} spacing={2}>
+      {activeNavGroup.items?.map(renderItem)}
+    </Stack>
+  )
 }
 
 const SubItem = ({ item, section }: { item: INavItem } & { section: TInstructorSection }) => {

@@ -38,6 +38,7 @@ import FieldLabel from 'app/utils/constants/field-label.constant'
 import lan from 'app/utils/constants/lan.constant'
 import { USER_SEARCH_MENU, USER_STATUS_SELECT_DATA } from 'app/utils/data/user.data'
 import Helper from 'app/utils/helpers/helper.helper'
+import { FaUserAltSlash, FaUserCheck, FaUserEdit } from 'react-icons/fa'
 
 // DATA
 export const columns: ITableColumn[] = [
@@ -95,7 +96,6 @@ const PageContent = () => {
 
 const PageTableToolbar = () => {
   const rolesSDQ = useRoleSelectDataQuery()
-  //
   const filters: FilterItemProps[] = useMemo(() => {
     return [
       {
@@ -136,7 +136,7 @@ const PageTable = () => {
       const rowActions: IActionItem[] = [
         {
           name: Helper.lodash.capitalize(lan.EDIT),
-          icon: FiEdit2,
+          icon: FaUserEdit,
           onClick: () => {
             onShow({
               title: `${Helper.lodash.upperFirst(lan.EDIT)} ${Helper.lodash.upperFirst(modelName)} Detail`,
@@ -149,6 +149,7 @@ const PageTable = () => {
       if (['active', 'inactive'].includes(item.status)) {
         rowActions.push({
           name: Helper.lodash.capitalize(item.status == 'active' ? lan.DEACTIVATE : lan.REACTIVATE),
+          icon: item.status == 'active' ? FaUserAltSlash : FaUserCheck,
           onClick: async () => {
             if (item.status == 'active') onDeactivate(item._id, item.profile.fullName)
             else onReactivate(item._id, item.profile.fullName)

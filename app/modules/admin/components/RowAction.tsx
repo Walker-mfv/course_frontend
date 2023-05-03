@@ -13,14 +13,19 @@ export default function RowActions({ actions }: RowActionProps) {
     if (item.path) {
       return (
         <NextLink key={item.name} href={item.path}>
-          <MenuItem key={item.name} icon={item.icon && <Icon as={item.icon} />}>
+          <MenuItem key={item.name} lineHeight={1} icon={item.icon && <Icon as={item.icon} fontSize={'15px'} />}>
             {item.name}
           </MenuItem>
         </NextLink>
       )
     }
     return (
-      <MenuItem key={item.name} icon={item.icon && <Icon as={item.icon} />} onClick={item.onClick}>
+      <MenuItem
+        key={item.name}
+        lineHeight={1}
+        icon={item.icon && <Icon as={item.icon} fontSize={'15px'} />}
+        onClick={item.onClick}
+      >
         {item.name}
       </MenuItem>
     )
@@ -32,9 +37,5 @@ export default function RowActions({ actions }: RowActionProps) {
       </MenuButton>
       <MenuList>{actionsHtml}</MenuList>
     </Menu>
-    // <ButtonGroup variant='outline' spacing={2} size="md">
-    //     <IconButton isRound  aria-label='edit button' colorScheme='green' icon={<Icon as={FiEdit3} />}> </IconButton>
-    //     <IconButton isRound  aria-label='delete button' colorScheme='red' icon={<Icon as={FiTrash} />}> </IconButton>
-    // </ButtonGroup>
   )
 }
