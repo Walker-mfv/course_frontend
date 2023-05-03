@@ -96,7 +96,7 @@ export const SubBar = () => {
   )
   if (!activeNavGroup) return <></>
   return (
-    <Stack p={10} mt={6} spacing={2}>
+    <Stack p={10} mt={6} spacing={3}>
       {activeNavGroup.items?.map(renderItem)}
     </Stack>
   )
@@ -111,7 +111,9 @@ const SubItem = ({ item, section }: { item: INavItem } & { section: TInstructorS
   return (
     <HStack>
       <NextLink href={PathHelper.getInstructorPath(section, item.path)}>
-        <Text fontWeight={sub == item.path ? 'bold' : undefined}>{item.label}</Text>
+        <Text fontSize={'lg'} fontWeight={sub == item.path ? 'bold' : undefined}>
+          {item.label}
+        </Text>
       </NextLink>
     </HStack>
   )

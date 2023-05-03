@@ -24,7 +24,6 @@ export function ReportProvider({ reportId: defaultReportId, children }: { report
     setReportId(id)
   }, [reportId, id])
 
-  //
   const state: IReportProvider = useMemo(() => {
     return {
       state: {

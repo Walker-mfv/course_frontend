@@ -10,6 +10,7 @@ export type TApproveStatus = 'active' | 'rejected'
 export const apiApproveCourse = (id: string, status: TApproveStatus): Promise<boolean> => {
   return axiosApiInstance.patch(`${prefix}/approve/${id}`, { status }).then((res) => res.data)
 }
+
 export const apiSubmitForReview = (id: string): Promise<boolean> => {
   return axiosApiInstance.patch(`${prefix}/submit-for-review/${id}`).then((res) => res.data)
 }

@@ -32,6 +32,13 @@ import {
   useConvertCourseToDraft,
   useInstructorCoursesQuery,
 } from 'app/modules/instructor/queries/instructor-courses-query.hook'
+import RowActions from '@admin/components/RowAction'
+import Helper from 'app/utils/helpers/helper.helper'
+import lan from 'app/utils/constants/lan.constant'
+import { FiEdit2 } from 'react-icons/fi'
+import { IoIosRemoveCircleOutline } from 'react-icons/io'
+import { useRouter } from 'next/router'
+import { AiOutlineCheckCircle } from 'react-icons/ai'
 
 interface OverlayBoxProps extends BoxProps {}
 const OverlayBox = ({ children, ...props }: OverlayBoxProps) => {
@@ -125,6 +132,7 @@ const Row = ({ item }: { item: IInstructorCourse }) => {
   const subColor = useSubtitleColor()
   const toast = useAppToast()
   const { mutate: convertCourseToDraft } = useConvertCourseToDraft()
+  const router = useRouter()
   const renderCourseInfo = useMemo(() => {
     const onConvertCourseToDraft = () => {
       convertCourseToDraft(item._id, {
@@ -207,6 +215,25 @@ const Row = ({ item }: { item: IInstructorCourse }) => {
                 />
               </OverlayBox>
             </Td>
+
+            <Td>
+              <RowActions
+                actions={[
+                  {
+                    name: Helper.lodash.capitalize(lan.EDIT),
+                    icon: FiEdit2,
+                    onClick: () => {
+                      router.push(PathHelper.getInstructorCourseFormPath(item._id))
+                    },
+                  },
+                  {
+                    name: Helper.lodash.capitalize(item.status == 'active' ? lan.DEACTIVATE : lan.REACTIVATE),
+                    icon: item.status == 'active' ? IoIosRemoveCircleOutline : AiOutlineCheckCircle,
+                    onClick: async () => {},
+                  },
+                ]}
+              />
+            </Td>
           </>
         )
     }
@@ -220,6 +247,7 @@ const Row = ({ item }: { item: IInstructorCourse }) => {
     item.status,
     subColor,
     toast,
+    router,
   ])
 
   const renderContent = useMemo(() => {

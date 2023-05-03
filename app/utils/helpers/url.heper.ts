@@ -9,6 +9,7 @@ export default class UrlHelper {
     }
     return searchParams.toString()
   }
+
   static paramsToObject(entries: IterableIterator<[string, string]>): ParsedUrlQuery {
     const result: {
       [key: string]: string

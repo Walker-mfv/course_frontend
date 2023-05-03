@@ -43,13 +43,13 @@ export function InstructorParamsProvider({
       return value
     })
   }, [vInstructorId])
-  //
+
   const params = router.pathname.split('/').slice(2)
   const [section, sub]: [TInstructorSection, string | undefined] = useMemo(() => {
     if (!params) return ['courses', undefined]
     return params as [TInstructorSection, string | undefined]
   }, [params])
-  //
+
   const state: IInstructorParamsProvider = useMemo(() => {
     return {
       state: {

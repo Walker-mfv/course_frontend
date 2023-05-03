@@ -35,6 +35,7 @@ export const getClientUrlParams = (
   !clientQuery._order && (clientQuery._order = defaultSortOrder)
   return clientQuery
 }
+
 export const standardizeClientQuery = (
   clientQuery: IClientUrlParams,
   defaultVal: IClientUrlParams = {}

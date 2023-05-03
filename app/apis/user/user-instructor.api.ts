@@ -85,6 +85,7 @@ export function countPaymentTransactions({ queryKey }: any): Promise<number> {
     .get(`${prefix}/count-payment-transactions/${paymentId}?${queryString}`)
     .then((res) => res.data)
 }
+
 export function fetchInstructorCourses({ queryKey }: any): Promise<IInstructorCourse[]> {
   const [_key, clientQuery, viewInstructorId]: [string, IClientUrlParams, string | undefined] = queryKey
   const queryString = UrlHelper.cvtObjToQueryString({ ...clientQuery, viewInstructorId })

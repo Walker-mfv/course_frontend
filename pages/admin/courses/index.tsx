@@ -83,9 +83,7 @@ const PageContent = () => {
 
 const PageTableToolbar = () => {
   const { onNew } = useCourseActions()
-  const router = useRouter()
-  const { ctrlName } = usePageParams()
-  //
+
   const filters: FilterItemProps[] = useMemo(() => {
     return [
       {

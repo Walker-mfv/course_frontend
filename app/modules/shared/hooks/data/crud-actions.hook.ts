@@ -43,7 +43,7 @@ export const useCrudActions = () => {
               queryClient.invalidateQueries([ctrl])
               const title = itemName ? `${itemName} ${lan.DEACTIVATED}` : Helper.lodash.upperFirst(lan.ITEM_DEACTIVATED)
               toast(NotifyHelper.success(title))
-              //
+
               options?.onSuccess && options.onSuccess()
               resolve()
             } catch (e: any) {
@@ -66,7 +66,7 @@ export const useCrudActions = () => {
         queryClient.invalidateQueries([ctrl])
         const title = itemName ? `${itemName} ${lan.REACTIVATED}` : Helper.lodash.upperFirst(lan.ITEM_REACTIVATED)
         toast(NotifyHelper.success(title))
-        //
+
         options?.onSuccess && options.onSuccess()
       } catch (e: any) {
         toast(NotifyHelper.somethingWentWrong)
