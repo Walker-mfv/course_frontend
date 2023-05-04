@@ -225,7 +225,6 @@ interface FormCourseSlice {
   course?: ICourse
   curriculum: (ICourseSection & {})[]
   status: TStatus
-  //
   sectionExpandedIndexes?: number[]
   unitExpandedIndexes: IUnitExpandedIndexes
   isSectionDragging: boolean
@@ -262,13 +261,15 @@ export const formCourseSlice = createSlice({
         state.sectionExpandedIndexes = [...Array(action.payload.details.sections?.length || 0)].map((_, i) => i)
       }
     },
-    //
+
     setSectionDragging: (state, action: PayloadAction<boolean>) => {
       state.isSectionDragging = action.payload
     },
+
     setUnitExpandedIndexes: (state, action: PayloadAction<{ sectionId: string; indexes: number[] }>) => {
       state.unitExpandedIndexes[action.payload.sectionId] = action.payload.indexes
     },
+
     addUnitExpandedIndex: (state, action: PayloadAction<IUnitAddress>) => {
       const { sectionId, unitId } = action.payload
       const [_, unitIdx] = getSectionNUnitIdx(sectionId, unitId)(state as any)
@@ -280,7 +281,6 @@ export const formCourseSlice = createSlice({
         state.unitExpandedIndexes[sectionId] = [unitIdx]
       }
     },
-    //
   },
   extraReducers(builder) {
     builder
@@ -465,7 +465,7 @@ const getUnitIdxWithSectionIdx = (sectionIdx: number, unitId: string) => (state:
 export const selectSectionIndex = (id: string) => (state: RootState) => getSectionIdx(id)(state.formCourse)
 export const selectSectionNUnitIndex = (sectionId: string, unitId: string) => (state: RootState) =>
   getSectionNUnitIdx(sectionId, unitId)(state.formCourse)
-//
+
 export const selectFormCourse = (state: RootState) => state.formCourse.course
 export const selectFormCourseStatus = (state: RootState) => state.formCourse.status
 export const selectFormCourseIsSectionDragging = (state: RootState) => state.formCourse.isSectionDragging
@@ -520,7 +520,7 @@ export const selectFormCourseUnitNo = (sectionId: string, unitId: string) => {
     return no
   }
 }
-//
+
 export const {
   setSectionDragging: formCourseSetSectionDragging,
   setSectionExpandedIndexes: formCourseSetSectionExpandedIndexes,

@@ -126,7 +126,7 @@ const LibraryRow = ({ row, type }: { row: IFile; type: TLibraryTable }) => {
   } = useUnitParams()
   const toast = useAppToast()
   const queryClient = useQueryClient()
-  const { onDeleteOne, onUpdate, onXThunkUpdate } = useCrudActions()
+  const { onDeleteOne, onXThunkUpdate } = useCrudActions()
 
   const onSelectClick = async () => {
     switch (contentType) {

@@ -18,3 +18,7 @@ export const apiSubmitForReview = (id: string): Promise<boolean> => {
 export const apiConvertCourseToDraft = (id: string): Promise<boolean> => {
   return axiosApiInstance.patch(`${prefix}/convert-course-to-draft/${id}`).then((res) => res.data)
 }
+
+export const apiConvertCourseToInActive = (id: string): Promise<boolean> => {
+  return axiosApiInstance.patch(`${prefix}/convert-course-to-inactive/${id}`).then((res) => res.data)
+}

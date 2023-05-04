@@ -2,7 +2,13 @@ import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { fetchById } from 'app/apis/acp/admin.api'
 import { CONTROLLER } from 'app/utils/constants/app.constant'
 import ICourse from '@shared/interfaces/models/course.interface'
-import { apiApproveCourse, apiSubmitForReview, fetchCourseBriefById, TApproveStatus } from 'app/apis/course/course.api'
+import {
+  apiApproveCourse,
+  apiConvertCourseToInActive,
+  apiSubmitForReview,
+  fetchCourseBriefById,
+  TApproveStatus,
+} from 'app/apis/course/course.api'
 
 export const RQK_COURSE = 'course'
 export const useCourseQuery = (id?: string) => {
@@ -41,4 +47,14 @@ export const useApproveCourse = () => {
       },
     }
   )
+}
+
+export const useDeactiveCourse = () => {
+  const queryClient = useQueryClient()
+  return useMutation((id: string) => apiConvertCourseToInActive(id), {
+    onMutate: () => {},
+    onSuccess: (_) => {
+      queryClient.invalidateQueries(CONTROLLER.course)
+    },
+  })
 }

@@ -24,11 +24,14 @@ import MyCircularProgress from 'app/modules/shared/components/MyCircularProgress
 import MyHead from 'app/modules/shared/components/MyHead'
 import { NextPageWithLayout } from 'app/types/next'
 import PathHelper from 'app/utils/helpers/path.helper'
+import { BadRequest } from '@shared/parts/BadRequest'
 
 const CoursePage: NextPageWithLayout = () => {
   const { data: course } = useCourseDetailQuery()
   const router = useRouter()
   const show = useShowPreviewCourse()
+
+  if(!course) return <BadRequest />
   return (
     <>
       <MyHead

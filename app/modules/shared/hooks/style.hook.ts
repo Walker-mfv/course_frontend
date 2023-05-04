@@ -29,6 +29,7 @@ export const useSubtitleColor = () => {
 export const useMutedColor = () => {
   return useColorModeValue('#A1A5B7', '#A1A5B7')
 }
+
 export const useDefaultColor = () => {
   return useColorModeValue('black', 'white')
 }
