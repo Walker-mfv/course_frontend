@@ -31,7 +31,6 @@ export class RevenueReportGenerator extends ReportGenerator {
     doc.text(`${user.profile.fullName} Revenue Report`, pageWidth - 15, 15, { align: 'right' })
     doc.setFont('times', 'normal')
 
-    //
     doc.setFontSize(10)
     doc.setFont('times', 'italic')
     doc.text(`Generated at ${moment(new Date()).format('DD/MM/YYYY')}`, pageWidth - 15, 20, {

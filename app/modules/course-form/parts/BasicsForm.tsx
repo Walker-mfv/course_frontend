@@ -78,7 +78,6 @@ function BasicsForm() {
     }
   }, [item, reset])
   const { onUpdate } = useCrudActions()
-  //
   const primaryCatWatch = watch('category')
   const catPrimarySD = useCatPrimarySelectData()
   const catSubSD = useCatSubSelectData(primaryCatWatch)

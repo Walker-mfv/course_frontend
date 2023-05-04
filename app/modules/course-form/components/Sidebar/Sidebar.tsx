@@ -93,7 +93,7 @@ const NavItem = (props: ICourseFormNavItem) => {
   )
   const router = useRouter()
   return (
-    <NextLink href={PathHelper.getCourseFormPath(id, props.section, router.pathname)}>
+    <NextLink href={PathHelper.getCourseFormPath(id as string, props.section, router.pathname)}>
       <ListItem
         py={2}
         pl={8}

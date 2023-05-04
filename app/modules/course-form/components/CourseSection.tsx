@@ -204,7 +204,7 @@ const CourseSection = ({ sectionIndex, sectionId }: CourseSectionProps) => {
     isDragging && dispatch(formCourseSetSectionExpandedIndexes([]))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDragging])
-  //
+
   return (
     <Stack spacing={0} ref={ref}>
       <MainMemo

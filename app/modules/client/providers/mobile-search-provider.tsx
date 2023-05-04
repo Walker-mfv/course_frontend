@@ -16,7 +16,6 @@ export const useMobileSearch = () => {
 
 export function MobileSearchProvider({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
-  //
   const state = useMemo(
     () => ({
       isOpen,

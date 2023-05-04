@@ -46,7 +46,6 @@ export default function UserDetailForm({ userId, onUserCreated }: UserDetailForm
   const { onCreate, onUpdate } = useCrudActions()
   const { onClose } = useAppDialog()
   const { data: roleSD } = useRoleSelectDataQuery()
-  //
   const [isAvatarChanged, setAvatarChanged] = useState(false)
   const [formType, setFormType] = useState<'add' | 'edit'>('add')
   const [loading, setLoading] = useState<boolean>(true)

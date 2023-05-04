@@ -15,7 +15,6 @@ export const useSidebar = () => {
 
 export function SidebarProvider({ defaultIsOpen, children }: { defaultIsOpen?: boolean; children: ReactNode }) {
   const { isOpen, onOpen, onClose, onToggle } = useDisclosure({ defaultIsOpen })
-  //
   const state = useMemo(
     () => ({
       isOpen,

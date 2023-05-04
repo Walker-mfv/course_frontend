@@ -40,7 +40,6 @@ export const ExportExcelRevenueReport = () => {
   )
   useEffect(() => {
     if (enabled && !isLoading && !!data) {
-      //
       const rows = data.map((item) => {
         const expectedPaidDate = item.history.paidAt
           ? new Date(item.history.paidAt)
@@ -56,7 +55,6 @@ export const ExportExcelRevenueReport = () => {
       })
       const csvExporter = new ExportToCsv(options)
       csvExporter.generateCsv(rows)
-      //
       onClose()
       setEnabled(false)
     }

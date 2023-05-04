@@ -120,6 +120,7 @@ a {
 #nprogress {
   .bar {
     border-bottom: 2px solid #805ad5;
+    z-index: 10000;
   }
 
   .peg {

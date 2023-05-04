@@ -20,7 +20,6 @@ export const useInstructorCourseReview = () => {
 
 export function InstructorCourseReviewProvider({ review, children }: { review: IReview; children: ReactNode }) {
   const [writingResponse, setWritingResponse] = useState<boolean>(false)
-  //
   const state: IInstructorCourseReviewProvider = useMemo(
     () => ({
       state: {

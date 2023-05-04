@@ -47,7 +47,6 @@ function PricingForm() {
       }
     })
   }, [priceTiers])
-  //
   useEffect(() => {
     if (!!item) {
       const defaultValues: Partial<FormData> = {
@@ -57,7 +56,6 @@ function PricingForm() {
       reset(defaultValues)
     }
   }, [item, reset])
-  //
   // const currencyW = watch('currency')
   // useEffect(() => {
   //     const priceTierSD = COURSE_PRICE_TIER_DATA[currencyW]

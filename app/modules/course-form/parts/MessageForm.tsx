@@ -24,7 +24,6 @@ const vldSchema = yup.object({
 
 function MessageForm() {
   const item = useSelector(selectFormCourse)
-  //
   const queryClient = useQueryClient()
   const { onXThunkUpdate } = useCrudActions()
   const {

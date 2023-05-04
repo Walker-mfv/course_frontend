@@ -26,15 +26,9 @@ export interface CourseSectionFormProps {
   onClose?: () => void
 }
 
-export default function CourseSectionForm({
-  formType = 'edit',
-  sectionIndex,
-  //
-  onClose,
-}: CourseSectionFormProps) {
+export default function CourseSectionForm({ formType = 'edit', sectionIndex, onClose }: CourseSectionFormProps) {
   const section = useSelector(selectFormCourseSection(formType == 'edit' ? sectionIndex : -1))
   const { onXThunkUpdate } = useCrudActions()
-  //
   const {
     register,
     formState: { errors, isDirty },
@@ -49,7 +43,7 @@ export default function CourseSectionForm({
       : {},
     resolver: yupResolver(validateSchema),
   })
-  //
+
   const onSubmit = handleSubmit((values) => {
     onClose && onClose()
     if (formType == 'edit') {

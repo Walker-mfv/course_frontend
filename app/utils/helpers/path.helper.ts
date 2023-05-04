@@ -159,9 +159,7 @@ export default class PathHelper {
     }
   ) {
     let queryString = ''
-    //
     if (options?.commentId) queryString += `commentId=${options.commentId}`
-    //
     queryString = !!queryString ? `?${queryString}` : ''
     return `${this.clientPrefix}/${this.clientPages.courseDetail}/${slug}/${this.clientPages.learn}${queryString}`
   }
@@ -182,14 +180,14 @@ export default class PathHelper {
   private static get clientPrefix() {
     return this.module.client == '' ? '' : `/${this.module.client}`
   }
-  //
+
   static getSignUpPath() {
     return `/${this.module.auth}/${this.authPages.signup}`
   }
   static getLoginPath() {
     return `/${this.module.auth}/${this.authPages.login}`
   }
-  //
+
   static getGoogleLoginUrl() {
     return `${API_DOMAIN}/auth/google`
   }

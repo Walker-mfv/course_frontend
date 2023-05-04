@@ -25,7 +25,6 @@ export function PermissionManagementProvider({ children }: { children: ReactNode
   const [roleId, setRoleId] = useState<string>()
   const [documentPermissionId, setDocumentPermissionId] = useState<string>()
   const { data: role } = useFetchById<IRole>('roles', roleId)
-  //
   const state: IPermissionManagementProvider = useMemo(
     () => ({
       state: {

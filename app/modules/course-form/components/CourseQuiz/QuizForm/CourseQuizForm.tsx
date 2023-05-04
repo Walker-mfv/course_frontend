@@ -37,13 +37,7 @@ export interface CourseQuizFormProps extends IUnitAddress {
   onClose?: () => void
 }
 
-export default function CourseQuizForm({
-  unitIdx,
-  formType = 'edit',
-  //
-  onClose,
-  ...props
-}: CourseQuizFormProps) {
+export default function CourseQuizForm({ unitIdx, formType = 'edit', onClose, ...props }: CourseQuizFormProps) {
   const unit = useAppSelector((state) =>
     formType == 'edit' ? selectFormCourseUnitByIds(props.sectionId, props.unitId)(state) : undefined
   )
@@ -55,7 +49,6 @@ export default function CourseQuizForm({
   )
   const quiz = TypeHelper.isQuiz(unit?.quiz) ? unit?.quiz : undefined
   const { onXThunkUpdate } = useCrudActions()
-  //
   const {
     register,
     formState: { errors, isDirty },
@@ -69,7 +62,6 @@ export default function CourseQuizForm({
     },
     resolver: yupResolver(validateSchema),
   })
-  //
   const onSubmit = handleSubmit((values) => {
     const { title, description } = values
     onClose && onClose()

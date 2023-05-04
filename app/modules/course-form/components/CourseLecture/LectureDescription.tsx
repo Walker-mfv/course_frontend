@@ -21,7 +21,7 @@ const DescriptionEditor = (props: { setEditMode: (val: boolean) => void }) => {
     state: { lecture },
   } = useLectureParams()
   const { onXThunkUpdate } = useCrudActions()
-  //
+
   const {
     watch,
     setValue,
@@ -33,7 +33,7 @@ const DescriptionEditor = (props: { setEditMode: (val: boolean) => void }) => {
       description: lecture.description,
     },
   })
-  //
+
   const onCancel = () => {
     props.setEditMode(false)
   }

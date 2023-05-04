@@ -10,7 +10,6 @@ export interface CourseRatingChartProps {
 }
 export default function CourseRatingChart(props: CourseRatingChartProps) {
   const themeColors = useTheme().colors
-  //
   const ratingData = [...Array(5)].map((_, i) => {
     const stat = props.data?.find((item) => item.rating == 5 - i)
     if (stat) return stat.count

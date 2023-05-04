@@ -56,7 +56,6 @@ export default function AddNewRuleForm(props: AddNewRuleFormProps) {
   const { onClose } = useAppDialog()
   const { mutate: addRolePermission } = useAddRolePermission()
 
-  //
   const onSubmit = handleSubmit(async (values) => {
     addRolePermission(
       { roleId: values.role, documentPermissionId: values.documentPermission },

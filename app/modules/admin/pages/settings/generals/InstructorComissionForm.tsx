@@ -29,7 +29,6 @@ export default function InstructorCommissionForm() {
     resolver: yupResolver(vldSchema),
     defaultValues: {},
   })
-  //
   const { isLoading, data } = useConfigurationQuery()
   const { mutate: updateConfiguration } = useUpdateConfiguration()
 

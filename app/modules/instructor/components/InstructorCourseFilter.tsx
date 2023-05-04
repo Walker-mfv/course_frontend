@@ -22,7 +22,6 @@ export default function InstructorCourseFilter({ isUrlFilter = true, ...props }:
     _order: 'desc',
     status_filter: 'active',
   })
-  //
   const { 'course._id_filter': courseIdFilter } = urlParams
   useEffect(() => {
     if (isUrlFilter) {
@@ -30,12 +29,10 @@ export default function InstructorCourseFilter({ isUrlFilter = true, ...props }:
       setValue(value)
     }
   }, [courseIdFilter, isUrlFilter])
-  //
   const onChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
     const value = e.target.value
     setValue(value)
     if (isUrlFilter) {
-      //
       const url = getUrlWithQueryParams({
         'course._id_filter': value,
       })

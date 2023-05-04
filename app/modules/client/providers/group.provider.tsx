@@ -17,7 +17,6 @@ export const useCourseGroup = () => {
 
 export function GroupProvider({ limit, children }: { limit: number; children: ReactNode }) {
   const [page, setPage] = useState<number>(1)
-  //
   const onBeforeChange = useCallback(
     (nextSlide: number, state: CarouselInternalState) => {
       const newPage = Math.ceil((nextSlide + 1 + state.slidesToShow) / limit)
@@ -25,7 +24,6 @@ export function GroupProvider({ limit, children }: { limit: number; children: Re
     },
     [limit]
   )
-  //
   const state = useMemo(
     () => ({
       state: {

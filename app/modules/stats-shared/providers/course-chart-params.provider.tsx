@@ -23,7 +23,6 @@ export function CourseChartParamsProvider({
   courseId?: string
 }) {
   const [courseId, setCourseId] = useState<string | undefined>(defaultCourseId)
-  //
   const state: ICourseChartParamsProvider = useMemo(
     () => ({
       state: {

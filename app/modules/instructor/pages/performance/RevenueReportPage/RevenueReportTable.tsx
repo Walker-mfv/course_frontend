@@ -7,7 +7,6 @@ import ExpectedPaidDate from '@shared/components/ExpectedPaidDate'
 import NextLink from '@shared/components/NextLink'
 import Price from '@shared/components/Price'
 import IPayment from '@shared/interfaces/models/payment.interface'
-//
 
 const Row = ({ item, onPay, onViewDetail }: { item: IPayment } & Actions) => {
   const timePeriod = moment(new Date(item.history.createdAt)).format('MMM, YYYY')
@@ -58,7 +57,6 @@ const Row = ({ item, onPay, onViewDetail }: { item: IPayment } & Actions) => {
   )
 }
 
-//
 interface Actions {
   onPay?: (item: IPayment) => void
   onViewDetail?: (item: IPayment) => void

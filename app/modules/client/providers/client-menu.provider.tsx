@@ -29,7 +29,6 @@ export const useClientMenu = () => {
 export function ClientMenuProvider({ children }: { children: ReactNode }) {
   const catsMenu = useCatsMenuQuery()
   const [hoveredPrimaryCat, setHoveredPrimaryCat] = useState<ISecondLevelCatInfo>()
-  //
   const state = useMemo(
     () => ({
       state: {

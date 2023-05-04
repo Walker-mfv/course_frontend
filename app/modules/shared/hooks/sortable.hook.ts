@@ -5,7 +5,6 @@ import { TDragItem } from '../interfaces/drag-item.interface'
 interface ISortableOptions {
   accept: string
   canDrag?: boolean
-  //
 }
 export const useSortable = <T extends TDragItem>(
   options: ISortableOptions & {

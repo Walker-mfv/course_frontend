@@ -1,7 +1,6 @@
 const FieldLabel = {
   all: 'All',
   actions: 'Actions',
-  //
   'user.createdAt': 'Joined at',
   'user.name': 'Name',
   'user.fullName': 'Full name',
@@ -15,7 +14,6 @@ const FieldLabel = {
   'user.email': 'Email',
   'user.phone': 'Phone',
   'user.address': 'Address',
-  //
   'course.title': 'Course title',
   'course.status': 'Status',
   'course.author': 'Author',

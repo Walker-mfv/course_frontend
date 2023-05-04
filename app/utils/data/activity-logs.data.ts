@@ -19,4 +19,3 @@ export const ACTIVITY_LOGS_SEARCH_MENU: SearchItem[] = [
     field: 'content',
   },
 ]
-//

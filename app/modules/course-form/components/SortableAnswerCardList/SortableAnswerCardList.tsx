@@ -19,7 +19,6 @@ export default function SortableAnswerCardList({ placeholders }: SortableAnswerC
     watch,
   } = useFormContext<IAnswerFormData>()
   const { formName, fields, append, remove, swap, maxLength, minQty, fieldName } = useAnswerFieldArray()
-  //
   const canDelete = fields.length > (minQty || 0)
   const renderCard = useCallback(
     (field, i) => {

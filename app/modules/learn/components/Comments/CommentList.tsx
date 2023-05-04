@@ -19,7 +19,6 @@ function CommentList({
   isLoading?: boolean
 }) {
   const borderColor = useBorderColor()
-  //
   const renderItem = useCallback(
     (item: IComment) => {
       return <CommentExcerpt key={item._id} parentId={parentId} comment={item} />

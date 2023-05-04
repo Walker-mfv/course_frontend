@@ -32,7 +32,6 @@ export default function DateRangeFilter() {
     state: { dateRange },
     methods: { setDateRange },
   } = useMyChart()
-  //
   const onChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
     if (e.target.value) {
       const value = JSON.parse(e.target.value) as IDateRange

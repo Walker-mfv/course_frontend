@@ -35,4 +35,3 @@ export const USER_SEARCH_MENU: SearchItem[] = [
     field: 'profile.fullName',
   },
 ]
-//

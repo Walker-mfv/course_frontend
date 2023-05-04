@@ -21,7 +21,6 @@ interface IDevice {
   model: string
 }
 
-//
 interface IGeolocation {
   lat: number
   long: number
@@ -34,7 +33,6 @@ export interface IGeolocationInfo {
 interface IDeviceInfo {
   ip: string
   geolocationInfo: IGeolocationInfo
-  //
   client: IClient
   os: IOs
   device: IDevice

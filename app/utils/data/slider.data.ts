@@ -27,4 +27,3 @@ export const SLIDER_SEARCH_MENU: SearchItem[] = [
     field: 'description',
   },
 ]
-//

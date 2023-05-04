@@ -12,7 +12,6 @@ export const transformUsers = (items: IUser[]): IUser[] => {
     }
     cloneItem.profile = profile
 
-    //
     // cloneItem.createdAt = new Date(cloneItem.createdAt);
     // cloneItem.modifiedAt = cloneItem.modifiedAt ? new Date(cloneItem.modifiedAt) : undefined;
     return cloneItem

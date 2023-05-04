@@ -94,7 +94,6 @@ export const ExportPdfRevenueReport = () => {
         }
       })
       rp.genReport({ columns, rows }, user!)
-      //
       onClose()
       setEnabled(false)
     }

@@ -21,7 +21,7 @@ export const AddNewRuleButton = ({
     state: { role },
   } = usePermissionManagement()
   const { onShow } = useAppDialog()
-  //
+  
   const onClick = () => {
     let docPermissionId = documentPermissionId?.toString() || undefined
     onShow({

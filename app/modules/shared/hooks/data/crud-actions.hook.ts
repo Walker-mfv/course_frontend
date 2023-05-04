@@ -106,7 +106,6 @@ export const useCrudActions = () => {
                   queryClient.invalidateQueries([ctrl])
                   const title = itemName ? `${itemName} ${lan.DELETED}` : Helper.lodash.upperFirst(lan.ITEM_DELETED)
                   toast(NotifyHelper.success(title))
-                  //
                   options?.onSuccess && options.onSuccess()
                   resolve()
                 } catch (e: any) {
@@ -205,11 +204,9 @@ export const useCrudActions = () => {
             queryClient.invalidateQueries([ctrlName])
             const title = `${ids.length} ${lan.ITEMS_DELETED}`
             toast(NotifyHelper.success(title))
-            //
             options?.onSuccess && options.onSuccess()
           } catch (e: any) {
             toast(NotifyHelper.somethingWentWrong)
-            //
             options?.onError && options.onError(e)
           }
         },

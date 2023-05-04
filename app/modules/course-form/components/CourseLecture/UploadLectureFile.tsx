@@ -30,8 +30,6 @@ export default function UploadLectureFile(props: UploadLectureFileProps) {
     state: { lecture },
   } = useLectureParams()
   const [uploadProgress, setUploadProgress] = useState<number>()
-  //
-  //
   const {
     register,
     formState: { errors, isSubmitting },

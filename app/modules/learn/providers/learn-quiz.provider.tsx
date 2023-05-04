@@ -53,7 +53,6 @@ export function LearnQuizProvider({ children }: { children: ReactNode }) {
     setSelectedOptions([])
     setWelcomeScreen(true)
   }, [unit._id])
-  //
   useEffect(() => {
     if (learnUnit) {
       if (learnUnit.learnQuiz) setLearnQuiz(learnUnit.learnQuiz)
@@ -71,7 +70,6 @@ export function LearnQuizProvider({ children }: { children: ReactNode }) {
       )
     }
   }, [learnUnit, unit])
-  //
   const setCurrentQuestionIdx = useCallback((val: number) => {
     setLearnQuiz((learnQuiz) => {
       return update(learnQuiz, {
@@ -251,7 +249,6 @@ export function LearnQuizProvider({ children }: { children: ReactNode }) {
     learnQuiz.skipQuestions,
     unit._id,
   ])
-  //
   const lastSelected = useMemo(() => {
     if (selectedOptions.length == 0) return undefined
     const question = learnQuiz.quiz?.questions.at(learnQuiz.currentQuestionIdx)
@@ -262,7 +259,6 @@ export function LearnQuizProvider({ children }: { children: ReactNode }) {
     }
   }, [learnQuiz.currentQuestionIdx, learnQuiz.quiz?.questions, selectedOptions])
 
-  //
   const state: LearnQuizProvider = useMemo(
     () => ({
       state: {

@@ -55,7 +55,6 @@ function CommentForm({ ...props }: CommentFormProps) {
       content: props.comment?.content,
     })
   }, [props.comment?.content, reset])
-  //
   const onSubmit = handleSubmit(async (values) => {
     const data: Partial<IComment> = {
       parent: null,

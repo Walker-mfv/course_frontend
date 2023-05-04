@@ -51,7 +51,7 @@ export default function PriceTiersForm() {
     control, // control props comes from useForm (optional: if you are using FormContext)
     name: 'priceTiers', // unique name for your Field Array
   })
-  //
+
   const { isLoading, data } = useConfigurationQuery()
   const { mutate: updateConfiguration } = useUpdateConfiguration()
 
@@ -64,7 +64,6 @@ export default function PriceTiersForm() {
     }
   }, [data, reset])
 
-  //
   const renderItem = useCallback(
     (field: Record<'id', string>, index: number) => {
       return (

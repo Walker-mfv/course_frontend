@@ -28,7 +28,6 @@ export const useLearningCourseIdsQuery = (options?: UseQueryOptions<string[]>) =
     ...options,
   })
 }
-//
 export const useArchiveCourses = () => {
   const queryClient = useQueryClient()
   return useMutation(apiArchiveCourses, {

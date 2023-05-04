@@ -31,7 +31,6 @@ export function LibraryProvider({
   const [sortBy, setSortBy] = useState<string>()
   const [order, setOrder] = useState<string>()
   const [fileType, setFilType] = useState<TFileType>(defaultFileType)
-  //
   const state = useMemo(
     () => ({
       state: { search, sortBy, order, fileType },

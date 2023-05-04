@@ -15,7 +15,7 @@ export default function DocumentTypeFilter() {
   const {
     methods: { setDocumentPermissionId },
   } = usePermissionManagement()
-  //
+
   const { [DOCUMENT_TYPE_FILTER_KEY]: value = '' } = usePermissionManagementParams()
   useEffect(() => {
     setDocumentPermissionId(value + '' || undefined)
@@ -30,7 +30,6 @@ export default function DocumentTypeFilter() {
 
   const onChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
     const value = e.target.value
-    //
     const url = getUrlWithQueryParams({
       [DOCUMENT_TYPE_FILTER_KEY]: value,
     })

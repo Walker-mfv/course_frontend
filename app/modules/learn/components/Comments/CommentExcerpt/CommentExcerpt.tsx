@@ -67,7 +67,6 @@ const CommentBottomBar = (props: CommentExcerptProps) => {
   const [isReply, setReply] = useState<boolean>(false)
   const [showSubs, setShowSubs] = useState<boolean>(false)
   const { isLoading: subCommentLoading, data: subComments } = useUnitSubCommentsQuery(props.comment._id, showSubs)
-  //
   const onCancel = useCallback(() => {
     setReply(false)
   }, [])
@@ -147,7 +146,6 @@ function CommentExcerpt({ comment, ...props }: CommentExcerptProps) {
   } = useAuth()
   const subColor = useSubtitleColor()
   const [editMode, setEditMode] = useState<boolean>(false)
-  //
   const fullName = comment.user.profile.fullName
   const isMyComment = user?._id == comment.user._id
   const onCancelEdit = useCallback(() => {

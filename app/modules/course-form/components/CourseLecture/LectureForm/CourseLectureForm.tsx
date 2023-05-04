@@ -33,13 +33,7 @@ export interface CourseLectureFormProps extends IUnitAddress {
   onClose?: () => void
 }
 
-export default function CourseLectureForm({
-  unitIdx,
-  formType = 'edit',
-  //
-  onClose,
-  ...props
-}: CourseLectureFormProps) {
+export default function CourseLectureForm({ unitIdx, formType = 'edit', onClose, ...props }: CourseLectureFormProps) {
   const unit = useAppSelector((state) =>
     formType == 'edit' ? selectFormCourseUnitByIds(props.sectionId, props.unitId)(state) : undefined
   )
@@ -51,7 +45,6 @@ export default function CourseLectureForm({
   )
   const lecture = TypeHelper.isLecture(unit?.lecture) ? unit?.lecture : undefined
   const { onXThunkUpdate } = useCrudActions()
-  //
   const {
     register,
     formState: { errors, isDirty },
@@ -63,7 +56,6 @@ export default function CourseLectureForm({
     },
     resolver: yupResolver(validateSchema),
   })
-  //
   const onSubmit = handleSubmit((values) => {
     const { title } = values
     onClose && onClose()

@@ -15,7 +15,6 @@ const Actions = () => {
     methods: { setWritingResponse: setWritingRespond },
   } = useInstructorCourseReview()
   const { mutate: deleteResponse } = useDeleteReviewResponse()
-  //
   const onWritingResponse = () => {
     setWritingRespond(true)
   }

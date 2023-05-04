@@ -35,11 +35,9 @@ export function SimplePaginationProvider({
   const onPreviousPage = useCallback(() => {
     setPage(page - 1)
   }, [page])
-  //
   const totalPage = QueryHelper.getTotalPage(rowsPerPage, totalItem)
   const hasPreviousPage = page > 1 && totalPage > 1
   const hasNextPage = totalPage > page
-  //
   const state: ISimplePaginationProvider = useMemo(
     () => ({
       state: {

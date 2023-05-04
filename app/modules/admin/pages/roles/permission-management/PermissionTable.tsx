@@ -103,7 +103,7 @@ const Row = ({ item: rolePermission }: { item: IRolePermission }) => {
     rolePermission.onlyForCreator,
     updateRolePermission,
   ])
-  //
+
   const renderPermission = useCallback(
     (item: TPermission, i: number) => {
       const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {

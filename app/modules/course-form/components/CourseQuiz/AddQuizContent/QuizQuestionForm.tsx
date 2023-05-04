@@ -40,8 +40,6 @@ const validationSchema = yup.object({
   correctOptionNo: yup.number().required('Correct option ' + FormMsg.required),
 })
 
-//
-
 const AnswerEditor = (props: {
   index: number
   register: UseFormRegister<FormData>
@@ -89,7 +87,6 @@ const AddAnswerButton = ({
   const answerOptionsWatch = watch('answerOptions')
   const canAddAnswer =
     answerOptionsWatch?.filter((item) => Helper.cvtHtmlToText(item.answerContent).trim() == '').length == 0
-  //
   const onAdd = () => {
     append({
       answerContent: '',
@@ -139,7 +136,6 @@ export default function QuizContentForm(props: QuizQuestionForm) {
     name: 'answerOptions', // unique name for your Field Array
   })
 
-  //
   useEffect(() => {
     if (editingQuestion) {
       reset(editingQuestion)

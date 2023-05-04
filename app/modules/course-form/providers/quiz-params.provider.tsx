@@ -47,7 +47,6 @@ export function QuizParamsProvider({ children }: { children: ReactNode }) {
       setEditingQuestion(undefined)
     }
   }, [isEditContent])
-  //
   const state = useMemo(
     () => ({
       state: {

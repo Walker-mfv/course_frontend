@@ -15,12 +15,12 @@ export default function RoleFilter() {
   const {
     methods: { setRoleId },
   } = usePermissionManagement()
-  //
+
   const { [ROLE_FILTER_KEY]: value = '' } = usePermissionManagementParams()
   useEffect(() => {
     setRoleId(value + '' || undefined)
   }, [setRoleId, value])
-  //
+
   const renderOption = useCallback((item: ISelectItem<string>, i: number) => {
     return (
       <option key={i} value={item.value}>
@@ -30,7 +30,6 @@ export default function RoleFilter() {
   }, [])
   const onChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
     const value = e.target.value
-    //
     const url = getUrlWithQueryParams({
       [ROLE_FILTER_KEY]: value,
     })

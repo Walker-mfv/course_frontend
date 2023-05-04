@@ -78,7 +78,6 @@ export function LectureParamsProvider({ children }: { children: ReactNode }) {
       setProcessingFile(genProcessingFile(data.data.name || '', data.data.type || '', data.data.size || 0, user!._id))
       await dispatch(updateCourseLectureVideo({ ...data, lectureId: lecture._id, ...address }))
       queryClient.invalidateQueries([RQK_MY_FILES])
-      //
       reset()
       // eslint-disable-next-line react-hooks/exhaustive-deps
     },
@@ -94,7 +93,6 @@ export function LectureParamsProvider({ children }: { children: ReactNode }) {
     },
     [address, dispatch, lecture._id, queryClient, reset, user]
   )
-  //
   const state = useMemo(
     () => ({
       state: {

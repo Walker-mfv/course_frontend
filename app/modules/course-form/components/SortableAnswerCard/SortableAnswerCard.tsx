@@ -24,11 +24,9 @@ export interface SortableAnswerCardProps extends Partial<IFieldArray<IAnswerForm
   formName: string
   placeholder?: string
   maxLength?: number
-  //
   field: string
   index: number
   value: string
-  //
   canDelete: boolean
   register: UseFormRegister<IAnswerFormData>
 }
@@ -59,7 +57,6 @@ function SortableAnswerCard({
     },
   })
 
-  //
   const subColor = useSubtitleColor()
   const onDeleteClick = useCallback(() => {
     if (canDelete) {

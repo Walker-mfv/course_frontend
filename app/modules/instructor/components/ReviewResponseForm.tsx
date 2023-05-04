@@ -47,7 +47,6 @@ function ReviewResponseForm({ ...props }: ReviewResponseFormProps) {
       content: review.response?.content,
     })
   }, [review.response?.content, reset])
-  //
   const onSubmit = handleSubmit(async (values) => {
     const data: Partial<IReviewResponse> = {
       content: values.content,
