@@ -1,4 +1,4 @@
-import { Stack } from '@chakra-ui/react'
+import { Stack, toast } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 import { FiEdit2, FiTrash } from 'react-icons/fi'
@@ -33,6 +33,14 @@ import lan from 'app/utils/constants/lan.constant'
 import { COURSE_SEARCH_MENU, COURSE_STATUS_SELECT_DATA } from 'app/utils/data/course.data'
 import Helper from 'app/utils/helpers/helper.helper'
 import PathHelper from 'app/utils/helpers/path.helper'
+import { useConvertCourseToInactive } from 'app/modules/instructor/queries/instructor-courses-query.hook'
+import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
+import { Text } from '@chakra-ui/react'
+import { useAppToast } from '@shared/hooks/app-toast.hook'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import { IoIosRemoveCircleOutline } from 'react-icons/io'
+import { AiOutlineCheckCircle } from 'react-icons/ai'
+import { useApproveCourse, useDeactiveCourse } from '@course-form/hooks/course-query.hook'
 
 // DATA
 export const columns: ITableColumn[] = [
@@ -111,12 +119,95 @@ const PageTableToolbar = () => {
 }
 
 const PageTable = () => {
+  const { onShow } = useSimpleDialog()
   const router = useRouter()
   const { onDeleteOne } = useCrudActions()
+  const toast = useAppToast()
   const { ctrlName, modelName } = usePageParams()
   const rowsQ = useAdminTableRows<ICourse>(ctrlName)
+  const { mutate: deactiveCourse } = useDeactiveCourse()
+  const { mutate: reactiveCourse } = useApproveCourse()
+
   const rows: ITableRow[] | undefined = useMemo(() => {
     return rowsQ.data?.map((item) => {
+      const onDeactivate = () => {
+        onShow({
+          title: 'Confirm Deactivation',
+          content: (
+            <>
+              <Text fontWeight={'bold'} fontSize={'lg'}>
+                Do you want to deactivation this course?
+              </Text>{' '}
+              This means that the course is no longer visible to students, and they will not be able to enroll the
+              course materials but enrolled students can still access the course.
+            </>
+          ),
+          colorScheme: 'blue',
+          onPositive: () => {
+            deactiveCourse(item._id, {
+              onSuccess: (_) => {
+                toast(NotifyHelper.success('Course deactivated'))
+              },
+              onError: (_) => {
+                toast(NotifyHelper.somethingWentWrong)
+              },
+            })
+          },
+        })
+      }
+
+      const onReactivate = () => {
+        onShow({
+          title: 'Reactive Course',
+          content:
+            'Once the course is reactivated, it will be live on the website. Do you want to reactive this course?',
+          colorScheme: 'blue',
+          onPositive: () => {
+            reactiveCourse(
+              { id: item._id, status: 'active' },
+              {
+                onSuccess: (_) => {
+                  toast(NotifyHelper.success('Course reactivated'))
+                },
+                onError: (_) => {
+                  toast(NotifyHelper.somethingWentWrong)
+                },
+              }
+            )
+          },
+        })
+      }
+
+      const actions = [
+        {
+          name: Helper.lodash.capitalize(lan.EDIT),
+          icon: FiEdit2,
+          onClick: () => {
+            router.push(PathHelper.getAdminCourseFormPath(item._id))
+          },
+        },
+        {
+          name: Helper.lodash.capitalize(lan.DELETE),
+          icon: FiTrash,
+          onClick: async () => {
+            onDeleteOne(item._id, item.basicInfo.title, {
+              deletionValidate: true,
+            })
+          },
+        },
+      ]
+
+      if (item.status == 'active' || item.status == 'inactive') {
+        actions.push({
+          name: Helper.lodash.capitalize(item.status == 'active' ? lan.DEACTIVATE : lan.REACTIVATE),
+          icon: item.status == 'active' ? IoIosRemoveCircleOutline : AiOutlineCheckCircle,
+          onClick: async () => {
+            if (item.status == 'active') onDeactivate()
+            else onReactivate()
+          },
+        })
+      }
+
       return {
         _id: item._id,
         'basicInfo.title': (
@@ -130,28 +221,7 @@ const PageTable = () => {
         status: <StatusBadge status={item.status as TStatus} />,
         'history.createdAt': <Time timestamp={item.history.createdAt} />,
         'history.updatedAt': item.history.updatedAt ? <Time type="long" timestamp={item.history.updatedAt} /> : null,
-        actions: (
-          <RowActions
-            actions={[
-              {
-                name: Helper.lodash.capitalize(lan.EDIT),
-                icon: FiEdit2,
-                onClick: () => {
-                  router.push(PathHelper.getAdminCourseFormPath(item._id))
-                },
-              },
-              {
-                name: Helper.lodash.capitalize(lan.DELETE),
-                icon: FiTrash,
-                onClick: async () => {
-                  onDeleteOne(item._id, item.basicInfo.title, {
-                    deletionValidate: true,
-                  })
-                },
-              },
-            ]}
-          />
-        ),
+        actions: <RowActions actions={actions} />,
       }
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps

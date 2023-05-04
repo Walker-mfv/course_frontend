@@ -51,6 +51,7 @@ const ApproveActions = (props: CourseActionsProps) => {
   const { mutate: approveCourse } = useApproveCourse()
   const router = useRouter()
   const toast = useAppToast()
+
   const onApprove = () => {
     onShow({
       title: 'Approve Course',
@@ -72,6 +73,7 @@ const ApproveActions = (props: CourseActionsProps) => {
       },
     })
   }
+
   const onReject = () => {
     onShow({
       title: 'Reject Course',

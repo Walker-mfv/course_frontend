@@ -30,6 +30,7 @@ import { useInstructorCoursesUrlParams } from 'app/modules/instructor/hooks/inst
 import IInstructorCourse from 'app/modules/instructor/interfaces/instructor-course.interface'
 import {
   useConvertCourseToDraft,
+  useConvertCourseToInactive,
   useInstructorCoursesQuery,
 } from 'app/modules/instructor/queries/instructor-courses-query.hook'
 import RowActions from '@admin/components/RowAction'
@@ -38,7 +39,7 @@ import lan from 'app/utils/constants/lan.constant'
 import { FiEdit2 } from 'react-icons/fi'
 import { IoIosRemoveCircleOutline } from 'react-icons/io'
 import { useRouter } from 'next/router'
-import { AiOutlineCheckCircle } from 'react-icons/ai'
+import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
 
 interface OverlayBoxProps extends BoxProps {}
 const OverlayBox = ({ children, ...props }: OverlayBoxProps) => {
@@ -121,6 +122,7 @@ const TdContent = ({ item }: { item: ICourse }) => {
         <Heading as="div" fontSize={'md'} whiteSpace="pre-wrap" minW={'200px'} noOfLines={2}>
           <HighlightSearchText value={item.basicInfo.title} />
         </Heading>
+        {item.status}
         <HStack>
           <StatusBadge status={item.status!} label={item.status == 'pending' ? 'Waiting for Approval' : undefined} />
         </HStack>
@@ -128,11 +130,15 @@ const TdContent = ({ item }: { item: ICourse }) => {
     </HStack>
   )
 }
+
 const Row = ({ item }: { item: IInstructorCourse }) => {
+  const { onShow } = useSimpleDialog()
   const subColor = useSubtitleColor()
   const toast = useAppToast()
   const { mutate: convertCourseToDraft } = useConvertCourseToDraft()
+  const { mutate: convertCourseToInactive } = useConvertCourseToInactive()
   const router = useRouter()
+
   const renderCourseInfo = useMemo(() => {
     const onConvertCourseToDraft = () => {
       convertCourseToDraft(item._id, {
@@ -141,6 +147,52 @@ const Row = ({ item }: { item: IInstructorCourse }) => {
         },
       })
     }
+
+    const onDeactivate = () => {
+      onShow({
+        title: 'Confirm Deactivation',
+        content: (
+          <>
+            <Text fontWeight={'bold'} fontSize={'lg'}>
+              Do you want to deactivation this course?
+            </Text>{' '}
+            This means that the course is no longer visible to students, and they will not be able to enroll the course
+            materials but enrolled students can still access the course. You will need to ask your administrator to be
+            able to reopen the course.
+          </>
+        ),
+        colorScheme: 'blue',
+        onPositive: () => {
+          convertCourseToInactive(item._id, {
+            onSuccess: (_) => {
+              toast(NotifyHelper.success('Course deactivated'))
+            },
+            onError: (_) => {
+              toast(NotifyHelper.somethingWentWrong)
+            },
+          })
+        },
+      })
+    }
+
+    const actions = [
+      {
+        name: Helper.lodash.capitalize(lan.EDIT),
+        icon: FiEdit2,
+        onClick: () => {
+          router.push(PathHelper.getInstructorCourseFormPath(item._id))
+        },
+      },
+    ]
+
+    if (item.status == 'active') {
+      actions.push({
+        name: Helper.lodash.capitalize(lan.DEACTIVATE),
+        icon: IoIosRemoveCircleOutline,
+        onClick: async () => onDeactivate(),
+      })
+    }
+
     switch (item.status) {
       case 'draft':
         return (
@@ -217,38 +269,13 @@ const Row = ({ item }: { item: IInstructorCourse }) => {
             </Td>
 
             <Td>
-              <RowActions
-                actions={[
-                  {
-                    name: Helper.lodash.capitalize(lan.EDIT),
-                    icon: FiEdit2,
-                    onClick: () => {
-                      router.push(PathHelper.getInstructorCourseFormPath(item._id))
-                    },
-                  },
-                  {
-                    name: Helper.lodash.capitalize(item.status == 'active' ? lan.DEACTIVATE : lan.REACTIVATE),
-                    icon: item.status == 'active' ? IoIosRemoveCircleOutline : AiOutlineCheckCircle,
-                    onClick: async () => {},
-                  },
-                ]}
-              />
+              <RowActions actions={actions} />
             </Td>
           </>
         )
     }
-  }, [
-    convertCourseToDraft,
-    item._id,
-    item.basicInfo.title,
-    item.meta.avgRatingScore,
-    item.numStudent,
-    item.numStudentLoved,
-    item.status,
-    subColor,
-    toast,
-    router,
-  ])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item._id, item.basicInfo.title, item.meta.avgRatingScore, item.numStudent, item.numStudentLoved, item.status])
 
   const renderContent = useMemo(() => {
     switch (item.status) {

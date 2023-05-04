@@ -31,7 +31,7 @@ export default function TopBar({ ...props }: BoxProps) {
         ) : null}
         {/* <AdminBreadcrumb /> */}
       </HStack>
-      <HStack>
+      <HStack pt={2}>
         {/* <SettingSidebarToggler /> */}
         <ThemeButton size="sm" />
         <NotificationButton size="sm" />

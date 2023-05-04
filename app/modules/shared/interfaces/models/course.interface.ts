@@ -66,7 +66,7 @@ export interface ICourseHistory extends IHistory {
   publishedAt?: string
 }
 
-export type TCourseStatus = 'active' | 'draft' | 'pending' | 'rejected'
+export type TCourseStatus = 'active' | 'draft' | 'pending' | 'rejected' | 'inactive'
 export default interface ICourse extends IModel {
   status?: TCourseStatus
   categories?: string[] | ICategory[]

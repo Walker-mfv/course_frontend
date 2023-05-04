@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import { apiConvertCourseToDraft } from 'app/apis/course/course.api'
+import { apiConvertCourseToDraft, apiConvertCourseToInActive } from 'app/apis/course/course.api'
 import { countInstructorCourses, fetchInstructorCourses } from 'app/apis/user/user-instructor.api'
 import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
 import IInstructorCourse from '../interfaces/instructor-course.interface'
@@ -42,6 +42,19 @@ export const useConvertCourseToDraft = () => {
   } = useInstructorParams()
   const clientQuery = useInstructorCoursesUrlParams()
   return useMutation((id: string) => apiConvertCourseToDraft(id), {
+    onSuccess: (_) => {
+      queryClient.invalidateQueries([RQK_INSTRUCTOR_COURSES, clientQuery, viewInstructorId])
+    },
+  })
+}
+
+export const useConvertCourseToInactive = () => {
+  const queryClient = useQueryClient()
+  const {
+    state: { viewInstructorId },
+  } = useInstructorParams()
+  const clientQuery = useInstructorCoursesUrlParams()
+  return useMutation((id: string) => apiConvertCourseToInActive(id), {
     onSuccess: (_) => {
       queryClient.invalidateQueries([RQK_INSTRUCTOR_COURSES, clientQuery, viewInstructorId])
     },

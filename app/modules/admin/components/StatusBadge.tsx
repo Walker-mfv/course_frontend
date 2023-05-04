@@ -28,7 +28,7 @@ const data: Record<
   },
   inactive: {
     color: 'yellow',
-    content: 'In active',
+    content: 'Inactive',
   },
   unverified: {
     color: 'gray',
