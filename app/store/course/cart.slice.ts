@@ -58,16 +58,20 @@ export const cartSlice = createSlice({
   },
   extraReducers(builder) {},
 })
+
 // SELECTOR
 export const isCartExist = (state: RootState) => {
   return !!state.cart.data
 }
+
 export const selectCoursesInCart = (state: RootState) => {
   return state.cart.data?.courses || []
 }
+
 export const selectTotalCourse = (state: RootState) => {
   return state.cart.data?.courses?.length || 0
 }
+
 export const selectTotalOriginPrice = (state: RootState) => {
   let price =
     state.cart.data?.courses.reduce((prev, current) => {

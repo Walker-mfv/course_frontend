@@ -22,10 +22,10 @@ export default function SearchBar() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const searchDebounce = useCallback(
     debounce((searchValue: string) => {
-      if (searchValue.trim() != '') {
-        router.push(PathHelper.getFilteredCoursesWithSearchValue(searchValue))
-      }
-    }, 500),
+      // if (searchValue.trim() != '') {
+      router.push(PathHelper.getFilteredCoursesWithSearchValue(searchValue))
+      // }
+    }, 1000),
     [router]
   )
 
@@ -33,6 +33,7 @@ export default function SearchBar() {
     setValue(e.target.value)
     searchDebounce(e.target.value)
   }
+
   return (
     <InputGroup maxWidth={'600px'} marginLeft="auto">
       <InputLeftElement pointerEvents="none">

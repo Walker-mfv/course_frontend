@@ -3,7 +3,6 @@ import React from 'react'
 import { useIsClientMobile } from '../../hooks/is-client-mobile.hook'
 import DesktopTopBar from './ClientDesktopTopBar'
 import ClientMobileTopBar from './ClientMobileTopBar'
-import HorizontalCategoryBar from './HorizontalCategoryBar'
 
 const TopBar = () => {
   const bg = useColorModeValue('white', undefined)

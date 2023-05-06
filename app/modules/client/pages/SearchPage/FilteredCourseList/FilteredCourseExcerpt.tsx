@@ -43,26 +43,20 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
   const subColor = useSubtitleColor()
   const showOriginPrice = useBreakpointValue([false, false, true])
   const author = TypeHelper.isUser(course.history.createdBy) ? course.history.createdBy : undefined
-  const { width: widthContent, ref: refContent } = useObserveElementWidth<HTMLDivElement>()
-  const { width: widthPrice, ref: refPrice } = useObserveElementWidth<HTMLDivElement>()
+  const { width: widthCourseWrp, ref: refCourseWrp } = useObserveElementWidth<HTMLDivElement>()
 
   return (
-    <Popover
-      placement="right"
-      offset={[0, -widthContent + -widthPrice + -20]}
-      boundary={'scrollParent'}
-      trigger="hover"
-    >
+    <Popover placement="right" offset={[0, -widthCourseWrp / 2]} boundary={'scrollParent'} trigger="hover">
       <NextLink href={PathHelper.getCourseDetailPath(course.basicInfo.slug)}>
         <PopoverTrigger>
-          <HStack align="start">
+          <HStack align="start" ref={refCourseWrp}>
             <CourseImage
               src={course.basicInfo.image || ''}
               w={{ base: '100px', sm: '150px', md: '250px' }}
               borderRadius={'lg'}
               overflow={'hidden'}
             />
-            <Stack flex={1} spacing={0} pl={{ md: 4 }} ref={refContent}>
+            <Stack flex={1} spacing={0} pl={{ md: 4 }}>
               {/* TITLE & SUBTITLE */}
               <Box>
                 <Heading noOfLines={2} fontSize={'sm'}>
@@ -102,7 +96,6 @@ function FilteredCourseExcerpt({ course }: { course: ICourse }) {
               fontSize={'lg'}
               ml={2}
               minWidth={'100px'}
-              ref={refPrice}
             >
               <CoursePrice
                 currency={course.basicInfo.currency!}
