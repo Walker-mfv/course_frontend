@@ -98,11 +98,7 @@ export const COURSE_STATUS_SELECT_DATA: TCourseSelectItem[] = [
 
 export const COURSE_SEARCH_MENU: SearchItem[] = [
   {
-    title: FieldLabel.all,
-    field: 'all',
-  },
-  {
     title: FieldLabel['course.title'],
-    field: 'title',
+    field: 'all',
   },
 ]

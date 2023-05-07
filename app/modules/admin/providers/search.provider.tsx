@@ -72,6 +72,7 @@ export default function SearchProvider({ defaultField, children }: { defaultFiel
     },
     [getUrlWithQueryParams, router, field, setValue]
   )
+
   const state = useMemo(
     () => ({
       field: field,

@@ -77,6 +77,7 @@ export default function MyInput({
             isDisabled={isDisabled}
             {...register(field)}
             _placeholder={{ fontSize: '15px' }}
+            py={1}
           />
           {maxLength && (
             <InputRightElement>

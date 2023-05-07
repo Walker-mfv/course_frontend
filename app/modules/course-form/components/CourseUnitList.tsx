@@ -28,7 +28,14 @@ export default function CourseUnitList({ sectionId }: CourseUnitListProps) {
         dispatch(formCourseSetUnitExpandedIndexes({ sectionId: section!._id, indexes: values as number[] }))
       }}
     >
-      <Stack spacing={0}>
+      <Stack
+        spacing={0}
+        sx={{
+          '& > :last-child > div > button': {
+            opacity: 1,
+          },
+        }}
+      >
         {section.units.length > 0 ? (
           unitListHtml
         ) : (

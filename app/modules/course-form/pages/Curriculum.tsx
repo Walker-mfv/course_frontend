@@ -38,7 +38,14 @@ function Curriculum() {
             allowMultiple
             onChange={(indexes) => dispatch(formCourseSetSectionExpandedIndexes(indexes as number[]))}
           >
-            <Stack spacing={0}>
+            <Stack
+              spacing={0}
+              sx={{
+                '& > :last-child > div > button': {
+                  opacity: 1,
+                },
+              }}
+            >
               {sectionListHtml}
               <AddCourseSection sectionIndex={sections.length} />
             </Stack>

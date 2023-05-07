@@ -23,7 +23,7 @@ function AddCourseSection(props: AddCourseSectionProps) {
       py={2}
       sx={{
         button: {
-          transition: 'opacity 1s ease-in',
+          transition: 'opacity 0.5s ease-in',
         },
         '&:hover': {
           button: {

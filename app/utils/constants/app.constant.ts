@@ -23,6 +23,7 @@ export const CONTROLLER: Record<TModel, TController> = {
   slider: 'sliders',
   'activity log': 'activity-logs',
 }
+
 export const MODEL: Record<TModel, TModel> = {
   notification: 'notification',
   order: 'order',

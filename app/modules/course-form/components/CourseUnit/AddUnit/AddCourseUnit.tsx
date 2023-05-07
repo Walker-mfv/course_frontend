@@ -38,7 +38,7 @@ export default function AddCourseUnit(props: AddCourseUnitProps) {
     <Stack
       sx={{
         button: {
-          transition: 'opacity 2s',
+          transition: 'opacity 1s',
         },
         '&:hover': {
           button: {
@@ -48,7 +48,7 @@ export default function AddCourseUnit(props: AddCourseUnitProps) {
       }}
       pb={addMode ? 2 : undefined}
     >
-      <Box mb={1}>
+      <Box mb={1} mt={1}>
         {!addMode ? (
           <Button
             colorScheme="purple"
@@ -56,6 +56,7 @@ export default function AddCourseUnit(props: AddCourseUnitProps) {
             opacity={buttonOpacity}
             onClick={() => setAddMode(true)}
             leftIcon={<Icon as={AppIcon.add} />}
+            pr={2}
           >
             Add
           </Button>

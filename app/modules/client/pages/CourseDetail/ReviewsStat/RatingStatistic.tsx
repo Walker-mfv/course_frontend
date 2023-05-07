@@ -43,7 +43,7 @@ const Stars = () => {
       </HStack>
     )
   })
-  return <Stack spacing={0.2}>{html}</Stack>
+  return <Stack spacing={'2px'}>{html}</Stack>
 }
 
 function RatingStatistic() {
