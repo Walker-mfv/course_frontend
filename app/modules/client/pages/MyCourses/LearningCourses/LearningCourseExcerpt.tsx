@@ -52,7 +52,7 @@ function LearningCourseExcerpt({ item, actions }: LearningCourseExcerptProps) {
           {/* INFO */}
           <Stack pt={2} px={[2, 4]} pb={[2, 4]} flex={1}>
             {/* TITLE */}
-            <Stack mb={1} minH="45px">
+            <Stack mb={1}>
               <Heading fontSize={'md'} noOfLines={3} lineHeight={'1.4'}>
                 {item.course.basicInfo.title}
               </Heading>

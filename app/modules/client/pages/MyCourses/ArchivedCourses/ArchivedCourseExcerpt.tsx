@@ -49,7 +49,7 @@ function ArchivedCourseExcerpt({ item, actions }: ArchivedCourseExcerptProps) {
           {/* INFO */}
           <Stack pt={2} px={[2, 4]} pb={[2, 4]} flex={1}>
             {/* TITLE */}
-            <Stack mb={1} minH="45px">
+            <Stack mb={1}>
               <Heading fontSize={'md'}>{item.course.basicInfo.title}</Heading>
             </Stack>
             {/* PROGRESS */}

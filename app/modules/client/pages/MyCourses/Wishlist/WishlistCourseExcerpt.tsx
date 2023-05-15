@@ -48,20 +48,24 @@ function WishlistCourseExcerpt({ item }: WishlistCourseExcerptProps) {
           {/* INFO */}
           <Stack pt={2} px={[2, 4]} pb={[2, 4]} flex={1}>
             {/* TITLE */}
-            <Stack mb={1} minH="45px">
-              <Heading fontSize={'md'}>{item.basicInfo.title}</Heading>
+            <Stack mb={1}>
+              <Heading fontSize={'md'} noOfLines={3} lineHeight={'1.4'}>
+                {item.basicInfo.title}
+              </Heading>
             </Stack>
-            <HStack justify={'space-between'}>
-              <Stack spacing={0}>
-                <Rating value={item.meta.avgRatingScore || 0} ratingCount={item.meta.ratingCount} />
-                <CoursePrice
-                  currency={item.basicInfo.currency!}
-                  originPrice={item.basicInfo.price || 0}
-                  promotions={item.promotions?.enabled ? item.promotions : undefined}
-                ></CoursePrice>
-              </Stack>
-              <AddToFavoriteButton size="sm" item={item} />
-            </HStack>
+            <Box display={'flex'} alignItems={'end'} flex={1}>
+              <HStack justify={'space-between'}>
+                <Stack spacing={0}>
+                  <Rating value={item.meta.avgRatingScore || 0} ratingCount={item.meta.ratingCount} />
+                  <CoursePrice
+                    currency={item.basicInfo.currency!}
+                    originPrice={item.basicInfo.price || 0}
+                    promotions={item.promotions?.enabled ? item.promotions : undefined}
+                  ></CoursePrice>
+                </Stack>
+                <AddToFavoriteButton size="sm" item={item} />
+              </HStack>
+            </Box>
           </Stack>
         </Stack>
       </NextLink>
