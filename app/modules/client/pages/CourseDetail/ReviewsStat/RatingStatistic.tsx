@@ -35,7 +35,7 @@ const Stars = () => {
     return (
       <HStack key={i}>
         <Box minW={'100px'}>
-          <RatingStar value={value} w={15} />
+          <RatingStar value={value} w={'15px'} />
         </Box>
         <Text fontSize={'15px'} fontWeight={700}>
           {percent}%
@@ -56,7 +56,7 @@ function RatingStatistic() {
         <Heading fontSize={'3.5rem'} color={'var(--chakra-colors-rating-500)'}>
           {ratingValue}
         </Heading>
-        <RatingStar value={meta.avgRatingScore || 0} w={16} />
+        <RatingStar value={meta.avgRatingScore || 0} w={'16px'} />
         <Text color="var(--chakra-colors-rating-500)" fontWeight={'bold'}>
           Course Rating
         </Text>

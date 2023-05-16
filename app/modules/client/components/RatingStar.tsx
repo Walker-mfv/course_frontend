@@ -1,10 +1,15 @@
 import React from 'react'
-import StarRatings from 'react-star-ratings'
+import dynamic from 'next/dynamic'
 
 export interface RatingStarProps {
   value: number
-  w?: any
+  w?: string
 }
+
+const StarRatings = dynamic(() => import('react-star-ratings'), {
+  ssr: false,
+})
+
 function RatingStar({ w = '16px', value }: RatingStarProps) {
   return (
     <StarRatings
