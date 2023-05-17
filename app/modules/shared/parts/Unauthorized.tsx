@@ -1,9 +1,9 @@
+import { LockIcon } from '@chakra-ui/icons'
 import { Box, Heading, Text, Button, Icon } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import { CiFaceFrown } from 'react-icons/ci'
 import { useCardBg } from '../hooks/style.hook'
 
-export function BadRequest() {
+export function Unauthorized() {
   const bg = useCardBg()
   const router = useRouter()
 
@@ -22,12 +22,12 @@ export function BadRequest() {
       boxShadow={'md'}
       flexDirection={'column'}
     >
-      <Icon as={CiFaceFrown} w={16} h={16} mb={6} color={'gray.300'} />
+      <Icon as={LockIcon} w={16} h={16} mb={6} color={'gray.300'} />
       <Heading fontSize={'2.3rem'} fontWeight="bold" mb={2}>
-        Oh No! Error 404
+        Access denied
       </Heading>
       <Text color={'gray.500'} fontSize="lg" mb={4}>
-        Sorry, the page you&apos;re looking for does not exist.
+        You don&apos;t have permissions to access this page.
       </Text>
       <Button colorScheme="purple" size="lg" onClick={() => router.push('/')}>
         Go Back Home
