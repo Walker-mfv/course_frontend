@@ -69,3 +69,7 @@ export const apiResetPassWord = (token: string, password: string): Promise<void>
 export function apiVerifyEmail(code: string): Promise<void> {
   return axios.post(`${API_DOMAIN}/${prefix}/verify-email`, { code }).then((res) => res.data)
 }
+
+export function apiCheckUserName(value: string): Promise<boolean> {
+  return axiosApiInstance.get<boolean>(`${API_DOMAIN}/${prefix}/check-unique/username/${value}`).then((res) => res.data)
+}

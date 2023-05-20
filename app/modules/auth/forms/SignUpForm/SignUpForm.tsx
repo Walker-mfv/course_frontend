@@ -52,7 +52,7 @@ export default function SignUpForm({
   const onSubmit = handleSubmit(async (values) => {
     const { firstName, lastName, email, password } = values
     try {
-      await onSignUp({ firstName, lastName, email, password })
+      onSignUp({ firstName, lastName, email, password })
       reset()
       setSubmited(true)
     } catch (e) {}

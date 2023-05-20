@@ -17,6 +17,7 @@ export function fetchClientCourses({ queryKey }: any): Promise<ICourse[]> {
   const queryString = UrlHelper.cvtObjToQueryString(clientQuery)
   return axiosApiInstance.get(`${prefix}/client?${queryString}`).then((res) => res.data)
 }
+
 //count filter
 export function countClientFilter({ queryKey }: any): Promise<ICountResult[]> {
   const [_key, clientQuery, fields]: [string, IClientUrlParams, string[]] = queryKey
@@ -24,6 +25,7 @@ export function countClientFilter({ queryKey }: any): Promise<ICountResult[]> {
   const fieldsString = fields.join(',')
   return axiosApiInstance.get(`${prefix}/count-client-filter/${fieldsString}?${queryString}`).then((res) => res.data)
 }
+
 export function countClientCourses({ queryKey }: any): Promise<number> {
   const [_key, clientQuery]: [string, IClientUrlParams] = queryKey
   const queryString = UrlHelper.cvtObjToQueryString(clientQuery)

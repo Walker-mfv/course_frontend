@@ -1,6 +1,6 @@
-import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
-import { apiDeleteUserReview, apiUpdateUserReview, fetchUserReview } from 'app/apis/user/user-review.api'
 import IReview from '@shared/interfaces/models/review.interface'
+import { apiDeleteUserReview, apiUpdateUserReview, fetchUserReview } from 'app/apis/user/user-review.api'
+import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
 
 export const RQK_USER_REVIEW = 'user-review'
 export const useUserRatingQuery = (courseId: string, options?: UseQueryOptions<IReview>) => {
@@ -21,6 +21,7 @@ export const useUpdateUserReview = () => {
     }
   )
 }
+
 export const useDeleteUserReview = () => {
   const queryClient = useQueryClient()
   return useMutation(({ reviewId }: { courseId: string; reviewId: string }) => apiDeleteUserReview(reviewId), {

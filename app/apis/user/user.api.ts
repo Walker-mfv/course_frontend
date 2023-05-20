@@ -1,6 +1,8 @@
+import IClientUrlParams from 'app/modules/admin/interfaces/client-url-params.interface'
 import { ICart, IUser } from 'app/modules/shared/interfaces/models/user.interface'
 import { axiosApiInstance } from 'app/utils/axios-utils'
 import { CONTROLLER } from 'app/utils/constants/app.constant'
+import UrlHelper from 'app/utils/helpers/url.heper'
 
 const prefix = `${CONTROLLER.user}`
 
@@ -37,4 +39,11 @@ export const fetchCart = (): Promise<ICart> => {
 
 export const apiEditProfile = (data: Partial<IUser>): Promise<IUser> => {
   return axiosApiInstance.patch(`/${prefix}/me/profile`, data).then((res) => res.data)
+}
+
+export const fetchUserByUsername = ({ queryKey }: any): Promise<any> => {
+  const [_key, username, clientQuery]: [string, string, IClientUrlParams] = queryKey
+  const queryString = UrlHelper.cvtObjToQueryString(clientQuery)
+  // if (!username) return Promise.resolve(null)
+  return axiosApiInstance.get(`/${prefix}/info/${username}?${queryString}`).then((res) => res.data)
 }

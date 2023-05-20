@@ -3,16 +3,15 @@ import IInstructorCourse from 'app/modules/instructor/interfaces/instructor-cour
 import IPaymentTransaction from 'app/modules/instructor/interfaces/payment-transaction.interface'
 import IStudent from 'app/modules/instructor/interfaces/student.interface'
 import { TOverviewTotal } from 'app/modules/instructor/types/overview-total.type'
+import { TTotalRange } from 'app/modules/instructor/types/total-range.type'
 import IPayment from 'app/modules/shared/interfaces/models/payment.interface'
-import IReview from 'app/modules/shared/interfaces/models/review.interface'
+import IReview, { IReviewResponse } from 'app/modules/shared/interfaces/models/review.interface'
+import { IRatingStat } from 'app/modules/shared/interfaces/rating-stat.interface'
+import { IStat } from 'app/modules/shared/interfaces/stat.interface'
 import { IDateRange } from 'app/modules/stats-shared/providers/chart-provider'
 import { axiosApiInstance } from 'app/utils/axios-utils'
 import { CONTROLLER } from 'app/utils/constants/app.constant'
 import UrlHelper from 'app/utils/helpers/url.heper'
-import { TTotalRange } from 'app/modules/instructor/types/total-range.type'
-import { IReviewResponse } from 'app/modules/shared/interfaces/models/review.interface'
-import { IRatingStat } from 'app/modules/shared/interfaces/rating-stat.interface'
-import { IStat } from 'app/modules/shared/interfaces/stat.interface'
 
 const prefix = `${CONTROLLER.user}/instructor`
 export function fetchInstructorCourseReviews({ queryKey, pageParam = 1 }: any): Promise<IReview[]> {
@@ -68,6 +67,7 @@ export function countPayments({ queryKey }: any): Promise<number> {
   const queryString = UrlHelper.cvtObjToQueryString({ ...clientQuery, viewInstructorId })
   return axiosApiInstance.get(`${prefix}/count-payments?${queryString}`).then((res) => res.data)
 }
+
 export function fetchPaymentTransactions({ queryKey }: any): Promise<IPaymentTransaction[]> {
   const [_key, clientQuery, paymentId, _page, _limit]: [string, IClientUrlParams, string, number, number] = queryKey
   const queryString = UrlHelper.cvtObjToQueryString({
@@ -147,6 +147,7 @@ export function fetchInstructorTotal(
   })
   return axiosApiInstance.get(`${prefix}/total-${type}?${queryString}`).then((res) => res.data)
 }
+
 export function fetchInstructorAvgCourseRating(
   range: TTotalRange,
   courseId?: string,

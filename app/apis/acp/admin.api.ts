@@ -65,7 +65,6 @@ export function apiDeleteMany<T>(ctrl: TController, ids: string[]): Promise<T[]>
   return axiosApiInstance.delete<T[]>(`${getPrefix(ctrl)}/records?ids=${queryString}`).then((res) => res.data)
 }
 
-// IS
 export function apiCheckUnique(ctrl: TController, field: string, value: string): Promise<boolean> {
   return axiosApiInstance.get<boolean>(`${getPrefix(ctrl)}/check-unique/${field}/${value}`).then((res) => res.data)
 }

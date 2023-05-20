@@ -1,5 +1,5 @@
 import { Unauthorized } from '@shared/parts/Unauthorized'
 
-export default function PageNotFound() {
+export default function UnauthorizedPage() {
   return <Unauthorized />
 }

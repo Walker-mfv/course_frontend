@@ -34,6 +34,10 @@ export default class PathHelper {
     course: 'courses',
   }
 
+  private static userPages = {
+    user: 'user',
+  }
+
   private static clientPages = {
     courseDetail: 'course',
     category: 'courses',
@@ -139,9 +143,14 @@ export default class PathHelper {
     return `${this.clientPrefix}/${path}`
   }
 
+  static getUserPath(slug: string) {
+    return `${this.clientPrefix}/${this.userPages.user}/${slug}`
+  }
+
   static getCourseDetailPath(slug: string) {
     return `${this.clientPrefix}/${this.clientPages.courseDetail}/${slug}`
   }
+
   static getFilteredCoursesWithSearchValue(searchValue: string) {
     return `${this.clientPrefix}/${this.clientPages.search}/${searchValue}`
   }

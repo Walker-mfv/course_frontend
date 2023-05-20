@@ -1,8 +1,8 @@
+import { fetchCourseBySlug } from 'app/apis/course/client-course.api'
+import ICourse from 'app/modules/shared/interfaces/models/course.interface'
+import TypeHelper from 'app/utils/helpers/type.helper'
 import { useRouter } from 'next/router'
 import { useQuery, UseQueryOptions } from 'react-query'
-import { fetchCourseBySlug } from 'app/apis/course/client-course.api'
-import TypeHelper from 'app/utils/helpers/type.helper'
-import ICourse from 'app/modules/shared/interfaces/models/course.interface'
 
 export const RQK_COURSE_DETAIL = 'course-detail'
 export const getCourseDetailSlug = (params: any) => {
@@ -18,6 +18,7 @@ export const useCourseDetailQuery = (options?: UseQueryOptions<ICourse>) => {
     ...options,
   })
 }
+
 // CURRICULUM
 export const useCourseDetailCurriculum = () => {
   return useCourseDetailQuery().data?.details.sections

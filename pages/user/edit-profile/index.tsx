@@ -1,5 +1,4 @@
 import { Stack } from '@chakra-ui/react'
-import React from 'react'
 import ClientLayout from 'app/modules/client/ClientLayout'
 import ClientPageContainer from 'app/modules/client/components/ClientPageContainer'
 import ClientPageHeading from 'app/modules/client/components/ClientPageHeading'

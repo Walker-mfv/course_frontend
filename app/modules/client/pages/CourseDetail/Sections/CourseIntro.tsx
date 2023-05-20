@@ -1,11 +1,13 @@
-import { AspectRatio, Box, Container, Heading, HStack, Stack, Text, useColorModeValue, Image } from '@chakra-ui/react'
-import moment from 'moment'
-import React from 'react'
-import NumberFormat from 'react-number-format'
-import CourseImage from 'app/modules/shared/components/CourseImage'
+import { AspectRatio, Box, Container, Heading, HStack, Image, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import Rating from '@client/components/Rating'
 import { useShowPreviewCourse } from '@client/hooks/show-preview-course.hook'
 import { useCourseDetailQuery } from '@client/queries/course-detail-query.hook'
+import NextLink from '@shared/components/NextLink'
+import CourseImage from 'app/modules/shared/components/CourseImage'
+import PathHelper from 'app/utils/helpers/path.helper'
+import moment from 'moment'
+import React from 'react'
+import NumberFormat from 'react-number-format'
 import CourseCheckout from './CourseCheckout'
 
 const Meta = () => {
@@ -57,9 +59,11 @@ const History = () => {
     <Stack fontSize={'14px'} spacing={2}>
       <HStack>
         <Text color={show ? 'white' : 'unset'}>Create by</Text>
-        <Text color="purple.400" as="ins">
-          {course?.history.createdBy.profile.fullName}
-        </Text>
+        <NextLink href={PathHelper.getUserPath(course?.history.createdBy.username as string)}>
+          <Text color="purple.400" as="ins">
+            {course?.history.createdBy.profile.fullName}
+          </Text>
+        </NextLink>
       </HStack>
       <HStack>
         <HStack>

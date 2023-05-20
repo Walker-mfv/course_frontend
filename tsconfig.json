@@ -29,6 +29,7 @@
     "types/*.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/**/*.tsx",
     "pages/**/*.tsx",
     "pages/**/*.ts",
     "app/**/*.tsx",

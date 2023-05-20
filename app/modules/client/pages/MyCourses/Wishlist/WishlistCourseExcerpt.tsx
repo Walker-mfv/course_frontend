@@ -1,13 +1,13 @@
 import { AspectRatio, Box, Heading, HStack, Icon, Image, Stack, VStack } from '@chakra-ui/react'
-import React from 'react'
-import PathHelper from 'app/utils/helpers/path.helper'
-import NextLink from '@shared/components/NextLink'
-import ICourse from '@shared/interfaces/models/course.interface'
 import AddToFavoriteButton from '@client/components/AddToFavoriteButton'
 import CoursePrice from '@client/components/CourseGroup/CoursePrice'
 import Rating from '@client/components/Rating'
-import MyCourseCard from '../MyCourseCard'
+import NextLink from '@shared/components/NextLink'
+import ICourse from '@shared/interfaces/models/course.interface'
 import AppIcon from 'app/utils/constants/app-icon.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
+import React from 'react'
+import MyCourseCard from '../MyCourseCard'
 
 export interface WishlistCourseExcerptProps {
   item: ICourse
@@ -15,7 +15,7 @@ export interface WishlistCourseExcerptProps {
 function WishlistCourseExcerpt({ item }: WishlistCourseExcerptProps) {
   return (
     <MyCourseCard>
-      <NextLink href={PathHelper.getLearnCoursePath(item.basicInfo.slug)}>
+      <NextLink href={PathHelper.getCourseDetailPath(item.basicInfo.slug)}>
         <Stack shadow={'lg'} height="full" borderRadius={'lg'} overflow={'hidden'}>
           {/* IMAGE */}
           <AspectRatio ratio={16 / 9} pos="relative">

@@ -1,4 +1,3 @@
-import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
 import { useAuth } from '@auth/providers/auth.provider'
 import ICourse from '@shared/interfaces/models/course.interface'
 import {
@@ -8,6 +7,7 @@ import {
   fetchWishlist,
   fetchWishlistCourseIds,
 } from 'app/apis/user/user-my-courses.api'
+import { useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query'
 
 export const RQK_WISHLIST = 'wishlist'
 
@@ -21,6 +21,7 @@ export const useWishlistQuery = (options?: UseQueryOptions<ICourse[]>) => {
     ...options,
   })
 }
+
 export const useCountWishlist = () => {
   return useQuery<number>([RQK_WISHLIST, 'count'], countWishlist, {
     keepPreviousData: true,

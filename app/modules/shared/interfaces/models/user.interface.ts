@@ -32,6 +32,7 @@ export type TUserStatus = 'active' | 'inactive' | 'block' | 'unverified'
 export interface IUser extends IModel {
   email: string
   status: TUserStatus
+  username: string
   password: string
   profile: IProfile
   role: IRole
