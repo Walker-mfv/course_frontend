@@ -14,9 +14,9 @@ export interface WishlistCourseExcerptProps {
 }
 function WishlistCourseExcerpt({ item }: WishlistCourseExcerptProps) {
   return (
-    <MyCourseCard>
+    <MyCourseCard borderRadius={'lg'} overflow={'hidden'}>
       <NextLink href={PathHelper.getCourseDetailPath(item.basicInfo.slug)}>
-        <Stack shadow={'lg'} height="full" borderRadius={'lg'} overflow={'hidden'}>
+        <Stack shadow={'lg'} height="full">
           {/* IMAGE */}
           <AspectRatio ratio={16 / 9} pos="relative">
             <Box

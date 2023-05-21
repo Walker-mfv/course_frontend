@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { apiAddCourseToCart, apiDeleteCourseInCart, updateMe } from 'app/apis/user/user.api'
+import { apiAddCourseToCart, apiDeleteCourseInCart } from 'app/apis/user/user.api'
 import ICourse from 'app/modules/shared/interfaces/models/course.interface'
 import { ICart } from 'app/modules/shared/interfaces/models/user.interface'
 import LocalStorageHelper from 'app/utils/helpers/localStorage.helper'
@@ -38,9 +38,10 @@ export const cartSlice = createSlice({
       state.data = action.payload as any
       state.data && LocalStorageHelper.setCart(state.data as any)
     },
-    resetCart: (state, action: PayloadAction<void>) => {
+    resetCart: (state) => {
       for (let key in initialState) {
-        ;(state as any)[key] = (initialState as any)[key]
+        // @ts-ignore
+        state[key] = initialState[key]
       }
       state.data && LocalStorageHelper.setCart(state.data as any)
     },

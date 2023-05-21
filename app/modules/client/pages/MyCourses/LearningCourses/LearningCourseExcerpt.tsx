@@ -1,11 +1,11 @@
 import { AspectRatio, Box, Heading, HStack, Icon, Image, Progress, Stack, Text, VStack } from '@chakra-ui/react'
-import React from 'react'
-import AppIcon from 'app/utils/constants/app-icon.constant'
-import PathHelper from 'app/utils/helpers/path.helper'
 import { MyMenu } from '@shared/components/MyMenu'
 import NextLink from '@shared/components/NextLink'
 import { IMenuItem } from '@shared/interfaces/menu-item.interface'
 import { IUserCourse } from '@shared/interfaces/models/user_course.interface'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
+import React from 'react'
 import MyCourseCard from '../MyCourseCard'
 import BoxRating from './BoxRating'
 
@@ -17,9 +17,9 @@ export interface LearningCourseExcerptProps {
 function LearningCourseExcerpt({ item, actions }: LearningCourseExcerptProps) {
   const percent = Math.floor(item.learnDetail.progress * 100)
   return (
-    <MyCourseCard overflow={'hidden'}>
+    <MyCourseCard borderRadius={'lg'} overflow={'hidden'}>
       <NextLink href={PathHelper.getLearnCoursePath(item.course.basicInfo.slug)}>
-        <Stack shadow={'lg'} height="full" borderRadius={'lg'} overflow={'hidden'}>
+        <Stack shadow={'lg'} height="full">
           {/* IMAGE */}
           <AspectRatio ratio={16 / 9} pos="relative">
             <Box

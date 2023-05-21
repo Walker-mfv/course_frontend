@@ -28,9 +28,17 @@ const UserCourse = ({ courses }: { courses: any }) => {
       </Text>
       <SimpleGrid columns={[1, 2, 3]} spacing={[2, 4, 5]}>
         {courses.map((course: any) => (
-          <Box bgColor={bgColor} shadow="lg" pos="relative" height="full" key={course._id}>
+          <Box
+            bgColor={bgColor}
+            shadow="lg"
+            pos="relative"
+            height="full"
+            key={course._id}
+            borderRadius={'lg'}
+            overflow={'hidden'}
+          >
             <NextLink href={PathHelper.getCourseDetailPath(course.basicInfo.slug)}>
-              <Stack shadow={'lg'} height="full" borderRadius={'lg'} overflow={'hidden'}>
+              <Stack shadow={'lg'} height="full" overflow={'hidden'}>
                 {/* IMAGE */}
                 <AspectRatio ratio={16 / 9} pos="relative">
                   <Box

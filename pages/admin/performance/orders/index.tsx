@@ -1,6 +1,4 @@
 import { Stack } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
-import React, { useMemo } from 'react'
 import AdminLayout from 'app/modules/admin/AdminLayout'
 import AdminTable from 'app/modules/admin/components/AdminTable/AdminTable'
 import AdminTableToolbar from 'app/modules/admin/components/AdminTable/AdminTableToolbar'
@@ -16,7 +14,6 @@ import Card from 'app/modules/shared/components/Card'
 import MyHead from 'app/modules/shared/components/MyHead'
 import Price from 'app/modules/shared/components/Price'
 import { useAdminTableRows } from 'app/modules/shared/hooks/data/admin-query.hook'
-import { useCrudActions } from 'app/modules/shared/hooks/data/crud-actions.hook'
 import IOrder from 'app/modules/shared/interfaces/models/order.interface'
 import { ITableColumn } from 'app/modules/shared/interfaces/table-column.interface'
 import { ITableRow } from 'app/modules/shared/interfaces/table-row.interface'
@@ -27,6 +24,8 @@ import FieldLabel from 'app/utils/constants/field-label.constant'
 import { ORDER_SEARCH_MENU } from 'app/utils/data/order.data'
 import Helper from 'app/utils/helpers/helper.helper'
 import PathHelper from 'app/utils/helpers/path.helper'
+import { useRouter } from 'next/router'
+import React, { useMemo } from 'react'
 
 // DATA
 export const columns: ITableColumn[] = [
@@ -105,9 +104,7 @@ const PageTableToolbar = () => {
 }
 
 const PageTable = () => {
-  const router = useRouter()
-  const { onDeleteOne } = useCrudActions()
-  const { ctrlName, modelName } = usePageParams()
+  const { ctrlName } = usePageParams()
   const rowsQ = useAdminTableRows<IOrder>(ctrlName)
   const rows: ITableRow[] | undefined = useMemo(() => {
     return rowsQ.data?.map((item) => {

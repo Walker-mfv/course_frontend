@@ -1,11 +1,13 @@
-import { Avatar, Box, HStack, Stack, Text } from '@chakra-ui/react'
+import { Avatar, Box, HStack, Stack, StackDivider, Text } from '@chakra-ui/react'
+import { useBorderColor } from '@shared/hooks/style.hook'
 import UserCourse from './UserCourse'
 
 const UserProfile = ({ user }: { user: any }) => {
   const { profile, role, countStudents, countReviews, courses } = user
+  const borderColor = useBorderColor()
 
   return (
-    <Stack spacing={10}>
+    <Stack spacing={6} divider={<StackDivider color={borderColor} />}>
       <HStack spacing={16}>
         <Avatar
           name={profile.fullName}
