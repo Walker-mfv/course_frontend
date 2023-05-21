@@ -1,5 +1,5 @@
-import { AiOutlineFilePdf, AiOutlineReload, AiOutlineFileText, AiOutlineAppstore } from 'react-icons/ai'
-import { BiBarChart, BiCog, BiMessageDetail, BiUserCircle, BiSortAlt2 } from 'react-icons/bi'
+import { AiOutlineAppstore, AiOutlineFilePdf, AiOutlineFileText, AiOutlineReload } from 'react-icons/ai'
+import { BiBarChart, BiCog, BiMessageDetail, BiSortAlt2, BiUserCircle } from 'react-icons/bi'
 import { BsQuestionCircle } from 'react-icons/bs'
 import { FaCircle, FaFacebook, FaHeart, FaPlayCircle } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
@@ -19,6 +19,7 @@ import {
   FiHeart,
   FiInfo,
   FiList,
+  FiLogOut,
   FiMail,
   FiMenu,
   FiMinus,
@@ -33,7 +34,6 @@ import {
   FiUsers,
   FiVideo,
   FiX,
-  FiLogOut,
 } from 'react-icons/fi'
 import { IoCaretDown, IoCaretUp, IoStarSharp } from 'react-icons/io5'
 import { MdAttachMoney, MdOutlineTopic } from 'react-icons/md'
@@ -100,4 +100,5 @@ const AppIcon = {
   withlist: AiOutlineAppstore,
   logout: FiLogOut,
 }
+
 export default AppIcon

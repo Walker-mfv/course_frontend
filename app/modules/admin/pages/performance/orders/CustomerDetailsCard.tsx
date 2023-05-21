@@ -1,7 +1,7 @@
-import { Text } from '@chakra-ui/react'
-import AppIcon from 'app/utils/constants/app-icon.constant'
-import ListTile from '@shared/components/ListTile'
 import { useAdminOrderDetailQuery } from '@admin/queries/admin-order-detail-query.hook'
+import { Text } from '@chakra-ui/react'
+import ListTile from '@shared/components/ListTile'
+import AppIcon from 'app/utils/constants/app-icon.constant'
 import OrderCard from './OrderCard'
 
 export const CustomerDetailsCard = () => {

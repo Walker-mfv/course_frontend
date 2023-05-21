@@ -1,7 +1,3 @@
-import React, { useCallback, useEffect } from 'react'
-import { formCourseSetStatus, setFormCourse } from 'app/store/course/form-course.slice'
-import { useAppDispatch } from 'app/store/hooks'
-import AppTitle from 'app/utils/constants/app-title.constant'
 import { useCourseFormParams } from '@course-form/hooks/course-form-params.hook'
 import { useCourseQuery } from '@course-form/hooks/course-query.hook'
 import Basics from '@course-form/pages/Basics'
@@ -14,6 +10,10 @@ import Settings from '@course-form/pages/Settings'
 import { TCourseFormSection } from '@course-form/types/course-form-sectiontype'
 import Card from 'app/modules/shared/components/Card'
 import MyHead from 'app/modules/shared/components/MyHead'
+import { formCourseSetStatus, setFormCourse } from 'app/store/course/form-course.slice'
+import { useAppDispatch } from 'app/store/hooks'
+import AppTitle from 'app/utils/constants/app-title.constant'
+import React, { useCallback, useEffect } from 'react'
 
 export default function CourseForm() {
   const { id, section } = useCourseFormParams()

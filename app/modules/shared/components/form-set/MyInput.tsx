@@ -34,6 +34,7 @@ export default function MyInput({
   isDisabled,
   register,
   iconLeft,
+  onChange,
 }: IMyInput) {
   const subColor = useSubtitleColor()
   const value = watch ? watch(field) : undefined
@@ -78,6 +79,12 @@ export default function MyInput({
             {...register(field)}
             _placeholder={{ fontSize: '15px' }}
             py={1}
+            onChange={(e) => {
+              if (onChange) {
+                onChange(e)
+                register(field).onChange(e)
+              }
+            }}
           />
           {maxLength && (
             <InputRightElement>

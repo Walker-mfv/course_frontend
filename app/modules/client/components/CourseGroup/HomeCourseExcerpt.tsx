@@ -11,18 +11,17 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react'
-import React from 'react'
-import PathHelper from 'app/utils/helpers/path.helper'
-import TypeHelper from 'app/utils/helpers/type.helper'
 import NextLink from 'app/modules/shared/components/NextLink'
 import { useBorderColor, useCardBg, useSubtitleColor } from 'app/modules/shared/hooks/style.hook'
 import ICourse from 'app/modules/shared/interfaces/models/course.interface'
+import AppImg from 'app/utils/constants/app-img.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
+import TypeHelper from 'app/utils/helpers/type.helper'
+import React from 'react'
 import { useIsClientMobile } from '../../hooks/is-client-mobile.hook'
 import Rating from '../Rating'
 import BriefCourse from './BriefCourse'
 import CoursePrice from './CoursePrice'
-import AvatarSkeleton from '@shared/components/AvatarSkeleton'
-import AppImg from 'app/utils/constants/app-img.constant'
 
 export interface HomeCourseExcerptProps {
   course: ICourse

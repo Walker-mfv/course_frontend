@@ -1,7 +1,6 @@
+import { Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import BasicsForm from '../parts/BasicsForm'
 import CoursePageSection from '../parts/CoursePageSection'
-import { SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import PricingForm from '../parts/PricingForm'
 
 function Pricing() {
