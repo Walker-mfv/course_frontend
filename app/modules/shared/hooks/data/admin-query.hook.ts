@@ -1,9 +1,9 @@
-import { useQuery, UseQueryOptions } from 'react-query'
+import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
+import { useAdminUrlParams } from '@admin/providers/admin-query.provider'
 import { fetchAll, fetchById, fetchCount, fetchSelectDataWithClientQuery } from 'app/apis/acp/admin.api'
 import { CONTROLLER } from 'app/utils/constants/app.constant'
 import { TController } from 'app/utils/data/data.type'
-import IClientUrlParams from '@admin/interfaces/client-url-params.interface'
-import { useAdminUrlParams } from '@admin/providers/admin-query.provider'
+import { useQuery, UseQueryOptions } from 'react-query'
 import { ISelectItem } from '../../interfaces/select-data.interface'
 
 const fetchAllOptions: UseQueryOptions = {
@@ -20,6 +20,7 @@ export function useFetchById<T>(ctrl: TController, id?: string) {
 
 export function useAdminTableRows<T>(name: TController, options?: UseQueryOptions<T[]>) {
   const query = useAdminUrlParams()
+
   return useQuery<T[]>([name, query], fetchAll, {
     notifyOnChangeProps: 'tracked',
     ...(fetchAllOptions as any),

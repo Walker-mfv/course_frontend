@@ -1,8 +1,8 @@
-import { Text, Box, Heading, HStack, Icon, Stack, StackDivider, Skeleton } from '@chakra-ui/react'
+import { Box, Heading, HStack, Icon, Skeleton, Stack, StackDivider, Text } from '@chakra-ui/react'
+import Card from 'app/modules/shared/components/Card'
+import { useBorderColor, useMutedColor } from 'app/modules/shared/hooks/style.hook'
 import React, { ReactNode, useCallback } from 'react'
 import { IconType } from 'react-icons'
-import Card from 'app/modules/shared/components/Card'
-import { useBorderColor, useMutedColor, useSubtitleColor } from 'app/modules/shared/hooks/style.hook'
 
 type TItem = {
   icon: IconType
@@ -19,9 +19,9 @@ export default function OrderCard({ data, title, ...props }: OrderCardProps) {
   const mutedColor = useMutedColor()
   const borderColor = useBorderColor()
   const renderContent = useCallback(
-    (item: TItem, i) => {
+    (item: TItem, index) => {
       return (
-        <HStack justify={'space-between'} color={mutedColor}>
+        <HStack key={index} justify={'space-between'} color={mutedColor}>
           <HStack>
             <Icon fontSize={'xl'} as={item.icon} />
             <Text>{item.label}</Text>

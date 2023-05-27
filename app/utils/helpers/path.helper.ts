@@ -44,6 +44,7 @@ export default class PathHelper {
     cart: 'cart',
     learn: 'learn',
     myCourses: 'my-courses',
+    myOrders: 'my-orders',
     search: 'courses/search',
     user: 'user',
   }
@@ -60,9 +61,11 @@ export default class PathHelper {
   static getActivityLogsPath() {
     return `/${this.module.admin}/${this.adminPages['activity-log']}`
   }
+
   static getAdminOrdersPath(orderId: string) {
     return `/${this.module.admin}/${this.adminPages.performance}/orders/${orderId}`
   }
+
   static getAdminInstructorPayment(instructorId: string) {
     return `/${this.module.admin}/${this.adminPages.payments}/instructor-payments/${instructorId}`
   }
@@ -139,6 +142,7 @@ export default class PathHelper {
   static getClientDomain(path: string = '') {
     return `${process.env.NEXT_PUBLIC_FRONTEND_DOMAIN}/${path}`
   }
+
   static getClientPath(path: string = '') {
     return `${this.clientPrefix}/${path}`
   }
@@ -172,14 +176,25 @@ export default class PathHelper {
     queryString = !!queryString ? `?${queryString}` : ''
     return `${this.clientPrefix}/${this.clientPages.courseDetail}/${slug}/${this.clientPages.learn}${queryString}`
   }
+
   // MY COURSES
   static getMyCoursesPath(sub: TMyCourse = 'learning') {
     return `${this.clientPrefix}/${this.clientPages.myCourses}/${sub}`
   }
+
   // CART
   static getCartPath() {
     return `${this.clientPrefix}/${this.clientPages.cart}`
   }
+
+  static getMyOrdersPath() {
+    return `${this.clientPrefix}/${this.clientPages.user}/${this.clientPages.myOrders}`
+  }
+
+  static getMyOrderDetailPath(orderId: string) {
+    return `/${this.clientPrefix}/${this.clientPages.user}/${this.clientPages.myOrders}/${orderId}`
+  }
+
   // CATEGORY
   static getCategoryPath(cat: string, subCat?: string) {
     const subCatString = subCat ? `/${subCat}` : ''
@@ -193,6 +208,7 @@ export default class PathHelper {
   static getSignUpPath() {
     return `/${this.module.auth}/${this.authPages.signup}`
   }
+
   static getLoginPath() {
     return `/${this.module.auth}/${this.authPages.login}`
   }

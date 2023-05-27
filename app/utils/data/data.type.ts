@@ -26,6 +26,7 @@ export type TController =
   | 'sliders'
   | 'activity-logs'
   | 'user-course'
+  | 'my-orders'
 
 export type TModel =
   | 'notification'
@@ -44,6 +45,7 @@ export type TModel =
   | 'payment'
   | 'slider'
   | 'activity log'
+  | 'my-orders'
 
 export type TRoleStatus = 'active' | 'inactive'
 

@@ -24,7 +24,6 @@ import FieldLabel from 'app/utils/constants/field-label.constant'
 import { ORDER_SEARCH_MENU } from 'app/utils/data/order.data'
 import Helper from 'app/utils/helpers/helper.helper'
 import PathHelper from 'app/utils/helpers/path.helper'
-import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 
 // DATA
@@ -74,32 +73,6 @@ const PageContent = () => {
 }
 
 const PageTableToolbar = () => {
-  const router = useRouter()
-  const { ctrlName } = usePageParams()
-  //
-  // const filters: FilterItemProps[] = useMemo(() => {
-  //     return [
-  //         {
-  //             field: 'status',
-  //             label: FieldLabel['user.status'],
-  //             options: COURSE_STATUS_SELECT_DATA,
-  //         },
-  //         // {
-  //         //     field: 'role._id',
-  //         //     label: FieldLabel['user.role'],
-  //         //     options: rolesSDQ.data
-  //         // },
-  //     ]
-  // }, [])
-
-  // GEN ROWS DATA
-  const actions = useMemo(() => {
-    return [
-      // <Filter key={1} data={[]} />,
-      // <ExportButton key={2} />,
-      // <MainCreateButton onClick={() => onNew('admin')} key={3} />,
-    ]
-  }, [])
   return <AdminTableToolbar searchMenu={ORDER_SEARCH_MENU} />
 }
 

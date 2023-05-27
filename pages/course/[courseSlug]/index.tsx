@@ -1,8 +1,5 @@
 import { Box, Container, HStack, Stack } from '@chakra-ui/react'
-import { GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
-import React from 'react'
-import { dehydrate, QueryClient } from 'react-query'
+import { BadRequest } from '@shared/parts/BadRequest'
 import { fetchCourseBySlug } from 'app/apis/course/client-course.api'
 import ClientLayout from 'app/modules/client/ClientLayout'
 import { useShowPreviewCourse } from 'app/modules/client/hooks/show-preview-course.hook'
@@ -12,9 +9,9 @@ import CourseContent from 'app/modules/client/pages/CourseDetail/Sections/Course
 import CourseDescription from 'app/modules/client/pages/CourseDetail/Sections/CourseDescription'
 import CourseIntro from 'app/modules/client/pages/CourseDetail/Sections/CourseIntro'
 import CourseObjective from 'app/modules/client/pages/CourseDetail/Sections/CourseObjective'
+import CoursePreview from 'app/modules/client/pages/CourseDetail/Sections/CoursePreview'
 import CourseRequirement from 'app/modules/client/pages/CourseDetail/Sections/CourseRequirement'
 import CourseSuitableLearner from 'app/modules/client/pages/CourseDetail/Sections/CourseSuitableLearner'
-import CoursePreview from 'app/modules/client/pages/CourseDetail/Sections/CoursePreview'
 import {
   getCourseDetailSlug,
   RQK_COURSE_DETAIL,
@@ -24,14 +21,18 @@ import MyCircularProgress from 'app/modules/shared/components/MyCircularProgress
 import MyHead from 'app/modules/shared/components/MyHead'
 import { NextPageWithLayout } from 'app/types/next'
 import PathHelper from 'app/utils/helpers/path.helper'
-import { BadRequest } from '@shared/parts/BadRequest'
+import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
+import React from 'react'
+import { dehydrate, QueryClient } from 'react-query'
 
 const CoursePage: NextPageWithLayout = () => {
   const { data: course } = useCourseDetailQuery()
   const router = useRouter()
   const show = useShowPreviewCourse()
 
-  if(!course) return <BadRequest />
+  if (!course) return <BadRequest />
+
   return (
     <>
       <MyHead

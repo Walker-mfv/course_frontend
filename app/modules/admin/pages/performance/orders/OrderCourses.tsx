@@ -1,6 +1,4 @@
 import { HStack, Skeleton, Stack, Table, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
-import React, { useCallback } from 'react'
-import PathHelper from 'app/utils/helpers/path.helper'
 import Rating from '@client/components/Rating'
 import { CourseExcerptMeta } from '@client/pages/SearchPage/FilteredCourseList/FilteredCourseExcerpt'
 import CourseImage from 'app/modules/shared/components/CourseImage'
@@ -8,6 +6,8 @@ import NextLink from 'app/modules/shared/components/NextLink'
 import Price from 'app/modules/shared/components/Price'
 import { useMutedColor } from 'app/modules/shared/hooks/style.hook'
 import { ICourseInOrder } from 'app/modules/shared/interfaces/models/order.interface'
+import PathHelper from 'app/utils/helpers/path.helper'
+import React, { useCallback } from 'react'
 
 const Row = ({ item }: { item: ICourseInOrder }) => {
   const mutedColor = useMutedColor()
@@ -54,11 +54,14 @@ export interface OrderCoursesProps {
   totalPrice?: number
 }
 export default function OrderCourses(props: OrderCoursesProps) {
-  const renderItem = useCallback((item: ICourseInOrder, i: number) => {
+  const renderItem = useCallback((item: ICourseInOrder) => {
     return <Row key={item.course._id} item={item} />
   }, [])
   return (
     <Skeleton isLoaded={!props.isLoading}>
+      <Text fontSize={'xl'} fontWeight={'bold'} mb={'2'}>
+        Order Courses
+      </Text>
       <TableContainer>
         <Table variant="simple">
           <Thead>

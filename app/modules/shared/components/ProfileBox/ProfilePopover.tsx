@@ -1,10 +1,10 @@
-import { Avatar, AvatarProps } from '@chakra-ui/react'
-import React, { useMemo } from 'react'
-import PathHelper from 'app/utils/helpers/path.helper'
 import { useAuth } from '@auth/providers/auth.provider'
+import { Avatar, AvatarProps } from '@chakra-ui/react'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import PathHelper from 'app/utils/helpers/path.helper'
+import React, { useMemo } from 'react'
 import { TModule } from '../../types/module.type'
 import MyDropdown, { IMyDropdownItemGroup } from '../form-set/MyDropdown'
-import AppIcon from 'app/utils/constants/app-icon.constant'
 
 export interface ProfilePopoverProps extends AvatarProps {
   context?: TModule
@@ -56,6 +56,11 @@ function ProfilePopover({ postLogout, context = 'client', ...props }: ProfilePop
               label: 'Wishlist',
               path: PathHelper.getMyCoursesPath('wishlist'),
               icon: <AppIcon.withlist fontSize={'1.1rem'} />,
+            },
+            {
+              label: 'My orders',
+              path: PathHelper.getMyOrdersPath(),
+              icon: <AppIcon.payment fontSize={'1.1rem'} />,
             },
           ],
         },

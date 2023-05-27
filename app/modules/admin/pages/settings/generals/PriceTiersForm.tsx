@@ -105,7 +105,6 @@ export default function PriceTiersForm() {
     const inputValue = e.target.value
     // Format the value or perform any necessary validations
     const formattedValue = formatCurrency(formatter(inputValue))
-    // console.log(formattedValue)
     setValue(`priceTiers.${index}.value`, formattedValue)
   }
 

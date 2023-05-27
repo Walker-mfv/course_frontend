@@ -1,6 +1,4 @@
 import { Heading, Stack } from '@chakra-ui/react'
-import React from 'react'
-import { useSelector } from 'react-redux'
 import ClientLayout from 'app/modules/client/ClientLayout'
 import ClientPageContainer from 'app/modules/client/components/ClientPageContainer'
 import ClientPageHeading from 'app/modules/client/components/ClientPageHeading'
@@ -10,6 +8,8 @@ import MyHead from 'app/modules/shared/components/MyHead'
 import { selectTotalCourse } from 'app/store/course/cart.slice'
 import { NextPageWithLayout } from 'app/types/next'
 import AppTitle from 'app/utils/constants/app-title.constant'
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 const CartPage: NextPageWithLayout = () => {
   const totalCourse = useSelector(selectTotalCourse)

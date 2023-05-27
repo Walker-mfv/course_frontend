@@ -1,5 +1,4 @@
-import { Stack } from '@chakra-ui/react'
-import { useCardBg } from '@shared/hooks/style.hook'
+import { Stack, useColorModeValue } from '@chakra-ui/react'
 import ClientLayout from 'app/modules/client/ClientLayout'
 import ClientPageContainer from 'app/modules/client/components/ClientPageContainer'
 import ClientPageHeading from 'app/modules/client/components/ClientPageHeading'
@@ -11,7 +10,7 @@ import AppTitle from 'app/utils/constants/app-title.constant'
 type Props = {}
 
 const EditProfilePage: NextPageWithLayout = (props: Props) => {
-  const bg = useCardBg()
+  const bg = useColorModeValue('white', 'transparent')
 
   return (
     <>

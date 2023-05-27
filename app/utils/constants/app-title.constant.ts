@@ -6,6 +6,7 @@ const AppTitle = {
   LEARN: 'Learning',
   SEARCH: 'Searching',
   MY_COURSES: 'My courses',
+  MY_ORDERS: 'My orders',
   ARCHIVED_COURSES: 'My archived courses',
   WISHLIST: 'My wishlist',
   EDIT_PROFILE: 'Edit prrofile',

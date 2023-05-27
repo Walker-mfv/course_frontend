@@ -1,5 +1,6 @@
+import AdminLayout from '@admin/AdminLayout'
 import { GridItem, SimpleGrid, Stack } from '@chakra-ui/react'
-import AdminLayout from 'app/modules/admin/AdminLayout'
+import { BadRequest } from '@shared/parts/BadRequest'
 import { CustomerDetailsCard } from 'app/modules/admin/pages/performance/orders/CustomerDetailsCard'
 import OrderCourses from 'app/modules/admin/pages/performance/orders/OrderCourses'
 import { OrderDetailsCard } from 'app/modules/admin/pages/performance/orders/OrderDetailsCard'
@@ -11,12 +12,15 @@ import AppTitle from 'app/utils/constants/app-title.constant'
 
 const Page: NextPageWithLayout = () => {
   const { isLoading, data } = useAdminOrderDetailQuery()
+
+  if (!data && !isLoading) return <BadRequest hasHomeLink={false} />
+
   return (
     <>
       <MyHead title={AppTitle.ADMIN_ORDER_DETAIL} />
       <Stack spacing={5}>
         <SimpleGrid spacing={{ md: 5 }} columns={24}>
-          <GridItem colSpan={{ base: 24, md: 12, lg: 11 }}>
+          <GridItem colSpan={{ base: 24, md: 12, lg: 12 }}>
             <OrderDetailsCard />
           </GridItem>
           <GridItem colSpan={{ base: 24, md: 12, lg: 12 }}>

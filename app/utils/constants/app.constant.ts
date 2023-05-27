@@ -7,6 +7,7 @@ export const FRONTEND_DOMAIN = process.env.NEXT_PUBLIC_FRONTEND_DOMAIN
 
 export const CONTROLLER: Record<TModel, TController> = {
   order: 'orders',
+  'my-orders': 'my-orders',
   user: 'users',
   role: 'roles',
   course: 'courses',
@@ -27,6 +28,7 @@ export const CONTROLLER: Record<TModel, TController> = {
 export const MODEL: Record<TModel, TModel> = {
   notification: 'notification',
   order: 'order',
+  'my-orders': 'my-orders',
   user: 'user',
   role: 'role',
   course: 'course',
