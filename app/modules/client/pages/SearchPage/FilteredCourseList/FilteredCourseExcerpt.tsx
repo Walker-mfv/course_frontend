@@ -1,3 +1,4 @@
+import Time from '@admin/components/Time'
 import {
   Box,
   Heading,
@@ -12,20 +13,19 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react'
-import React, { useEffect, useRef, useState } from 'react'
-import PathHelper from 'app/utils/helpers/path.helper'
-import Time from '@admin/components/Time'
-import CourseImage from '@shared/components/CourseImage'
-import NextLink from '@shared/components/NextLink'
-import { useSubtitleColor } from '@shared/hooks/style.hook'
-import ICourse from '@shared/interfaces/models/course.interface'
-import CoursePrice from '@client/components/CourseGroup/CoursePrice'
 import BriefCourse from '@client/components/CourseGroup/BriefCourse'
+import CoursePrice from '@client/components/CourseGroup/CoursePrice'
 import Rating from '@client/components/Rating'
 import { useIsClientMobile } from '@client/hooks/is-client-mobile.hook'
-import Helper from 'app/utils/helpers/helper.helper'
-import TypeHelper from 'app/utils/helpers/type.helper'
+import CourseImage from '@shared/components/CourseImage'
+import NextLink from '@shared/components/NextLink'
 import { useObserveElementWidth } from '@shared/hooks/observe-resize-element'
+import { useSubtitleColor } from '@shared/hooks/style.hook'
+import ICourse from '@shared/interfaces/models/course.interface'
+import Helper from 'app/utils/helpers/helper.helper'
+import PathHelper from 'app/utils/helpers/path.helper'
+import TypeHelper from 'app/utils/helpers/type.helper'
+import React from 'react'
 
 export const CourseExcerptMeta = ({ course }: { course: ICourse }) => {
   const subColor = useSubtitleColor()

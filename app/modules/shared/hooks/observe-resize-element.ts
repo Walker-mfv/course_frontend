@@ -1,10 +1,11 @@
-import { useState, useRef, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const useObserveElementWidth = <T extends HTMLElement>() => {
   const [width, setWidth] = useState(0)
   const ref = useRef<T>(null)
 
   useEffect(() => {
+    const copyRef = ref.current
     const observer = new ResizeObserver((entries) => {
       setWidth(entries[0].contentRect.width)
     })
@@ -14,8 +15,7 @@ export const useObserveElementWidth = <T extends HTMLElement>() => {
     }
 
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      ref.current && observer.unobserve(ref.current)
+      copyRef && observer.unobserve(copyRef)
     }
   }, [])
 

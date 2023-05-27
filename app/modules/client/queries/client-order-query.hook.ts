@@ -14,7 +14,7 @@ export function useFetchById<T>(ctrl: TController, id?: string) {
   })
 }
 
-export function useUserTableRows(options?: UseQueryOptions<Omit<IOrder, 'moneyConfiguration'>[]>) {
+export function useClientTableRows(options?: UseQueryOptions<Omit<IOrder, 'moneyConfiguration'>[]>) {
   const query = useAdminUrlParams()
 
   return useQuery<Omit<IOrder, 'moneyConfiguration'>[]>([RQK_CLIENT_FETCH_BY_ID, query], fetchMyOrders, {

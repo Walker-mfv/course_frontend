@@ -8,9 +8,9 @@ const prefix = `my-orders`
 export async function fetchMyOrders({ queryKey }: any): Promise<Omit<IOrder, 'moneyConfiguration'>[]> {
   const [_key, clientQuery]: [string, IClientUrlParams] = queryKey
   const queryString = UrlHelper.cvtObjToQueryString(clientQuery)
-  return axiosApiInstance.get(`/${prefix}?${queryString}`).then((res) => res.data)
+  return axiosApiInstance.get(`${prefix}?${queryString}`).then((res) => res.data)
 }
 
 export async function fetchMyOrderDetail(id: string): Promise<Omit<IOrder, 'moneyConfiguration'>> {
-  return axiosApiInstance.get(`/${prefix}/${id}`).then((res) => res.data)
+  return axiosApiInstance.get(`${prefix}/${id}`).then((res) => res.data)
 }

@@ -192,7 +192,7 @@ export default class PathHelper {
   }
 
   static getMyOrderDetailPath(orderId: string) {
-    return `/${this.clientPrefix}/${this.clientPages.user}/${this.clientPages.myOrders}/${orderId}`
+    return `${this.clientPrefix}/${this.clientPages.user}/${this.clientPages.myOrders}/${orderId}`
   }
 
   // CATEGORY

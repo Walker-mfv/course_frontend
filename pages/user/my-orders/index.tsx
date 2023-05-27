@@ -5,7 +5,7 @@ import { Stack } from '@chakra-ui/react'
 import ClientLayout from '@client/ClientLayout'
 import ClientPageContainer from '@client/components/ClientPageContainer'
 import ClientPageHeading from '@client/components/ClientPageHeading'
-import { useUserTableRows } from '@client/queries/client-order-query.hook'
+import { useClientTableRows } from '@client/queries/client-order-query.hook'
 import AdminTable from 'app/modules/admin/components/AdminTable/AdminTable'
 import RowActions from 'app/modules/admin/components/RowAction'
 import Time from 'app/modules/admin/components/Time'
@@ -63,7 +63,7 @@ const PageContent = () => {
 
 const PageTable = () => {
   // const { ctrlName } = usePageParams()
-  const rowsQ = useUserTableRows()
+  const rowsQ = useClientTableRows()
 
   const rows: ITableRow[] | undefined = useMemo(() => {
     return rowsQ.data?.map((item: Omit<IOrder, 'moneyConfiguration'>) => {
