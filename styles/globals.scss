@@ -82,6 +82,7 @@ a {
 
 .home-intro-carousel-container {
   aspect-ratio: 3.35;
+  border-radius: var(--chakra-radii-md);
   .home-intro-carousel-item {
     aspect-ratio: 3.35;
   }
