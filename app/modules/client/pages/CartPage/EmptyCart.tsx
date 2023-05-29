@@ -10,7 +10,7 @@ export default function EmptyCart() {
   const bg = useCardBg()
 
   return (
-    <Box p={5} border="1px solid" borderColor={borderColor} borderRadius={'lg'} backgroundColor={bg}>
+    <Box p={5} border="1px solid" borderColor={borderColor} borderRadius={'lg'} backgroundColor={bg} boxShadow={'md'}>
       <VStack>
         <Image borderRadius={'md'} maxW={'250px'} alt="Cart image" src={AppImg.EMPTY_SHOPPING_CART} />
         <VStack pb={10}>

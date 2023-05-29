@@ -1,15 +1,16 @@
-import { Text, Heading, Stack, HStack, StackDivider, space, Box, Stat, StatHelpText, StatArrow } from '@chakra-ui/react'
+import { HStack, Stack, StackDivider, Stat, StatArrow, StatHelpText, Text, useColorModeValue } from '@chakra-ui/react'
+import Price from '@shared/components/Price'
+import { useBorderColor } from '@shared/hooks/style.hook'
+import { selectTotalOriginPrice, selectTotalSellPrice } from 'app/store/course/cart.slice'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectTotalOriginPrice, selectTotalSellPrice } from 'app/store/course/cart.slice'
-import Price from '@shared/components/Price'
 import { CheckoutButton } from './CheckoutButton'
-import { useBorderColor } from '@shared/hooks/style.hook'
 
 function CartCheckoutInfo() {
   const borderColor = useBorderColor()
   const totalPrice = useSelector(selectTotalOriginPrice)
   const sellPrice = useSelector(selectTotalSellPrice)
+  const bg = useColorModeValue('white', 'transparent')
   const percent = Math.floor(((totalPrice - sellPrice) / totalPrice) * 100)
   return (
     <Stack
@@ -19,6 +20,8 @@ function CartCheckoutInfo() {
       borderRadius={'lg'}
       p={6}
       pt={4}
+      backgroundColor={bg}
+      boxShadow={'md'}
       divider={<StackDivider color={borderColor} />}
     >
       <Stack spacing={2}>

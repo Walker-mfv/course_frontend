@@ -49,7 +49,7 @@ export const columns: ITableColumn[] = [
 // PAGE CONTENT
 const PageContent = () => {
   return (
-    <Stack flexDir="column" spacing={8}>
+    <Stack flexDir="column" spacing={8} borderRadius={'lg'} borderWidth={'1px'}>
       {/* MAIN TABLE*/}
       <Card>
         <Stack spacing={8} flexDir="column" alignItems={'stretch'}>
@@ -62,7 +62,6 @@ const PageContent = () => {
 }
 
 const PageTable = () => {
-  // const { ctrlName } = usePageParams()
   const rowsQ = useClientTableRows()
 
   const rows: ITableRow[] | undefined = useMemo(() => {

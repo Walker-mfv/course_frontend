@@ -1,5 +1,4 @@
 import { Box, Stack } from '@chakra-ui/react'
-import React from 'react'
 import ClientLayout from 'app/modules/client/ClientLayout'
 import ClientPageContainer from 'app/modules/client/components/ClientPageContainer'
 import HighestRatingCoursesGroup from 'app/modules/client/pages/HomePage/HighestRatingCoursesGroup'
@@ -9,6 +8,7 @@ import MostPopularCoursesGroup from 'app/modules/client/pages/HomePage/MostPopul
 import MyHead from 'app/modules/shared/components/MyHead'
 import { NextPageWithLayout } from 'app/types/next'
 import { APP_NAME } from 'app/utils/constants/app.constant'
+import React from 'react'
 
 const HomePage: NextPageWithLayout = () => {
   return (
@@ -17,7 +17,7 @@ const HomePage: NextPageWithLayout = () => {
       <Box>
         <HomeIntro />
         <ClientPageContainer px={{ sm: '5px', lg: '12px', xl: 0 }}>
-          <Stack spacing={[4, 8, 10]}>
+          <Stack spacing={[4, 6]}>
             <LatestCoursesGroup />
             <MostPopularCoursesGroup />
             <HighestRatingCoursesGroup />

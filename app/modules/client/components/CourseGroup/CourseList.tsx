@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
+import ICourse from 'app/modules/shared/interfaces/models/course.interface'
 import React from 'react'
 import Carousel, { ResponsiveType } from 'react-multi-carousel'
-import ICourse from 'app/modules/shared/interfaces/models/course.interface'
 import { useCourseGroup } from '../../providers/group.provider'
 import HomeCourseExcerpt from './HomeCourseExcerpt'
 
@@ -44,8 +44,7 @@ const CourseList = (props: CourseListProps) => {
   const {
     methods: { onBeforeChange },
   } = useCourseGroup()
-  // const [max] = useMediaQuery('(max-width: 479px)')
-  // const [min] = useMediaQuery('(min-width: 400px)')
+
   const courseExcerptsHtml = props.courses.map((item, i) => {
     return (
       <Box key={i} px={2} draggable={false} height={'full'}>

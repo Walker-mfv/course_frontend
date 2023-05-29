@@ -39,7 +39,14 @@ function HomeCourseExcerpt({ course }: HomeCourseExcerptProps) {
       <Popover placement="right" boundary={'scrollParent'} trigger="hover">
         <NextLink href={PathHelper.getCourseDetailPath(course.basicInfo.slug)}>
           <PopoverTrigger>
-            <Stack bg={bgCard} borderRadius={'lg'} border={'1px solid'} borderColor={borderColor} height={'full'}>
+            <Stack
+              bg={bgCard}
+              borderRadius={'lg'}
+              border={'1px solid'}
+              borderColor={borderColor}
+              height={'full'}
+              boxShadow={'md'}
+            >
               <AspectRatio ratio={16 / 9}>
                 <Image
                   src={course.basicInfo.image || ''}
@@ -89,7 +96,7 @@ function HomeCourseExcerpt({ course }: HomeCourseExcerptProps) {
           <Portal>
             <PopoverContent width={'21rem'} borderRadius={'lg'}>
               <PopoverArrow />
-              <PopoverBody shadow="md" p={6}>
+              <PopoverBody shadow="md" p={6} borderRadius={'lg'}>
                 <BriefCourse course={course} />
               </PopoverBody>
             </PopoverContent>

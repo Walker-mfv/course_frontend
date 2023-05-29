@@ -4,7 +4,7 @@ import React from 'react'
 export interface ClientPageHeadingProps extends HeadingProps {}
 function ClientPageHeading({ children, ...props }: ClientPageHeadingProps) {
   return (
-    <Heading fontSize={['2xl', '2xl', '4xl']} {...props}>
+    <Heading fontSize={['2xl', '2xl', '4xl']} fontWeight={600} {...props}>
       {children}
     </Heading>
   )
