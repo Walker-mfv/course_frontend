@@ -1,7 +1,7 @@
 import { Image, Skeleton } from '@chakra-ui/react'
+import ISlider from 'app/modules/shared/interfaces/models/slider.interface'
 import React, { useEffect } from 'react'
 import Carousel from 'react-multi-carousel'
-import ISlider from 'app/modules/shared/interfaces/models/slider.interface'
 import ClientPageContainer from '../../components/ClientPageContainer'
 import { GroupProvider, useCourseGroup } from '../../providers/group.provider'
 import { useHomeSlidersQuery } from '../../queries/home-sliders-query.hook'
@@ -10,7 +10,7 @@ const limit = 2
 const List = (props: { items?: ISlider[] }) => {
   const images =
     props.items?.map((item, i) => {
-      return <Image draggable={false} key={i} src={item.picture || ''} alt="" borderRadius={3} w={'full'} />
+      return <Image draggable={false} key={i} src={item.picture || ''} alt="" borderRadius={'md'} w={'full'} />
     }) || []
 
   return (
