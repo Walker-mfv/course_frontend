@@ -120,7 +120,7 @@ export default function PriceTiersForm() {
               <Input
                 {...register(`priceTiers.${index}.value`)}
                 type={'text'}
-                onChange={(e) => {
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   handleFormatCurrency(e, index)
                   register(`priceTiers.${index}.value`).onChange(e)
                 }}

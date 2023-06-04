@@ -1,13 +1,13 @@
-import { Stack, Button, Icon, ButtonGroup, HStack, Box } from '@chakra-ui/react'
-import React, { useCallback, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { updateLecture } from 'app/store/course/form-course.slice'
-import AppIcon from 'app/utils/constants/app-icon.constant'
-import Helper from 'app/utils/helpers/helper.helper'
+import { Box, Button, ButtonGroup, HStack, Icon, Stack } from '@chakra-ui/react'
 import CancelButton from '@shared/components/button-set/CancelButton'
 import SubmitButton from '@shared/components/button-set/SubmitButton'
 import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
 import Editor from '@shared/parts/Editor/Editor'
+import { updateLecture } from 'app/store/course/form-course.slice'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import Helper from 'app/utils/helpers/helper.helper'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { useLectureParams } from '../../providers/lecture-params.provider'
 import { useUnitParams } from '../../providers/unit-params.provider'
 
@@ -51,7 +51,13 @@ const DescriptionEditor = (props: { setEditMode: (val: boolean) => void }) => {
   return (
     <form onSubmit={onSubmit}>
       <Stack>
-        <Editor setValue={setValue as any} watch={watch} label="Description" field="description" />
+        <Editor
+          setValue={setValue as any}
+          watch={watch}
+          label="Description"
+          field="description"
+          placeholder="=Description"
+        />
         <ButtonGroup justifyContent={'end'}>
           <CancelButton size="sm" onClick={onCancel} />
           <SubmitButton disabled={!isDirty || isSubmitting} size={'sm'} />

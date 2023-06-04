@@ -1,6 +1,6 @@
 import { Stack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
-import React, { useCallback, useRef } from 'react'
+import React, { useCallback } from 'react'
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
 import { ReactQuillProps } from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
@@ -16,76 +16,32 @@ export interface EditorProps extends ReactQuillProps {
   setValue?: UseFormSetValue<any>
 }
 
-export default function Editor({
-  field,
-  label,
-  required,
-  setValue,
-  watch,
-  // ref: _,
-  ...props
-}: EditorProps) {
-  const quillRef = useRef(null)
-
+export default function Editor({ field, label, required, setValue, watch, ...props }: EditorProps) {
   const setEditorVal = useCallback(
     (val: string) => {
       setValue && setValue(field, val, { shouldDirty: true, shouldValidate: true })
     },
     [field, setValue]
   )
-
-  // const handleRef = useCallback((ref) => {
-  //     const quill = ref?.getEditor && ref.getEditor()
-
-  //     // disable spellcheck
-  //     quill?.root?.setAttribute('spellcheck', false)
-
-  //     quillRef.current = ref
-  // }, [])
-
-  //
-
   const value = watch ? watch(field) : undefined
-  /*
-   * Quill modules to attach to editor
-   */
+
+  // Quill modules to attach to editor
   const modules = {
     toolbar: [
-      [{ header: '1' }, { header: '2' }, { font: [] }],
+      [{ header: '1' }, { header: '2' }],
       [{ size: [] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote', 'blockquote', 'code', 'code-block'],
+      ['bold', 'italic', 'underline'],
       [{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
       [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
-      [{ color: [] }, { background: [] }],
-      ['link'],
-      ['clean'],
     ],
     clipboard: {
       // toggle to add extra line breaks when pasting HTML:
       matchVisual: false,
     },
   }
-  /*
-   * Quill editor formats
-   */
-  const formats = [
-    'header',
-    'font',
-    'size',
-    'bold',
-    'italic',
-    'underline',
-    'strike',
-    'blockquote',
-    'list',
-    'bullet',
-    'indent',
-    'link',
-    'align',
-    'direction',
-    'color',
-    'background',
-  ]
+
+  // Quill editor formats
+  const formats = ['header', 'size', 'bold', 'italic', 'underline', 'list', 'bullet', 'indent', 'align', 'direction']
 
   return (
     <Stack spacing={1}>

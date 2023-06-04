@@ -97,4 +97,11 @@ export default class Helper {
     const mergeddArr = lodash.values(mergeObj)
     return mergeddArr
   }
+
+  static getTextFromHTML(htmlString: string): string {
+    const parser = new DOMParser()
+    const doc = parser.parseFromString(htmlString, 'text/html')
+    const text = doc.documentElement.textContent as string
+    return text
+  }
 }
