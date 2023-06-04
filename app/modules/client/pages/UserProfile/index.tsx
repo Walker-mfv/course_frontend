@@ -8,12 +8,12 @@ const UserProfile = ({ user }: { user: any }) => {
 
   return (
     <Stack spacing={6} divider={<StackDivider color={borderColor} />}>
-      <HStack spacing={16}>
+      <HStack spacing={14}>
         <Avatar
           name={profile.fullName}
-          width={'12rem'}
+          width={'11rem'}
+          height={'11rem'}
           src={profile.avatar || ''}
-          height={'12rem'}
           border={'5px solid white'}
           boxShadow={'md'}
           size={'2xl'}
@@ -22,7 +22,7 @@ const UserProfile = ({ user }: { user: any }) => {
           <Text fontSize="4xl" fontWeight={'600'}>
             {profile.fullName}
           </Text>
-          <Text color={'gray.500'}>{role.name}</Text>
+          <Text color={'gray.500'}>{[profile.headline]}</Text>
           {role.name !== 'Student' && (
             <HStack mt={6} spacing={6} fontWeight={500}>
               <Stack spacing={0}>
@@ -37,6 +37,18 @@ const UserProfile = ({ user }: { user: any }) => {
           )}
         </Box>
       </HStack>
+      {role.name !== 'Student' && (
+        <Stack spacing={4}>
+          <Text fontWeight={600} fontSize={'2xl'}>
+            About me
+          </Text>
+          <div
+            className="des-html"
+            dangerouslySetInnerHTML={{ __html: profile.biography || '' }}
+            style={{ lineHeight: 1.6 }}
+          ></div>
+        </Stack>
+      )}
       {role.name !== 'Student' && <UserCourse courses={courses} />}
     </Stack>
   )

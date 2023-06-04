@@ -44,6 +44,5 @@ export const apiEditProfile = (data: Partial<IUser>): Promise<IUser> => {
 export const fetchUserByUsername = ({ queryKey }: any): Promise<any> => {
   const [_key, username, clientQuery]: [string, string, IClientUrlParams] = queryKey
   const queryString = UrlHelper.cvtObjToQueryString(clientQuery)
-  // if (!username) return Promise.resolve(null)
   return axiosApiInstance.get(`/${prefix}/info/${username}?${queryString}`).then((res) => res.data)
 }
