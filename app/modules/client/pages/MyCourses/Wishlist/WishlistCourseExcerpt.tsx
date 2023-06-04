@@ -54,7 +54,7 @@ function WishlistCourseExcerpt({ item }: WishlistCourseExcerptProps) {
               </Heading>
             </Stack>
             <Box display={'flex'} alignItems={'end'} flex={1}>
-              <HStack justify={'space-between'}>
+              <HStack w={'full'} justify={'space-between'}>
                 <Stack spacing={0}>
                   <Rating value={item.meta.avgRatingScore || 0} ratingCount={item.meta.ratingCount} />
                   <CoursePrice
