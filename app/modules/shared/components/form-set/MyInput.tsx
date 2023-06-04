@@ -80,10 +80,8 @@ export default function MyInput({
             _placeholder={{ fontSize: '15px' }}
             py={1}
             onChange={(e) => {
-              if (onChange) {
-                onChange(e)
-                register(field).onChange(e)
-              }
+              register(field).onChange(e)
+              onChange && onChange(e)
             }}
           />
           {maxLength && (
