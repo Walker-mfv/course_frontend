@@ -168,6 +168,15 @@ a {
   border-bottom-right-radius: var(--chakra-radii-md);
 }
 
+.quill .ql-editor.ql-blank::before {
+  color: var(--chakra-colors-gray-400);
+  font-style: normal;
+}
+
+.quill.editor-input .ql-container {
+  min-height: 60px;
+}
+
 .react-datepicker__input-container > input {
   padding: 5px 10px;
 }

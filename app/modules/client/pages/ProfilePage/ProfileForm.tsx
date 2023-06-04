@@ -95,6 +95,7 @@ const ProfileForm = () => {
       setDisabled(false)
     })
   })
+
   return (
     <form onSubmit={onSubmit}>
       <Stack spacing={6}>
@@ -117,6 +118,7 @@ const ProfileForm = () => {
                   register={register}
                   error={errors.firstName}
                   autoFocus
+                  placeholder="First name"
                 />
               </GridItem>
               <GridItem colSpan={1}>
@@ -126,6 +128,7 @@ const ProfileForm = () => {
                   label={FieldLabel['user.lastName']}
                   register={register}
                   error={errors.lastName}
+                  placeholder="Last name"
                 />
               </GridItem>
             </SimpleGrid>
@@ -142,16 +145,28 @@ const ProfileForm = () => {
                   md: 1,
                 }}
               >
-                <MyInput field="phone" label={FieldLabel['user.phone']} register={register} error={errors.phone} />
+                <MyInput
+                  field="phone"
+                  label={FieldLabel['user.phone']}
+                  register={register}
+                  error={errors.phone}
+                  placeholder="Phone number"
+                />
               </GridItem>
             </SimpleGrid>
 
-            <MyInput field="address" label={FieldLabel['user.address']} register={register} error={errors.address} />
+            <MyInput
+              field="address"
+              label={FieldLabel['user.address']}
+              register={register}
+              error={errors.address}
+              placeholder="Address"
+            />
 
             {uploadProgress && <MyProgressBar value={uploadProgress} />}
           </Stack>
         </Stack>
-        <Button colorScheme={'blue'} type="submit" disabled={!isAvatarChanged && (!isDirty || isDisabled)}>
+        <Button colorScheme={'blue'} type="submit" disabled={(!isAvatarChanged && !isDirty) || isDisabled}>
           Submit
         </Button>
       </Stack>

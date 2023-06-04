@@ -14,6 +14,7 @@ const AppTitle = {
   SIGN_UP: 'Sign up',
   RESET_PASSWORD: 'Reset password',
   // INSTRUCTOR
+  INSTRUCTOR_REGISTER: 'Instructor register',
   INSTRUCTOR_COURSES: 'Manage courses',
   INSTRUCTOR_OVERVIEW: 'Overview',
   INSTRUCTOR_STUDENTS: 'Students',

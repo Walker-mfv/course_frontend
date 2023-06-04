@@ -1,25 +1,25 @@
 import { ButtonGroup, GridItem, SimpleGrid, Stack } from '@chakra-ui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
-import React, { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { useQueryClient } from 'react-query'
-import { useSelector } from 'react-redux'
-import * as yup from 'yup'
+import SubmitButton from '@shared/components/button-set/SubmitButton'
+import MyInput from '@shared/components/form-set/MyInput'
+import MySelect from '@shared/components/form-set/MySelect'
+import MyProgressBar from '@shared/components/MyProgress'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
+import { useCatPrimarySelectData, useCatSubSelectData } from '@shared/hooks/models/category.hook'
+import { useUploadImage } from '@shared/hooks/upload-image.hook'
+import ICourse, { TCourseLevel } from '@shared/interfaces/models/course.interface'
+import Editor from '@shared/parts/Editor/Editor'
 import { selectFormCourse } from 'app/store/course/form-course.slice'
 import { COURSE_IMAGE_DIR } from 'app/utils/constants/firebase.constant'
 import FormMsg from 'app/utils/constants/form-message.constant'
 import { COURSE_LAN_SELECT_DATA, COURSE_LEVEL_SELECT_DATA } from 'app/utils/data/course.data'
 import Helper from 'app/utils/helpers/helper.helper'
 import TypeHelper from 'app/utils/helpers/type.helper'
-import MyInput from '@shared/components/form-set/MyInput'
-import MyProgressBar from '@shared/components/MyProgress'
-import MySelect from '@shared/components/form-set/MySelect'
-import SubmitButton from '@shared/components/button-set/SubmitButton'
-import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
-import { useCatPrimarySelectData, useCatSubSelectData } from '@shared/hooks/models/category.hook'
-import { useUploadImage } from '@shared/hooks/upload-image.hook'
-import ICourse, { TCourseLevel } from '@shared/interfaces/models/course.interface'
-import Editor from '@shared/parts/Editor/Editor'
+import React, { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { useQueryClient } from 'react-query'
+import { useSelector } from 'react-redux'
+import * as yup from 'yup'
 import { RQK_COURSE } from '../hooks/course-query.hook'
 import RecImageUpload from './RecImageUpload'
 
@@ -211,7 +211,7 @@ function BasicsForm() {
             </Stack>
           </GridItem>
         </SimpleGrid>
-        <Editor field="description" label="Description" watch={watch} setValue={setValue} />
+        <Editor field="description" label="Description" watch={watch} setValue={setValue} placeholder="Description" />
 
         {/* IMAGE UPLOADER */}
         <Stack>

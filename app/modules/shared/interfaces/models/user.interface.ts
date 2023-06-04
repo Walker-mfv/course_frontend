@@ -9,6 +9,8 @@ export interface IProfile {
   phone?: string
   address?: string
   fullName: string
+  headline?: string
+  biography?: string
 }
 
 export interface ICourseList {
