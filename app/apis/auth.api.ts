@@ -1,9 +1,9 @@
-import axios from 'axios'
-import { IUserSignUp } from '../modules/auth/interfaces/user-sign-up.interface'
-import { IUser } from '../modules/shared/interfaces/models/user.interface'
 import { axiosApiInstance } from 'app/utils/axios-utils'
 import { CONTROLLER } from 'app/utils/constants/app.constant'
 import { IAuthTokens } from 'app/utils/helpers/cookie.helper'
+import axios from 'axios'
+import { IUserSignUp } from '../modules/auth/interfaces/user-sign-up.interface'
+import { IUser } from '../modules/shared/interfaces/models/user.interface'
 import { API_DOMAIN } from './../utils/constants/app.constant'
 
 const prefix = `${CONTROLLER.auth}`
@@ -41,35 +41,39 @@ export const fetchUserWithAccessToken = async (accessToken: string): Promise<IUs
   })
   return data
 }
-export const fetchAuthUser = (): Promise<IUser> => {
+
+export const fetchAuthUser = async (): Promise<IUser> => {
   return axiosApiInstance.get(`${prefix}/user`).then((res) => res.data)
 }
-export const verifyRecaptcha = (data: { secret: string; response: string }): Promise<boolean> => {
+
+export const verifyRecaptcha = async (data: { secret: string; response: string }): Promise<boolean> => {
   return axiosApiInstance.post(`${prefix}/verify-recaptcha`, data).then((res) => res.data)
 }
-export const apiLogin = (email: string, password: string): Promise<IAuthTokens> => {
+
+export const apiLogin = async (email: string, password: string): Promise<IAuthTokens> => {
   return axios.post(`${API_DOMAIN}/${prefix}/login`, { email, password }).then((res) => res.data)
 }
-export const apiLogout = (): Promise<IUser> => {
+
+export const apiLogout = async (): Promise<IUser> => {
   return axiosApiInstance.get(`${prefix}/logout`).then((res) => res.data)
 }
 
-export function apiSignUp(data: IUserSignUp): Promise<void> {
+export async function apiSignUp(data: IUserSignUp): Promise<void> {
   return axios.post(`${API_DOMAIN}/${prefix}/sign-up`, data).then((res) => res.data)
 }
 
-export const apiForgotPassword = (email: string): Promise<void> => {
+export const apiForgotPassword = async (email: string): Promise<void> => {
   return axios.post(`${API_DOMAIN}/${prefix}/forgot-password`, { email }).then((res) => res.data)
 }
 
-export const apiResetPassWord = (token: string, password: string): Promise<void> => {
+export const apiResetPassWord = async (token: string, password: string): Promise<void> => {
   return axios.put(`${API_DOMAIN}/${prefix}/reset-password`, { token, password }).then((res) => res.data)
 }
 
-export function apiVerifyEmail(code: string): Promise<void> {
+export async function apiVerifyEmail(code: string): Promise<void> {
   return axios.post(`${API_DOMAIN}/${prefix}/verify-email`, { code }).then((res) => res.data)
 }
 
-export function apiCheckUserName(value: string): Promise<boolean> {
+export async function apiCheckUserName(value: string): Promise<boolean> {
   return axiosApiInstance.get<boolean>(`${API_DOMAIN}/${prefix}/check-unique/username/${value}`).then((res) => res.data)
 }

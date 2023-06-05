@@ -6,18 +6,19 @@ import UrlHelper from 'app/utils/helpers/url.heper'
 
 const prefix = `${CONTROLLER.user}`
 
-export const updateMe = (user: Partial<IUser>): Promise<void> => {
+export const updateMe = async (user: Partial<IUser>): Promise<void> => {
   return axiosApiInstance.patch(`/${prefix}/me`, user).then((res) => res.data)
 }
 
-export const apiSwitchToInstructor = (): Promise<void> => {
+export const apiSwitchToInstructor = async (): Promise<void> => {
   return axiosApiInstance.patch(`/${prefix}/me/switch-to-instructor`).then((res) => res.data)
 }
 
-export const apiUpdateCart = (cart: ICart): Promise<void> => {
+export const apiUpdateCart = async (cart: ICart): Promise<void> => {
   return axiosApiInstance.patch(`/${prefix}/cart`, cart).then((res) => res.data)
 }
-export const apiAddCourseToCart = (courseId: string): Promise<void> => {
+
+export const apiAddCourseToCart = async (courseId: string): Promise<void> => {
   return axiosApiInstance
     .post(`/${prefix}/cart`, {
       courseId,
@@ -25,7 +26,7 @@ export const apiAddCourseToCart = (courseId: string): Promise<void> => {
     .then((res) => res.data)
 }
 
-export const apiDeleteCourseInCart = (courseId: string): Promise<void> => {
+export const apiDeleteCourseInCart = async (courseId: string): Promise<void> => {
   return axiosApiInstance.delete(`/${prefix}/cart/${courseId}`).then((res) => res.data)
 }
 
@@ -33,15 +34,15 @@ export const apiCheckoutMomo = async (): Promise<string> => {
   return axiosApiInstance.post(`/${prefix}/cart/checkout-momo`).then((res) => res.data)
 }
 
-export const fetchCart = (): Promise<ICart> => {
+export const fetchCart = async (): Promise<ICart> => {
   return axiosApiInstance.get(`/${prefix}/cart`).then((res) => res.data)
 }
 
-export const apiEditProfile = (data: Partial<IUser>): Promise<IUser> => {
+export const apiEditProfile = async (data: Partial<IUser>): Promise<IUser> => {
   return axiosApiInstance.patch(`/${prefix}/me/profile`, data).then((res) => res.data)
 }
 
-export const fetchUserByUsername = ({ queryKey }: any): Promise<any> => {
+export const fetchUserByUsername = async ({ queryKey }: any): Promise<any> => {
   const [_key, username, clientQuery]: [string, string, IClientUrlParams] = queryKey
   const queryString = UrlHelper.cvtObjToQueryString(clientQuery)
   return axiosApiInstance.get(`/${prefix}/info/${username}?${queryString}`).then((res) => res.data)

@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { API_DOMAIN } from 'app/utils/constants/app.constant'
 import CookieHelper from 'app/utils/helpers/cookie.helper'
 import { IGeolocationInfo } from './../modules/shared/interfaces/models/activity-log.interface'

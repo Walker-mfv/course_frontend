@@ -7,7 +7,7 @@ import UrlHelper from 'app/utils/helpers/url.heper'
 const getPrefix = (id: string) => `${CONTROLLER.course}/${id}/reviews`
 
 // CLIENT APIS
-export function fetchCourseReviews({ queryKey, pageParam = 1 }: any): Promise<IReview[]> {
+export async function fetchCourseReviews({ queryKey, pageParam = 1 }: any): Promise<IReview[]> {
   const [_key, courseId, limit, filterStar]: [string, string, number, number | undefined] = queryKey
 
   const query: IClientUrlParams = {
@@ -19,7 +19,7 @@ export function fetchCourseReviews({ queryKey, pageParam = 1 }: any): Promise<IR
   return axiosApiInstance.get(`${getPrefix(courseId)}?${queryString}`).then((res) => res.data)
 }
 
-export function countCourseReviews(courseId: string, filterStar?: number): Promise<number> {
+export async function countCourseReviews(courseId: string, filterStar?: number): Promise<number> {
   const queryString = typeof filterStar != 'undefined' ? `rating_filter=${filterStar}` : ''
   return axiosApiInstance.get(`${getPrefix(courseId)}/count?${queryString}`).then((res) => res.data)
 }
