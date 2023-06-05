@@ -1,7 +1,6 @@
 import { Button, ButtonProps, Icon } from '@chakra-ui/react'
 import React from 'react'
 import { FaFileExport } from 'react-icons/fa'
-import { FiPlus } from 'react-icons/fi'
 
 export interface ExportButtonProps extends ButtonProps {}
 

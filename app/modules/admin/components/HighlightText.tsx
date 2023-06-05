@@ -1,6 +1,6 @@
 import { Text, TextProps, useColorModeValue } from '@chakra-ui/react'
-import React from 'react'
 import Helper from 'app/utils/helpers/helper.helper'
+import React from 'react'
 
 export interface HighlightSearchTextProps extends TextProps {
   fields: string[]

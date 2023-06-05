@@ -12,11 +12,11 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react'
+import CustomMenuButton from '@shared/components/button-set/CustomMenuButton'
+import { useDarkBg, useDefaultBg, useIColor } from '@shared/hooks/style.hook'
 import React from 'react'
 import { IconType } from 'react-icons'
 import { FiMoreVertical, FiPlus } from 'react-icons/fi'
-import CustomMenuButton from '@shared/components/button-set/CustomMenuButton'
-import { useDarkBg, useDefaultBg, useIColor } from '@shared/hooks/style.hook'
 
 export interface BriefCardProps {
   icon?: IconType

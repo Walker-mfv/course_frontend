@@ -1,7 +1,7 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon } from '@chakra-ui/react'
+import Helper from 'app/utils/helpers/helper.helper'
 import React from 'react'
 import { FiChevronRight } from 'react-icons/fi'
-import Helper from 'app/utils/helpers/helper.helper'
 import { useAdminParams } from '../providers/admin-params.provider'
 
 export default function AdminBreadcrumb() {

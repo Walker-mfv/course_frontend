@@ -1,4 +1,4 @@
-import { HStack, VStack } from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
 import React from 'react'
 import Time from '../Time'
 

@@ -11,11 +11,11 @@ import {
   PopoverTrigger,
   VStack,
 } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import { FiFilter } from 'react-icons/fi'
 import { SelectOption } from '@shared/components/form-set/MultiSelect'
 import { useDeepCompareEffect } from '@shared/hooks/app.hook'
 import { IFilter, useFilter } from '@shared/hooks/filter.hook'
+import React, { useState } from 'react'
+import { FiFilter } from 'react-icons/fi'
 import { useAdminUrlParams } from '../../providers/admin-query.provider'
 import FilterItem, { FilterItemProps } from './FilterItem'
 
@@ -57,7 +57,7 @@ function Filter({ data }: FilterProps) {
   }
   return (
     <Popover placement={'bottom-end'}>
-      {({ isOpen, onClose }) => (
+      {({ onClose }) => (
         <>
           <PopoverTrigger>
             <Button colorScheme="blue" variant="ghost" leftIcon={<Icon as={FiFilter} />}>

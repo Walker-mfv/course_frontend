@@ -1,7 +1,7 @@
 import { FormControl, FormLabel } from '@chakra-ui/react'
-import React from 'react'
 import MultiSelect, { SelectOption } from '@shared/components/form-set/MultiSelect'
 import { ISelectItem } from '@shared/interfaces/select-data.interface'
+import React from 'react'
 
 export interface FilterItemProps {
   label: string

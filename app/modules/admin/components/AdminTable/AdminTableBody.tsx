@@ -1,16 +1,16 @@
 import { Tbody, Td, Tr } from '@chakra-ui/react'
-import React, { ChangeEvent } from 'react'
-import { useSelector } from 'react-redux'
-import { multiChangeAddOne, multiChangeDeleteOne, selectIsItemSelected } from 'app/store/admin/multi-change.slice'
-import { useAppDispatch } from 'app/store/hooks'
 import EmptyMessageTr from '@shared/components/message-set/EmptyMessageTr'
 import ErrorMessageTr from '@shared/components/message-set/ErrorMessageTr'
 import IModel from '@shared/interfaces/models/model.interface'
+import { ITableColumn } from '@shared/interfaces/table-column.interface'
+import { ITableRow } from '@shared/interfaces/table-row.interface'
+import { multiChangeAddOne, multiChangeDeleteOne, selectIsItemSelected } from 'app/store/admin/multi-change.slice'
+import { useAppDispatch } from 'app/store/hooks'
+import React, { ChangeEvent } from 'react'
+import { useSelector } from 'react-redux'
 import AdminHighlightSearchText from '../AdminHighlightSearchText'
 import { AdminTableProps } from './AdminTable'
-import { ITableRow } from '@shared/interfaces/table-row.interface'
 import AdminTableCheckbox from './AdminTableCheckbox'
-import { ITableColumn } from '@shared/interfaces/table-column.interface'
 
 const AdminTableBody = ({ isLoading, isError, rows = [], columns, ...props }: AdminTableProps) => {
   const bodyHtml =

@@ -1,8 +1,8 @@
+import { useAuth } from '@auth/providers/auth.provider'
 import { Accordion, Skeleton } from '@chakra-ui/react'
-import React, { memo, useEffect, useState } from 'react'
 import AppIcon from 'app/utils/constants/app-icon.constant'
 import { hasViewPermission } from 'app/utils/helpers/model-helpers/user.helper.'
-import { useAuth } from '@auth/providers/auth.provider'
+import React, { memo, useEffect, useState } from 'react'
 import { INavGroupItem } from '../../interfaces/nav-group-item.interface'
 import { useAdminParams } from '../../providers/admin-params.provider'
 import NavGroupItem from './NavGroupItem'
@@ -54,11 +54,6 @@ const navGroupItems: INavGroupItem[] = [
         link: '/admin/categories',
         key: 'categories',
       },
-      // {
-      //     title: 'Topics',
-      //     link: '/admin/topics',
-      //     key: 'topics'
-      // },
       {
         name: 'Course',
         title: 'Courses',

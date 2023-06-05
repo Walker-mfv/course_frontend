@@ -1,9 +1,9 @@
 import { Box, Heading, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, useColorModeValue } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import PathHelper from 'app/utils/helpers/path.helper'
 import NextLink from '@shared/components/NextLink'
 import { TMyCourse } from '@shared/interfaces/models/user.interface'
+import PathHelper from 'app/utils/helpers/path.helper'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import ClientPageContainer from '../../components/ClientPageContainer'
 import ArchivedCourses from './ArchivedCourses/ArchivedCourses'
 import LearningCourses from './LearningCourses/LearningCourses'
@@ -40,8 +40,6 @@ export default function MyCoursesTabs() {
         router.replace(PathHelper.getMyCoursesPath())
       }
       setCurrentPath(params?.at(0) as any)
-    } else {
-      // router.push(router.asPath + '/all', undefined, { shallow: true })
     }
   }, [params, router])
   const tabListHtml = tabs.map((item) => (

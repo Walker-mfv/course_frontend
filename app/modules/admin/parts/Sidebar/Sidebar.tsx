@@ -1,7 +1,7 @@
 import { Box, Flex, useTheme, VStack } from '@chakra-ui/react'
-import React, { memo } from 'react'
 import { useDevice } from '@shared/hooks/app.hook'
 import { useCardBg } from '@shared/hooks/style.hook'
+import React, { memo } from 'react'
 import { useAdminSidebar } from '../../providers/admin-sidebar.provider'
 import Nav from './Nav'
 import NavSizeToggler from './NavSizeToggler'
@@ -65,38 +65,6 @@ function Sidebar() {
             </Flex>
             <Nav />
           </VStack>
-
-          {/* AVATAR BOX*/}
-          {/* <VStack
-                        mb="4"
-                        align={{
-                            base: 'flex-start',
-                            lg: navSize == 'small' ? 'center' : 'flex-start',
-                        }}
-                    >
-                        <Divider
-                            display={{
-                                base: 'flex',
-                                lg: navSize == 'small' ? 'none' : 'flex',
-                            }}
-                        />
-                        <HStack mt={5}>
-                            <Avatar size="sm" src={AVATAR} />
-                            <VStack
-                                ml={5}
-                                align="stretch"
-                                display={{
-                                    base: 'flex',
-                                    lg: navSize == 'small' ? 'none' : 'flex',
-                                }}
-                            >
-                                <Heading as="h3" size="sm">
-                                    Jennie Kim
-                                </Heading>
-                                <Subtitle sx={{ mt: '0 !important' }}>Admin</Subtitle>
-                            </VStack>
-                        </HStack>
-                    </VStack> */}
         </VStack>
       </Box>
     </SidebarWrapper>

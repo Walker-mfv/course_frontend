@@ -1,8 +1,8 @@
 import { Button, Icon, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
-import React from 'react'
-import { FiChevronDown } from 'react-icons/fi'
 import NextLink from '@shared/components/NextLink'
 import IActionItem from '@shared/interfaces/action-item.inteface'
+import React from 'react'
+import { FiChevronDown } from 'react-icons/fi'
 
 export interface RowActionProps {
   actions: IActionItem[]
