@@ -1,4 +1,4 @@
-import { Box, Progress, useColorModeValue, useToast } from '@chakra-ui/react'
+import { Box, Progress, useColorModeValue } from '@chakra-ui/react'
 import ClientLayout from '@client/ClientLayout'
 import ClientPageContainer from '@client/components/ClientPageContainer'
 import InstructorTerms from '@client/pages/InstructorForm/InstructorTerms'
@@ -7,13 +7,17 @@ import MyHead from '@shared/components/MyHead'
 import { NextPageWithLayout } from 'app/types/next'
 import AppTitle from 'app/utils/constants/app-title.constant'
 import { LocalRegisterHelper } from 'app/utils/helpers/localStorage.helper'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const IntructorRegister: NextPageWithLayout = () => {
-  const toast = useToast()
-  const [step, setStep] = useState(LocalRegisterHelper.getRegisterStep() || 1)
+  const [step, setStep] = useState(1)
   const [progress, setProgress] = useState(50)
   const bg = useColorModeValue('white', 'transparent')
+
+  useEffect(() => {
+    setStep(LocalRegisterHelper.getRegisterStep() || 1)
+    setProgress((LocalRegisterHelper.getRegisterStep() || 1) * 50)
+  }, [])
 
   return (
     <>

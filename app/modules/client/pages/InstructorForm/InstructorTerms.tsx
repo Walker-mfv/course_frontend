@@ -53,7 +53,7 @@ const InstructorTerms = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <FormControl isInvalid={!!errors.instructor_terms}>
+      <FormControl isInvalid={!!errors.instructor_terms} mb={6} mt={8}>
         <Stack mb={4}>
           <Text fontWeight={600} fontSize={'xl'}>
             Instructor Terms
