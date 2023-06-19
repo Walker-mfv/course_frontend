@@ -1,5 +1,5 @@
 import IClientUrlParams from 'app/modules/admin/interfaces/client-url-params.interface'
-import { ICart, IUser } from 'app/modules/shared/interfaces/models/user.interface'
+import { ICalendarEvent, ICart, IUser } from 'app/modules/shared/interfaces/models/user.interface'
 import { axiosApiInstance } from 'app/utils/axios-utils'
 import { CONTROLLER } from 'app/utils/constants/app.constant'
 import UrlHelper from 'app/utils/helpers/url.heper'
@@ -46,4 +46,20 @@ export const fetchUserByUsername = async ({ queryKey }: any): Promise<any> => {
   const [_key, username, clientQuery]: [string, string, IClientUrlParams] = queryKey
   const queryString = UrlHelper.cvtObjToQueryString(clientQuery)
   return axiosApiInstance.get(`/${prefix}/info/${username}?${queryString}`).then((res) => res.data)
+}
+
+export const checkAuthCalendar = async (): Promise<boolean> => {
+  return axiosApiInstance.get(`/${prefix}/me/google/calendar/check-auth`).then((res) => res.data)
+}
+
+export const createCalendarEvent = async (data: any): Promise<any> => {
+  return axiosApiInstance.post(`/${prefix}/me/google/calendar/create-event`, data).then((res) => res.data)
+}
+
+export const fetchCalendarEvents = async (): Promise<ICalendarEvent[]> => {
+  return axiosApiInstance.get(`/${prefix}/me/google/calendar/events`).then((res) => res.data)
+}
+
+export const deleteCalendarEvent = async (eventId: string): Promise<any> => {
+  return axiosApiInstance.delete(`/${prefix}/me/google/calendar/events/${eventId}`).then((res) => res.data)
 }

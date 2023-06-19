@@ -1,3 +1,5 @@
+import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
+import { useAuth } from '@auth/providers/auth.provider'
 import {
   Avatar,
   Box,
@@ -15,14 +17,6 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react'
-import moment from 'moment'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import AppIcon from 'app/utils/constants/app-icon.constant'
-import lan from 'app/utils/constants/lan.constant'
-import DateHelper from 'app/utils/helpers/date.helper'
-import NotifyHelper from 'app/utils/helpers/notify.helper'
-import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
-import { useAuth } from '@auth/providers/auth.provider'
 import { useAppToast } from '@shared/hooks/app-toast.hook'
 import { useSubtitleColor } from '@shared/hooks/style.hook'
 import IComment from '@shared/interfaces/models/comment.interface'
@@ -31,6 +25,13 @@ import {
   useDeleteUnitSubComment,
   useUnitSubCommentsQuery,
 } from 'app/modules/learn/queries/unit-sub-comments-query.hook'
+import AppIcon from 'app/utils/constants/app-icon.constant'
+import lan from 'app/utils/constants/lan.constant'
+import DateHelper from 'app/utils/helpers/date.helper'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import moment from 'moment'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { FiEdit2, FiTrash } from 'react-icons/fi'
 import CommentForm from '../CommentForm'
 import CommentList from '../CommentList'
 
@@ -127,8 +128,12 @@ const Actions = (props: CommentExcerptProps & { editMode: boolean; setEditMode: 
     <Menu>
       <MenuButton variant="unstyled" as={IconButton} icon={<Icon as={AppIcon.moreVertical} />}></MenuButton>
       <MenuList>
-        <MenuItem onClick={onEdit}>Edit</MenuItem>
-        <MenuItem onClick={onDelete}>Delete</MenuItem>
+        <MenuItem onClick={onEdit} icon={<FiEdit2 fontSize={'15px'} />}>
+          Edit
+        </MenuItem>
+        <MenuItem onClick={onDelete} icon={<FiTrash fontSize={'15px'} />}>
+          Delete
+        </MenuItem>
       </MenuList>
     </Menu>
   )

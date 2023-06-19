@@ -216,4 +216,8 @@ export default class PathHelper {
   static getGoogleLoginUrl() {
     return `${API_DOMAIN}/auth/google`
   }
+
+  static getGoogleCalendarLoginUrl() {
+    return `${API_DOMAIN}/users/me/google/calendar`
+  }
 }

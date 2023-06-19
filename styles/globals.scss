@@ -177,6 +177,21 @@ a {
   min-height: 60px;
 }
 
+.react-datepicker-wrapper > .react-datepicker__input-container {
+  width: fit-content;
+}
+
 .react-datepicker__input-container > input {
-  padding: 5px 10px;
+  padding: 8px 15px;
+  border: 1px solid var(--chakra-colors-gray-200);
+  border-radius: var(--chakra-radii-md);
+}
+
+.react-datepicker__input-container input:focus {
+  outline-color: #9f7aea;
+  border-color: #9f7aea;
+}
+
+.react-datepicker__input-container > .react-datepicker__close-icon::after {
+  background-color: var(--chakra-colors-gray-400);
 }

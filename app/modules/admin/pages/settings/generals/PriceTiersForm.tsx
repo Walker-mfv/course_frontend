@@ -53,7 +53,7 @@ const vldSchema = yup.object({
             if (value) return Number(formatter(value as string)) < 10000000
             return false
           })
-          .test('min', `must be less than 1000`, (value) => {
+          .test('min', `must be greater than 1,000`, (value) => {
             if (value) return Number(formatter(value as string)) > 1000
             return false
           })

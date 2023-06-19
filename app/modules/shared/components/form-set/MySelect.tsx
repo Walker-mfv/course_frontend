@@ -1,4 +1,4 @@
-import { FormControl, FormErrorMessage, FormHelperText, FormLabel, Select, Text } from '@chakra-ui/react'
+import { FormControl, FormErrorMessage, FormHelperText, Select } from '@chakra-ui/react'
 import React from 'react'
 import { IMyInput } from '../../interfaces/my-input.interface'
 import { ISelectItem } from '../../interfaces/select-data.interface'
@@ -6,7 +6,9 @@ import MyFormLabel from './MyFormLabel'
 
 export interface MySelectProps extends IMyInput {
   options?: ISelectItem<string | number>[]
+  maxW?: string
 }
+
 export default function MySelect({
   field,
   label,

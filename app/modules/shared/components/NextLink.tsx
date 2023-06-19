@@ -1,4 +1,4 @@
-import { Box, Link, LinkProps } from '@chakra-ui/react'
+import { Link, LinkProps } from '@chakra-ui/react'
 import NLink, { LinkProps as NLinkProps } from 'next/link'
 import React from 'react'
 

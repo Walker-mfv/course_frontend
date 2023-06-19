@@ -104,4 +104,29 @@ export default class Helper {
     const text = doc.documentElement.textContent as string
     return text
   }
+
+  static getDateFromTime(time: string, duration: number, date_reminder: Date | undefined): [string, string] {
+    const [hours, minutes] = time.split(':')
+    const start_date = date_reminder ? new Date(date_reminder) : new Date()
+    start_date.setHours(Number(hours))
+    start_date.setMinutes(Number(minutes))
+
+    const newTimestamp = start_date.getTime() + duration * 1000
+    const end_date = new Date(newTimestamp)
+    return [start_date.toISOString(), end_date.toISOString()]
+  }
+
+  static formatTimeString(minutes: number) {
+    const hours = Math.floor(minutes / 60)
+    const mins = minutes % 60
+    return hours > 0 ? (mins === 0 ? `${hours}hr` : `${hours}hr ${mins}min`) : `${mins}min`
+  }
+
+  static getDateLocaleString(date: string): string {
+    return new Date(date).toLocaleDateString('en-US', {
+      day: 'numeric',
+      year: 'numeric',
+      month: 'short',
+    })
+  }
 }

@@ -1,5 +1,4 @@
-import { LockIcon } from '@chakra-ui/icons'
-import { Box, Heading, Text, Button, Icon } from '@chakra-ui/react'
+import { Box, Button, Heading, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { useCardBg } from '../hooks/style.hook'
 
@@ -22,14 +21,28 @@ export function Unauthorized() {
       boxShadow={'md'}
       flexDirection={'column'}
     >
-      <Icon as={LockIcon} w={16} h={16} mb={6} color={'gray.300'} />
-      <Heading fontSize={'2.3rem'} fontWeight="bold" mb={2}>
-        Access denied
+      <Heading
+        display="inline-block"
+        as="h2"
+        size="2xl"
+        bgGradient="linear(to-r, purple.400, purple.600)"
+        backgroundClip="text"
+      >
+        401
       </Heading>
-      <Text color={'gray.500'} fontSize="lg" mb={4}>
+      <Text fontSize="1.2rem" fontWeight={500} mt={3} mb={2}>
+        Access denied
+      </Text>
+      <Text color={'gray.500'} mb={6}>
         You don&apos;t have permissions to access this page.
       </Text>
-      <Button colorScheme="purple" size="lg" onClick={() => router.push('/')}>
+      <Button
+        colorScheme="purple"
+        size="lg"
+        bgGradient="linear(to-r, purple.400, purple.500, purple.600)"
+        variant="solid"
+        onClick={() => router.push('/')}
+      >
         Go Back Home
       </Button>
     </Box>

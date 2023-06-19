@@ -1,4 +1,4 @@
-import { ThemeConfig, extendTheme } from '@chakra-ui/react'
+import { extendTheme, ThemeConfig } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
 export const DEFAULT_LIGHT_BACKGROUND = '#faf9f7'
@@ -16,6 +16,16 @@ const theme = extendTheme({
   },
   components: {
     Input: {
+      defaultProps: {
+        focusBorderColor: 'purple.400',
+      },
+    },
+    Select: {
+      defaultProps: {
+        focusBorderColor: 'purple.400',
+      },
+    },
+    NumberInput: {
       defaultProps: {
         focusBorderColor: 'purple.400',
       },
