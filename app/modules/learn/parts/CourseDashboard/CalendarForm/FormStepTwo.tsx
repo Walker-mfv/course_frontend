@@ -202,8 +202,6 @@ export function FormStepTwo({ handlePreviousStep, values, setValues, onClose }: 
     setDisabled(false)
   })
 
-  console.log(errors)
-
   return (
     <form onSubmit={onSubmit}>
       <Stack spacing={6}>
