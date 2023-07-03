@@ -30,7 +30,7 @@ const Main = () => {
 
   const height = useBreakpointValue({
     base: 'fit-content',
-    xl: isOpen ? '400px' : `calc(100vh - ${LEARN_TOP_BAR_HEIGHT}px)`,
+    xl: isOpen ? '500px' : `calc(100vh - ${LEARN_TOP_BAR_HEIGHT}px)`,
   })
 
   const renderContent = useMemo(() => {

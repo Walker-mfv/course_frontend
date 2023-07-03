@@ -63,3 +63,7 @@ export async function fetchHighestRatingItems({ queryKey, pageParam = 1 }: any):
 export async function countHighestRatingItems(): Promise<number> {
   return axiosApiInstance.get(`${prefix}/count-highest-rating-items`).then((res) => res.data)
 }
+
+export async function fetchRecommendedCourses(courseIds: string[]) {
+  return axiosApiInstance.get(`${prefix}/recommendation?courseIds=${courseIds}`).then((res) => res.data)
+}

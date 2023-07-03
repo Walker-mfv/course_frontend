@@ -60,6 +60,7 @@ const Main = ({
           transitionProperty={'background-color'}
           transitionDuration="normal"
           borderRadius={'md'}
+          overflow={'hidden'}
         >
           <Stack opacity={opacity} spacing={0}>
             {renderUnitContent}

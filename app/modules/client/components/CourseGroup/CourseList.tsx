@@ -38,6 +38,7 @@ const responsive: ResponsiveType = {
 
 export interface CourseListProps {
   courses: ICourse[]
+  infinite?: boolean
 }
 
 const CourseList = (props: CourseListProps) => {
@@ -61,6 +62,7 @@ const CourseList = (props: CourseListProps) => {
       responsive={responsive}
       shouldResetAutoplay={false}
       partialVisible={true}
+      infinite={props.infinite}
     >
       {courseExcerptsHtml}
     </Carousel>

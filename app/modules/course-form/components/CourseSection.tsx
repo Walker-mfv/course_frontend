@@ -1,3 +1,4 @@
+import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
 import {
   AccordionButton,
   AccordionIcon,
@@ -10,10 +11,12 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
-import React, { MouseEventHandler, useEffect, useState } from 'react'
-import { useDrop } from 'react-dnd'
-import { FiFile } from 'react-icons/fi'
-import { useDispatch, useSelector } from 'react-redux'
+import DeleteButton from '@shared/components/button-set/DeleteButton'
+import DragButton from '@shared/components/button-set/DragButton'
+import EditButton from '@shared/components/button-set/EditButton'
+import { useAppToast } from '@shared/hooks/app-toast.hook'
+import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
+import { useSortable } from '@shared/hooks/sortable.hook'
 import {
   deleteSection,
   formCourseSetSectionExpandedIndexes,
@@ -24,13 +27,10 @@ import {
 import lan from 'app/utils/constants/lan.constant'
 import Helper from 'app/utils/helpers/helper.helper'
 import NotifyHelper from 'app/utils/helpers/notify.helper'
-import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
-import DeleteButton from '@shared/components/button-set/DeleteButton'
-import DragButton from '@shared/components/button-set/DragButton'
-import EditButton from '@shared/components/button-set/EditButton'
-import { useAppToast } from '@shared/hooks/app-toast.hook'
-import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
-import { useSortable } from '@shared/hooks/sortable.hook'
+import React, { MouseEventHandler, useEffect, useState } from 'react'
+import { useDrop } from 'react-dnd'
+import { FiFile } from 'react-icons/fi'
+import { useDispatch, useSelector } from 'react-redux'
 import { TDragUnit } from '../hooks/unit-sortable.hook'
 import AddCourseSection from './AddCourseSection'
 import CourseSectionForm from './CourseSectionForm'
@@ -155,6 +155,7 @@ const Main = ({
         bgColor={isOver ? 'cyan.100' : bg}
         p={4}
         borderRadius={'md'}
+        overflow={'hidden'}
       >
         <Stack opacity={opacity} spacing={0}>
           {/* HEADER */}

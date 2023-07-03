@@ -1,9 +1,6 @@
-import { debounce } from 'lodash'
-import { useCallback, useRef } from 'react'
-import { useDispatch } from 'react-redux'
-import { swapCourseUnit } from 'app/store/course/form-course.slice'
 import { useSortable } from '@shared/hooks/sortable.hook'
-import { IUnitSwapByIds } from './../../shared/interfaces/unit-swap.interface'
+import { swapCourseUnit } from 'app/store/course/form-course.slice'
+import { useDispatch } from 'react-redux'
 import { IUnitAddress } from './../interaces/unit-address.interface'
 
 export type TDragUnit = {

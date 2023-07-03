@@ -66,6 +66,7 @@ const CourseUnitHeader = (props: CourseUnitHeaderProps) => {
         return <CourseQuizForm sectionId={sectionId} unitId={unitId} onClose={() => setEditMode(false)} />
     }
   }, [sectionId, unitId, unitType])
+
   return (
     <>
       {!editMode ? (

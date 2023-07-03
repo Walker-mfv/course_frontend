@@ -1,15 +1,15 @@
-import { HStack, Text } from '@chakra-ui/react'
-import React from 'react'
-import { deleteQuizQuestion } from 'app/store/course/form-course.slice'
-import lan from 'app/utils/constants/lan.constant'
-import Helper from 'app/utils/helpers/helper.helper'
-import NotifyHelper from 'app/utils/helpers/notify.helper'
 import { useSimpleDialog } from '@admin/providers/simple-dialog.provider'
+import { HStack, Text } from '@chakra-ui/react'
 import DeleteButton from '@shared/components/button-set/DeleteButton'
 import EditButton from '@shared/components/button-set/EditButton'
 import { useAppToast } from '@shared/hooks/app-toast.hook'
 import { useCrudActions } from '@shared/hooks/data/crud-actions.hook'
 import { IQuestion } from '@shared/interfaces/models/quiz.interface'
+import { deleteQuizQuestion } from 'app/store/course/form-course.slice'
+import lan from 'app/utils/constants/lan.constant'
+import Helper from 'app/utils/helpers/helper.helper'
+import NotifyHelper from 'app/utils/helpers/notify.helper'
+import React from 'react'
 import { useQuizParams } from '../../providers/quiz-params.provider'
 import { useUnitParams } from '../../providers/unit-params.provider'
 
@@ -57,7 +57,11 @@ export default function QuestionExcerpt(props: QuestionExcerptProps) {
           '>.actions': {
             visibility: 'visible',
           },
+          backgroundColor: 'gray.100',
         },
+        px: 3,
+        py: 2,
+        borderRadius: 'md',
       }}
     >
       <Text as={'strong'}>{no}.</Text>

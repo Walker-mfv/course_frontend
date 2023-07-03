@@ -1,9 +1,11 @@
-import React, { useCallback, useMemo } from 'react'
-import AppTitle from 'app/utils/constants/app-title.constant'
+import { Box } from '@chakra-ui/react'
+import { RecommendCourseGroup } from '@client/pages/HomePage/RecomendCourseGroup'
+import { useArchiveCourses, useLearningCourses } from '@client/queries/learning-courses-query.hook'
 import MyHead from '@shared/components/MyHead'
 import { IMenuItem } from '@shared/interfaces/menu-item.interface'
 import { IUserCourse } from '@shared/interfaces/models/user_course.interface'
-import { useArchiveCourses, useLearningCourses } from '@client/queries/learning-courses-query.hook'
+import AppTitle from 'app/utils/constants/app-title.constant'
+import React, { useCallback, useMemo } from 'react'
 import MyCourseList from '../MyCourseList'
 import LearningCourseExcerpt from './LearningCourseExcerpt'
 
@@ -33,6 +35,9 @@ export default function LearningCourses() {
     <>
       <MyHead title={AppTitle.MY_COURSES} />
       <MyCourseList isLoading={isLoading} items={items || []} renderItem={renderItem} />
+      <Box mt={6}>
+        <RecommendCourseGroup />
+      </Box>
     </>
   )
 }

@@ -1,10 +1,8 @@
 import { AccordionPanel, Button, HStack, Icon, Stack } from '@chakra-ui/react'
-import React, { useMemo } from 'react'
-import { useDispatch } from 'react-redux'
 import { formCourseAddUnitExpandedIndex } from 'app/store/course/form-course.slice'
 import AppIcon from 'app/utils/constants/app-icon.constant'
-import TypeHelper from 'app/utils/helpers/type.helper'
-import { useLectureParams } from '../../providers/lecture-params.provider'
+import React, { useMemo } from 'react'
+import { useDispatch } from 'react-redux'
 import { QuizParamsProvider, useQuizParams } from '../../providers/quiz-params.provider'
 import { useUnitParams } from '../../providers/unit-params.provider'
 import CourseUnitHeader from '../CourseUnit/CourseUnitHeader'
@@ -22,6 +20,7 @@ const HeaderActionButton = () => {
     state: { quiz },
   } = useQuizParams()
   if (quiz?.questions?.length > 0 && !isEditContent) return <></>
+
   return (
     <>
       {!isEditContent ? (
@@ -72,7 +71,7 @@ const QuizBody = () => {
     setEditContent(true)
   }
   return (
-    <Stack spacing={4} p={2}>
+    <Stack spacing={4} p={2} borderRadius={'md'}>
       {!isEditContent ? (
         <Stack spacing={10}>
           <HStack justify={'space-between'}>

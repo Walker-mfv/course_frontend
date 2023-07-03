@@ -79,6 +79,8 @@ export default function AddCourseUnit(props: AddCourseUnitProps) {
           transitionProperty={'background-color'}
           transitionDuration="normal"
           bgColor={bg}
+          borderRadius={'md'}
+          overflow={'hidden'}
         >
           {!unitType ? <AddUnitOptionBar setUnitType={setUnitType} /> : renderAddSection}
         </Stack>

@@ -75,7 +75,7 @@ export default function UploadLectureFile(props: UploadLectureFileProps) {
           register={register}
           error={errors.file}
           type="file"
-          helperText="Note: All files should be at least 720p and less than 4.0 GB."
+          helperText="Note: All files should be at least 720p and less than 500 MB."
           accept={props.accept}
         />
         {uploadProgress && <MyProgressBar value={uploadProgress} showVal />}
